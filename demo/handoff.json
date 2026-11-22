@@ -1,0 +1,950 @@
+{
+  "schema_version": "part2-example-1.0",
+  "export_kind": "part2_synthetic_completed_information",
+  "synthetic": true,
+  "published": false,
+  "prepared_on": "2026-11-19",
+  "sample_notice": "개발 테스트용 가상 보완 완료 예시. 원본 입력서도 가상 자료이며, 추가 답변·대장·기관 회신·시험·인정 내용은 이 예시를 위해 작성한 모의 기록이다.",
+  "source_document": {
+    "name": "intake_filled_example(2).docx",
+    "sha256": "f8ecd1b018c552112dcdae51570731520cfc56d71f376d085368a2bf6233490c",
+    "submission_id": "d5e345a6-e876-5169-a35a-eedb09b30d76",
+    "source_date": "2026-11-10"
+  },
+  "preparation": {
+    "method": "원본 접수·추가답변·지원 문서값 검증 후 Part 2 요청 구조로 수동 구성",
+    "agent_version": "0.5.5",
+    "current_agent_export": "phase3-document-workflow-review",
+    "automatic_part2_projection": false,
+    "native_selected_code_remains_null": true,
+    "formal_publication_implemented": false,
+    "code_semantics": "selected_code는 이 가상 예시에서 기관 회신을 대조해 선택한 전달용 값이며 0.5.5의 자동 확정 기능을 의미하지 않는다.",
+    "handoff_revision": 1
+  },
+  "company": {
+    "name": "가상순환산업 (가상 업체)",
+    "business_number": "000-00-00000 (테스트용)",
+    "contact_name": "김예시 (가상)",
+    "contact_phone": "010-0000-0000 (테스트용)"
+  },
+  "cases": [
+    {
+      "schema_version": "part2-example-1.0",
+      "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+      "case_version": 0,
+      "handoff_revision": 1,
+      "synthetic": true,
+      "published": false,
+      "draft_revision": 1,
+      "name": "제품 포장용 PE 필름 자투리",
+      "process_description": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+      "classification": {
+        "reported_code": "51-03-01",
+        "selected_code": "51-03-01",
+        "code_label": "폐합성수지류(폐염화비닐수지류는 제외한다)",
+        "status": "synthetic_authority_reviewed_for_example",
+        "basis": "사용 원료 자료·현재 시료 성분자료·현장과 발생공정 대조를 전제로 한 가상 기관 회신",
+        "conditions": "A동 PF-01 포장 공정의 마른 필름 자투리이며 다른 품목 및 세척액 혼입이 없는 현재 회차에 한정",
+        "source_type": "current_case_authority_reply",
+        "evidence_id": "A-AUTHORITY",
+        "review_note": "이 전달 예시의 수동 선택값. 0.5.5 원본 내보내기의 selected_code는 null."
+      },
+      "components": [
+        {
+          "material": "PE",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "synthetic_sample_reviewed",
+          "share_basis": "sample_mass_fraction",
+          "evidence_ids": [
+            "A-COMPOSITION",
+            "A-QA"
+          ]
+        }
+      ],
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "hazardous_suspect_basis": "가상 기관 검토서에서 현재 건의 유해성 검토 상태를 확인",
+      "designated_waste_status": "non_designated",
+      "designation_scope": "가상 회신에 특정된 현장·공정·원료·시료 조건",
+      "quantity": {
+        "monthly_ton": [
+          0.18,
+          0.205,
+          0.2
+        ],
+        "monthly_periods": [
+          "2026-08",
+          "2026-09",
+          "2026-10"
+        ],
+        "monthly_records": [
+          {
+            "period": "2026-08",
+            "value": 180,
+            "unit": "kg",
+            "ton": 0.18,
+            "basis": "monthly_generation_record",
+            "evidence_id": "A-MONTHLY"
+          },
+          {
+            "period": "2026-09",
+            "value": 205,
+            "unit": "kg",
+            "ton": 0.205,
+            "basis": "monthly_generation_record",
+            "evidence_id": "A-MONTHLY"
+          },
+          {
+            "period": "2026-10",
+            "value": 200,
+            "unit": "kg",
+            "ton": 0.2,
+            "basis": "monthly_generation_record",
+            "evidence_id": "A-MONTHLY"
+          }
+        ],
+        "unit": "ton",
+        "status": "synthetic_records_reviewed",
+        "current_lot": {
+          "value": 200,
+          "unit": "kg",
+          "measured_at": "2026-11-09",
+          "method": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+          "evidence_ids": [
+            "A-INTAKE",
+            "A-QA"
+          ]
+        },
+        "conversion_note": "월별 발생대장의 kg를 1000으로 나누어 t로 환산. 이번 처리량과 월별 발생량은 각각 기록."
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10, A동 자재창고 (가상 주소)",
+        "basis": "원문 주소와 가상 사용자 확인",
+        "official_address_match": false,
+        "evidence_ids": [
+          "A-INTAKE",
+          "A-QA"
+        ]
+      },
+      "item_specific": {
+        "ic_tray": false,
+        "nonferrous_material": null,
+        "grain_processor_registered": null,
+        "evidence_id": "A-QA"
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null,
+        "evidence_ids": [
+          "A-QA",
+          "A-COMPOSITION"
+        ]
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "오염 안 보임",
+        "substances": [],
+        "raw_observation": "겉으로 묻은 이물질은 보이지 않음.",
+        "scope": "겉으로 보이는 상태 및 가상 성분자료로 특정한 물질",
+        "evidence_ids": [
+          "A-INTAKE",
+          "A-COMPOSITION"
+        ]
+      },
+      "material_form": "필름 조각",
+      "existing_declaration": {
+        "exists": false,
+        "waste_code": null,
+        "treatment_code": null,
+        "status": "no_previous_record",
+        "evidence_id": "A-INTAKE"
+      },
+      "combustible": true,
+      "combustible_basis": "가상 시험기록의 가연성 확인 문구",
+      "analysis": {
+        "heating_value_kcal": 8700,
+        "heating_value_unit": "kcal/kg",
+        "heating_value_type": "low",
+        "heating_value_basis": "as_received",
+        "moisture_pct": 0.8,
+        "moisture_basis": "as_received",
+        "chlorine_pct": 0.05,
+        "chlorine_basis": "dry",
+        "sample_id": "TEST-A-20261111",
+        "sampled_at": "2026-11-11",
+        "report_date": "2026-11-18",
+        "leaching_ok": null,
+        "leaching_ok_reason": "시료·항목·제출 목적별 적용 기준을 특정한 종합 적합 확인값은 이 예시에 없음. 개별 결과를 보존.",
+        "leaching_results": [
+          {
+            "analyte": "납",
+            "result": "0.10",
+            "unit": "mg/L",
+            "method": "가상 용출시험"
+          },
+          {
+            "analyte": "카드뮴",
+            "result": "<0.02",
+            "unit": "mg/L",
+            "method": "가상 용출시험"
+          },
+          {
+            "analyte": "6가 크롬",
+            "result": "불검출",
+            "unit": "mg/L",
+            "method": "가상 용출시험"
+          }
+        ],
+        "status": "synthetic_reviewed",
+        "evidence_ids": [
+          "A-LAB",
+          "A-HAZARD"
+        ]
+      },
+      "storage_state": "주 1회 발생. 지붕 있는 창고에서 다른 폐기물과 분리 보관.",
+      "raw_materials": "PE 포장용 필름 PF-01",
+      "chemicals": "첨가 세척제 없음",
+      "circular_resource": {
+        "status": "synthetic_individual_recognition",
+        "recognition_reference": "TEST-REC-A-20261118",
+        "valid_from": "2026-11-18",
+        "valid_to": "2029-11-17",
+        "scope": "A동 PF-01 필름 / PE 재생원료 제조 / 타 폐기물 혼입 방지",
+        "registration_reference": null,
+        "evidence_ids": [
+          "A-CIRCULAR"
+        ],
+        "note": "가상 개별 인정 완료를 가정"
+      },
+      "photos": {
+        "status": "not_provided",
+        "files": []
+      },
+      "missing": [
+        "analysis.leaching_ok",
+        "photos"
+      ],
+      "not_applicable": [
+        "components[].waste_code",
+        "item_specific.nonferrous_material",
+        "item_specific.grain_processor_registered",
+        "components[].separable",
+        "foreign_matter.separable"
+      ],
+      "coverage_notes": {
+        "components[].waste_code": "현재 폐기물 건 단위 분류번호를 classification에 기록",
+        "waste_code_candidates[]": "AI 후보 및 확신도 수치를 생성하지 않음. 가상 회신 번호를 사용",
+        "existing_declaration.waste_code": "과거 신고 이력 없음으로 null",
+        "existing_declaration.treatment_code": "과거 처리 이력 없음으로 null",
+        "analysis.leaching_ok": "시료·항목·제출 목적별 적용 기준을 특정한 종합 적합 확인값은 이 예시에 없음. 개별 결과를 보존.",
+        "case_version": "현재 0.5.5의 미발행 상태에 맞춰 0. 이 전달 예시의 문서 차수는 handoff_revision으로 관리"
+      },
+      "source_observations": {
+        "quantity_raw": "200kg",
+        "hazard_raw": "모름",
+        "mixture_type_original": "single",
+        "physical_state": "마른 투명 비닐 조각"
+      },
+      "field_evidence": {
+        "classification": [
+          "A-AUTHORITY"
+        ],
+        "components": [
+          "A-COMPOSITION"
+        ],
+        "hazardous_suspect": [
+          "A-AUTHORITY"
+        ],
+        "designated_waste_status": [
+          "A-AUTHORITY",
+          "A-HAZARD"
+        ],
+        "quantity.monthly_ton": [
+          "A-MONTHLY"
+        ],
+        "quantity.current_lot": [
+          "A-INTAKE",
+          "A-QA"
+        ],
+        "region": [
+          "A-INTAKE",
+          "A-QA"
+        ],
+        "item_specific": [
+          "A-QA"
+        ],
+        "foreign_matter": [
+          "A-QA",
+          "A-COMPOSITION"
+        ],
+        "mixed_with_other": [
+          "A-QA"
+        ],
+        "contamination": [
+          "A-INTAKE",
+          "A-COMPOSITION"
+        ],
+        "material_form": [
+          "A-INTAKE"
+        ],
+        "existing_declaration": [
+          "A-INTAKE"
+        ],
+        "combustible": [
+          "A-LAB"
+        ],
+        "analysis": [
+          "A-LAB",
+          "A-HAZARD"
+        ],
+        "storage_state": [
+          "A-INTAKE"
+        ]
+      },
+      "evidence": [
+        {
+          "evidence_id": "A-INTAKE",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "intake_filled_example(2).docx",
+          "acquisition_channel": "original_intake",
+          "issuer": "사용자",
+          "document_date": "2026-11-10",
+          "scope": "이 입력서의 해당 폐기물 표",
+          "raw_excerpt": "제품 포장 후 남은 필름을 절단·수거하는 작업 / 200kg / 마른 투명 비닐 조각",
+          "locator": "원본 폐기물 1 표",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-QA",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "추가 질문과 사용자 답변 모의 기록",
+          "acquisition_channel": "user_followup",
+          "issuer": "가상 현장 담당자",
+          "document_date": "2026-11-16",
+          "scope": "전주시 가상산업로 10, A동 자재창고 (가상 주소)",
+          "raw_excerpt": "사용 원료는 PF-01 PE 포장용 필름임. 이번 물량은 11월 9일 측정함. 트레이·금속·곡물 부산물에 해당하지 않음.",
+          "locator": "보완 기록 Q-A",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-MONTHLY",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "월별 발생대장 모의 보관본",
+          "acquisition_channel": "internal_record_request",
+          "issuer": "가상 환경 담당자",
+          "document_date": "2026-11-16",
+          "scope": "같은 현장·품목의 2026년 8월부터 10월까지의 발생량",
+          "raw_excerpt": "2026-08 180 kg; 2026-09 205 kg; 2026-10 200 kg",
+          "locator": "월별 발생대장 A 8월·9월·10월 행",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-COMPOSITION",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "현 시료 성분 및 질량분율 모의 결과",
+          "acquisition_channel": "test_institution",
+          "issuer": "가상 성분시험실",
+          "document_date": "2026-11-18",
+          "scope": "TEST-A-20261111 / 2026-11-11 채취 / 현재 발생공정",
+          "raw_excerpt": "현재 폐기물 시료의 재질 확인과 질량분율 확인 결과 PE 100%. 원료 투입비와 구분한 가상 확인값.",
+          "locator": "성분자료 A 표 1",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-AUTHORITY",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "현재 건 분류번호와 적용 범위 모의 회신",
+          "acquisition_channel": "competent_authority",
+          "issuer": "가상 폐기물 담당부서",
+          "document_date": "2026-11-18",
+          "scope": "전주시 가상산업로 10, A동 자재창고 (가상 주소) / 제품 포장 후 남은 필름을 절단·수거하는 작업",
+          "raw_excerpt": "51-03-01 폐합성수지류(폐염화비닐수지류는 제외한다) / A동 PF-01 포장 공정의 마른 필름 자투리이며 다른 품목 및 세척액 혼입이 없는 현재 회차에 한정 / 가상 기관 검토서에는 검토한 현장·공정·원료·시료 범위에서 지정폐기물 비해당으로 기재함.",
+          "locator": "모의 회신 A 본문 1항부터 3항",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-LAB",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "활용 목적 모의 시험성적서",
+          "acquisition_channel": "test_institution",
+          "issuer": "가상 물성시험실",
+          "document_date": "2026-11-18",
+          "scope": "TEST-A-20261111 / 2026-11-11 채취 / 요청한 시험항목",
+          "raw_excerpt": "저위발열량 8700 kcal/kg (수령 상태), 수분 0.8 % (수령 상태), 염소 0.05 % (건조 기준). 가상 시험기록의 가연성 확인값은 true.",
+          "locator": "모의 성적서 A 시험 결과표",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-HAZARD",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "제출 목적 유해물질 모의 분석결과",
+          "acquisition_channel": "waste_analysis_institution",
+          "issuer": "가상 폐기물분석실",
+          "document_date": "2026-11-18",
+          "scope": "TEST-A-20261111 / 해당 시료의 의뢰 항목",
+          "raw_excerpt": "납 | 0.10 | mg/L\n카드뮴 | <0.02 | mg/L\n6가 크롬 | 불검출 | mg/L",
+          "locator": "모의 분석결과 A 유해물질 표",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "A-CIRCULAR",
+          "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+          "title": "순환자원 개별 인정 모의 기록",
+          "acquisition_channel": "regional_environmental_authority",
+          "issuer": "가상 관할 환경청",
+          "document_date": "2026-11-18",
+          "scope": "전주시 가상산업로 10, A동 자재창고 (가상 주소) / 해당 PF-01 필름 / PE 재생원료 제조",
+          "raw_excerpt": "TEST-REC-A-20261118. 가상 유효기간 2026-11-18부터 2029-11-17까지. 현장·품목·용도 유지 및 타 폐기물 혼입 방지 조건.",
+          "locator": "모의 인정 기록 A 대상·용도·유효기간",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        }
+      ],
+      "agent_recording_check": {
+        "case_id": "3adf8cad-b6ee-54f4-aa08-e85b8be09f68",
+        "supported_review_inventory": [
+          {
+            "field": "classification.reported_code",
+            "review_id": 1,
+            "packet_id": "840eaa20-5b8a-5b20-8c3d-7dd41ecd982e",
+            "document_id": "6af97323-33fd-5763-a745-82345e7614a1"
+          },
+          {
+            "field": "classification.applicability",
+            "review_id": 2,
+            "packet_id": "840eaa20-5b8a-5b20-8c3d-7dd41ecd982e",
+            "document_id": "6af97323-33fd-5763-a745-82345e7614a1"
+          },
+          {
+            "field": "classification.conditions",
+            "review_id": 3,
+            "packet_id": "840eaa20-5b8a-5b20-8c3d-7dd41ecd982e",
+            "document_id": "6af97323-33fd-5763-a745-82345e7614a1"
+          },
+          {
+            "field": "designated_waste_status",
+            "review_id": 4,
+            "packet_id": "840eaa20-5b8a-5b20-8c3d-7dd41ecd982e",
+            "document_id": "6af97323-33fd-5763-a745-82345e7614a1"
+          },
+          {
+            "field": "analysis.heating_value_low",
+            "review_id": 5,
+            "packet_id": "99968dba-b346-5c95-aa52-075a9787fb24",
+            "document_id": "f140fd7d-0a34-5a6a-85e3-8871eea72641"
+          },
+          {
+            "field": "analysis.moisture",
+            "review_id": 6,
+            "packet_id": "99968dba-b346-5c95-aa52-075a9787fb24",
+            "document_id": "f140fd7d-0a34-5a6a-85e3-8871eea72641"
+          },
+          {
+            "field": "analysis.chlorine",
+            "review_id": 7,
+            "packet_id": "99968dba-b346-5c95-aa52-075a9787fb24",
+            "document_id": "f140fd7d-0a34-5a6a-85e3-8871eea72641"
+          },
+          {
+            "field": "hazard.analysis_results",
+            "review_id": 8,
+            "packet_id": "0f460957-e527-5e71-8de1-f35416f0740a",
+            "document_id": "8645ed19-5f9a-5c34-b66f-f62fb1f5bc73"
+          },
+          {
+            "field": "hazard.designation_basis",
+            "review_id": 9,
+            "packet_id": "0f460957-e527-5e71-8de1-f35416f0740a",
+            "document_id": "8645ed19-5f9a-5c34-b66f-f62fb1f5bc73"
+          },
+          {
+            "field": "circular_recognition.reference",
+            "review_id": 10,
+            "packet_id": "c63371cd-b252-5512-96c4-ba4845e32598",
+            "document_id": "d9e47fda-a748-5238-93fa-02acfba897e9"
+          },
+          {
+            "field": "circular_recognition.scope",
+            "review_id": 11,
+            "packet_id": "c63371cd-b252-5512-96c4-ba4845e32598",
+            "document_id": "d9e47fda-a748-5238-93fa-02acfba897e9"
+          }
+        ],
+        "native_export_kind": "phase3-document-workflow-review",
+        "native_case_version": 0,
+        "native_selected_code": null
+      }
+    },
+    {
+      "schema_version": "part2-example-1.0",
+      "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+      "case_version": 0,
+      "handoff_revision": 1,
+      "synthetic": true,
+      "published": false,
+      "draft_revision": 2,
+      "name": "기계 세척 후 남은 세척액",
+      "process_description": "금속 부품 가공 기계를 세척제로 씻는 작업",
+      "classification": {
+        "reported_code": "04-02-00",
+        "selected_code": "04-02-00",
+        "code_label": "그 밖의 폐유기용제",
+        "status": "synthetic_authority_reviewed_for_example",
+        "basis": "세척제 공급사 성분자료·해당 폐액 시료 분석·발생공정 대조를 전제로 한 가상 기관 회신",
+        "conditions": "B동 CL-01 세척 공정에서 회수한 비할로겐계 유기용제 혼합 폐액. 원료 또는 혼입 상태 변경 시 재확인",
+        "source_type": "current_case_authority_reply",
+        "evidence_id": "B-AUTHORITY",
+        "review_note": "이 전달 예시의 수동 선택값. 0.5.5 원본 내보내기의 selected_code는 null."
+      },
+      "components": [
+        {
+          "material": "유기계 세척용제 혼합액",
+          "share_pct": 90,
+          "separable": "아니오",
+          "waste_code": null,
+          "status": "synthetic_sample_reviewed",
+          "share_basis": "sample_mass_fraction",
+          "evidence_ids": [
+            "B-COMPOSITION",
+            "B-QA"
+          ]
+        },
+        {
+          "material": "혼입된 기계유",
+          "share_pct": 10,
+          "separable": "아니오",
+          "waste_code": null,
+          "status": "synthetic_sample_reviewed",
+          "share_basis": "sample_mass_fraction",
+          "evidence_ids": [
+            "B-COMPOSITION",
+            "B-QA"
+          ]
+        }
+      ],
+      "waste_code_candidates": [],
+      "hazardous_suspect": true,
+      "hazardous_suspect_basis": "가상 기관 검토서에서 현재 건의 유해성 검토 상태를 확인",
+      "designated_waste_status": "designated",
+      "designation_scope": "가상 회신에 특정된 현장·공정·원료·시료 조건",
+      "quantity": {
+        "monthly_ton": [
+          0.095,
+          0.102,
+          0.098
+        ],
+        "monthly_periods": [
+          "2026-08",
+          "2026-09",
+          "2026-10"
+        ],
+        "monthly_records": [
+          {
+            "period": "2026-08",
+            "value": 95,
+            "unit": "kg",
+            "ton": 0.095,
+            "basis": "monthly_generation_record",
+            "evidence_id": "B-MONTHLY"
+          },
+          {
+            "period": "2026-09",
+            "value": 102,
+            "unit": "kg",
+            "ton": 0.102,
+            "basis": "monthly_generation_record",
+            "evidence_id": "B-MONTHLY"
+          },
+          {
+            "period": "2026-10",
+            "value": 98,
+            "unit": "kg",
+            "ton": 0.098,
+            "basis": "monthly_generation_record",
+            "evidence_id": "B-MONTHLY"
+          }
+        ],
+        "unit": "ton",
+        "status": "synthetic_records_reviewed",
+        "current_lot": {
+          "value": 100,
+          "unit": "L",
+          "measured_at": "2026-11-09",
+          "method": "자료 없음. 눈금 있는 용기로 실제 내용물 부피를 측정함.",
+          "evidence_ids": [
+            "B-INTAKE",
+            "B-QA"
+          ]
+        },
+        "conversion_note": "월별 발생대장의 kg를 1000으로 나누어 t로 환산. 이번 처리량과 월별 발생량은 각각 기록."
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10, B동 세척실 (가상 주소)",
+        "basis": "원문 주소와 가상 사용자 확인",
+        "official_address_match": false,
+        "evidence_ids": [
+          "B-INTAKE",
+          "B-QA"
+        ]
+      },
+      "item_specific": {
+        "ic_tray": false,
+        "nonferrous_material": null,
+        "grain_processor_registered": null,
+        "evidence_id": "B-QA"
+      },
+      "foreign_matter": {
+        "items": [
+          "기계유"
+        ],
+        "separable": "아니오",
+        "evidence_ids": [
+          "B-QA",
+          "B-COMPOSITION"
+        ]
+      },
+      "mixed_with_other": true,
+      "contamination": {
+        "level": "일부 오염 관찰",
+        "substances": [
+          "기계유"
+        ],
+        "raw_observation": "표면 일부에 기름막이 보임. 정확한 성분·함량은 원문에서 모름으로 기재.",
+        "scope": "겉으로 보이는 상태 및 가상 성분자료로 특정한 물질",
+        "evidence_ids": [
+          "B-INTAKE",
+          "B-COMPOSITION"
+        ]
+      },
+      "material_form": "액상",
+      "existing_declaration": {
+        "exists": false,
+        "waste_code": null,
+        "treatment_code": null,
+        "status": "no_previous_record",
+        "evidence_id": "B-INTAKE"
+      },
+      "combustible": true,
+      "combustible_basis": "가상 시험기록의 가연성 확인 문구",
+      "analysis": {
+        "heating_value_kcal": 6200,
+        "heating_value_unit": "kcal/kg",
+        "heating_value_type": "low",
+        "heating_value_basis": "as_received",
+        "moisture_pct": 1.7,
+        "moisture_basis": "as_received",
+        "chlorine_pct": 0.04,
+        "chlorine_basis": "dry",
+        "sample_id": "TEST-B-20261111",
+        "sampled_at": "2026-11-11",
+        "report_date": "2026-11-18",
+        "leaching_ok": null,
+        "leaching_ok_reason": "시료·항목·제출 목적별 적용 기준을 특정한 종합 적합 확인값은 이 예시에 없음. 개별 결과를 보존.",
+        "leaching_results": [
+          {
+            "analyte": "납",
+            "result": "0.42",
+            "unit": "mg/L",
+            "method": "가상 용출시험"
+          },
+          {
+            "analyte": "카드뮴",
+            "result": "<0.02",
+            "unit": "mg/L",
+            "method": "가상 용출시험"
+          },
+          {
+            "analyte": "6가 크롬",
+            "result": "불검출",
+            "unit": "mg/L",
+            "method": "가상 용출시험"
+          }
+        ],
+        "status": "synthetic_reviewed",
+        "evidence_ids": [
+          "B-LAB",
+          "B-HAZARD"
+        ]
+      },
+      "storage_state": "뚜껑 있는 전용 용기에 보관. 다른 폐기물과 섞지 않음.",
+      "raw_materials": "금속 가공기계 세척 공정",
+      "chemicals": "비할로겐계 세척제 CL-01",
+      "circular_resource": {
+        "status": "unconfirmed",
+        "recognition_reference": null,
+        "valid_from": null,
+        "valid_to": null,
+        "scope": null,
+        "registration_reference": null,
+        "evidence_ids": [
+          "B-QA"
+        ],
+        "note": "증빙 확보 전 상태. 해당 여부에 대한 결론을 두지 않음"
+      },
+      "photos": {
+        "status": "not_provided",
+        "files": []
+      },
+      "missing": [
+        "analysis.leaching_ok",
+        "photos",
+        "circular_resource.recognition_or_registration"
+      ],
+      "not_applicable": [
+        "components[].waste_code",
+        "item_specific.nonferrous_material",
+        "item_specific.grain_processor_registered"
+      ],
+      "coverage_notes": {
+        "components[].waste_code": "현재 폐기물 건 단위 분류번호를 classification에 기록",
+        "waste_code_candidates[]": "AI 후보 및 확신도 수치를 생성하지 않음. 가상 회신 번호를 사용",
+        "existing_declaration.waste_code": "과거 신고 이력 없음으로 null",
+        "existing_declaration.treatment_code": "과거 처리 이력 없음으로 null",
+        "analysis.leaching_ok": "시료·항목·제출 목적별 적용 기준을 특정한 종합 적합 확인값은 이 예시에 없음. 개별 결과를 보존.",
+        "case_version": "현재 0.5.5의 미발행 상태에 맞춰 0. 이 전달 예시의 문서 차수는 handoff_revision으로 관리"
+      },
+      "source_observations": {
+        "quantity_raw": "100L",
+        "hazard_raw": "모름",
+        "mixture_type_original": null,
+        "physical_state": "회색 액체이며 표면에 기름막이 일부 보임"
+      },
+      "field_evidence": {
+        "classification": [
+          "B-AUTHORITY"
+        ],
+        "components": [
+          "B-COMPOSITION"
+        ],
+        "hazardous_suspect": [
+          "B-AUTHORITY"
+        ],
+        "designated_waste_status": [
+          "B-AUTHORITY",
+          "B-HAZARD"
+        ],
+        "quantity.monthly_ton": [
+          "B-MONTHLY"
+        ],
+        "quantity.current_lot": [
+          "B-INTAKE",
+          "B-QA"
+        ],
+        "region": [
+          "B-INTAKE",
+          "B-QA"
+        ],
+        "item_specific": [
+          "B-QA"
+        ],
+        "foreign_matter": [
+          "B-QA",
+          "B-COMPOSITION"
+        ],
+        "mixed_with_other": [
+          "B-QA"
+        ],
+        "contamination": [
+          "B-INTAKE",
+          "B-COMPOSITION"
+        ],
+        "material_form": [
+          "B-INTAKE"
+        ],
+        "existing_declaration": [
+          "B-INTAKE"
+        ],
+        "combustible": [
+          "B-LAB"
+        ],
+        "analysis": [
+          "B-LAB",
+          "B-HAZARD"
+        ],
+        "storage_state": [
+          "B-INTAKE"
+        ]
+      },
+      "evidence": [
+        {
+          "evidence_id": "B-INTAKE",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "intake_filled_example(2).docx",
+          "acquisition_channel": "original_intake",
+          "issuer": "사용자",
+          "document_date": "2026-11-10",
+          "scope": "이 입력서의 해당 폐기물 표",
+          "raw_excerpt": "금속 부품 가공 기계를 세척제로 씻는 작업 / 100L / 회색 액체이며 표면에 기름막이 일부 보임",
+          "locator": "원본 폐기물 2 표",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "B-QA",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "추가 질문과 사용자 답변 모의 기록",
+          "acquisition_channel": "user_followup",
+          "issuer": "가상 현장 담당자",
+          "document_date": "2026-11-16",
+          "scope": "전주시 가상산업로 10, B동 세척실 (가상 주소)",
+          "raw_excerpt": "CL-01을 사용한 폐액에 기계유가 혼입됨. 현장 수작업으로 분리하기 어려움. 이번 100 L는 11월 9일 측정함.",
+          "locator": "보완 기록 Q-B",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "B-MONTHLY",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "월별 발생대장 모의 보관본",
+          "acquisition_channel": "internal_record_request",
+          "issuer": "가상 환경 담당자",
+          "document_date": "2026-11-16",
+          "scope": "같은 현장·품목의 2026년 8월부터 10월까지의 발생량",
+          "raw_excerpt": "2026-08 95 kg; 2026-09 102 kg; 2026-10 98 kg",
+          "locator": "월별 발생대장 B 8월·9월·10월 행",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "B-COMPOSITION",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "현 시료 성분 및 질량분율 모의 결과",
+          "acquisition_channel": "test_institution",
+          "issuer": "가상 성분시험실",
+          "document_date": "2026-11-18",
+          "scope": "TEST-B-20261111 / 2026-11-11 채취 / 현재 발생공정",
+          "raw_excerpt": "해당 폐액 시료의 질량분율은 유기계 세척용제 혼합액 90%, 혼입 기계유 10%라는 가상 시험결과. 세척용제 혼합액 부분에 수분이 포함됨.",
+          "locator": "성분자료 B 표 1",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "B-AUTHORITY",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "현재 건 분류번호와 적용 범위 모의 회신",
+          "acquisition_channel": "competent_authority",
+          "issuer": "가상 폐기물 담당부서",
+          "document_date": "2026-11-18",
+          "scope": "전주시 가상산업로 10, B동 세척실 (가상 주소) / 금속 부품 가공 기계를 세척제로 씻는 작업",
+          "raw_excerpt": "04-02-00 그 밖의 폐유기용제 / B동 CL-01 세척 공정에서 회수한 비할로겐계 유기용제 혼합 폐액. 원료 또는 혼입 상태 변경 시 재확인 / 가상 기관 검토서는 현재 폐액을 지정폐기물 검토 대상으로 기재함. 이는 납 등 일부 용출값 하나로 결정한 결과가 아니다.",
+          "locator": "모의 회신 B 본문 1항부터 3항",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "B-LAB",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "활용 목적 모의 시험성적서",
+          "acquisition_channel": "test_institution",
+          "issuer": "가상 물성시험실",
+          "document_date": "2026-11-18",
+          "scope": "TEST-B-20261111 / 2026-11-11 채취 / 요청한 시험항목",
+          "raw_excerpt": "저위발열량 6200 kcal/kg (수령 상태), 수분 1.7 % (수령 상태), 염소 0.04 % (건조 기준). 가상 시험기록의 가연성 확인값은 true.",
+          "locator": "모의 성적서 B 시험 결과표",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        },
+        {
+          "evidence_id": "B-HAZARD",
+          "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+          "title": "제출 목적 유해물질 모의 분석결과",
+          "acquisition_channel": "waste_analysis_institution",
+          "issuer": "가상 폐기물분석실",
+          "document_date": "2026-11-18",
+          "scope": "TEST-B-20261111 / 해당 시료의 의뢰 항목",
+          "raw_excerpt": "납 | 0.42 | mg/L\n카드뮴 | <0.02 | mg/L\n6가 크롬 | 불검출 | mg/L",
+          "locator": "모의 분석결과 B 유해물질 표",
+          "synthetic": true,
+          "status": "synthetic_reviewed"
+        }
+      ],
+      "agent_recording_check": {
+        "case_id": "fb4df6cd-52d4-56e2-b3d1-42ff03e3a688",
+        "supported_review_inventory": [
+          {
+            "field": "classification.reported_code",
+            "review_id": 12,
+            "packet_id": "1cfd0276-d525-57ba-bc1b-f0b551383f82",
+            "document_id": "34055b99-7081-59ad-a4a2-3b17e25e9101"
+          },
+          {
+            "field": "classification.applicability",
+            "review_id": 13,
+            "packet_id": "1cfd0276-d525-57ba-bc1b-f0b551383f82",
+            "document_id": "34055b99-7081-59ad-a4a2-3b17e25e9101"
+          },
+          {
+            "field": "classification.conditions",
+            "review_id": 14,
+            "packet_id": "1cfd0276-d525-57ba-bc1b-f0b551383f82",
+            "document_id": "34055b99-7081-59ad-a4a2-3b17e25e9101"
+          },
+          {
+            "field": "designated_waste_status",
+            "review_id": 15,
+            "packet_id": "1cfd0276-d525-57ba-bc1b-f0b551383f82",
+            "document_id": "34055b99-7081-59ad-a4a2-3b17e25e9101"
+          },
+          {
+            "field": "analysis.heating_value_low",
+            "review_id": 16,
+            "packet_id": "69f7613c-8b4b-5a2a-a1d0-b29f760a77b3",
+            "document_id": "f471f3a4-53cb-50be-bda7-72ef9463462f"
+          },
+          {
+            "field": "analysis.moisture",
+            "review_id": 17,
+            "packet_id": "69f7613c-8b4b-5a2a-a1d0-b29f760a77b3",
+            "document_id": "f471f3a4-53cb-50be-bda7-72ef9463462f"
+          },
+          {
+            "field": "analysis.chlorine",
+            "review_id": 18,
+            "packet_id": "69f7613c-8b4b-5a2a-a1d0-b29f760a77b3",
+            "document_id": "f471f3a4-53cb-50be-bda7-72ef9463462f"
+          },
+          {
+            "field": "hazard.analysis_results",
+            "review_id": 19,
+            "packet_id": "3d9f8ce4-5584-5c7f-841e-ef3790fdbf07",
+            "document_id": "21930873-2b07-5720-b96c-70965fbf1a5e"
+          },
+          {
+            "field": "hazard.designation_basis",
+            "review_id": 20,
+            "packet_id": "3d9f8ce4-5584-5c7f-841e-ef3790fdbf07",
+            "document_id": "21930873-2b07-5720-b96c-70965fbf1a5e"
+          }
+        ],
+        "native_export_kind": "phase3-document-workflow-review",
+        "native_case_version": 0,
+        "native_selected_code": null
+      }
+    }
+  ],
+  "agent_recording_check": {
+    "status": "PASS",
+    "counts": {
+      "controls": 47,
+      "cells": 53,
+      "paragraphs": 17,
+      "companies": 1,
+      "sites": 1,
+      "case_candidates": 2
+    },
+    "scope": "원본 바이트·관계형 원문행, 추가 답변, 지원 문서값 검증. 가상 자료의 현실 적합성 검증은 수행하지 않음."
+  }
+}

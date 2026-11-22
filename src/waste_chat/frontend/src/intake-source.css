@@ -1,0 +1,22 @@
+.intake-import{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);min-width:0}
+.intake-import .btn:disabled{cursor:default;opacity:.48}
+.intake-explainer,.intake-import [role=status]{font-size:12px;line-height:1.5;color:var(--muted);margin:7px 0 0}
+.intake-import [role=status]:empty{display:none}
+.intake-select select{display:block;max-width:100%;width:100%;padding:7px 9px;font:inherit;font-size:13px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:5px}
+.intake-record{min-width:0;padding:9px 11px;margin:8px 0 10px;border:1px solid var(--line);border-left:3px solid #87937c;border-radius:4px;background:#f9faf5;overflow-wrap:anywhere}
+.intake-record-name{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;font-size:14px}
+.intake-demo{font-size:11px;color:#6b4b13;border:1px solid #ddc897;background:#f9f3e0;border-radius:3px;padding:1px 4px}
+.intake-meta,.intake-reference{font-size:12px;line-height:1.55;color:#4b5243}
+.intake-meta{margin-top:3px}
+.intake-reference{margin-top:5px}
+.intake-reference summary{cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.intake-reference dl{margin:6px 0}
+.intake-reference dl div{display:grid;grid-template-columns:5em 1fr;gap:8px;margin:2px 0}
+.intake-reference dd{margin:0;color:var(--ink);min-width:0}
+.intake-reference p{margin:6px 0 0}
+.intake-status-link{font:inherit;font-size:11px;line-height:1.4;max-width:55%;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-right:auto;text-decoration:underline;text-underline-offset:2px;color:#47563c}
+.field-offer .offer-source,.cell-value small{overflow-wrap:anywhere}
+.offer-issue{font-size:12px;line-height:1.45;color:#8b3528}
+.cell-value .offer-source{font-size:11px;color:#56614f}
+.cell-value.with-source{display:grid;gap:2px}
+.cell-inspector .field-offers{margin-bottom:7px}

@@ -1,0 +1,2101 @@
+{
+  "case_id": "PRE-15",
+  "region": {
+    "sido": "전북특별자치도",
+    "sigungu": "전주시",
+    "address": "전주시 가상산업로 10 (가상 주소)"
+  },
+  "routes": [
+    {
+      "gate": 2,
+      "tier": "material_recycle",
+      "route_type": "mixed_recycle",
+      "title": "재생이용 (R-3-3, R-4-4)",
+      "waste_codes": [
+        "51-03-01",
+        "01-01-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01",
+            "01-01-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "원료 제조 / 직접 제품제조",
+          "role": "recycler",
+          "treatment_codes": [
+            "2003",
+            "2004"
+          ],
+          "r_codes": [
+            "R-3-3",
+            "R-4-4"
+          ],
+          "waste_codes": [
+            "51-03-01+01-01-01"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 51-03-01, 01-01-01에 R-3-3, R-4-4 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-3-3",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "분리, 선별, 압축, 감용, 절단, 파쇄, 분쇄, 용융, 반응, 증발ㆍ농축, 증류, 추출 및 열분해 등의 공정을 통해 폐기물을 종이, 금속, 유리, 합성수지, 섬유, 고무, 석유, 석유화학제품 또는 석유대체연료의 원료물질로제조하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        },
+        {
+          "r_code": "R-4-4",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "고무, 섬유 및 플라스틱 등 수지류를 고무, 섬유 또는 합성수지제품으로 제조하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 2,
+      "tier": null,
+      "route_type": "mixed_recycle",
+      "title": "중간 가공 (R-10) (R-10-1)",
+      "waste_codes": [
+        "51-03-01",
+        "01-01-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01",
+            "01-01-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "중간가공폐기물 제조",
+          "role": "preprocessor",
+          "treatment_codes": [
+            "2010"
+          ],
+          "r_codes": [
+            "R-10-1"
+          ],
+          "waste_codes": [
+            "51-03-01+01-01-01"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 51-03-01, 01-01-01에 R-10-1 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "중간가공폐기물을 받을 최종 재활용처를 계약 시 확인",
+          "basis": "폐기물관리법 시행규칙 별표 4의2 R-10",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-10-1",
+          "tier": null,
+          "pre_analysis": false,
+          "description": "R-3부터 R-9까지의 재활용 유형에 따라 재활용하기 위한 중간가공폐기물을 만드는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "[51-03-01] 소각: 일반소각 / 고온소각",
+      "waste_codes": [
+        "51-03-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "일반소각 / 고온소각",
+          "role": "treatment",
+          "treatment_codes": [
+            "2101",
+            "2102"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D3-2자 폐합성고분자화합물: 소각 (곤란하면 15cm 이하 파쇄·절단·용융 후 관리형 매립)",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "대규모점포·농수산물도매시장 개설자는 발포폴리스티렌을 재활용하거나 용융 감량",
+          "basis": "WMA_RULE:B5:3@20261002#8b91601a27cc5291",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:3@20261002#8b91601a27cc5291"
+      ],
+      "basis_status": "검토 대기"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "[51-03-01] 매립: 민간관리형 매립시설 / 지방자치단체 매립시설 / 국가 매립시설 (파쇄·분쇄 / 절단 / 용융 후)",
+      "waste_codes": [
+        "51-03-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "전처리: 파쇄·분쇄 / 절단 / 용융",
+          "role": "treatment",
+          "treatment_codes": [
+            "2106",
+            "2107",
+            "2108"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01"
+          ]
+        },
+        {
+          "order": 3,
+          "process": "민간관리형 매립시설 / 지방자치단체 매립시설 / 국가 매립시설",
+          "role": "treatment",
+          "treatment_codes": [
+            "2201",
+            "2205",
+            "2206"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "51-03-01"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D3-2자 폐합성고분자화합물: 소각 (곤란하면 15cm 이하 파쇄·절단·용융 후 관리형 매립)",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional",
+        "소각이 곤란한 경우에만 매립"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "대규모점포·농수산물도매시장 개설자는 발포폴리스티렌을 재활용하거나 용융 감량",
+          "basis": "WMA_RULE:B5:3@20261002#8b91601a27cc5291",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "기준: 최대지름 15센티미터 이하",
+          "basis": "WMA_RULE:B5:3@20261002#8b91601a27cc5291",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "소각이 곤란한 경우에만 매립",
+          "basis": "WMA_RULE:B5:3@20261002#8b91601a27cc5291",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:3@20261002#8b91601a27cc5291"
+      ],
+      "basis_status": "검토 대기"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "[01-01-01] 소각: 일반소각 / 고온소각",
+      "waste_codes": [
+        "01-01-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "01-01-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "일반소각 / 고온소각",
+          "role": "treatment",
+          "treatment_codes": [
+            "2101",
+            "2102"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "01-01-01"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2라 폐합성고분자화합물(지정): 소각 (곤란하면 15cm 이하 파쇄·절단·용융 후 지정폐기물 관리형 매립)",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "소각이 곤란한 경우만 매립",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "[01-01-01] 매립: 민간관리형 매립시설 (파쇄·분쇄 / 절단 / 용융 후)",
+      "waste_codes": [
+        "01-01-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "01-01-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "전처리: 파쇄·분쇄 / 절단 / 용융",
+          "role": "treatment",
+          "treatment_codes": [
+            "2106",
+            "2107",
+            "2108"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "01-01-01"
+          ]
+        },
+        {
+          "order": 3,
+          "process": "민간관리형 매립시설",
+          "role": "treatment",
+          "treatment_codes": [
+            "2201"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "01-01-01"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2라 폐합성고분자화합물(지정): 소각 (곤란하면 15cm 이하 파쇄·절단·용융 후 지정폐기물 관리형 매립)",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional",
+        "소각이 곤란한 경우에만 매립"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "소각이 곤란한 경우만 매립",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "기준: 최대지름 15센티미터 이하",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "소각이 곤란한 경우에만 매립",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    }
+  ],
+  "matches": [
+    {
+      "route_index": 0,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "recycler",
+          "candidates": [
+            {
+              "company_id": "수지자원|부여군",
+              "name": "수지자원",
+              "role": "recycler",
+              "sido": "충남",
+              "sigungu": "부여군",
+              "address": "충남 부여군 석성면 증산천길 140 수지자원",
+              "phone": "041-832-9375",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2758",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2003"
+              ],
+              "r_codes": [
+                "R-3"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.22914741691375,
+                "lng": 126.8716835713503,
+                "basis": "시군구 중심점",
+                "distance_km": 51.2
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2003 원료 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "이원켐텍|세종",
+              "name": "(주)이원켐텍",
+              "role": "recycler",
+              "sido": "세종",
+              "sigungu": "",
+              "address": "세종 전의면 산단길 21-142 (주)이원켐텍",
+              "phone": "044-868-2175",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2263",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2004"
+              ],
+              "r_codes": [
+                "R-4"
+              ],
+              "accepts_designated": [
+                "01-01",
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.570293323225656,
+                "lng": 127.26972573995928,
+                "basis": "시군구 중심점",
+                "distance_km": 84.5
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2004 직접 제품제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "장원산업|청도군",
+              "name": "장원산업",
+              "role": "recycler",
+              "sido": "경북",
+              "sigungu": "청도군",
+              "address": "경북 청도군 풍각면 지리골길 87 장원산업",
+              "phone": "054-373-0347",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2037",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2003"
+              ],
+              "r_codes": [
+                "R-3"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.62065,
+                "lng": 128.5912,
+                "basis": "업체 좌표",
+                "distance_km": 133.8
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2003 원료 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "일신케미칼|김포시",
+              "name": "일신케미칼",
+              "role": "recycler",
+              "sido": "경기",
+              "sigungu": "김포시",
+              "address": "경기 김포시 대곶면 대곶북로305번길 115 (대곶면 석정리 115-29)",
+              "phone": "031-987-6042",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#829",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2003"
+              ],
+              "r_codes": [
+                "R-3"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 37.04939795,
+                "lng": 127.1414911,
+                "basis": "업체 좌표",
+                "distance_km": 136.8
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2003 원료 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "신화산업|천안시 동남구",
+              "name": "신화산업(천안)",
+              "role": "recycler",
+              "sido": "충남",
+              "sigungu": "천안시 동남구",
+              "address": "충남 천안시 동남구 수신면 발산리 282번지",
+              "phone": "041-551-1502",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2838",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2003"
+              ],
+              "r_codes": [
+                "R-3"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.574874,
+                "lng": 129.308032,
+                "basis": "업체 좌표",
+                "distance_km": 198.6
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2003 원료 제조"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 6,
+          "rejected_summary": {
+            "혼합물 일부만 허가": 2634,
+            "처리 방법 다름": 8,
+            "자가처리만 신고": 1
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 1,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "preprocessor",
+          "candidates": [
+            {
+              "company_id": "대우비철|광산구",
+              "name": "대우비철",
+              "role": "preprocessor",
+              "sido": "광주",
+              "sigungu": "광산구",
+              "address": "광주 광산구 사암로 776 (도천동)",
+              "phone": "062-952-2344",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2128",
+              "permit_type": "허가",
+              "registration_type": "중간 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.21183214,
+                "lng": 126.8184766,
+                "basis": "업체 좌표",
+                "distance_km": 73.2
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "대영피앤시|광산구",
+              "name": "대영피앤시",
+              "role": "preprocessor",
+              "sido": "광주",
+              "sigungu": "광산구",
+              "address": "광주 광산구 북문대로 341-22 (신창동)",
+              "phone": "062-955-5002",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2127",
+              "permit_type": "허가",
+              "registration_type": "중간 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.16430673289368,
+                "lng": 126.73928980623381,
+                "basis": "시군구 중심점",
+                "distance_km": 80.9
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "천곡산업|청주시 청원구",
+              "name": "천곡산업",
+              "role": "preprocessor",
+              "sido": "충북",
+              "sigungu": "청주시 청원구",
+              "address": "충북 청주시 청원구 북이면 대율내추길 38 천곡산업",
+              "phone": "043-218-5112",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2148",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.7478739,
+                "lng": 127.5233448,
+                "basis": "업체 좌표",
+                "distance_km": 109.1
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "협진케미칼|달성군",
+              "name": "협진케미칼",
+              "role": "preprocessor",
+              "sido": "대구",
+              "sigungu": "달성군",
+              "address": "대구 달성군 논공읍 노이길 181 협진케미칼",
+              "phone": null,
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#2196",
+              "permit_type": "허가",
+              "registration_type": "중간 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.761822,
+                "lng": 128.4329,
+                "basis": "업체 좌표",
+                "distance_km": 117.7
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "거창케미칼|김해시",
+              "name": "거창케미칼(종합재활용)",
+              "role": "preprocessor",
+              "sido": "경남",
+              "sigungu": "김해시",
+              "address": "경남 김해시 한림면 명동로123번길 16-82",
+              "phone": null,
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#1494",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "01-01 폐합성고분자화합물, 51-03 폐합성고분자화합물",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "01-01"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.30793279,
+                "lng": 128.82096,
+                "basis": "업체 좌표",
+                "distance_km": 163.2
+              },
+              "reasons": [
+                "01-01, 51-03 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 7,
+          "rejected_summary": {
+            "혼합물 일부만 허가": 2634,
+            "자가처리만 신고": 1,
+            "처리 방법 다름": 7
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 2,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "케이씨환경서비스전주사업부|전주시",
+              "name": "케이씨환경서비스㈜전주사업부",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "전주시",
+              "address": "전주시 덕진구 서귀로 211-6 (여의동)",
+              "phone": "063-212-5261",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 소각.xlsx#56",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐목재류, 폐섬유류, 폐고무류, 폐합성고분자화합물 등",
+              "capacity": {
+                "시설용량_톤일": "62.4",
+                "2023_처리량": "20254.8"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.819141809597596,
+                "lng": 127.12969676784823,
+                "basis": "시군구 중심점",
+                "distance_km": 0.0
+              },
+              "reasons": [
+                "중간처분_소각 (생활·사업장일반)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "이도에코전주|전주시 덕진구",
+              "name": "이도에코전주㈜",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "전주시 덕진구",
+              "address": "전주시 덕진구 원만성로 55 (팔복동3가)",
+              "phone": "063-212-5004",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 소각.xlsx#57",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐합성수지류, 폐지류, 폐섬유류 오니류 등",
+              "capacity": {
+                "시설용량_톤일": "60",
+                "2023_처리량": "21149.3"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.852242982179106,
+                "lng": 127.12545064041294,
+                "basis": "시군구 중심점",
+                "distance_km": 3.7
+              },
+              "reasons": [
+                "중간처분_소각 (생활·사업장일반)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "이엠케이승경|익산시",
+              "name": "(주)이엠케이승경",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "익산시",
+              "address": "춘포면 궁성로 188-14",
+              "phone": "063-291-6122",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 소각.xlsx#59",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "생활폐기물",
+              "capacity": {
+                "시설용량_톤일": "91",
+                "2023_처리량": "40089.8"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.92819748,
+                "lng": 127.0537962,
+                "basis": "업체 좌표",
+                "distance_km": 13.9
+              },
+              "reasons": [
+                "중간처분_소각 (생활·사업장일반)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "동원페이퍼정읍공장|정읍시",
+              "name": "동원페이퍼㈜정읍공장",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "정읍시",
+              "address": "영파동 500-12",
+              "phone": "063-536-8814",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 소각.xlsx#60",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "생활계폐기물",
+              "capacity": {
+                "시설용량_톤일": "96",
+                "2023_처리량": "19088"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.610287945477324,
+                "lng": 126.9068592144633,
+                "basis": "시군구 중심점",
+                "distance_km": 30.7
+              },
+              "reasons": [
+                "중간처분_소각 (생활·사업장일반)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "엔아이티|군산시",
+              "name": "㈜엔아이티",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전라북도 군산시 서해로 259",
+              "phone": "063-467-4142",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 소각.xlsx#58",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "생활폐기물",
+              "capacity": {
+                "시설용량_톤일": "340.8",
+                "2023_처리량": "106313.7"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.97090463,
+                "lng": 126.5783603,
+                "basis": "업체 좌표",
+                "distance_km": 52.5
+              },
+              "reasons": [
+                "중간처분_소각 (생활·사업장일반)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 76,
+          "rejected_summary": {
+            "건설폐기물만": 586,
+            "대상 폐기물 다름": 84,
+            "처리 방법 다름": 65,
+            "영업 중단": 5
+          },
+          "questions": [
+            {
+              "field": "designated_analysis",
+              "to": "part1",
+              "text": "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?"
+            },
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 3,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "신아|전북",
+              "name": "(주)신아",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "",
+              "address": "서흥공단1길 64",
+              "phone": "063-544-2951",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 기타.xlsx#30",
+              "permit_type": "허가",
+              "registration_type": "중간처분_기타",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2106"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "소각재, 폐촉매, 분진, 석탄재",
+              "capacity": {
+                "시설용량_톤일": "260",
+                "2023_처리량": "0"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.725721104681085,
+                "lng": 127.13349494789914,
+                "basis": "시도 중심점",
+                "distance_km": 10.4
+              },
+              "reasons": [
+                "중간처분_기타 (생활·사업장일반)",
+                "처리방법 2106"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "동광전업순창공장|순창군",
+              "name": "동광전업㈜ 순창공장",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "순창군",
+              "address": "금과면 대성리 172-2",
+              "phone": "063-652-7353",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 기타.xlsx#31",
+              "permit_type": "허가",
+              "registration_type": "중간처분_기타",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2106"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐석재류, 폐전주(폐전주를 철거할 때 발생하는 폐애자, 폐근가 및 폐합성수지제 커버류 등을 포함한다)",
+              "capacity": {
+                "시설용량_톤일": "480",
+                "2023_처리량": "0"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.42822046237313,
+                "lng": 127.17192706723404,
+                "basis": "시군구 중심점",
+                "distance_km": 43.6
+              },
+              "reasons": [
+                "중간처분_기타 (생활·사업장일반)",
+                "처리방법 2106"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "성우환경|북구",
+              "name": "성우환경㈜",
+              "role": "treatment",
+              "sido": "광주",
+              "sigungu": "북구",
+              "address": "광주광역시 북구 삼소로 452-14(월출동)",
+              "phone": "062-571-1336",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 기타.xlsx#4",
+              "permit_type": "허가",
+              "registration_type": "중간처분_기타",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2106"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐합성고분자화합물, 폐섬유류, 폐지류, 폐금속류",
+              "capacity": {
+                "시설용량_톤일": "10",
+                "2023_처리량": "0"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.18956703501897,
+                "lng": 126.90971469527639,
+                "basis": "시군구 중심점",
+                "distance_km": 72.8
+              },
+              "reasons": [
+                "중간처분_기타 (생활·사업장일반)",
+                "처리방법 2106"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "해성성사|공주시",
+              "name": "해성성사",
+              "role": "treatment",
+              "sido": "충남",
+              "sigungu": "공주시",
+              "address": "의당면 의당길 27",
+              "phone": "041-854-3061",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 기타.xlsx#25",
+              "permit_type": "허가",
+              "registration_type": "중간처분_기타",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2106"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐합성수지류 외 2종",
+              "capacity": {
+                "시설용량_톤일": "40",
+                "2023_처리량": "2641.1"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.47855321344372,
+                "lng": 127.04268248532998,
+                "basis": "시군구 중심점",
+                "distance_km": 73.7
+              },
+              "reasons": [
+                "중간처분_기타 (생활·사업장일반)",
+                "처리방법 2106"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "중앙이엔비|충남",
+              "name": "㈜중앙이엔비",
+              "role": "treatment",
+              "sido": "충남",
+              "sigungu": "",
+              "address": "탄천면 차돌배기길 72-14",
+              "phone": "041-858-9701",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(생활, 사업장일반폐기물) - 기타.xlsx#26",
+              "permit_type": "허가",
+              "registration_type": "중간처분_기타",
+              "waste_group": "생활·사업장일반",
+              "treatment_codes": [
+                "2106"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐합성수지",
+              "capacity": {
+                "시설용량_톤일": "60",
+                "2023_처리량": "12672"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.52340379497793,
+                "lng": 126.88654196984726,
+                "basis": "시도 중심점",
+                "distance_km": 81.3
+              },
+              "reasons": [
+                "중간처분_기타 (생활·사업장일반)",
+                "처리방법 2106"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 26,
+          "rejected_summary": {
+            "건설폐기물만": 587,
+            "대상 폐기물 다름": 84,
+            "영업 중단": 5,
+            "처리 방법 다름": 114
+          },
+          "questions": [
+            {
+              "field": "designated_analysis",
+              "to": "part1",
+              "text": "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?"
+            },
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": true
+        },
+        {
+          "step_order": 3,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "진등산업|익산시",
+              "name": "(유)진등산업",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "익산시",
+              "address": "삼기면 기산리 산130-1, 산122, 산123",
+              "phone": "063-861-1672",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(생활, 사업장일반, 건설폐기물) - 매립.xlsx#30",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "생활·사업장일반·건설",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐합성수지류, 폐합성고무류, 광재류, 분진, 폐주물사, 폐사, 폐내화물, 폐도자기조각, 소각재, 폐촉매, 폐흡착제, 폐흡수제, 폐석고, 폐석회, 연소잔재물, 폐토사, 건설폐토석, 폐합성섬유, 폐금속류, 폐유리, 폐유리섬유 및 폐보온재",
+              "capacity": {
+                "잔여매립가능량_m3": "0",
+                "2023_처리량": "0"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.06482,
+                "lng": 126.9788246,
+                "basis": "업체 좌표",
+                "distance_km": 30.5
+              },
+              "reasons": [
+                "최종처분 (생활·사업장일반·건설)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "KBI국인산업|군산시",
+              "name": "㈜KBI국인산업",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "군산시 외항로 1270",
+              "phone": "063-464-6070",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(생활, 사업장일반, 건설폐기물) - 매립.xlsx#25",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "생활·사업장일반·건설",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "사업장비(非)배출시설계 (사업장생활계)",
+              "capacity": {
+                "잔여매립가능량_m3": "633073",
+                "2023_처리량": "144000"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "최종처분 (생활·사업장일반·건설)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "코리아썬환경산업|서천군",
+              "name": "코리아썬환경산업㈜",
+              "role": "treatment",
+              "sido": "충남",
+              "sigungu": "서천군",
+              "address": "종천면 당정리 15번지외 2필지",
+              "phone": "041-953-4427",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(생활, 사업장일반, 건설폐기물) - 매립.xlsx#24",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "생활·사업장일반·건설",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "사업장비(非)배출시설계 (사업장생활계)",
+              "capacity": {
+                "잔여매립가능량_m3": "0",
+                "2023_처리량": "0"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.09656306754758,
+                "lng": 126.73480121664873,
+                "basis": "시군구 중심점",
+                "distance_km": 47.1
+              },
+              "reasons": [
+                "최종처분 (생활·사업장일반·건설)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "보림씨에스|보령시",
+              "name": "보림씨에스",
+              "role": "treatment",
+              "sido": "충남",
+              "sigungu": "보령시",
+              "address": "웅천읍 대창증산로 166",
+              "phone": "041-932-2323",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(생활, 사업장일반, 건설폐기물) - 매립.xlsx#17",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "생활·사업장일반·건설",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "안정화처리물 등",
+              "capacity": {
+                "잔여매립가능량_m3": "2074584",
+                "2023_처리량": "37456"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.348856444808945,
+                "lng": 126.62833022938982,
+                "basis": "시군구 중심점",
+                "distance_km": 74.2
+              },
+              "reasons": [
+                "최종처분 (생활·사업장일반·건설)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "제이엔텍|충남",
+              "name": "㈜제이엔텍",
+              "role": "treatment",
+              "sido": "충남",
+              "sigungu": "",
+              "address": "송산면 가곡로 250",
+              "phone": "041-357-0802",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(생활, 사업장일반, 건설폐기물) - 매립.xlsx#23",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "생활·사업장일반·건설",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [],
+              "scope_text": "폐수처리오니 외 91종(일반) 폐수처리오니 외 50종(지정)",
+              "capacity": {
+                "잔여매립가능량_m3": "1545119.4",
+                "2023_처리량": "392839.6"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.52340379497793,
+                "lng": 126.88654196984726,
+                "basis": "시도 중심점",
+                "distance_km": 81.3
+              },
+              "reasons": [
+                "최종처분 (생활·사업장일반·건설)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 36,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 83,
+            "처리 방법 다름": 102,
+            "영업 중단": 5
+          },
+          "questions": [
+            {
+              "field": "designated_analysis",
+              "to": "part1",
+              "text": "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?"
+            },
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 4,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "케이씨환경서비스전주사업부|전주시 덕진구",
+              "name": "케이씨환경서비스(주)전주사업부",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "전주시 덕진구",
+              "address": "전북특별자치도 전주시 덕진구 서귀로(여의동)",
+              "phone": "063-212-5261",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#39",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "04",
+                "06"
+              ],
+              "scope_text": "◦폐유, 기타 폐유기용제, 폐합성고분자화합물",
+              "capacity": {
+                "시설용량_톤일": "62.4",
+                "2023_처리량": "3114.4"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.852242982179106,
+                "lng": 127.12545064041294,
+                "basis": "시군구 중심점",
+                "distance_km": 3.7
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "엔아이티군산사업소|군산시",
+              "name": "㈜엔아이티 군산사업소",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전라북도 군산시 서해로(소룡동, 환경관리공단(군산사업소))",
+              "phone": "063-468-2286",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#38",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2102"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "*"
+              ],
+              "scope_text": "◦지정폐기물",
+              "capacity": {
+                "시설용량_톤일": "90",
+                "2023_처리량": "13927.164"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2102 / 고온소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "케이비아이국인산업|구미시",
+              "name": "(주)케이비아이국인산업",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "구미시",
+              "address": "경상북도 구미시 3공단3로 46-79",
+              "phone": "054-473-1116",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#33",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2102"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "03-08",
+                "05"
+              ],
+              "scope_text": "◦폐합성고분자화합물, 폐페인트 및 폐락카, 폐흡착제, 폐흡수제, 기타 환경부장관 지정고시 고온소각 가능 물질",
+              "capacity": {
+                "시설용량_톤일": "256.8",
+                "2023_처리량": "20846.92"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.211292388548195,
+                "lng": 128.3641669097103,
+                "basis": "시군구 중심점",
+                "distance_km": 119.3
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2102 / 고온소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "경북환경에너지|구미시",
+              "name": "경북환경에너지주식회사",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "구미시",
+              "address": "경상북도 구미시 4공단로 44",
+              "phone": "054-475-4141",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#34",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "04",
+                "06"
+              ],
+              "scope_text": "◦폐합성고분자화합물, 폐유, 폐유기용제",
+              "capacity": {
+                "시설용량_톤일": "14.2",
+                "2023_처리량": "6661.39"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.211292388548195,
+                "lng": 128.3641669097103,
+                "basis": "시군구 중심점",
+                "distance_km": 119.3
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "와이엔텍|여수시",
+              "name": "(주)와이엔텍",
+              "role": "treatment",
+              "sido": "전남",
+              "sigungu": "여수시",
+              "address": "전라남도 여수시 여수산단로(월내동)",
+              "phone": "061-690-6900",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#28",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "01-02",
+                "01-03",
+                "02-01",
+                "02-02",
+                "03-08",
+                "05",
+                "06",
+                "09"
+              ],
+              "scope_text": "폐합성고분자화합물, 오니류, 폐농약, 폐산(액상), 폐알칼리(액상), 폐흡착제 및 폐흡수제, 폐페인트 및 폐락카, 폐유, 폐유독물질",
+              "capacity": {
+                "시설용량_톤일": "72",
+                "2023_처리량": "24736.388"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 34.76225031989451,
+                "lng": 127.67100187231402,
+                "basis": "시군구 중심점",
+                "distance_km": 127.4
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 20,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 192,
+            "영업 중단": 5,
+            "처리 방법 다름": 9
+          },
+          "questions": [
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 5,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 199,
+            "영업 중단": 5,
+            "처리 방법 다름": 22
+          },
+          "questions": [
+            {
+              "field": "pretreatment_by",
+              "to": "partner",
+              "text": "전처리: 파쇄·분쇄 / 절단 / 용융: 매립 업체에서 같이 하나요, 배출 사업장에서 직접 해야 하나요?"
+            }
+          ],
+          "optional": true
+        },
+        {
+          "step_order": 3,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "케이비아이국인산업|군산시",
+              "name": "㈜케이비아이국인산업(군산)",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전북특별자치도 군산시 외항로(비응도동,국인산업)",
+              "phone": "063-464-6075",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#33",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "01-02",
+                "02-01",
+                "02-02",
+                "03-01",
+                "03-02",
+                "03-03",
+                "03-04",
+                "03-05",
+                "03-06",
+                "03-07",
+                "03-08",
+                "06"
+              ],
+              "scope_text": "◦폐산, 폐알칼리, 폐유(타르·피치류), 폐합성고분자화합물, 광재, 폐주물사, 샌드블라스트 폐사, 폐내화물, 도자기 편류, 폐촉매, 분진, 소각재, 오니류, 안정화 또는 고형화 처리물, 폐흡수제 및 폐흡착제 * 사업장 일반폐기물과 혼합 매립",
+              "capacity": {
+                "잔여매립가능량_m3": "157650",
+                "2023_처리량": "0"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "이에스티|울주군",
+              "name": "(주)이에스티",
+              "role": "treatment",
+              "sido": "울산",
+              "sigungu": "울주군",
+              "address": "울산광역시 울주군 온산읍 원봉로(당월리)",
+              "phone": "052-238-8721",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#6",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "01-02",
+                "02-01",
+                "03-01",
+                "03-02",
+                "03-03",
+                "03-04",
+                "03-06",
+                "03-07",
+                "03-08",
+                "06",
+                "07"
+              ],
+              "scope_text": "◦폐산(고상), 폐알카리(고상), 폐유(Tar, 피치 및 기타 달리 분류되지 아니하는 폐유), 광재, 분진, 폐주물사, 샌드블라스트폐사, 폐내화물, 도자기 조각, 소각 잔재물, 안정화 또는 고형화처리물, 폐석고, 폐석회, 폐합성고분자화합물, 폐촉매, 폐흡수제 및 폐흡착제, 동식물 잔재물, 오니류(폐수처리오니, 공정오니), 폐석면, 기타 매립대상 지정폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "84928.6000000001",
+                "2023_처리량": "10656"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.59189803,
+                "lng": 127.3544371,
+                "basis": "업체 좌표",
+                "distance_km": 88.3
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "인선이엔티광양|광양시",
+              "name": "인선이엔티(주)광양",
+              "role": "treatment",
+              "sido": "전남",
+              "sigungu": "광양시",
+              "address": "전라남도 광양시 제철로(금호동)",
+              "phone": "061-791-0190",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#14",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "01-02",
+                "02-01",
+                "02-02",
+                "03-01",
+                "03-02",
+                "03-03",
+                "03-04",
+                "03-05",
+                "03-06",
+                "03-07",
+                "03-08",
+                "06",
+                "07"
+              ],
+              "scope_text": "폐산, 폐알칼리, 폐유(타르핏치류), 오니류(폐수처리오니, 공정오니), 폐합성고분자화합물(열경화성), 분진, 광재, 폐주물사, 폐촉매, 폐흡착제, 폐흡수제, 샌드블라스트폐사, 폐내화물, 소각재, 안정화 또는 고형화처리물, 도자기편류, 폐석면, 기타(폐기물관리법 시행규칙 별표1에서 규정한 기준치 이상을 함유한 폐기물, 폐전지)",
+              "capacity": {
+                "잔여매립가능량_m3": "38394.79999999999",
+                "2023_처리량": "19786.21"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.03307424167351,
+                "lng": 127.66450202624551,
+                "basis": "시군구 중심점",
+                "distance_km": 99.9
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "양원이엔지|고령군",
+              "name": "(주)양원이엔지",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "고령군",
+              "address": "경상북도 고령군 성산면 동고령산단2길 77",
+              "phone": "054-956-7250",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#23",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "*"
+              ],
+              "scope_text": "◦지정폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "176376",
+                "2023_처리량": "15399"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.7321610130865,
+                "lng": 128.3104651598019,
+                "basis": "시군구 중심점",
+                "distance_km": 107.0
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "에코비트그린구미|구미시",
+              "name": "(주)에코비트그린구미",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "구미시",
+              "address": "경상북도 구미시 4공단로10길 56",
+              "phone": "054-476-5540",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#24",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "*"
+              ],
+              "scope_text": "◦지정폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "0",
+                "2023_처리량": "20918"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.211292388548195,
+                "lng": 128.3641669097103,
+                "basis": "시군구 중심점",
+                "distance_km": 119.3
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 14,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 195,
+            "영업 중단": 5,
+            "처리 방법 다름": 12
+          },
+          "questions": [
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    }
+  ]
+}

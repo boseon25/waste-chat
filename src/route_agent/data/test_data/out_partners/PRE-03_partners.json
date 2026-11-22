@@ -1,0 +1,336 @@
+{
+  "case_id": "PRE-03",
+  "region": {
+    "sido": "전북특별자치도",
+    "sigungu": "전주시",
+    "address": "전주시 가상산업로 10 (가상 주소)"
+  },
+  "routes": [
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "매립: 민간관리형 매립시설",
+      "waste_codes": [
+        "07-01-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "07-01-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "민간관리형 매립시설",
+          "role": "treatment",
+          "treatment_codes": [
+            "2201"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "07-01-01"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2바2 고형화되어 흩날릴 우려 없는 폐석면: 포대 포장 후 지정폐기물 매립시설 매립",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "매립 구역 지정·표지판",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    }
+  ],
+  "matches": [
+    {
+      "route_index": 0,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "보림씨에스|보령시",
+              "name": "(주)보림씨에스",
+              "role": "treatment",
+              "sido": "충남",
+              "sigungu": "보령시",
+              "address": "충청남도 보령시 웅천읍 대창증산로(대창리)",
+              "phone": "041-932-2323",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#10",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-02",
+                "03-01",
+                "03-02",
+                "03-03",
+                "03-04",
+                "03-05",
+                "03-06",
+                "03-07",
+                "03-08",
+                "07"
+              ],
+              "scope_text": "◦ 지정폐기물: 오니류(무기성)(01-02), 광재(03-01), 분진(03-02-00), 폐주물사 및 폐사(03-03), 폐내화물 및 폐도자기조각(03-04), 소각재(03-05), 안정화 또는 고형화·고화처리물(03-06), 폐촉매(03-07), 폐흡착제 및 폐흡수제(03-08), 폐석면(07-01-01, 07-03-00) ◦ 일반폐기물: 건설 폐재류, 사업장생활계 폐기물, 사업장 배출시설계 폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "561518",
+                "2023_처리량": "9587"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.348856444808945,
+                "lng": 126.62833022938982,
+                "basis": "시군구 중심점",
+                "distance_km": 74.2
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "이에스티|울주군",
+              "name": "(주)이에스티",
+              "role": "treatment",
+              "sido": "울산",
+              "sigungu": "울주군",
+              "address": "울산광역시 울주군 온산읍 원봉로(당월리)",
+              "phone": "052-238-8721",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#6",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "01-02",
+                "02-01",
+                "03-01",
+                "03-02",
+                "03-03",
+                "03-04",
+                "03-06",
+                "03-07",
+                "03-08",
+                "06",
+                "07"
+              ],
+              "scope_text": "◦폐산(고상), 폐알카리(고상), 폐유(Tar, 피치 및 기타 달리 분류되지 아니하는 폐유), 광재, 분진, 폐주물사, 샌드블라스트폐사, 폐내화물, 도자기 조각, 소각 잔재물, 안정화 또는 고형화처리물, 폐석고, 폐석회, 폐합성고분자화합물, 폐촉매, 폐흡수제 및 폐흡착제, 동식물 잔재물, 오니류(폐수처리오니, 공정오니), 폐석면, 기타 매립대상 지정폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "84928.6000000001",
+                "2023_처리량": "10656"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.59189803,
+                "lng": 127.3544371,
+                "basis": "업체 좌표",
+                "distance_km": 88.3
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "인선이엔티광양|광양시",
+              "name": "인선이엔티(주)광양",
+              "role": "treatment",
+              "sido": "전남",
+              "sigungu": "광양시",
+              "address": "전라남도 광양시 제철로(금호동)",
+              "phone": "061-791-0190",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#14",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "01-02",
+                "02-01",
+                "02-02",
+                "03-01",
+                "03-02",
+                "03-03",
+                "03-04",
+                "03-05",
+                "03-06",
+                "03-07",
+                "03-08",
+                "06",
+                "07"
+              ],
+              "scope_text": "폐산, 폐알칼리, 폐유(타르핏치류), 오니류(폐수처리오니, 공정오니), 폐합성고분자화합물(열경화성), 분진, 광재, 폐주물사, 폐촉매, 폐흡착제, 폐흡수제, 샌드블라스트폐사, 폐내화물, 소각재, 안정화 또는 고형화처리물, 도자기편류, 폐석면, 기타(폐기물관리법 시행규칙 별표1에서 규정한 기준치 이상을 함유한 폐기물, 폐전지)",
+              "capacity": {
+                "잔여매립가능량_m3": "38394.79999999999",
+                "2023_처리량": "19786.21"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.03307424167351,
+                "lng": 127.66450202624551,
+                "basis": "시군구 중심점",
+                "distance_km": 99.9
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "양원이엔지|고령군",
+              "name": "(주)양원이엔지",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "고령군",
+              "address": "경상북도 고령군 성산면 동고령산단2길 77",
+              "phone": "054-956-7250",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#23",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "*"
+              ],
+              "scope_text": "◦지정폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "176376",
+                "2023_처리량": "15399"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.7321610130865,
+                "lng": 128.3104651598019,
+                "basis": "시군구 중심점",
+                "distance_km": 107.0
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "에코비트그린구미|구미시",
+              "name": "(주)에코비트그린구미",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "구미시",
+              "address": "경상북도 구미시 4공단로10길 56",
+              "phone": "054-476-5540",
+              "data_date": "2023",
+              "source": "폐기물 최종처분업(지정 폐기물) 매립.xlsx#24",
+              "permit_type": "허가",
+              "registration_type": "최종처분",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2201"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "*"
+              ],
+              "scope_text": "◦지정폐기물",
+              "capacity": {
+                "잔여매립가능량_m3": "0",
+                "2023_처리량": "20918"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.211292388548195,
+                "lng": 128.3641669097103,
+                "basis": "시군구 중심점",
+                "distance_km": 119.3
+              },
+              "reasons": [
+                "최종처분 (지정)",
+                "처리방법 2201 / 관리형 매립"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 20,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 193,
+            "영업 중단": 5,
+            "처리 방법 다름": 8
+          },
+          "questions": [
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    }
+  ]
+}

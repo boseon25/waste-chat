@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0",
+  "export_kind": "part2_integration_sample",
+  "synthetic": true,
+  "published": false,
+  "sample_notice": "개발 테스트 전용. 기존 시연의 폐기물명·수량·현장에 가상 분류번호 확인, 발생대장, 시험값, 처리이력을 더했다. 실제 신고·행정기관 회신·시험성적서·허가 대조 결과가 아니다. 1.0 요청 필드에 협의용 필드를 추가한 예시다.",
+  "cases": [
+    {
+      "schema_version": "1.0",
+      "case_id": "DEMO-PART2-01",
+      "source_demo_case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+      "case_version": 1,
+      "synthetic": true,
+      "name": "제품 포장용 PE 필름 자투리",
+      "process_description": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+      "classification": {
+        "reported_code": "51-03-01",
+        "selected_code": "51-03-01",
+        "status": "mock_reviewed",
+        "evidence_id": "DEMO-1-CODE"
+      },
+      "components": [
+        {
+          "material": "PE",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "designated_waste_status": "non_designated",
+      "quantity": {
+        "monthly_ton": [
+          1.15,
+          1.27,
+          1.21
+        ],
+        "monthly_periods": [
+          "2026-08",
+          "2026-09",
+          "2026-10"
+        ],
+        "status": "confirmed",
+        "current_lot": {
+          "value": 200.0,
+          "unit": "kg"
+        },
+        "unit": "ton"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10, A동 자재창고 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": false,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": "51-03-01",
+        "treatment_code": "2009",
+        "status": "mock_reported"
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": 10200,
+        "moisture_pct": 0.8,
+        "chlorine_pct": 0.05,
+        "leaching_ok": true,
+        "heating_value_unit": "kcal/kg",
+        "sample_id": "DEMO-SAMPLE-01"
+      },
+      "storage_state": "지붕 있는 창고에서 분리 보관",
+      "missing": [],
+      "not_applicable": [
+        "components[].waste_code",
+        "item_specific.nonferrous_material",
+        "item_specific.grain_processor_registered",
+        "components[].separable",
+        "foreign_matter.separable"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "DEMO-1-INTAKE-1",
+          "source": "가상 입력서",
+          "field": "name",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-INTAKE-2",
+          "source": "가상 입력서",
+          "field": "process_description",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-INTAKE-3",
+          "source": "가상 입력서",
+          "field": "quantity.current_lot",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-INTAKE-4",
+          "source": "가상 입력서",
+          "field": "region",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-INTAKE-5",
+          "source": "가상 입력서",
+          "field": "storage_state",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-INTAKE-6",
+          "source": "가상 입력서",
+          "field": "material_form",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-CODE",
+          "source": "가상 분류번호 검토 기록",
+          "field": "classification",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-HAZARD-1",
+          "source": "가상 유해성 검토 기록",
+          "field": "hazardous_suspect",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-HAZARD-2",
+          "source": "가상 유해성 검토 기록",
+          "field": "designated_waste_status",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-MONTHLY",
+          "source": "가상 월별 발생대장",
+          "field": "quantity.monthly_ton",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-TEST-1",
+          "source": "가상 시험성적서",
+          "field": "components",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-TEST-2",
+          "source": "가상 시험성적서",
+          "field": "analysis",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-TEST-3",
+          "source": "가상 시험성적서",
+          "field": "combustible",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-DECL",
+          "source": "가상 과거 신고·처리 기록",
+          "field": "existing_declaration",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-SITE-1",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "foreign_matter",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-SITE-2",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "mixed_with_other",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-SITE-3",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "contamination",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-1-SITE-4",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "item_specific",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_id": "DEMO-PART2-02",
+      "source_demo_case_id": "671dcb92-d0f3-5520-b2f5-4257c86c9f9e",
+      "case_version": 1,
+      "synthetic": true,
+      "name": "기계 세척 후 남은 세척액",
+      "process_description": "금속 부품 가공 기계를 세척제로 씻는 작업",
+      "classification": {
+        "reported_code": "04-02-00",
+        "selected_code": "04-02-00",
+        "status": "mock_reviewed",
+        "evidence_id": "DEMO-2-CODE"
+      },
+      "components": [
+        {
+          "material": "유기계 세척용제",
+          "share_pct": 90,
+          "separable": "아니오",
+          "waste_code": null,
+          "status": "confirmed"
+        },
+        {
+          "material": "혼입된 기계유",
+          "share_pct": 10,
+          "separable": "아니오",
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "waste_code_candidates": [],
+      "hazardous_suspect": true,
+      "designated_waste_status": "designated",
+      "quantity": {
+        "monthly_ton": [
+          0.32,
+          0.28,
+          0.31
+        ],
+        "monthly_periods": [
+          "2026-08",
+          "2026-09",
+          "2026-10"
+        ],
+        "status": "confirmed",
+        "current_lot": {
+          "value": 100.0,
+          "unit": "L"
+        },
+        "unit": "ton"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10, B동 세척실 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [
+          "기계유"
+        ],
+        "separable": "아니오"
+      },
+      "mixed_with_other": true,
+      "contamination": {
+        "level": "오염",
+        "substances": [
+          "기계유"
+        ]
+      },
+      "material_form": "액상",
+      "existing_declaration": {
+        "waste_code": "04-02-00",
+        "treatment_code": "2009",
+        "status": "mock_reported"
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": 6200,
+        "moisture_pct": 1.7,
+        "chlorine_pct": 0.04,
+        "leaching_ok": false,
+        "heating_value_unit": "kcal/kg",
+        "sample_id": "DEMO-SAMPLE-02"
+      },
+      "storage_state": "뚜껑 있는 전용 용기에 보관",
+      "missing": [],
+      "not_applicable": [
+        "components[].waste_code",
+        "item_specific.nonferrous_material",
+        "item_specific.grain_processor_registered",
+        "item_specific.ic_tray"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "DEMO-2-INTAKE-1",
+          "source": "가상 입력서",
+          "field": "name",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-INTAKE-2",
+          "source": "가상 입력서",
+          "field": "process_description",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-INTAKE-3",
+          "source": "가상 입력서",
+          "field": "quantity.current_lot",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-INTAKE-4",
+          "source": "가상 입력서",
+          "field": "region",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-INTAKE-5",
+          "source": "가상 입력서",
+          "field": "storage_state",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-INTAKE-6",
+          "source": "가상 입력서",
+          "field": "material_form",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-CODE",
+          "source": "가상 분류번호 검토 기록",
+          "field": "classification",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-HAZARD-1",
+          "source": "가상 유해성 검토 기록",
+          "field": "hazardous_suspect",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-HAZARD-2",
+          "source": "가상 유해성 검토 기록",
+          "field": "designated_waste_status",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-MONTHLY",
+          "source": "가상 월별 발생대장",
+          "field": "quantity.monthly_ton",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-TEST-1",
+          "source": "가상 시험성적서",
+          "field": "components",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-TEST-2",
+          "source": "가상 시험성적서",
+          "field": "analysis",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-TEST-3",
+          "source": "가상 시험성적서",
+          "field": "combustible",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-DECL",
+          "source": "가상 과거 신고·처리 기록",
+          "field": "existing_declaration",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-SITE-1",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "foreign_matter",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-SITE-2",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "mixed_with_other",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-SITE-3",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "contamination",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        },
+        {
+          "evidence_id": "DEMO-2-SITE-4",
+          "source": "가상 현장 작업 및 선별 기록",
+          "field": "item_specific",
+          "checked_at": "2026-11-12",
+          "synthetic": true
+        }
+      ]
+    }
+  ]
+}

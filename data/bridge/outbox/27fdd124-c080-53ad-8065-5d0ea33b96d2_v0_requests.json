@@ -1,0 +1,27 @@
+{
+ "case_id": "27fdd124-c080-53ad-8065-5d0ea33b96d2",
+ "based_on_case_version": 0,
+ "requested_by": "part2",
+ "requests": [
+  {
+   "request_id": "f5d5eff1-317c-50c7-8ab4-276a129ffd8f",
+   "case_id": "27fdd124-c080-53ad-8065-5d0ea33b96d2",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "part2:emitter_facility_type"
+   ],
+   "trigger_rule_id": "law_agent:emitter_facility_type",
+   "reason": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다.",
+   "question": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다.",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "route:27fdd124-c080-53ad-8065-5d0ea33b96d2-G2-intermediate-single_material_recycle",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  }
+ ]
+}

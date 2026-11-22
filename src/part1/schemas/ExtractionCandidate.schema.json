@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "field_path": {
+      "title": "Field Path",
+      "type": "string"
+    },
+    "raw_value": {
+      "title": "Raw Value",
+      "type": "string"
+    },
+    "normalized_candidate": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Normalized Candidate"
+    },
+    "evidence_ref": {
+      "title": "Evidence Ref",
+      "type": "string"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "field_path",
+    "raw_value",
+    "evidence_ref"
+  ],
+  "title": "ExtractionCandidate",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Structural contract only. Run Pydantic for local semantic/reference validation."
+}

@@ -1,0 +1,10 @@
+cd ~/5.Agent_System/프로젝트/waste_agent
+source env.sh
+set -a; . src/law_agent/llm/.env; set +a
+IN=src/route_agent/data/test_data/start/part1_sample.json
+
+# 경로까지 (업체 매칭 없이)
+PYTHONPATH=src python3 -m law_agent.run $IN --out data/law_agent/out --no-partners -v
+
+# 업체 매칭·순위·탄소까지
+PYTHONPATH=src python3 -m law_agent.run $IN --out data/law_agent/out -v

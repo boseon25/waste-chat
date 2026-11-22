@@ -1,0 +1,121 @@
+=====================================================================
+ 폐기물 에이전트 실행 명령 (파트 1 → 파트 2)            2026.11.18 · step48
+ 위치: ~/5.Agent_System/프로젝트/waste_agent  (모든 명령은 이 폴더에서)
+ 키 값은 이 파일에 쓰지 않는다. 키는 src/law_agent/llm/.env 에만.
+=====================================================================
+
+---------------------------------------------------------------------
+0. 새 판 설치 (zip 받을 때마다)
+---------------------------------------------------------------------
+cd ~/5.Agent_System/프로젝트/waste_agent
+mv law_agent_stepNN_*.zip src/                  # 받은 zip 위치에 맞게
+cd src && unzip -o law_agent_stepNN_*.zip && cd ..
+bash src/law_agent/bin/install.sh               # waste.sh · waste-admin.sh 설치 (처음 한 번 + 판 바뀔 때)
+./waste-admin.sh test                           # 테스트 (412 passed)
+
+  * 가상환경·env.sh·키(.env)·PYTHONPATH·파트 1 위치(src/part1)는 스크립트가 알아서 맞춘다.
+  * 가상환경이 다른 곳이면: WASTE_VENV=경로 ./waste.sh …
+  * 파트 1 패키지가 처음이면: pip install -r src/part1/requirements.txt
+
+
+---------------------------------------------------------------------
+1. 사용자용 (배출업체 담당자) — ./waste.sh
+---------------------------------------------------------------------
+./waste.sh new 입력서.docx                      # ① 입력서 접수 → 폐기물 목록 (1번을 작업 중으로)
+./waste.sh new 입력서.docx --synthetic          #    가상 입력서로 연습할 때만 --synthetic
+./waste.sh cases                                # 폐기물 목록 (▶ = 작업 중)
+./waste.sh use 2                                # 작업할 폐기물 바꾸기 (번호 또는 case_id)
+
+./waste.sh next                                 # ② 파트 1이 더 묻는 질문 (한 번에 최대 3개, 번호 붙음)
+./waste.sh answer 1 "2026-11-09"                # 질문 번호로 답하기 (판 번호 자동)
+./waste.sh next                                 # "더 물을 질문이 없습니다" 나올 때까지
+./waste.sh code 51-03-01 "시행규칙 별표 4 폐합성수지류"   # 분류번호를 근거와 함께 기록
+
+./waste.sh send                                 # ③ 파트 2 판단 → 결과 바로 표시
+./waste.sh send -v                              #    진행 과정을 쉬운 말로 보면서
+./waste.sh send --queue                         #    감시(start)를 켜 둔 경우: inbox 에만 넣기
+./waste.sh result                               # ④ 결과 다시 보기
+                                                #    경로 · 가공업체 순위 · 운송업체 순위 · 필요한 서류 · 더 알려줄 것
+
+  연습 순서 (가상 입력서):
+  ./waste.sh new src/part1/fixtures/intake_records_example.docx --synthetic
+  ./waste.sh next
+  ./waste.sh answer 1 "2026-11-09"
+  ./waste.sh next
+  ./waste.sh code 51-03-01 "시행규칙 별표 4 폐합성수지류"
+  ./waste.sh send -v
+
+
+---------------------------------------------------------------------
+2. 관리자용 — ./waste-admin.sh
+---------------------------------------------------------------------
+./waste-admin.sh start -v                       # 파트 2 감시 켜기 (inbox → outbox), 쉬운 말 로그
+./waste-admin.sh start -vv                      #   노드·시간·호출 수 로그
+./waste-admin.sh log                            # 실시간 로그 따라 보기 (다른 창에서)
+./waste-admin.sh status                         # 대기·완료·실패·결과 목록, 작업 중 사례
+./waste-admin.sh web                            # 관리자 웹 화면 → http://127.0.0.1:8765/admin
+./waste-admin.sh detail                         # 작업 중 사례의 판단 전체 (터미널)
+./waste-admin.sh detail --case 사례ID           # 다른 사례
+./waste-admin.sh detail --case 사례ID --q B-1   # 질문 하나 자세히 (근거·모델별 이유·인용)
+./waste-admin.sh questions                      # 질문 번호표 (A-1 … J-4 가 무슨 질문인지)
+./waste-admin.sh p1 part1.py status             # 파트 1 명령 그대로 (--db·--case 자동)
+./waste-admin.sh models                         # 쓸 수 있는 모델 · 설정 모델 OK 확인
+./waste-admin.sh eval                           # 사전검증 24건 평가 (모델 비용 있음)
+./waste-admin.sh cache                          # dry(가짜) 답 캐시 지우기
+./waste-admin.sh test                           # 테스트
+
+  관리자만 테스트 데이터로 확인 (창 2개):
+  [창 1] ./waste-admin.sh start -v
+  [창 2] cp src/law_agent/bridge/examples/part1_filled_demo.json data/bridge/inbox/demo_$(date +%H%M%S).json
+         ./waste-admin.sh status
+         ./waste-admin.sh web
+
+  관리자 웹 화면 (다른 컴퓨터에서 볼 때)
+  내 컴퓨터에서: ssh -L 8765:127.0.0.1:8765 아이디@서버주소   → 브라우저 http://127.0.0.1:8765/admin
+  또는 서버에서: ./waste-admin.sh web --host 0.0.0.0   (로그인 없음 — 내부망에서만)
+
+
+---------------------------------------------------------------------
+3. 창(터미널) 나누기
+---------------------------------------------------------------------
+  같은 창에서 차례로: new · next · answer · code · send · result · status · detail · test · models
+  창을 따로 차지하는 것: start (감시) · log (실시간 로그) · web (웹 화면)  → 끌 때 Ctrl+C
+  감시(start)를 켜 둔 동안 사용자는 send --queue 로 보낸다.
+
+
+---------------------------------------------------------------------
+4. 폴더 · 파일
+---------------------------------------------------------------------
+  data/waste/state.json                   작업 중 DB·사례 (사용자 명령이 기억)
+  data/waste/db/                          파트 1 입력서별 DB
+  data/bridge/inbox/                      파트 1 → 파트 2 (처리 중 .working, 끝나면 done/, 실패 failed/)
+  data/bridge/outbox/{사례}_v{판}_proposals.json   파트 3 에 넘길 경로
+  data/bridge/outbox/{사례}_v{판}_requests.json    파트 1 에 되묻는 질문 (파트 1 InformationRequest 형식)
+  data/bridge/outbox/{사례}_v{판}_result.json      전체 결과 (관리자 화면·detail 이 읽음)
+  data/bridge/outbox/live.log             실시간 로그
+  data/law_agent/audit/{사례}/{시각}.jsonl  감사 기록
+  data/law_agent/cache/                   모델 답 캐시
+
+
+---------------------------------------------------------------------
+5. 직접 실행 (스크립트 없이, 개발용)
+---------------------------------------------------------------------
+source env.sh; set -a; . src/law_agent/llm/.env; set +a
+PYTHONPATH=src python3 -m law_agent.run 입력.json --out data/law_agent/out -v       # 한 번 실행
+PYTHONPATH=src python3 -m law_agent.run 입력.json --out … --gate-only              # 경로 판단만 (평가·비용 측정)
+PYTHONPATH=src python3 -m law_agent.eval.show_result 결과.json --routes
+PYTHONPATH=src python3 -m law_agent.eval.compare_routes /tmp/ra24 data/law_agent/out24   # route_agent 와 비교
+PYTHONPATH=src python3 -m law_agent.graph --mermaid --out graph.md                # LangGraph 구조도
+
+
+---------------------------------------------------------------------
+6. 자주 나는 문제
+---------------------------------------------------------------------
+  next 오류 "질문은 한 번에 1~3개"        → step43 이후 판으로 (기본 3개)
+  answer 오류 "질문과 폐기물 건 연결…"    → '질문ID' 자리에 next 에 나온 번호(1·2·3)를 넣기
+  send 결과 "판단 전 확인 필요: 분류번호" → ./waste.sh code 51-03-01 "근거" 후 다시 send
+  감시가 FileNotFoundError 로 멈춤         → 감시가 두 개 켜져 있었음. step48 이후 판 + pgrep -fa law_agent 로 확인
+  LLM 실패 HTTP 410                        → 타임리 주소 변경. step28 이후 판
+  LLM 실패 temperature                     → step29 이후 판
+  모델 이름 없음                           → ./waste-admin.sh models 로 확인 후 settings.yaml 수정
+  관리자 화면에 '모델에게 준 사실'이 빔    → step46 이전 결과. 다시 판단하면 채워짐

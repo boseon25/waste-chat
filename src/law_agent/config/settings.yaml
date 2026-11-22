@@ -1,0 +1,109 @@
+# law_agent 설정 v0 (2026.11.16)
+# 인증값(TIMELY_API_KEY 등)은 여기에 적지 않는다. 환경변수로만.
+
+llm:
+  provider: timely                  # 회사별 직접 주소 (llm/client.py). 예전 OpenAI 호환 주소는 2026.11.18 종료(410)
+  direct_host: https://hello.timelyai.io
+  max_output_tokens: 4096           # claude 는 max_tokens 가 꼭 있어야 함
+  base_url_env: TIMELY_BASE_URL     # 회사 이름 없는 모델(시험용)만 씀. 실제 모델은 direct_host
+  api_key_env: TIMELY_API_KEY
+  temperature: 0
+  planner_model: anthropic/claude-sonnet-5-5
+  timeout_seconds: 90               # 한 번 호출 제한 시간 (gemini 가 느림: 시험 때 한 번에 4~12초)
+  judge_models:                     # 계열이 다른 3개 (2026.11.16 시험: 분류번호 행 R코드·모름·지시무시 3문항 모두 통과)
+    - anthropic/claude-sonnet-5-5   # 5.6초 / 3문항
+    - openai/gpt-6.1-sol            # 8.3초
+    - google/gemini-4-argon         # 11.8초
+  judge_fallbacks:                  # 예비 (자동 교체 아님 — 위 모델이 계속 실패하면 사람이 바꿔 넣음)
+    anthropic: anthropic/claude-opus-5-5
+    openai: openai/gpt-6-astra
+    google: google/gemini-4-carbon
+  # 쓰지 않는 이름: ~…-latest (가리키는 모델이 바뀌어 재현 불가), …:batch (일괄 처리용), …-preview (바뀔 수 있음)
+  judge_mode: escalate              # escalate: 앞 2개가 같은 답이면 끝, 다르면 3번째 / all: 항상 3개 / single: 첫 모델만
+  law_engine: langgraph             # 판단 루프 엔진: langgraph (graph.py) | loop (agents/loop.py, 같은 결과 — 비교용)
+  judge_workers: 3                  # 동시에 판단하는 질문 수 (6 → 3: 새 주소 요청 한도 429, 2026.11.18)
+  light_stages: [G, H, I, J, B-2]        # 서류·신고·업체 자격·다른 법: 모델 1개 (실패·무효면 2번째). 경로를 가르는 A~F 는 그대로
+  min_judges: 2                     # 유효한 답이 이보다 적으면 needs_human (single 모드는 1로 봄)
+
+consensus:
+  agree_ratio: 0.67                 # 2/3 이상 같으면 채택
+  re_retrieve_max: 2                # 질문당 재검색 횟수
+  safety_veto: true                 # 한 모델이라도 유효 인용과 함께 "불가"면 conditional + 사람 검토
+
+retrieval:
+  max_articles_per_question: 12
+  citation_depth: 2                 # 인용 따라가기 단계 (넓게일 때. 좁게(1회차)는 최소 조문에서 1단계만)
+  min_score: 0.15                   # 검색 순위 합친 점수(0~1)가 이보다 낮으면 버림
+  narrow_search_top: 3              # 좁게(1회차)일 때 넣을 검색 결과 수
+  same_family_search: true          # 검색 결과는 지정 조문과 같은 법 계열만 (WMA·WMA_DEC·WMA_RULE 등). J 문항은 제외 (2026.11.18 비용)
+  embedding_model: null             # 미정. null이면 조각 단위 BM25 (tools/bm25.py)만
+
+evidence:
+  max_chars_per_question: 30000             # 넓게: 재검색·J(특별법) 질문
+  narrow_max_chars_per_question: 6000       # 좁게: 1회차. 10000 이면 빈자리를 검색 결과가 채워 비용만 늘어 6000 으로 (2026.11.17 시험)
+  require_complete_articles: true   # 호 개수 검증 실패 조문은 "불완전" 표시
+
+limits:
+  max_llm_calls_per_case: 160       # 사례 전체 (혼합물 2성분 데모가 100에서 끊김 → 160)(모든 차례·재검색 합계). escalate 기준: 질문 수 × 2 + 갈린 질문
+  max_seconds_per_case: 600
+
+# 읽어도 되는 데이터 (사실 데이터만). 판정표는 읽지 않는다.
+data:
+  law_dir_env: WASTE_LAW_DIR        # data/law/chunk_v2
+  tables_dir_env: WASTE_DATA_DIR    # data/tables/active
+  reference_dir_env: WASTE_REFERENCE_DIR
+  allowed_tables:                   # 사실 데이터 (law_agent_데이터지도.md 1절)
+    - waste_codes_4.csv             # 분류번호 목록·이름 (별표 4 그대로). '지정폐기물' 칸은 쓰지 않음
+    - treatment_code_map.csv        # 처리방법 코드 이름·처리구분
+    - rcode_detail_4_2.csv          # R코드 이름·설명 (별표 4의2 그대로)
+    - waste_code_crosswalk.csv      # 업체 데이터 코드 ↔ 분류번호
+    - partners_*.csv                # 업체
+    - demand_designated.csv         # 순환자원 구매처
+    - facility_master.csv           # 업체 좌표
+  partner_matching_exception:       # route_agent 업체 매칭이 내부에서 읽는 판정표 (1안: 기록만, eval I-2 제외)
+    - reporter_scope.csv
+  table_answer_tables:              # 2026.11.18 규칙 2 개정: 법 원문이 '분류번호별 표'인 질문은 판정표로 답함
+    - recycling_types_4_3.csv       #   D-1 (별표 4의3)
+    - not_in_4_3.csv                #   D-1 (별표 4의3에 없는 번호)
+    - designated_resources.csv      #   C-1 (순환자원 지정 고시)
+    - disposal_methods_5.csv        #   F-1·F-2 (별표 5)
+    - energy_recovery_criteria.csv  #   E-1 (시행규칙 제3조 에너지 회수기준)
+  blocked_tables:                   # 판정표 — read_table 로는 못 읽음 (표 답은 read_answer_table, 업체 매칭 예외는 read_exception_table)
+    - not_in_4_3.csv
+    - gate3_rules.csv
+    - recycling_types_4_3.csv
+    - designated_resources.csv
+    - prohibited_restricted.csv
+    - disposal_methods_5.csv
+    - plan_check_targets.csv
+    - energy_recovery_criteria.csv
+    - designated_check_targets.csv
+    - condition_texts.csv
+    - reporter_scope.csv
+    - hazardous_codes.csv
+
+store:
+  root_env: LAW_AGENT_DATA_DIR      # data/law_agent
+  cache: true
+  audit: true
+
+prompt_versions:
+  planner: planner_v1
+  judge: judge_v1
+
+scope:                               # 2026.11.18: 서비스 범위 — 중간재활용업만 (비우면 전체 경로·업체)
+  route_tiers: [intermediate]        # 관문 2 '중간 가공 (R-10)' 경로만 만든다 (다른 경로는 skipped 에 '범위 밖')
+  recycler_registration: [중간 재활용업]   # 업체 표 등록형태 (종합 재활용업·최종 재활용업·폐기물처리 신고자 제외)
+  r_codes: [R-10]                   # 뒤 질문·근거에는 이 R코드만 (D-1 답 자체는 그대로, 경로는 route_tiers 로)
+  # 실제 실행(파트 3 에 넘김): gate_only false → 서류 안내(G-2 전자인계·H-1 배출자 신고·H-2/H-3 처리계획) 포함
+  # 평가·비교·비용 측정: run.py --gate-only (또는 LAW_AGENT_GATE_ONLY=1) → 아래 gate_only_skip 도 건너뜀
+  gate_only: false
+  gate_only_skip: [A-3, G-2, H-1, H-2, H-3]   # A-3 (지정 여부 사전 확인 대상) 은 파트 1 안내에만 쓰임
+  skip_questions: [C-1, C-2, G-4, E-1, F-1, F-2, D-2, I-1, I-2, I-3, J-1, J-2, J-3, J-4]   # 범위 밖·코드에서 안 쓰임 (D-2 재사용 경로용, I 업체 허가는 업체 표로, J 특별법)
+
+road:                                # 카카오 도로 거리 (core/partners/road.py, 2026.11.18)
+  enabled: true                      # 키(KAKAO_REST_API_KEY)가 없으면 자동으로 직선 × 1.3 추정
+  shortlist: 10                      # 역할마다 직선거리 앞쪽 몇 곳만 조회 (호출 수 제한)
+  timeout_s: 10
+  priority: RECOMMEND                # RECOMMEND · TIME · DISTANCE
+  # 캐시 없음: 카카오 정책상 임시 캐싱 재사용 금지 → 실행마다 새로 조회

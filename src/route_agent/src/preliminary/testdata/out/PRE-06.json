@@ -1,0 +1,491 @@
+{
+  "case_id": "PRE-06",
+  "case_version": 1,
+  "preliminary": {
+    "waste_case_id": "PRE-06",
+    "classification": {
+      "status": "MATCHED",
+      "input_waste_code": "06-01-07",
+      "normalized_waste_code": "06-01-07",
+      "waste_name": "폐절연유(폴리클로리네이티드비페닐 함유 폐기물을 제외한다)",
+      "matched": true,
+      "warnings": [
+        "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다."
+      ],
+      "source": "waste_codes_4.csv",
+      "classification_level": "세분류",
+      "parent_code": "06-01",
+      "is_terminal": true,
+      "official_name": "폐절연유(폴리클로리네이티드비페닐 함유 폐기물을 제외한다)",
+      "waste_category_code": null,
+      "terminal_codes": [],
+      "hazardous_designation": "Y"
+    },
+    "restriction": {
+      "status": "NEEDS_INFO",
+      "recycling_blocked": false,
+      "allowed_rcodes": [],
+      "restricted_rcodes": [],
+      "matched_rules": [
+        {
+          "rule_id": "PR-L2b",
+          "action": "NEEDS_INFO",
+          "target": "PCB 함유 가능 품목(폐절연유 등)",
+          "legal_basis": "법 제13조의2 ② 2호",
+          "waste_code": "06-01-07",
+          "allowed_rcodes": [],
+          "note": "농도 기준 조문(시행규칙) 미확인 → 임시로 시행령 별표 1 제8호 기준 사용 (액상 2mg/L, 액상 외 용출액 0.003mg/L)",
+          "citation_status": "확인",
+          "source_chunk": "WMA:13의2/항2@20260918#d3f242e7db1fa6bb"
+        }
+      ],
+      "required_inputs": [
+        "analysis.pcb"
+      ],
+      "questions": [
+        "PCB 분석 결과가 있나요? (전기절연유는 1리터당 2밀리그램 미만인지 확인)"
+      ],
+      "review_required": false,
+      "warnings": []
+    },
+    "hazardous": {
+      "status": "HAZARDOUS",
+      "matched": true,
+      "waste_code": "06-01-07",
+      "rule": {
+        "분류번호": "06-01-07",
+        "폐기물_구분": "지정폐기물",
+        "단계": "세분류",
+        "상위": "06-01",
+        "명칭": "폐절연유(폴리클로리네이티드비페닐 함유 폐기물을 제외한다)",
+        "지정폐기물": "Y",
+        "근거": "WMA_RULE:B4@20261002#9bce159b174f5897",
+        "말단": "Y"
+      },
+      "required_inputs": [],
+      "questions": [],
+      "warnings": [
+        "공식 지정폐기물 목록과 일치했습니다. 개별 법령의 예외·분석 조건은 별도 확인이 필요합니다."
+      ]
+    },
+    "mixture": {
+      "status": "SINGLE",
+      "is_mixed": false,
+      "component_count": 1,
+      "share_total_pct": null,
+      "separable": null,
+      "component_codes_missing": [],
+      "warnings": [],
+      "questions": []
+    },
+    "gate_plan": {
+      "gate1": {
+        "action": "SKIP",
+        "reason": "지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.",
+        "conditions": []
+      },
+      "gate2": {
+        "action": "RUN",
+        "reason": "재활용 유형별 허용 조건을 확인합니다.",
+        "conditions": [
+          "지정폐기물 기준으로 판정합니다 (지정폐기물 재활용 허가 업체만).",
+          "재활용 제한 규칙에 필요한 입력이 부족합니다 (관문 2에서 needs_info)."
+        ]
+      },
+      "gate3": {
+        "action": "SKIP",
+        "reason": "지정폐기물(의심 포함)은 Gate 3 후보에서 제외합니다.",
+        "conditions": []
+      },
+      "gate4": {
+        "action": "RUN",
+        "reason": "처분 방법 및 세부 기준을 확인합니다.",
+        "conditions": [
+          "지정폐기물 처분 기준을 적용합니다."
+        ]
+      }
+    },
+    "status": "READY",
+    "required_information": [
+      "analysis.pcb"
+    ],
+    "warnings": [
+      "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다.",
+      "공식 지정폐기물 목록과 일치했습니다. 개별 법령의 예외·분석 조건은 별도 확인이 필요합니다."
+    ],
+    "case_version": 1,
+    "schema_version": "1.0",
+    "waste_status": "designated",
+    "hazardous_basis": "분류번호",
+    "component_results": [],
+    "questions": [
+      "PCB 분석 결과가 있나요? (전기절연유는 1리터당 2밀리그램 미만인지 확인)"
+    ]
+  },
+  "routes": [
+    {
+      "gate": 2,
+      "tier": "material_recycle",
+      "route_type": "single_material_recycle",
+      "title": "재생이용 (R-3-1, R-3-2, R-4-6)",
+      "waste_codes": [
+        "06-01-07"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "원료 제조 / 직접 제품제조",
+          "role": "recycler",
+          "treatment_codes": [
+            "2003",
+            "2004"
+          ],
+          "r_codes": [
+            "R-3-1",
+            "R-3-2",
+            "R-4-6"
+          ],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        }
+      ],
+      "regulatory": "needs_info",
+      "reasons": [
+        "별표 4의3에서 06-01-07에 R-3-1, R-3-2, R-4-6 허용",
+        "재활용 제한 규칙에 필요한 입력 부족"
+      ],
+      "questions": [
+        {
+          "field": "restriction",
+          "text": "PCB 분석 결과가 있나요? (전기절연유는 1리터당 2밀리그램 미만인지 확인)",
+          "to": "part1"
+        }
+      ],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-3-1",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "단순 해체, 분리, 파쇄, 선별 등의 공정을 통해 폐기물에서 금속또는 비금속 자원을 회수하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        },
+        {
+          "r_code": "R-3-2",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "용융, 용해, 반응, 추출 등의 공정을 통해 폐기물에서 금속 또는비금속 자원을 회수하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        },
+        {
+          "r_code": "R-4-6",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "재생유기용제, 재생윤활유 등 석유정제물을 제조하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 2,
+      "tier": "energy_recovery",
+      "route_type": "single_material_recycle",
+      "title": "에너지 회수 (R-9-2)",
+      "waste_codes": [
+        "06-01-07"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "연료·고형연료제품 제조",
+          "role": "recycler",
+          "treatment_codes": [
+            "2009"
+          ],
+          "r_codes": [
+            "R-9-2"
+          ],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        }
+      ],
+      "regulatory": "needs_info",
+      "reasons": [
+        "별표 4의3에서 06-01-07에 R-9-2 허용",
+        "재활용 제한 규칙에 필요한 입력 부족"
+      ],
+      "questions": [
+        {
+          "field": "restriction",
+          "text": "PCB 분석 결과가 있나요? (전기절연유는 1리터당 2밀리그램 미만인지 확인)",
+          "to": "part1"
+        }
+      ],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-9-2",
+          "tier": "energy_recovery",
+          "pre_analysis": false,
+          "description": "정제, 유화 등의 물리ㆍ화학적 처리방법으로 정제연료유나 재생연료유 등 유류를 만들거나 유화정제연료유로 사용하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 2,
+      "tier": null,
+      "route_type": "single_material_recycle",
+      "title": "중간 가공 (R-10) (R-10-1)",
+      "waste_codes": [
+        "06-01-07"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "중간가공폐기물 제조",
+          "role": "preprocessor",
+          "treatment_codes": [
+            "2010"
+          ],
+          "r_codes": [
+            "R-10-1"
+          ],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        }
+      ],
+      "regulatory": "needs_info",
+      "reasons": [
+        "별표 4의3에서 06-01-07에 R-10-1 허용",
+        "재활용 제한 규칙에 필요한 입력 부족"
+      ],
+      "questions": [
+        {
+          "field": "restriction",
+          "text": "PCB 분석 결과가 있나요? (전기절연유는 1리터당 2밀리그램 미만인지 확인)",
+          "to": "part1"
+        }
+      ],
+      "conditions": [
+        {
+          "text": "중간가공폐기물을 받을 최종 재활용처를 계약 시 확인",
+          "basis": "폐기물관리법 시행규칙 별표 4의2 R-10",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-10-1",
+          "tier": null,
+          "pre_analysis": false,
+          "description": "R-3부터 R-9까지의 재활용 유형에 따라 재활용하기 위한 중간가공폐기물을 만드는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "소각: 일반소각 / 고온소각",
+      "waste_codes": [
+        "06-01-07"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "일반소각 / 고온소각",
+          "role": "treatment",
+          "treatment_codes": [
+            "2101",
+            "2102"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2나1 폐유(액체): 유수분리 후 기름 소각 / 증발·농축 / 응집·침전 / 정제 / 소각·안정화",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "중간처분: 유수분리 / 증발농축 / 안정화 / 기타",
+      "waste_codes": [
+        "06-01-07"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "유수분리 / 증발농축 / 안정화 / 기타",
+          "role": "treatment",
+          "treatment_codes": [
+            "2110",
+            "2109",
+            "2114",
+            "2119"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "06-01-07"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2나1 폐유(액체): 유수분리 후 기름 소각 / 증발·농축 / 응집·침전 / 정제 / 소각·안정화",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "처리 후 남은 잔재물은 소각",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    }
+  ],
+  "skipped": {
+    "gate1": {
+      "action": "SKIP",
+      "reason": "지정폐기물로 확인되어 Gate 1 대상에서 제외합니다."
+    },
+    "gate3": {
+      "action": "SKIP",
+      "reason": "지정폐기물(의심 포함)은 Gate 3 후보에서 제외합니다."
+    }
+  }
+}

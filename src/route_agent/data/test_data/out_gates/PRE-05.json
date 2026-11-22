@@ -1,0 +1,255 @@
+{
+  "case_id": "PRE-05",
+  "case_version": 1,
+  "preliminary": {
+    "waste_case_id": "PRE-05",
+    "classification": {
+      "status": "MATCHED",
+      "input_waste_code": "10-12-06",
+      "normalized_waste_code": "10-12-06",
+      "waste_name": "인체조직물 중 태반(재활용하는 경우에만 해당한다)",
+      "matched": true,
+      "warnings": [
+        "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다."
+      ],
+      "source": "waste_codes_4.csv",
+      "classification_level": "세분류",
+      "parent_code": "10-12",
+      "is_terminal": true,
+      "official_name": "인체조직물 중 태반(재활용하는 경우에만 해당한다)",
+      "waste_category_code": null,
+      "terminal_codes": [],
+      "hazardous_designation": "Y"
+    },
+    "restriction": {
+      "status": "RESTRICTED",
+      "recycling_blocked": false,
+      "allowed_rcodes": [
+        "R-4-10"
+      ],
+      "restricted_rcodes": [],
+      "matched_rules": [
+        {
+          "rule_id": "PR-L3b",
+          "action": "RESTRICT",
+          "target": "태반",
+          "legal_basis": "법 제13조의2 ② 3호 (태반 예외)",
+          "waste_code": "10-12-06",
+          "allowed_rcodes": [
+            "R-4-10"
+          ],
+          "note": "규칙 별표 4의3에서 R-4-10만 허용",
+          "citation_status": "확인",
+          "source_chunk": "WMA:13의2/항2@20260918#d3f242e7db1fa6bb"
+        }
+      ],
+      "required_inputs": [],
+      "questions": [],
+      "review_required": false,
+      "warnings": []
+    },
+    "hazardous": {
+      "status": "HAZARDOUS",
+      "matched": true,
+      "waste_code": "10-12-06",
+      "rule": {
+        "분류번호": "10-12-06",
+        "폐기물_구분": "지정폐기물",
+        "단계": "세분류",
+        "상위": "10-12",
+        "명칭": "인체조직물 중 태반(재활용하는 경우에만 해당한다)",
+        "지정폐기물": "Y",
+        "근거": "WMA_RULE:B4@20261002#9bce159b174f5897",
+        "말단": "Y"
+      },
+      "required_inputs": [],
+      "questions": [],
+      "warnings": [
+        "공식 지정폐기물 목록과 일치했습니다. 개별 법령의 예외·분석 조건은 별도 확인이 필요합니다."
+      ]
+    },
+    "mixture": {
+      "status": "SINGLE",
+      "is_mixed": false,
+      "component_count": 1,
+      "share_total_pct": null,
+      "separable": null,
+      "component_codes_missing": [],
+      "warnings": [],
+      "questions": []
+    },
+    "gate_plan": {
+      "gate1": {
+        "action": "SKIP",
+        "reason": "지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.",
+        "conditions": []
+      },
+      "gate2": {
+        "action": "RUN",
+        "reason": "재활용 유형별 허용 조건을 확인합니다.",
+        "conditions": [
+          "지정폐기물 기준으로 판정합니다 (지정폐기물 재활용 허가 업체만).",
+          "재활용 제한 규칙의 허용 R코드 안에서만 경로를 만듭니다."
+        ]
+      },
+      "gate3": {
+        "action": "SKIP",
+        "reason": "지정폐기물(의심 포함)은 Gate 3 후보에서 제외합니다.",
+        "conditions": []
+      },
+      "gate4": {
+        "action": "RUN",
+        "reason": "처분 방법 및 세부 기준을 확인합니다.",
+        "conditions": [
+          "지정폐기물 처분 기준을 적용합니다."
+        ]
+      }
+    },
+    "status": "READY",
+    "required_information": [],
+    "warnings": [
+      "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다.",
+      "공식 지정폐기물 목록과 일치했습니다. 개별 법령의 예외·분석 조건은 별도 확인이 필요합니다."
+    ],
+    "case_version": 1,
+    "schema_version": "1.0",
+    "waste_status": "designated",
+    "hazardous_basis": "분류번호",
+    "component_results": [],
+    "questions": []
+  },
+  "routes": [
+    {
+      "gate": 2,
+      "tier": "material_recycle",
+      "route_type": "single_material_recycle",
+      "title": "재생이용 (R-4-10)",
+      "waste_codes": [
+        "10-12-06"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "10-12-06"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "직접 제품제조",
+          "role": "recycler",
+          "treatment_codes": [
+            "2004"
+          ],
+          "r_codes": [
+            "R-4-10"
+          ],
+          "waste_codes": [
+            "10-12-06"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 10-12-06에 R-4-10 허용",
+        "재활용 제한 규칙으로 R-4-10만 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-4-10",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "의약품을 제조하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "처분 방법 확인 필요",
+      "waste_codes": [
+        "10-12-06"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "10-12-06"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "처분 (방법 미정)",
+          "role": "treatment",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "10-12-06"
+          ]
+        }
+      ],
+      "regulatory": "needs_info",
+      "reasons": [
+        "별표 5 처분 방법 표에서 10-12-06에 맞는 행을 찾지 못함"
+      ],
+      "questions": [
+        {
+          "field": "disposal_method",
+          "text": "현재 이 폐기물을 어떻게 처분하고 있나요? (소각 / 매립 / 기타)",
+          "to": "part1"
+        }
+      ],
+      "conditions": [
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [],
+      "basis_status": "검토 대기"
+    }
+  ],
+  "skipped": {
+    "gate1": {
+      "action": "SKIP",
+      "reason": "지정폐기물로 확인되어 Gate 1 대상에서 제외합니다."
+    },
+    "gate3": {
+      "action": "SKIP",
+      "reason": "지정폐기물(의심 포함)은 Gate 3 후보에서 제외합니다."
+    }
+  }
+}

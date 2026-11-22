@@ -1,0 +1,337 @@
+[
+ {
+  "case_id": "PRE-01",
+  "name": "제품 포장용 PE 필름 자투리",
+  "input": "ok",
+  "input_expected": "ok",
+  "input_match": true,
+  "warnings": [],
+  "issues": [],
+  "A-1": "agreed/conditional",
+  "A-2": "일반",
+  "A-2_expected": "일반",
+  "A-2_result": "일치",
+  "B-1": "아님",
+  "B-1_expected": "아님",
+  "B-1_result": "일치",
+  "calls": 10,
+  "seconds": 44.6,
+  "usage": {
+   "prompt_tokens": 95991,
+   "completion_tokens": 5869,
+   "total_tokens": 101860
+  },
+  "reasons": {
+   "A-1": [
+    [
+     "safety_veto"
+    ],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:no",
+     "gemini-4-argon:yes"
+    ]
+   ],
+   "A-2": [
+    [],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ],
+   "B-1": [
+    [],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ]
+  },
+  "missing_facts": {}
+ },
+ {
+  "case_id": "PRE-02",
+  "name": "기계 세척 후 남은 세척액",
+  "input": "ok",
+  "input_expected": "ok",
+  "input_match": true,
+  "warnings": [],
+  "issues": [],
+  "A-1": "needs_info/unknown",
+  "A-2": "지정",
+  "A-2_expected": "지정",
+  "A-2_result": "일치",
+  "B-1": "보류",
+  "B-1_expected": "아님",
+  "B-1_result": "보류",
+  "calls": 26,
+  "seconds": 81.0,
+  "usage": {
+   "prompt_tokens": 220391,
+   "completion_tokens": 18707,
+   "total_tokens": 239098
+  },
+  "reasons": {
+   "A-1": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:unknown",
+     "gemini-4-argon:unknown"
+    ]
+   ],
+   "A-1.c1": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:yes"
+    ]
+   ],
+   "A-1.c2": [
+    [],
+    [
+     "claude-sonnet-5.5:unknown",
+     "gpt-6.1-sol:unknown"
+    ]
+   ],
+   "A-2": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:yes"
+    ]
+   ],
+   "A-2.c1": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:yes"
+    ]
+   ],
+   "A-2.c2": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:yes"
+    ]
+   ],
+   "B-1": [
+    [],
+    [
+     "claude-sonnet-5.5:unknown",
+     "gpt-6.1-sol:unknown"
+    ]
+   ],
+   "B-1.c1": [
+    [
+     "evidence_truncated"
+    ],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:unknown",
+     "gemini-4-argon:no"
+    ]
+   ],
+   "B-1.c2": [
+    [
+     "evidence_truncated"
+    ],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ]
+  },
+  "missing_facts": {
+   "A-1": [
+    "할로겐족 유기용제 여부"
+   ],
+   "A-1.c2": [
+    "폐유(기계유) 분류번호 원문",
+    "혼합 폐기물의 분류번호 판단 기준"
+   ],
+   "B-1": [
+    "금지물질 해당 여부",
+    "금지물질·제한물질 해당 여부",
+    "세척용제 성분",
+    "할로겐족 유기용제 여부"
+   ]
+  }
+ },
+ {
+  "case_id": "PRE-03",
+  "name": "건물 해체 슬레이트 지붕재",
+  "input": "ok",
+  "input_expected": "ok",
+  "input_match": true,
+  "warnings": [],
+  "issues": [],
+  "A-1": "agreed/conditional",
+  "A-2": "의심",
+  "A-2_expected": "지정",
+  "A-2_result": "조건부",
+  "B-1": "검토",
+  "B-1_expected": "금지",
+  "B-1_result": "조건부",
+  "calls": 12,
+  "seconds": 68.7,
+  "usage": {
+   "prompt_tokens": 123052,
+   "completion_tokens": 7928,
+   "total_tokens": 130980
+  },
+  "reasons": {
+   "A-1": [
+    [
+     "safety_veto"
+    ],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:conditional",
+     "gemini-4-argon:conditional"
+    ]
+   ],
+   "A-2": [
+    [
+     "safety_veto"
+    ],
+    [
+     "claude-sonnet-5.5:conditional",
+     "gpt-6.1-sol:yes",
+     "gemini-4-argon:conditional"
+    ]
+   ],
+   "B-1": [
+    [],
+    [
+     "claude-sonnet-5.5:conditional",
+     "gpt-6.1-sol:conditional",
+     "gemini-4-argon:conditional"
+    ]
+   ]
+  },
+  "missing_facts": {
+   "A-1": [
+    "비산 우려",
+    "석면 함량"
+   ],
+   "A-2": [
+    "석면 함량"
+   ],
+   "B-1": [
+    "석면 함량",
+    "설치ㆍ운영계획서 확인 여부",
+    "시험ㆍ연구 목적"
+   ]
+  }
+ },
+ {
+  "case_id": "PRE-15",
+  "name": "일반 플라스틱과 지정 플라스틱 혼합",
+  "input": "ok",
+  "input_expected": "ok",
+  "input_match": true,
+  "warnings": [],
+  "issues": [],
+  "A-1": "needs_human/unknown",
+  "A-2": "의심",
+  "A-2_expected": "지정",
+  "A-2_result": "조건부",
+  "B-1": "아님",
+  "B-1_expected": "아님",
+  "B-1_result": "일치",
+  "calls": 24,
+  "seconds": 94.4,
+  "usage": {
+   "prompt_tokens": 202144,
+   "completion_tokens": 15638,
+   "total_tokens": 217782
+  },
+  "reasons": {
+   "A-1": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:unknown",
+     "gemini-4-argon:yes"
+    ]
+   ],
+   "A-1.c1": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:yes"
+    ]
+   ],
+   "A-1.c2": [
+    [],
+    [
+     "claude-sonnet-5.5:yes",
+     "gpt-6.1-sol:yes"
+    ]
+   ],
+   "A-2": [
+    [
+     "safety_veto"
+    ],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:conditional",
+     "gemini-4-argon:conditional"
+    ]
+   ],
+   "A-2.c1": [
+    [],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ],
+   "A-2.c2": [
+    [
+     "safety_veto"
+    ],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:conditional",
+     "gemini-4-argon:conditional"
+    ]
+   ],
+   "B-1": [
+    [],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ],
+   "B-1.c1": [
+    [
+     "evidence_truncated"
+    ],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ],
+   "B-1.c2": [
+    [
+     "evidence_truncated"
+    ],
+    [
+     "claude-sonnet-5.5:no",
+     "gpt-6.1-sol:no"
+    ]
+   ]
+  },
+  "missing_facts": {
+   "A-2": [
+    "특정시설 PE의 고체 여부",
+    "폐기물 성상(고체상태 여부)"
+   ],
+   "A-2.c2": [
+    "고체상태 여부",
+    "폐기물 성상(고체상태 여부)"
+   ]
+  }
+ }
+]

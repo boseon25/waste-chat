@@ -1,0 +1,47 @@
+{
+ "case_id": "PRE-21",
+ "case_version": 1,
+ "engine": "law_agent_v0",
+ "input_check": {
+  "status": "needs_info",
+  "issues": [
+   {
+    "field": "classification.selected_code",
+    "status": "needs_info",
+    "text": "분류번호 99-99-99 가 분류표(시행규칙 별표 4)에 없음 — 번호 확인 필요"
+   }
+  ],
+  "warnings": []
+ },
+ "routes": [],
+ "skipped": {
+  "all": {
+   "action": "NEEDS_INFO",
+   "reason": "입력 형식 검사에서 멈춤"
+  }
+ },
+ "route_proposals": [],
+ "information_request": {
+  "schema_version": "1.1",
+  "case_id": "PRE-21",
+  "case_version": 1,
+  "requests": [
+   {
+    "request_id": "IR-1",
+    "field": "classification.selected_code",
+    "text": "분류번호 99-99-99 가 분류표(시행규칙 별표 4)에 없음 — 번호 확인 필요",
+    "to": "배출업체",
+    "affected_routes": []
+   }
+  ],
+  "fields": [
+   "classification.selected_code"
+  ],
+  "part2_internal": []
+ },
+ "law_review": [],
+ "evidence_pack_ids": [],
+ "run": {
+  "calls": 0
+ }
+}

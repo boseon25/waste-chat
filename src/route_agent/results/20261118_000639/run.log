@@ -1,0 +1,31 @@
+ac0bea9e-78dc-5110-b92f-607e0dbbf172  사전검증 READY  → /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/route_agent/results/20261118_000639/cases/ac0bea9e-78dc-5110-b92f-607e0dbbf172.json
+   관문1  needs_info  지정 순환자원 판매: 폐합성수지류 중 아이씨트레이(IC-Tray)   [업체 미확보] 
+            법령: 순환자원 지정 등에 관한 고시 별표 2
+   관문2  conditional 재사용 (R-1-1, R-1-2, R-2-1, R-2-2)   [업체 확보] transporter 5/6473, recycler 5/126 | 1순위 제이엠 4.8km 운송 0.18kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3
+   관문2  confirmed   재생이용 (R-3-2, R-3-3, R-3-4, R-4-4)   [업체 확보] transporter 5/6473, recycler 5/1150 | 1순위 (유)엘림이엔 4.8km 운송 0.18kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3
+   관문2  needs_info  에너지 회수 (R-8-1, R-8-2, R-9-1, R-9-3)   [업체 확보] transporter 5/6473, recycler 5/217 | 1순위 (주)미래페이퍼 4.8km 운송 0.18kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3
+   관문2  conditional 중간 가공 (R-10) (R-10-1)   [업체 확보] transporter 5/6473, preprocessor 5/1269 | 1순위 (유)우리산업에스이엔 4.8km 운송 0.18kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3, 폐관법 시행규칙 별표 4의2 R-10
+   관문4  conditional 소각: 일반소각 / 고온소각   [업체 확보] transporter 5/6473, treatment 5/76 | 1순위 케이씨환경서비스㈜전주사 5.0km 운송 0.19kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 5 제3호, 폐관법 제13조의2
+   관문4  conditional 매립: 민간관리형 매립시설 / 지방자치단체 매립시설 / 국가 매립시설 (   [업체 확보] transporter 5/6473, treatment 5/26, treatment 5/36 | 1순위 (유)진등산업 39.6km 운송 1.52kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 5 제3호, 폐관법 제13조의2
+671dcb92-d0f3-5520-b2f5-4257c86c9f9e  사전검증 READY  → /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/route_agent/results/20261118_000639/cases/671dcb92-d0f3-5520-b2f5-4257c86c9f9e.json
+   관문2  confirmed   재사용 (R-2-1)   [업체 확보] transporter 5/439, recycler 5/41 | 1순위 (주)유광드럼 25.1km 운송 0.11kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3, 폐관법 제25조
+   관문2  confirmed   재생이용 (R-3-2, R-4-6)   [업체 확보] transporter 5/439, recycler 5/91 | 1순위 (주)세호 36.5km 운송 0.16kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3, 폐관법 제25조
+   관문2  needs_info  에너지 회수 (R-9-2)   [업체 확보] transporter 5/439, recycler 5/68 | 1순위 (주)세호 36.5km 운송 0.16kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3, 폐관법 제25조
+   관문2  confirmed   중간 가공 (R-10) (R-10-1)   [업체 확보] transporter 5/439, preprocessor 5/24 | 1순위 (주)교우산업 군산지점 47.8km 운송 0.21kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 4의3, 폐관법 시행규칙 별표 4의2 R-10, 폐관법 제25조
+   관문4  confirmed   소각: 일반소각 / 고온소각   [업체 확보] transporter 5/439, treatment 5/34 | 1순위 케이씨환경서비스(주)전 4.8km 운송 0.02kgCO2eq/월
+            법령: 폐관법 시행규칙 별표 5 제4호, 폐관법 제25조, 폐관법 제13조의2
+   관문4  conditional 중간처분: 증발농축 / 기타 / 중화   [업체 미확보] transporter 5/439
+            법령: 폐관법 시행규칙 별표 5 제4호, 폐관법 제25조, 폐관법 제13조의2
+   gate1 SKIP: 지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.
+
+결과 폴더: /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/route_agent/results/20261118_000639  (파트 3: route_proposals.json / 파트 1: information_requests.json)

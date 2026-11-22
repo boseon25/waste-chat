@@ -1,0 +1,62 @@
+﻿req_id,doc_type,item,field,check,param,when,severity,message,basis_key,quote,status
+EC-01,entrust_contract,위탁자,consignor.name,required,,,error,위탁자(배출자) 상호가 없습니다,WMA_RULE:16의13/호3@20261112,수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것,draft
+EC-02,entrust_contract,수탁자,consignee.name,required,,,error,수탁자(처리 업체) 상호가 없습니다,WMA_RULE:16의13/호3@20261112,수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것,draft
+EC-03,entrust_contract,폐기물 종류,waste_items[].waste_code,required,,,error,위탁하는 폐기물의 종류(분류번호)가 없습니다,WMA_RULE:16의13/호3@20261112,가. 위탁하는 폐기물의 종류 및 수량,draft
+EC-04,entrust_contract,폐기물 수량,waste_items[].quantity_ton_year,number,,,error,위탁하는 폐기물의 수량(톤/년)이 없습니다,WMA_RULE:16의13/호3@20261112,가. 위탁하는 폐기물의 종류 및 수량,draft
+EC-05,entrust_contract,계약 기간,contract.start_date,required,,,error,계약 시작일이 없습니다,WMA_RULE:16의13/호3@20261112,나. 계약 기간 및 위탁 비용,draft
+EC-06,entrust_contract,계약 기간,contract.end_date,required,,,error,계약 종료일이 없습니다,WMA_RULE:16의13/호3@20261112,나. 계약 기간 및 위탁 비용,draft
+EC-07,entrust_contract,계약 기간,,date_order,contract.start_date|contract.end_date,,error,계약 종료일이 시작일보다 빠릅니다,WMA_RULE:16의13/호3@20261112,나. 계약 기간 및 위탁 비용,draft
+EC-08,entrust_contract,위탁 비용,contract.fee,required,,,error,위탁 비용이 없습니다,WMA_RULE:16의13/호3@20261112,나. 계약 기간 및 위탁 비용,draft
+EC-09,entrust_contract,성질·상태,waste_items[].properties,required,,,error,위탁하는 폐기물의 성질과 상태가 없습니다,WMA_RULE:16의13/호3@20261112,다. 위탁하는 폐기물의 성질과 상태 및 취급 시 주의사항,draft
+EC-10,entrust_contract,취급 시 주의사항,waste_items[].handling_cautions,required,,,error,취급 시 주의사항이 없습니다,WMA_RULE:16의13/호3@20261112,다. 위탁하는 폐기물의 성질과 상태 및 취급 시 주의사항,draft
+EC-11,entrust_contract,서면 체결,contract.signed_date,required,,,error,서면 계약 체결일(서명·날인)이 없습니다,WMA_RULE:16의13/호3@20261112,수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것,draft
+EC-12,entrust_contract,수탁처리능력 확인서,,attachment,capacity_check,,error,계약 전에 수탁자로부터 수탁처리능력 확인서(별지 제5호서식)를 받아야 합니다,WMA_RULE:16의13/호1@20261112,다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것,draft
+EC-13,entrust_contract,경로 일치,waste_items[].waste_code,in_route,waste_codes,,warning,이 경로의 폐기물 분류번호와 다릅니다,WMA_RULE:16의13/호3@20261112,가. 위탁하는 폐기물의 종류 및 수량,draft
+EC-14,entrust_contract,경로 일치,consignee.name,partner,,,warning,추천·예비 업체 목록에 없는 수탁자입니다. 허가·신고 범위를 직접 확인하세요,WMA_RULE:16의13/호2@20261112,적법한 수탁자에 해당하는지를 확인할 것,draft
+EC-15,entrust_contract,경로 일치,waste_items[].treatment_code,in_route,treatment_codes,,warning,이 경로의 처리방법 코드와 다릅니다,WMA_RULE:16의13/호3@20261112,가. 위탁하는 폐기물의 종류 및 수량,draft
+EC-16,entrust_contract,물량,waste_items[].quantity_ton_year,approx,ton_year,,warning,사례 배출량(연 환산)과 30% 넘게 다릅니다,WMA_RULE:16의13/호3@20261112,가. 위탁하는 폐기물의 종류 및 수량,draft
+EC-17,entrust_contract,적법 수탁자 확인,,info,,,info,폐기물적정처리추진센터 공개 자료 등으로 적법한 수탁자인지 확인하세요,WMA_RULE:16의13/호2@20261112,적법한 수탁자에 해당하는지를 확인할 것,draft
+EC-18,entrust_contract,보관,,info,,,info,위탁계약서는 계약 체결일부터 3년간 보관해야 합니다,WMA_RULE:16의13/호4@20261112,위탁계약서를 계약 체결일부터 3년간 보관할 것,draft
+CC-01,capacity_check,위탁자,consignor.name,required,,,error,①위탁자 상호가 없습니다,WMA_RULE:BF5@20261112,위탁자(배출자)는①란부터⑥란까지적은후,draft
+CC-02,capacity_check,위탁자,consignor.biz_no,required,,,error,②위탁자 사업자등록번호가 없습니다,WMA_RULE:BF5@20261112,위탁자(배출자)는①란부터⑥란까지적은후,draft
+CC-03,capacity_check,위탁자,consignor.representative,required,,,error,③위탁자 대표자가 없습니다,WMA_RULE:BF5@20261112,위탁자(배출자)는①란부터⑥란까지적은후,draft
+CC-04,capacity_check,위탁자,consignor.address,required,,,error,⑤위탁자 주소가 없습니다,WMA_RULE:BF5@20261112,위탁자(배출자)는①란부터⑥란까지적은후,draft
+CC-05,capacity_check,위탁 폐기물,waste_items[].waste_code,required,,,error,⑥위탁 폐기물 분류번호가 없습니다,WMA_RULE:BF5@20261112,사업장폐기물의 명칭과 분류번호를 적고,draft
+CC-06,capacity_check,위탁 폐기물,waste_items[].state,enum,1|2|기타,,error,"⑥성질·상태는 고체 ""1"", 액체 ""2"", 지정폐기물 함유 용기 ""기타""로 적어야 합니다",WMA_RULE:BF5@20261112,"고체상태이면 ""1""로, 액체상태이면 ""2""로",draft
+CC-07,capacity_check,위탁 폐기물,waste_items[].ton_year,number,,,error,⑥위탁량(톤/년)이 없습니다,WMA_RULE:BF5@20261112,위탁량(톤/년)란에는 연간 위탁처리하는 폐기물의 양을 톤,draft
+CC-08,capacity_check,수탁자,consignee.name,required,,,error,⑦수탁자 상호가 없습니다,WMA_RULE:BF5@20261112,수탁자(처리자)는⑦란부터,draft
+CC-09,capacity_check,수탁자,consignee.biz_no,required,,,error,⑧수탁자 사업자등록번호가 없습니다,WMA_RULE:BF5@20261112,수탁자(처리자)는⑦란부터,draft
+CC-10,capacity_check,수탁자,consignee.address,required,,,error,⑪수탁자 주소가 없습니다,WMA_RULE:BF5@20261112,수탁자(처리자)는⑦란부터,draft
+CC-11,capacity_check,허가·신고,consignee.permit_no,required,,,error,⑭폐기물처리업 허가(신고) 번호가 없습니다,WMA_RULE:BF5@20261112,⑭폐기물처리업 허가 또는 폐기물처리 신고 관련 사항,draft
+CC-12,capacity_check,허가·신고,consignee.permit_agency,required,,,error,⑭허가(신고수리) 기관이 없습니다,WMA_RULE:BF5@20261112,⑭폐기물처리업 허가 또는 폐기물처리 신고 관련 사항,draft
+CC-13,capacity_check,수탁 가능 여부,capacity.acceptable,enum,가능,,error,"수탁 가능 여부가 ""가능""이 아닙니다",WMA_RULE:BF5@20261112,"""가능 또는 불가능""으로 적습니다",draft
+CC-14,capacity_check,첨부,,attachment,permit_copy,,error,폐기물처리업 허가증 또는 신고증명서 사본이 첨부되지 않았습니다,WMA_RULE:16의13/호1@20261112,가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본,draft
+CC-15,capacity_check,첨부,,attachment,guarantee_copy,,warning,방치폐기물 처리이행보증 확인 서류 사본이 없습니다 (배출자 신고 대상 사업장이면 필요),WMA_RULE:16의13/호1@20261112,나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본,draft
+CC-16,capacity_check,경로 일치,waste_items[].waste_code,in_route,waste_codes,,warning,이 경로의 폐기물 분류번호와 다릅니다,WMA_RULE:BF5@20261112,사업장폐기물의 명칭과 분류번호를 적고,draft
+CC-17,capacity_check,경로 일치,consignee.name,partner,,,warning,추천·예비 업체 목록에 없는 수탁자입니다,WMA_RULE:16의13/호2@20261112,적법한 수탁자에 해당하는지를 확인할 것,draft
+CC-18,capacity_check,경로 일치,treatment_items[].treatment_code,in_route,treatment_codes,,warning,수탁자의 처리방법 코드가 이 경로의 처리방법과 다릅니다,WMA_RULE:BF5@20261112,처분 또는 재활용 방법란에는 아래 참고란의 폐기물처리 방법별 분류에 따른 분류번호를 적으며,draft
+CC-19,capacity_check,물량,waste_items[].ton_year,approx,ton_year,,warning,사례 배출량(연 환산)과 30% 넘게 다릅니다,WMA_RULE:BF5@20261112,위탁량(톤/년)란에는 연간 위탁처리하는 폐기물의 양을 톤,draft
+TP-01,treatment_plan,제출인,submitter.name,required,,,error,①상호가 없습니다,WMA_RULE:18의2/항4@20261112,폐기물처리계획서는 별지 제12호서식에 따르고,draft
+TP-02,treatment_plan,제출인,submitter.biz_no,required,,,error,②사업자등록번호가 없습니다,WMA_RULE:18의2/항4@20261112,폐기물처리계획서는 별지 제12호서식에 따르고,draft
+TP-03,treatment_plan,제출인,submitter.address,required,,,error,⑤사업장 주소가 없습니다,WMA_RULE:18의2/항4@20261112,폐기물처리계획서는 별지 제12호서식에 따르고,draft
+TP-04,treatment_plan,사업장 현황,business.industry,required,,,error,⑥업종(한국표준산업분류 세세분류)이 없습니다,WMA_RULE:BF12@20261112,⑥란은 한국표준산업분류(세세분류)에 따른 업종명을 적습니다,draft
+TP-05,treatment_plan,사업장 현황,business.main_materials,required,,,error,⑦주 원료명 및 사용량이 없습니다,WMA_RULE:18의2/항3@20261112,1. 주 원료명 및 사용량,draft
+TP-06,treatment_plan,사업장 현황,business.main_products,required,,,error,⑧주 생산품명 및 생산량이 없습니다,WMA_RULE:18의2/항3@20261112,2. 주 생산품명 및 생산량,draft
+TP-07,treatment_plan,사업장 현황,business.process,required,,,error,⑨제조공정이 없습니다,WMA_RULE:18의2/항3@20261112,3. 제조공정,draft
+TP-08,treatment_plan,폐기물,waste_items[].waste_code,required,,,error,⑪분류번호(지정폐기물 세분류)가 없습니다,WMA_RULE:BF12@20261112,⑪란은 「폐기물관리법 시행규칙」 별표 4 지정폐기물의 분류번호를 세분류로 적습니다,draft
+TP-09,treatment_plan,폐기물,waste_items[].kg_month,number,,,error,⑫배출량(kg/월)이 없습니다,WMA_RULE:BF12@20261112,⑫ 배출량,draft
+TP-10,treatment_plan,폐기물,waste_items[].ton_year,number,,,error,⑫배출량(톤/년)이 없습니다,WMA_RULE:BF12@20261112,⑫ 배출량,draft
+TP-11,treatment_plan,폐기물,waste_items[].cycle,required,,,error,⑬배출주기가 없습니다,WMA_RULE:BF12@20261112,⑬란은 배출주기를 일별ㆍ월별ㆍ계절별로 구분하여 적고,draft
+TP-12,treatment_plan,폐기물,waste_items[].state,enum,고상|액상|기타,,error,"⑭성질·상태는 ""고상"", ""액상"", ""기타"" 중 하나여야 합니다",WMA_RULE:BF12@20261112,"⑭란은 고체상태이면 ""고상""으로, 액체상태이면 ""액상""으로",draft
+TP-13,treatment_plan,운반계획,waste_items[].transporter,required,,,error,⑮운반자(자가 또는 위탁 업소명)가 없습니다,WMA_RULE:BF12@20261112,"⑮란의 운반자란에는 자가운반의 경우는 ""자가""로",draft
+TP-14,treatment_plan,처리계획,waste_items[].treatment_type,enum,자가|위탁,,error,"처리구분은 ""자가"" 또는 ""위탁""이어야 합니다",WMA_RULE:BF12@20261112,"처리구분란에는 자가처리의 경우는 ""자가""로, 위탁처리의 경우는 ""위탁""으로 적고",draft
+TP-15,treatment_plan,처리계획,waste_items[].treatment_company,required,,waste_items[].treatment_type==위탁,error,위탁 처리 업소명이 없습니다,WMA_RULE:BF12@20261112,"처리구분란에는 자가처리의 경우는 ""자가""로, 위탁처리의 경우는 ""위탁""으로 적고",draft
+TP-16,treatment_plan,처리계획,waste_items[].treatment_code,required,,,error,처리방법(처리분류·세분류 번호)이 없습니다,WMA_RULE:BF12@20261112,처리방법란에는 처리분류와 세분류 번호를 모두 적습니다,draft
+TP-17,treatment_plan,첨부,,attachment,capacity_check,waste_items[].treatment_type==위탁,error,위탁 처리이면 수탁처리능력 확인서(별지 제5호서식)를 첨부해야 합니다,WMA_RULE:BF12@20261112,1. 수탁처리능력확인서(사업장에서 발생하는 폐기물을 위탁하여 처리하는 경우만 해당합니다),draft
+TP-18,treatment_plan,첨부,,attachment,analysis_result,,error,폐기물 분석결과서(별지 제13호서식)가 없습니다,WMA_RULE:18의2/항4@20261112,폐기물 분석결과서는 별지 제13호서식에 따르며,draft
+TP-19,treatment_plan,제출 기한,,deadline,start_date|submit_date|30,,error,사업 개시일 또는 폐기물 발생일부터 1개월 안에 제출해야 합니다,WMA_RULE:18의2/항5@20261112,사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에,draft
+TP-20,treatment_plan,제출처,,info,,,info,폐기물 발생지를 관할하는 시·도지사 또는 지방환경관서의 장에게 제출합니다,WMA_RULE:18의2/항5@20261112,관할하는 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 한다,draft
+TP-21,treatment_plan,경로 일치,waste_items[].waste_code,in_route,waste_codes,,warning,이 경로의 폐기물 분류번호와 다릅니다,WMA_RULE:BF12@20261112,⑪란은 「폐기물관리법 시행규칙」 별표 4 지정폐기물의 분류번호를 세분류로 적습니다,draft
+TP-22,treatment_plan,경로 일치,waste_items[].treatment_code,in_route,treatment_codes,,warning,이 경로의 처리방법 코드와 다릅니다,WMA_RULE:BF12@20261112,처리방법란에는 처리분류와 세분류 번호를 모두 적습니다,draft
+TP-23,treatment_plan,경로 일치,waste_items[].treatment_company,partner,,waste_items[].treatment_type==위탁,warning,추천·예비 업체 목록에 없는 처리 업소입니다,WMA_RULE:BF12@20261112,"처리구분란에는 자가처리의 경우는 ""자가""로, 위탁처리의 경우는 ""위탁""으로 적고",draft
+TP-24,treatment_plan,물량,waste_items[].kg_month,approx,kg_month,,warning,사례 월 평균 배출량과 30% 넘게 다릅니다,WMA_RULE:BF12@20261112,⑫ 배출량,draft

@@ -1,0 +1,35 @@
+{
+  "table": "energy_recovery_criteria",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/energy_recovery_criteria.csv",
+  "rows": 7,
+  "confirmed": 7,
+  "parts": {
+    "WMA_RULE": [
+      "3/항1"
+    ]
+  },
+  "config": [
+    "energy_recovery_items.csv"
+  ],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "article_part",
+      "key": "3/항1",
+      "title": "에너지 회수기준 등",
+      "effective": "20261112",
+      "hash": "328da4d21c74840c",
+      "chars": 891,
+      "part": "3/항1"
+    }
+  ],
+  "ref_check": {
+    "refs": 7,
+    "inside": 7,
+    "outside": {},
+    "old_effective": {}
+  }
+}

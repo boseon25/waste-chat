@@ -1,0 +1,13 @@
+pypdf>=5.4,<7
+reportlab>=4.2,<5
+pypdfium2>=5.0,<6
+Pillow>=10,<14
+# 법령 판단 엔진(engine/agent, waste_agent 파트 1·2)
+httpx
+openai
+pyyaml
+langgraph
+pydantic==2.14.3
+python-docx>=1.1,<2
+tzdata>=2025.2
+openpyxl

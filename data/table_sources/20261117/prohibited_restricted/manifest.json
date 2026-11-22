@@ -1,0 +1,83 @@
+{
+  "table": "prohibited_restricted",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/prohibited_restricted.csv",
+  "rows": 78,
+  "confirmed": null,
+  "parts": {
+    "WMA": [
+      "13의2/항2"
+    ],
+    "WMA_RULE": [
+      "14의3/항3",
+      "B4의3"
+    ],
+    "WMA_DEC": [
+      "B1",
+      "B4의3"
+    ]
+  },
+  "config": [
+    "prohibited_rules.csv"
+  ],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA",
+      "type": "article_part",
+      "key": "13의2/항2",
+      "title": "폐기물의 재활용 원칙 및 준수사항",
+      "effective": "20261112",
+      "hash": "f8d30a3f6b632309",
+      "chars": 249,
+      "part": "13의2/항2"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "article_part",
+      "key": "14의3/항3",
+      "title": "폐기물의 재활용 기준 및 준수사항 등",
+      "effective": "20261112",
+      "hash": "af64bdf170851436",
+      "chars": 138,
+      "part": "14의3/항3"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "4의3",
+      "title": "폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)",
+      "effective": "20261112",
+      "hash": "7aeb303d9fe8dcf0",
+      "chars": 131212,
+      "part": "B4의3"
+    },
+    {
+      "law_id": "WMA_DEC",
+      "type": "annex",
+      "key": "1",
+      "title": "지정폐기물의 종류(제3조 관련)",
+      "effective": "20261112",
+      "hash": "72e3426369134a0f",
+      "chars": 5536,
+      "part": "B1"
+    },
+    {
+      "law_id": "WMA_DEC",
+      "type": "annex",
+      "key": "4의3",
+      "title": "재활용이 금지되거나 제한되는 폐기물(제7조의3 관련)",
+      "effective": "20261112",
+      "hash": "8a5307b106a38e52",
+      "chars": 1364,
+      "part": "B4의3"
+    }
+  ],
+  "ref_check": {
+    "refs": 78,
+    "inside": 78,
+    "outside": {},
+    "old_effective": {}
+  }
+}

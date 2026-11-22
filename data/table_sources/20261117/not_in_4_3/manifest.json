@@ -1,0 +1,44 @@
+{
+  "table": "not_in_4_3",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/not_in_4_3.csv",
+  "rows": 21,
+  "confirmed": 0,
+  "parts": {
+    "WMA_RULE": [
+      "B4",
+      "B4의3"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "4",
+      "title": "폐기물의 종류별 세부분류(제4조의2제1항 관련)",
+      "effective": "20261112",
+      "hash": "9bce159b174f5897",
+      "chars": 32542,
+      "part": "B4"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "4의3",
+      "title": "폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)",
+      "effective": "20261112",
+      "hash": "7aeb303d9fe8dcf0",
+      "chars": 131212,
+      "part": "B4의3"
+    }
+  ],
+  "ref_check": {
+    "refs": 0,
+    "inside": 0,
+    "outside": {},
+    "old_effective": {}
+  }
+}

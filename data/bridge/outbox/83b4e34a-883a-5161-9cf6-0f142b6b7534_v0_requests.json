@@ -1,0 +1,227 @@
+{
+ "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+ "based_on_case_version": 0,
+ "requested_by": "part2",
+ "requests": [
+  {
+   "request_id": "628f4762-0423-5b00-9cd7-87ed1cb7ffeb",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "substances"
+   ],
+   "trigger_rule_id": "law_agent:A-1,B-1,B-2,G-2",
+   "reason": "세척액 성분 — 판단 A-1, B-1, B-2, G-2에 필요합니다.",
+   "question": "세척액 성분 — 판단 A-1, B-1, B-2, G-2에 필요합니다.",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "classification",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "7714b174-81b9-538f-bb08-6f88d0854ec5",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "substances"
+   ],
+   "trigger_rule_id": "law_agent:A-1",
+   "reason": "분류번호 판단에 필요한 사실을 알려 주세요: 세척액의 성분(유기용제 해당 및 할로겐족 포함 여부)",
+   "question": "분류번호 판단에 필요한 사실을 알려 주세요: 세척액의 성분(유기용제 해당 및 할로겐족 포함 여부)",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "classification",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "e242a0e0-4d0d-5bee-b944-50caed791a38",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "substances"
+   ],
+   "trigger_rule_id": "law_agent:B-1",
+   "reason": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지·제한물질 해당 여부",
+   "question": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지·제한물질 해당 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "route:83b4e34a-883a-5161-9cf6-0f142b6b7534-G2-intermediate-single_material_recycle",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "e5d99201-8359-5d5d-a1ce-bbec48a8ca82",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "substances"
+   ],
+   "trigger_rule_id": "law_agent:B-1",
+   "reason": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 해당 여부",
+   "question": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 해당 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "route:83b4e34a-883a-5161-9cf6-0f142b6b7534-G2-intermediate-single_material_recycle",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "cbc2dbe8-9979-505a-8cd3-ac43bfa31cad",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "part2:A-4.구성 폐기물"
+   ],
+   "trigger_rule_id": "law_agent:A-4",
+   "reason": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 구성 폐기물",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 구성 폐기물",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "039fb3d4-df41-5fcc-8c94-aeaae68db8ee",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "mixture_type"
+   ],
+   "trigger_rule_id": "law_agent:A-4",
+   "reason": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 다른 폐기물과의 혼합 여부",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 다른 폐기물과의 혼합 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "555e63f1-8f92-56fa-b31c-65bb5981bb4e",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "separability"
+   ],
+   "trigger_rule_id": "law_agent:A-4",
+   "reason": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 분리 가능 여부",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 분리 가능 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "3643f195-6954-55ef-ab9a-ff041203ab02",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "substances"
+   ],
+   "trigger_rule_id": "law_agent:A-4",
+   "reason": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 폐기물 구성 성분",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 폐기물 구성 성분",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "802b28a5-4369-5a3a-a4e7-a926a4f86d26",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "mixture_type"
+   ],
+   "trigger_rule_id": "law_agent:A-4",
+   "reason": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 혼합 여부",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 혼합 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "c6c3780c-33ea-5dec-a2f1-9d687c5feab4",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "mixture_type"
+   ],
+   "trigger_rule_id": "law_agent:A-4",
+   "reason": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 혼합된 폐기물의 분리 가능 여부",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가? — 필요한 사실: 혼합된 폐기물의 분리 가능 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "accdf8cc-9530-53a4-b419-500847368176",
+   "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "generation.amount"
+   ],
+   "trigger_rule_id": "law_agent:H-2",
+   "reason": "지정폐기물 처리계획 확인 대상인가? (품목별 월 평균 배출량 기준과 사례 물량 비교) — 필요한 사실: 월 평균 배출량",
+   "question": "지정폐기물 처리계획 확인 대상인가? (품목별 월 평균 배출량 기준과 사례 물량 비교) — 필요한 사실: 월 평균 배출량",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  }
+ ]
+}

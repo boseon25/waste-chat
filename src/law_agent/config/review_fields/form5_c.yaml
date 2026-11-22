@@ -1,0 +1,37 @@
+# waste-chat 문서 form5_c (제5호 수탁처리능력 확인 · 처리업체) → 파트 2 검토 capacity_check
+# fields: waste-chat 칸 이름 → 검토 칸 위치. attachments: waste-chat 거래방 항목 key → 검토 첨부 이름
+doc: form5_c
+doc_type: capacity_check
+title: 제5호 수탁처리능력 확인서 (처리업체)
+fields:
+  generator_name: consignor.name
+  generator_registration: consignor.biz_no
+  generator_representative: consignor.representative
+  generator_address: consignor.address
+  waste_classification: waste_items[0].waste_code
+  waste_state_code: waste_items[0].state
+  receiver_entrusted_annual_tons: waste_items[0].ton_year
+  receiver_name: consignee.name
+  receiver_registration: consignee.biz_no
+  receiver_address: consignee.address
+  receiver_permit_number: consignee.permit_no
+  receiver_permit_authority: consignee.permit_agency
+  receiver_acceptance: capacity.acceptable
+  receiver_method: treatment_items[0].treatment_code
+  generator_birthdate: consignor.birthdate
+  generator_phone: consignor.phone
+  receiver_representative: consignee.representative
+  receiver_birthdate: consignee.birthdate
+  receiver_phone: consignee.phone
+  receiver_industry: consignee.industry
+  receiver_technical_capacity: consignee.tech
+  receiver_permit_date: consignee.permit_date
+  receiver_permit_industry: permit.industry
+  receiver_permit_waste: permit.waste
+  receiver_facility_type: facility.type
+  receiver_facility_capacity: facility.capacity
+  receiver_vehicle_size: vehicle.size
+  receiver_vehicle_count: vehicle.count
+attachments:
+  permit_processor: permit_copy
+  bond: guarantee_copy

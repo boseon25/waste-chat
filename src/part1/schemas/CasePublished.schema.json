@@ -1,0 +1,63 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "minLength": 1,
+      "title": "Event Id",
+      "type": "string"
+    },
+    "case_id": {
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "from_version": {
+      "minimum": 0,
+      "title": "From Version",
+      "type": "integer"
+    },
+    "to_version": {
+      "minimum": 1,
+      "title": "To Version",
+      "type": "integer"
+    },
+    "changed_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Changed Fields",
+      "type": "array"
+    },
+    "changed_evidence_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Changed Evidence Ids",
+      "type": "array"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "published_at": {
+      "format": "date-time",
+      "title": "Published At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_id",
+    "case_id",
+    "from_version",
+    "to_version",
+    "changed_fields",
+    "changed_evidence_ids",
+    "reason",
+    "published_at"
+  ],
+  "title": "CasePublished",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Structural contract only. Run Pydantic for local semantic/reference validation."
+}

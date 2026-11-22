@@ -1,0 +1,47 @@
+{
+ "case_id": "PRE-20",
+ "case_version": 1,
+ "engine": "law_agent_v0",
+ "input_check": {
+  "status": "needs_review",
+  "issues": [
+   {
+    "field": "classification.selected_code",
+    "status": "needs_review",
+    "text": "분류번호 51-03-XX 의 형식이 잘못됨"
+   }
+  ],
+  "warnings": []
+ },
+ "routes": [],
+ "skipped": {
+  "all": {
+   "action": "NEEDS_REVIEW",
+   "reason": "입력 형식 검사에서 멈춤"
+  }
+ },
+ "route_proposals": [],
+ "information_request": {
+  "schema_version": "1.1",
+  "case_id": "PRE-20",
+  "case_version": 1,
+  "requests": [
+   {
+    "request_id": "IR-1",
+    "field": "classification.selected_code",
+    "text": "분류번호 51-03-XX 의 형식이 잘못됨",
+    "to": "배출업체",
+    "affected_routes": []
+   }
+  ],
+  "fields": [
+   "classification.selected_code"
+  ],
+  "part2_internal": []
+ },
+ "law_review": [],
+ "evidence_pack_ids": [],
+ "run": {
+  "calls": 0
+ }
+}

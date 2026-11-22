@@ -1,0 +1,262 @@
+{
+  "case_id": "PRE-16",
+  "case_version": 1,
+  "preliminary": {
+    "waste_case_id": "PRE-16",
+    "classification": {
+      "status": "MATCHED",
+      "input_waste_code": "51-28-02",
+      "normalized_waste_code": "51-28-02",
+      "waste_name": "폐종이류",
+      "matched": true,
+      "warnings": [
+        "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다."
+      ],
+      "source": "waste_codes_4.csv",
+      "classification_level": "세분류",
+      "parent_code": "51-28",
+      "is_terminal": true,
+      "official_name": "폐종이류",
+      "waste_category_code": null,
+      "terminal_codes": [],
+      "hazardous_designation": "N"
+    },
+    "restriction": {
+      "status": "BLOCKED",
+      "recycling_blocked": true,
+      "allowed_rcodes": [],
+      "restricted_rcodes": [],
+      "matched_rules": [
+        {
+          "rule_id": "PR-L1",
+          "action": "BLOCK_TO_GATE4",
+          "target": "폐석면",
+          "legal_basis": "법 제13조의2 ② 1호",
+          "waste_code": "07-01-01",
+          "allowed_rcodes": [],
+          "note": "",
+          "citation_status": "확인",
+          "source_chunk": "WMA:13의2/항2@20260918#d3f242e7db1fa6bb"
+        },
+        {
+          "rule_id": "PR-R0",
+          "action": "BLOCK_TO_GATE4",
+          "target": "4의3에서 재활용 금지인 모든 분류번호",
+          "legal_basis": "시행규칙 별표 4의3 (재활용 금지) 전체",
+          "waste_code": "07-01-01",
+          "allowed_rcodes": [],
+          "note": "안전망: 개정으로 새 금지 코드가 생겨도 자동 차단",
+          "citation_status": "확인",
+          "source_chunk": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "required_inputs": [],
+      "questions": [],
+      "review_required": false,
+      "warnings": []
+    },
+    "hazardous": {
+      "status": "HAZARDOUS",
+      "matched": false,
+      "waste_code": "51-28-02",
+      "rule": null,
+      "required_inputs": [],
+      "questions": [],
+      "warnings": [
+        "공식 분류표의 지정폐기물 값이 N이며 지정폐기물 목록과 일치하지 않습니다.",
+        "혼합물 성분 중 HAZARDOUS 판정이 있어 전체에 적용합니다."
+      ]
+    },
+    "mixture": {
+      "status": "MIXED",
+      "is_mixed": true,
+      "component_count": 2,
+      "share_total_pct": 100.0,
+      "separable": false,
+      "component_codes_missing": [],
+      "warnings": [],
+      "questions": []
+    },
+    "gate_plan": {
+      "gate1": {
+        "action": "SKIP",
+        "reason": "재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.",
+        "conditions": []
+      },
+      "gate2": {
+        "action": "SKIP",
+        "reason": "재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.",
+        "conditions": []
+      },
+      "gate3": {
+        "action": "SKIP",
+        "reason": "재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.",
+        "conditions": []
+      },
+      "gate4": {
+        "action": "RUN",
+        "reason": "처분 방법 및 세부 기준을 확인합니다.",
+        "conditions": [
+          "지정폐기물 처분 기준을 적용합니다."
+        ]
+      }
+    },
+    "status": "READY",
+    "required_information": [],
+    "warnings": [
+      "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다.",
+      "공식 분류표의 지정폐기물 값이 N이며 지정폐기물 목록과 일치하지 않습니다.",
+      "혼합물 성분 중 HAZARDOUS 판정이 있어 전체에 적용합니다."
+    ],
+    "case_version": 1,
+    "schema_version": "1.0",
+    "waste_status": "designated",
+    "hazardous_basis": "분류번호",
+    "component_results": [
+      {
+        "waste_code": "07-01-01",
+        "classification_status": "MATCHED",
+        "hazardous_status": "HAZARDOUS",
+        "recycling_blocked": true,
+        "matched_rules": [
+          "PR-L1",
+          "PR-R0"
+        ]
+      }
+    ],
+    "questions": []
+  },
+  "routes": [
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "[51-28-02] 소각: 일반소각 / 고온소각",
+      "waste_codes": [
+        "51-28-02"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "51-28-02"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "일반소각 / 고온소각",
+          "role": "treatment",
+          "treatment_codes": [
+            "2101",
+            "2102"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "51-28-02"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D3-2다 폐지류·폐목재류·폐섬유류: 소각",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "재활용하지 않는 경우",
+          "basis": "WMA_RULE:B5:3@20261002#8b91601a27cc5291",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:3@20261002#8b91601a27cc5291"
+      ],
+      "basis_status": "검토 대기"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "[07-01-01] 매립: 민간관리형 매립시설",
+      "waste_codes": [
+        "07-01-01"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "07-01-01"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "민간관리형 매립시설",
+          "role": "treatment",
+          "treatment_codes": [
+            "2201"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "07-01-01"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2바2 고형화되어 흩날릴 우려 없는 폐석면: 포대 포장 후 지정폐기물 매립시설 매립",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "매립 구역 지정·표지판",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    }
+  ],
+  "skipped": {
+    "gate1": {
+      "action": "SKIP",
+      "reason": "재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다."
+    },
+    "gate2": {
+      "action": "SKIP",
+      "reason": "재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다."
+    },
+    "gate3": {
+      "action": "SKIP",
+      "reason": "재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다."
+    }
+  }
+}

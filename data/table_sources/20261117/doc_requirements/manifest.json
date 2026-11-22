@@ -1,0 +1,66 @@
+{
+  "table": "doc_requirements",
+  "method": "code",
+  "builder": "route_agent/src/doc_review/build_requirements.py --confirm",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/doc_requirements.csv",
+  "rows": 61,
+  "confirmed": 61,
+  "parts": {
+    "WMA_RULE": [
+      "16의13",
+      "18의2",
+      "BF5",
+      "BF12"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "article",
+      "key": "16의13",
+      "title": "위탁ㆍ수탁의 기준 및 절차",
+      "effective": "20261112",
+      "hash": "2fad9980685937f5",
+      "chars": 538,
+      "part": "16의13"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "article",
+      "key": "18의2",
+      "title": "지정폐기물 처리계획의 확인",
+      "effective": "20261112",
+      "hash": "abcf412cfd752115",
+      "chars": 2633,
+      "part": "18의2"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "F5",
+      "title": "수탁처리능력 확인서, 폐기물 수탁확인서",
+      "effective": "20261112",
+      "hash": "d4c50ceb8f6c77bb",
+      "chars": 21985,
+      "part": "BF5"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "F12",
+      "title": "폐기물 처리계획(변경)서",
+      "effective": "20261112",
+      "hash": "4b84960ea636d64b",
+      "chars": 10602,
+      "part": "BF12"
+    }
+  ],
+  "ref_check": {
+    "refs": 61,
+    "inside": 61,
+    "outside": {},
+    "old_effective": {}
+  }
+}

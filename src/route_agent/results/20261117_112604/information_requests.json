@@ -1,0 +1,35 @@
+[
+  {
+    "schema_version": "1.1",
+    "case_id": "DEMO-PART2-01",
+    "case_version": 1,
+    "requests": [
+      {
+        "request_id": "IR-1",
+        "field": "emitter_facility_type",
+        "text": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다.",
+        "to": "배출업체",
+        "affected_routes": [
+          "DEMO-PART2-01-G2-reuse-direct_use",
+          "DEMO-PART2-01-G2-material_recycle-single_material_recycle",
+          "DEMO-PART2-01-G2-energy_recovery-single_material_recycle",
+          "DEMO-PART2-01-G2-intermediate-single_material_recycle",
+          "DEMO-PART2-01-G4-incineration-alternative_treatment",
+          "DEMO-PART2-01-G4-landfill-alternative_treatment"
+        ]
+      }
+    ],
+    "fields": [
+      "emitter_facility_type"
+    ],
+    "part2_internal": []
+  },
+  {
+    "schema_version": "1.1",
+    "case_id": "DEMO-PART2-02",
+    "case_version": 1,
+    "requests": [],
+    "fields": [],
+    "part2_internal": []
+  }
+]

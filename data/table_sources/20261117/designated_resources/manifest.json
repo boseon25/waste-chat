@@ -1,0 +1,44 @@
+{
+  "table": "designated_resources",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/designated_resources.csv",
+  "rows": 19,
+  "confirmed": null,
+  "parts": {
+    "CEA_DESIG": [
+      "B1",
+      "B2"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "CEA_DESIG",
+      "type": "annex",
+      "key": "1",
+      "title": "순환자원 지정대상(제2조제1항 관련)",
+      "effective": "20260514",
+      "hash": "b62dcf38ca197525",
+      "chars": 154,
+      "part": "B1"
+    },
+    {
+      "law_id": "CEA_DESIG",
+      "type": "annex",
+      "key": "2",
+      "title": "순환이용의 용도, 방법 및 기준 등(제3조 관련)",
+      "effective": "20260514",
+      "hash": "3d33178ae5e198d9",
+      "chars": 11132,
+      "part": "B2"
+    }
+  ],
+  "ref_check": {
+    "refs": 19,
+    "inside": 19,
+    "outside": {},
+    "old_effective": {}
+  }
+}

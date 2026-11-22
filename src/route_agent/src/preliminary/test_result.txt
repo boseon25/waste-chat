@@ -1,0 +1,52 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.2.0, pluggy-1.7.0 -- /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python
+cachedir: .pytest_cache
+rootdir: /home/a202192012/5.Agent_System/프로젝트/산업자원_순환·재활용_에이전트(MS)/src/route_agent/src/preliminary
+plugins: langsmith-0.14.4, platformdirs-4.12.2, anyio-4.15.1
+collecting ... collected 43 items
+
+test_preliminary_modules.py::test_json_payload_is_valid[category_code] PASSED [  2%]
+test_preliminary_modules.py::test_json_payload_is_valid[terminal_code] PASSED [  4%]
+test_preliminary_modules.py::test_json_payload_is_valid[wrong_name] PASSED [  6%]
+test_preliminary_modules.py::test_json_payload_is_valid[asbestos] PASSED [  9%]
+test_preliminary_modules.py::test_json_payload_is_valid[mixed_waste] PASSED [ 11%]
+test_preliminary_modules.py::test_json_payload_is_valid[missing_code] PASSED [ 13%]
+test_preliminary_modules.py::test_json_payload_is_valid[invalid_code] PASSED [ 16%]
+test_preliminary_modules.py::test_json_payload_is_valid[unknown_code] PASSED [ 18%]
+test_preliminary_modules.py::test_json_mixed_components_are_parsed PASSED [ 20%]
+test_preliminary_modules.py::test_normalize_waste_code[0101-0101] PASSED [ 23%]
+test_preliminary_modules.py::test_normalize_waste_code[01-01] PASSED     [ 25%]
+test_preliminary_modules.py::test_normalize_waste_code[01-01-01-01] PASSED [ 27%]
+test_preliminary_modules.py::test_normalize_waste_code[01-01-01-01-01-01] PASSED [ 30%]
+test_preliminary_modules.py::test_normalize_waste_code[010101-01-01-01] PASSED [ 32%]
+test_preliminary_modules.py::test_normalize_waste_code[None-None] PASSED [ 34%]
+test_preliminary_modules.py::test_normalize_waste_code[01-01-XX-None] PASSED [ 37%]
+test_preliminary_modules.py::test_normalize_waste_code[12345-None] PASSED [ 39%]
+test_preliminary_modules.py::test_classifier_from_json[category_code-PARENT_CLASS] PASSED [ 41%]
+test_preliminary_modules.py::test_classifier_from_json[terminal_code-MATCHED] PASSED [ 44%]
+test_preliminary_modules.py::test_classifier_from_json[wrong_name-MISMATCH] PASSED [ 46%]
+test_preliminary_modules.py::test_classifier_from_json[missing_code-NEEDS_INFO] PASSED [ 48%]
+test_preliminary_modules.py::test_classifier_from_json[invalid_code-REVIEW] PASSED [ 51%]
+test_preliminary_modules.py::test_classifier_from_json[unknown_code-NOT_FOUND] PASSED [ 53%]
+test_preliminary_modules.py::test_single_level_terminal_code_is_valid PASSED [ 55%]
+test_preliminary_modules.py::test_all_official_codes_have_expected_classification PASSED [ 58%]
+test_preliminary_modules.py::test_all_crosswalk_terminal_codes_are_valid PASSED [ 60%]
+test_preliminary_modules.py::test_hazardous_csv_matches_official_designation PASSED [ 62%]
+test_preliminary_modules.py::test_all_hazardous_codes_are_detected PASSED [ 65%]
+test_preliminary_modules.py::test_non_hazardous_terminal_code_is_not_hazardous PASSED [ 67%]
+test_preliminary_modules.py::test_parent_class_is_not_evaluated_by_hazardous_checker PASSED [ 69%]
+test_preliminary_modules.py::test_asbestos_json_activates_block_rule PASSED [ 72%]
+test_preliminary_modules.py::test_parent_json_stops_downstream_checks PASSED [ 74%]
+test_preliminary_modules.py::test_wrong_name_json_requires_review PASSED [ 76%]
+test_preliminary_modules.py::test_asbestos_json_skips_gate2 PASSED       [ 79%]
+test_preliminary_modules.py::test_terminal_json_reaches_downstream_checks PASSED [ 81%]
+test_preliminary_modules.py::test_missing_code_json_requires_information PASSED [ 83%]
+test_preliminary_modules.py::test_invalid_code_json_requires_review PASSED [ 86%]
+test_preliminary_modules.py::test_json_result_can_be_serialized PASSED   [ 88%]
+test_preliminary_modules.py::test_json_string_directly_passed_to_integrator PASSED [ 90%]
+test_preliminary_modules.py::test_json_bytes_directly_passed_to_integrator PASSED [ 93%]
+test_preliminary_modules.py::test_json_string_parent_class_requires_information PASSED [ 95%]
+test_preliminary_modules.py::test_invalid_json_string_raises_adapter_error PASSED [ 97%]
+test_preliminary_modules.py::test_json_string_without_waste_code_requires_information PASSED [100%]
+
+============================== 43 passed in 0.05s ==============================

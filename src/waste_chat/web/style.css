@@ -1,0 +1,55 @@
+:root {
+  --ink:#252720; --muted:#65675e; --line:#d7d8ce; --oat:#eeede6; --paper:#fffefa; --rail:#242620; --citron:#d9edb2;
+  font-family:Inter, system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-synthesis:none; color:var(--ink); background:var(--oat);
+}
+*, *::before, *::after {box-sizing:border-box}
+body {margin:0}
+button,input,select,textarea,a {font:inherit}
+button,a {touch-action:manipulation}
+button {cursor:pointer}
+button:disabled, input:disabled, textarea:disabled, select:disabled {cursor:not-allowed;opacity:.52}
+:where(button,a,input,select,textarea):focus-visible {outline:2px solid #648b37;outline-offset:2px}
+[hidden] {display:none!important}
+h1,h2,h3,p {margin:0}
+svg {flex-shrink:0}
+.svg-bank {position:absolute;width:0;height:0;overflow:hidden}
+svg:has(use) {width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sr-only {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.btn,.icon-btn,.choice,.changed-field,.chat-prompt {display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:6px 10px;font-size:13px;font-weight:590;line-height:1.45;text-decoration:none}
+.btn:hover,.icon-btn:hover,.choice:hover {background:#f0f1e9}
+.btn.primary {color:var(--paper);background:var(--ink);border-color:var(--ink)}
+.btn.danger {color:#934329}
+.icon-btn {width:32px;height:32px;padding:4px;border:0}
+dialog:not(.nav-drawer) {width:min(460px,calc(100vw - 28px));max-height:85dvh;overflow:auto;margin:auto;border:1px solid #c4c6b9;border-radius:12px;padding:24px;color:var(--ink);background:var(--paper);box-shadow:0 18px 70px #16170e36}
+dialog::backdrop {background:#1e221a77}
+.dlg-head,.dlg-buttons,.case-actions {display:flex;align-items:center;gap:8px}
+.dlg-head {justify-content:space-between;margin-bottom:12px}
+.dlg-head h2 {font-size:22px;font-weight:720;letter-spacing:-.05em}
+dialog:not(.nav-drawer)>p {font-size:14px;line-height:1.65;color:var(--muted);margin:8px 0 14px;word-break:keep-all;overflow-wrap:anywhere}
+dialog:not(.nav-drawer) label,.field label {display:block;font-size:13px;font-weight:670;margin:12px 0 5px}
+dialog label span {color:var(--muted);font-weight:500}
+dialog:not(.nav-drawer) input,dialog textarea,.field input,.field textarea {padding:8px 10px;border:1px solid #c9cbbf;border-radius:5px;width:100%;font-size:14px;color:var(--ink);background:#fff;line-height:1.5}
+dialog textarea,.field textarea {resize:vertical}
+dialog p.hint {font-size:12px}
+.dlg-buttons {justify-content:flex-end;margin-top:18px}
+.case-actions {flex-wrap:wrap;margin:12px 0}
+.context-list {display:grid;gap:4px}
+.context-list label {display:flex!important;align-items:center;gap:8px;margin:0!important;padding:7px 8px;border-radius:5px;background:#f1f2ea}
+.context-list input {width:16px!important;height:16px;accent-color:#53663c;flex:none}
+.toast,.no-script {position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;border-radius:7px;padding:10px 15px;font-size:13px;max-width:calc(100vw - 24px);z-index:8}
+
+#roomBar {position:fixed;inset:0 0 auto 0;height:44px;z-index:60;display:flex;align-items:center;gap:12px;padding:0 16px;background:#161617;color:#ececee;font-size:13px;border-bottom:1px solid #2a2a2d}
+#roomBar strong {font-weight:650;white-space:nowrap}
+#roomBar .room-name {color:#96969d;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#roomBar .room-status {margin-left:auto;color:#d9a95b;white-space:nowrap}
+#roomBar .btn {height:30px;padding:0 12px;border-radius:8px;background:#ececee;border-color:#ececee;color:#111;font-weight:620}
+body.in-room .work-shell {height:calc(100dvh - 44px)!important;margin-top:44px}
+body.in-room .work-column, body.in-room .rail-dock {height:calc(100dvh - 44px)}
+
+/* 서류 작성 화면의 어두운 표시. 색을 뒤집되 서식 이미지와 사진은 원래 색으로 되돌린다. */
+html.ws-dark {background:#000}
+html.ws-dark body {background:#000}
+html.ws-dark body > :not(#roomBar):not(.svg-bank) {filter:invert(1) hue-rotate(180deg)}
+html.ws-dark .rail-dock {filter:invert(1) hue-rotate(180deg) grayscale(1)}
+html.ws-dark img, html.ws-dark iframe {filter:invert(1) hue-rotate(180deg)}

@@ -1,0 +1,181 @@
+$ db_intake.py ingest /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/fixtures/intake_checkable_example.docx --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --synthetic
+DB COMMIT + REOPEN VERIFY PASS / created / 08f3cd3f-a30a-5883-862e-50ab36f24ade
+JSON 파일은 아직 만들지 않았습니다. inspect로 DB를 확인한 뒤 export를 실행하세요.
+
+$ db_intake.py inspect --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3
+DB VERIFY: PASS / 08f3cd3f-a30a-5883-862e-50ab36f24ade
+원본: intake_checkable_example.docx / synthetic=True
+업체 1, 현장 2, 폐기물 후보 2
+컨트롤 51, 체크 선택 6, 미선택 14
+업체: 가상순환산업 (가상 업체) / 000-00-00000 (테스트용) / 김예시 (가상) / 010-0000-0000 (테스트용)
+폐기물: 제품 포장용 PE 필름 자투리 | 200 kg (mass) | 유해물질=모름
+  현장: 전주시 가상산업로 10, A동 자재창고 (가상 주소) / 공통 현장 상속=True
+  폐기물 ID: ac0bea9e-78dc-5110-b92f-607e0dbbf172
+폐기물: 기계 세척 후 남은 세척액 | 100 L (volume) | 유해물질=모름
+  현장: 전주시 가상산업로 10, B동 세척실 (가상 주소) / 공통 현장 상속=False
+  폐기물 ID: 671dcb92-d0f3-5520-b2f5-4257c86c9f9e
+DB 저장 대조 통과는 사용자 확인·법적 분류·실제 발행을 뜻하지 않습니다.
+
+$ phase2.py next --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172
+[40] 건 ac0bea9e-78dc-5110-b92f-607e0dbbf172 / quantity.measured_at / phase2 / 질문 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f
+이번 처리량을 실제로 측정한 날짜를 YYYY-MM-DD로 알려 주세요. 작성일이나 업로드일과 다를 수 있습니다.
+현재 후보값: None
+phase2.py answer --db DB --case CASE_ID --request QUESTION_ID --revision 0 "답변"
+[50] 건 ac0bea9e-78dc-5110-b92f-607e0dbbf172 / classification_evidence / phase2 / 질문 9ded501d-4338-5473-a4e3-e7e269467397
+같은 현장·품목의 기존 신고자료나 현재 건 적용 조건이 명시된 관할기관 회신이 있나요? 번호를 직접 확정하지 않고 자료 요청으로 연결합니다.
+현재 후보값: None
+값 직접 입력 대신 phase2.py documents --db DB --case CASE_ID --request QUESTION_ID
+현재 질문 2개 / 대기 2개
+사용자 진술은 공인 분석/법적 확정이 아닙니다. 이미 모름·자료 없음으로 답한 동일 맥락 질문은 반복하지 않습니다.
+
+$ phase2.py answer --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --request 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f --revision 0 2999-01-01
+ERROR: 실제 측정일은 미래 날짜일 수 없습니다.
+
+$ phase2.py answer --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case 671dcb92-d0f3-5520-b2f5-4257c86c9f9e --request 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f --revision 0 2026-11-10
+ERROR: 질문과 폐기물 건 연결이 일치하지 않습니다.
+
+$ phase2.py answer --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --request 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f --revision 0 2026-11-10
+답변 저장·재검증 완료: 해당 건의 사용자 진술 초안만 갱신했습니다.
+미확인은 null, 근거 없는 분류번호·분석값·법적 판단은 확정하지 않습니다.
+
+$ phase2.py correct --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --request 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f --revision 0 2026-11-09 --reason 가상 기록 재확인
+ERROR: REVISION_CONFLICT: 이력을 다시 읽고 현재 차수로 답하세요.
+
+$ phase2.py correct --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --request 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f --revision 1 2026-11-09 --reason 가상 기록 재확인
+답변 저장·재검증 완료: 해당 건의 사용자 진술 초안만 갱신했습니다.
+미확인은 null, 근거 없는 분류번호·분석값·법적 판단은 확정하지 않습니다.
+
+$ phase2.py history --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --request 67a65ca3-e60b-523c-86b1-c1e1e0f5d51f
+{
+  "request_id": "67a65ca3-e60b-523c-86b1-c1e1e0f5d51f",
+  "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+  "field": "quantity.measured_at",
+  "context": "584b114b-f908-5daf-891b-97e650212cc9",
+  "route": null,
+  "priority": 40,
+  "asked_at": "2026-11-17T15:00:21.376483+00:00",
+  "rule_version": "phase2-0.3.0",
+  "asked_reason": "누락/불일치 규칙: quantity.measured_at",
+  "history": [
+    {
+      "request_id": "67a65ca3-e60b-523c-86b1-c1e1e0f5d51f",
+      "revision": 1,
+      "raw_value": "2026-11-10",
+      "status": "answered",
+      "normalized_text": "2026-11-10",
+      "normalized_bool": null,
+      "quantity_value": null,
+      "quantity_unit": null,
+      "quantity_dimension": null,
+      "conversion_rule": null,
+      "reason": "사용자 최초 답변",
+      "answered_at": "2026-11-17T15:00:22.055786+00:00",
+      "value": "2026-11-10"
+    },
+    {
+      "request_id": "67a65ca3-e60b-523c-86b1-c1e1e0f5d51f",
+      "revision": 2,
+      "raw_value": "2026-11-09",
+      "status": "answered",
+      "normalized_text": "2026-11-09",
+      "normalized_bool": null,
+      "quantity_value": null,
+      "quantity_unit": null,
+      "quantity_dimension": null,
+      "conversion_rule": null,
+      "reason": "가상 기록 재확인",
+      "answered_at": "2026-11-17T15:00:22.549397+00:00",
+      "value": "2026-11-09"
+    }
+  ],
+  "revision": 2,
+  "status": "answered"
+}
+
+$ phase2.py documents --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --request 9ded501d-4338-5473-a4e3-e7e269467397
+자료 요청 ID: 7b65bfa0-0817-5e3f-8796-74e9789dd136 / 건: ac0bea9e-78dc-5110-b92f-607e0dbbf172 / 상태: open
+{
+  "title": "폐기물 분류번호",
+  "fields": [
+    "classification.reported_code",
+    "classification.selected_code"
+  ],
+  "reason": "현재 건에 적용되는 코드와 과거 신고 기록을 구분하기 위해 필요합니다.",
+  "question": "같은 현장·품목의 기존 신고자료 또는 현재 건의 적용 조건이 명시된 관할기관 회신이 있나요?",
+  "where": [
+    "사내 환경·안전 담당자에게 신고자료의 해당 품목 행 요청",
+    "자료가 없거나 적용이 불명확하면 배출 현장 관할 시·군·구 폐기물 담당 부서에 문의"
+  ],
+  "prepare": [
+    "현장 주소",
+    "품목·발생 공정·원료·성상",
+    "기존 신고일/번호(알면)",
+    "보유 분석자료"
+  ],
+  "alternative": "관할 부서의 접수/처리기관과 문의 절차부터 확인. 회신의 대상·조건·날짜를 보존하고 selected_code는 null 유지.",
+  "caution": "신고자료 번호는 reported_code 후보. 현재 건 적용 검토 없이 selected_code로 복사하지 않음. 재질별 코드·AI 확신도 추정 금지.",
+  "guidance_id": "guidance-023-classification",
+  "official_routes": [
+    {
+      "source_id": "law",
+      "url": "https://www.law.go.kr/",
+      "checked_at": "2026-11-11",
+      "checked_scope": "공식 홈페이지와 법령·별표/서식 검색 메뉴 확인",
+      "limitation": "개별 폐기물 적용 조항·시행본·행정기관 회신은 미검토"
+    }
+  ]
+}
+자료 응답: db_intake.py supply-answer --db DB --request GUIDANCE_ID "자료 없음 또는 설명" [--file FILE]
+실제 신청·자동 발급·자료 적용성 확정은 하지 않습니다.
+
+$ db_intake.py supply-answer --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --request 7b65bfa0-0817-5e3f-8796-74e9789dd136 자료 없음
+저장 완료. 현재 건 적용성·내용 검토 전이며 사실값은 자동 확정되지 않습니다.
+대안: 관할 부서의 접수/처리기관과 문의 절차부터 확인. 회신의 대상·조건·날짜를 보존하고 selected_code는 null 유지.
+보류 범위: classification
+다음 단계: phase3.py plan --db <현재 DB> --case ac0bea9e-78dc-5110-b92f-607e0dbbf172 --purpose "필요한 판단 목적"
+기본 묶음은 분류 근거 회신입니다. 시험값은 실제 필요한 --need 항목만 선택하세요. 모든 사용자에게 일괄 시험을 요구하지 않습니다.
+
+$ phase2.py next --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case ac0bea9e-78dc-5110-b92f-607e0dbbf172
+현재 질문 0개 / 대기 0개
+사용자 진술은 공인 분석/법적 확정이 아닙니다. 이미 모름·자료 없음으로 답한 동일 맥락 질문은 반복하지 않습니다.
+
+$ phase2.py next --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case 671dcb92-d0f3-5520-b2f5-4257c86c9f9e
+[40] 건 671dcb92-d0f3-5520-b2f5-4257c86c9f9e / quantity.measured_at / phase2 / 질문 7ba47040-2da9-556c-856b-231c96f43c86
+이번 처리량을 실제로 측정한 날짜를 YYYY-MM-DD로 알려 주세요. 작성일이나 업로드일과 다를 수 있습니다.
+현재 후보값: None
+phase2.py answer --db DB --case CASE_ID --request QUESTION_ID --revision 0 "답변"
+[45] 건 671dcb92-d0f3-5520-b2f5-4257c86c9f9e / hazard_evidence / phase2 / 질문 cb311c8c-bb1d-5b49-8854-d454bc344c9b
+공정·물질·오염 관찰에 대한 구체적인 원문이 있어 확인합니다. 원료/약품 자료나 해당 시료 분석자료가 있나요? 지정폐기물 해당 여부를 단정하지 않습니다.
+현재 후보값: None
+값 직접 입력 대신 phase2.py documents --db DB --case CASE_ID --request QUESTION_ID
+[50] 건 671dcb92-d0f3-5520-b2f5-4257c86c9f9e / classification_evidence / phase2 / 질문 199c7120-7d81-51c5-9072-48cd91e8da18
+같은 현장·품목의 기존 신고자료나 현재 건 적용 조건이 명시된 관할기관 회신이 있나요? 번호를 직접 확정하지 않고 자료 요청으로 연결합니다.
+현재 후보값: None
+값 직접 입력 대신 phase2.py documents --db DB --case CASE_ID --request QUESTION_ID
+현재 질문 3개 / 대기 3개
+사용자 진술은 공인 분석/법적 확정이 아닙니다. 이미 모름·자료 없음으로 답한 동일 맥락 질문은 반복하지 않습니다.
+
+$ phase2.py answer --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case 671dcb92-d0f3-5520-b2f5-4257c86c9f9e --request 7ba47040-2da9-556c-856b-231c96f43c86 --revision 0 잘 모르겠어요
+답변 저장·재검증 완료: 해당 건의 사용자 진술 초안만 갱신했습니다.
+미확인은 null, 근거 없는 분류번호·분석값·법적 판단은 확정하지 않습니다.
+
+$ phase2.py next --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --case 671dcb92-d0f3-5520-b2f5-4257c86c9f9e
+[45] 건 671dcb92-d0f3-5520-b2f5-4257c86c9f9e / hazard_evidence / phase2 / 질문 cb311c8c-bb1d-5b49-8854-d454bc344c9b
+공정·물질·오염 관찰에 대한 구체적인 원문이 있어 확인합니다. 원료/약품 자료나 해당 시료 분석자료가 있나요? 지정폐기물 해당 여부를 단정하지 않습니다.
+현재 후보값: None
+값 직접 입력 대신 phase2.py documents --db DB --case CASE_ID --request QUESTION_ID
+[50] 건 671dcb92-d0f3-5520-b2f5-4257c86c9f9e / classification_evidence / phase2 / 질문 199c7120-7d81-51c5-9072-48cd91e8da18
+같은 현장·품목의 기존 신고자료나 현재 건 적용 조건이 명시된 관할기관 회신이 있나요? 번호를 직접 확정하지 않고 자료 요청으로 연결합니다.
+현재 후보값: None
+값 직접 입력 대신 phase2.py documents --db DB --case CASE_ID --request QUESTION_ID
+현재 질문 2개 / 대기 2개
+사용자 진술은 공인 분석/법적 확정이 아닙니다. 이미 모름·자료 없음으로 답한 동일 맥락 질문은 반복하지 않습니다.
+
+$ db_intake.py verify --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3
+VERIFY PASS: 08f3cd3f-a30a-5883-862e-50ab36f24ade / {'controls': 51, 'cells': 53, 'paragraphs': 17, 'companies': 1, 'sites': 2, 'case_candidates': 2}
+
+$ db_intake.py export --db /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/intake.sqlite3 --out /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/db_export.json
+DB verified -> 2 draft cases -> /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/db_export.json; published=false
+
+$ db_intake.py validate-json /home/a202192012/5.Agent_System/프로젝트/waste_agent/src/part1/output/part1_demo/core/db_export.json
+JSON SHAPE + REFERENCES: PASS (실제 DB 대조/법적 검증 아님)

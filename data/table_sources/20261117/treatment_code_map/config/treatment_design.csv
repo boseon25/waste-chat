@@ -1,0 +1,70 @@
+﻿code,r_code,baseline,tier,carbon_factor_key,transport_needed,confidence,note
+1001,R-1,recycle,reuse,recycle_reuse,N,high,
+1002,R-2,recycle,reuse,recycle_reuse,N,high,
+1003,R-3,recycle,material_recycle,recycle_material,N,high,
+1004,R-4,recycle,material_recycle,recycle_material,N,high,
+1005,R-5,recycle,material_recycle,recycle_material,N,high,
+1006,R-6,recycle,material_recycle,recycle_material,N,high,
+1007,R-7,recycle,material_recycle,recycle_material,N,high,
+1008,R-8,recycle,energy_recovery,energy_recovery,N,high,
+1009,R-9,recycle,energy_recovery,energy_recovery,N,high,
+1010,R-10,recycle,,null,N,medium,"중간가공 → 최종 처리 미상, tier 미정"
+1011,R-11,recycle,material_recycle,recycle_material,N,high,재활용환경성평가 승인 유형
+1101,,incineration,disposal,incineration,N,high,
+1102,,incineration,disposal,incineration_high_temp,N,high,
+1103,,incineration,disposal,pyrolysis_disposal,N,high,
+1104,,incineration,disposal,melting_high_temp,N,high,
+1105,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1106,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1107,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1108,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1109,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1110,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1111,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1112,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null (의료폐기물)
+1113,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1114,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1115,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1116,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1117,,intermediate_disposal,,null,N,low,
+1201,,landfill,disposal,landfill_managed,N,high,
+1202,,landfill,disposal,landfill_isolated,N,high,
+1203,,landfill,disposal,landfill,N,high,
+1300,,ocean_disposal,,null,N,high,범위 밖
+1500,,export,,null,N,high,범위 밖
+2001,R-1,recycle,reuse,recycle_reuse,Y,high,
+2002,R-2,recycle,reuse,recycle_reuse,Y,high,
+2003,R-3,recycle,material_recycle,recycle_material,Y,high,
+2004,R-4,recycle,material_recycle,recycle_material,Y,high,
+2005,R-5,recycle,material_recycle,recycle_material,Y,high,
+2006,R-6,recycle,material_recycle,recycle_material,Y,high,
+2007,R-7,recycle,material_recycle,recycle_material,Y,high,
+2008,R-8,recycle,energy_recovery,energy_recovery,Y,high,
+2009,R-9,recycle,energy_recovery,energy_recovery,Y,high,
+2010,R-10,recycle,,null,Y,medium,"중간가공 → 최종 처리 미상, tier 미정"
+2011,R-11,recycle,material_recycle,recycle_material,Y,high,재활용환경성평가 승인 유형
+2101,,incineration,disposal,incineration,Y,high,
+2102,,incineration,disposal,incineration_high_temp,Y,high,
+2103,,incineration,disposal,pyrolysis_disposal,Y,high,
+2104,,incineration,disposal,melting_high_temp,Y,high,
+2105,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2106,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2107,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2108,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2109,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2110,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2111,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2112,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null (의료폐기물)
+2113,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2114,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2115,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2116,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2117,,incineration,disposal,incineration,Y,high,
+2118,,incineration,disposal,incineration,Y,high,한국환경공단·수도권매립지관리공사 운영
+2119,,intermediate_disposal,,null,Y,low,
+2201,,landfill,disposal,landfill_managed,Y,high,
+2202,,landfill,disposal,landfill_isolated,Y,high,
+2204,,landfill,disposal,landfill,Y,high,2203 결번
+2205,,landfill,disposal,landfill_managed,Y,high,
+2206,,landfill,disposal,landfill_managed,Y,high,
+2300,,ocean_disposal,,null,Y,high,범위 밖

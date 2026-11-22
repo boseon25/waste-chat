@@ -1,0 +1,140 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "case_id": {
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "based_on_case_version": {
+      "minimum": 0,
+      "title": "Based On Case Version",
+      "type": "integer"
+    },
+    "requested_by": {
+      "enum": [
+        "part1",
+        "part2",
+        "part3"
+      ],
+      "title": "Requested By",
+      "type": "string"
+    },
+    "fields": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Fields",
+      "type": "array"
+    },
+    "trigger_rule_id": {
+      "minLength": 1,
+      "title": "Trigger Rule Id",
+      "type": "string"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "question": {
+      "title": "Question",
+      "type": "string"
+    },
+    "answer_type": {
+      "enum": [
+        "text",
+        "single_choice",
+        "number",
+        "date",
+        "file"
+      ],
+      "title": "Answer Type",
+      "type": "string"
+    },
+    "options": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Options",
+      "type": "array"
+    },
+    "acceptable_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Acceptable Evidence",
+      "type": "array"
+    },
+    "guidance_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Guidance Id"
+    },
+    "blocking_scope": {
+      "pattern": "^(all|classification|route:[^\\s:]+|matching:[^\\s:]+|document:[^\\s:]+)$",
+      "title": "Blocking Scope",
+      "type": "string"
+    },
+    "status": {
+      "default": "open",
+      "enum": [
+        "open",
+        "answered",
+        "resolved",
+        "unavailable"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "answer_evidence_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Answer Evidence Ids",
+      "type": "array"
+    },
+    "resolution_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Resolution Reason"
+    }
+  },
+  "required": [
+    "request_id",
+    "case_id",
+    "based_on_case_version",
+    "requested_by",
+    "fields",
+    "trigger_rule_id",
+    "reason",
+    "question",
+    "answer_type",
+    "blocking_scope"
+  ],
+  "title": "InformationRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Structural contract only. Run Pydantic for local semantic/reference validation."
+}

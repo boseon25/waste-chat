@@ -1,0 +1,6 @@
+export ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export WASTE_DATA_DIR="$ROOT/data/tables/active"
+export WASTE_REFERENCE_DIR="$ROOT/data/reference"
+export WASTE_LAW_DIR="$ROOT/data/law/chunk_v2"
+export LAW_AGENT_DATA_DIR="$ROOT/data/law_agent"
+export LAW_AGENT_DATA_DIR="$ROOT/data/law_agent"

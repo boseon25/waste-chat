@@ -1,0 +1,116 @@
+{
+  "table": "designated_check_targets",
+  "method": "llm",
+  "builder": "draft_tables.py draft designated_check_targets",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/designated_check_targets.csv",
+  "rows": 9,
+  "confirmed": 9,
+  "parts": {
+    "WMA_RULE": [
+      "17의2"
+    ],
+    "GUIDE_DECL": [
+      "§Ⅵ"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "article",
+      "key": "17의2",
+      "title": "사업장폐기물배출자의 확인 등",
+      "effective": "20261112",
+      "hash": "27c7ef5cf4d02e5a",
+      "chars": 491,
+      "part": "17의2"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ",
+      "title": "Ⅵ. 사업장폐기물 배출자의 확인의무",
+      "effective": "20251231",
+      "hash": "72b09a3a8d3892e9",
+      "chars": 3385,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.1",
+      "title": "1. 지정폐기물 해당여부 확인(법 제17조제1항)가. 확인대상 폐기물(규",
+      "effective": "20251231",
+      "hash": "4f99f29f9806478e",
+      "chars": 333,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.2",
+      "title": "2. 수탁처리능력 사전확인대상 사업자(법 제17조제1항제3호 및 규칙 제",
+      "effective": "20251231",
+      "hash": "6d123a045d89487d",
+      "chars": 114,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.3",
+      "title": "3. 수탁처리능력확인서 발급 및 작성방법(법 제17조제1항제3호 및 규칙",
+      "effective": "20251231",
+      "hash": "10d96ca3119db72a",
+      "chars": 1342,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.4",
+      "title": "4. 발급 및 확인 시기○ 폐기물배출자는 폐기물 위탁처리계약(변경계약 포",
+      "effective": "20251231",
+      "hash": "fb37cb179a89a2e8",
+      "chars": 106,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.5",
+      "title": "5. 발급 시 첨부하여야 하는 구비서류가. 폐기물처리업허가증 또는 폐기물",
+      "effective": "20251231",
+      "hash": "000896fef1cbc77b",
+      "chars": 234,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.6",
+      "title": "6. 폐기물적정처리추진센터에서 공개한 자료 등을 활용하여 적법한 수탁자에",
+      "effective": "20251231",
+      "hash": "990990c707d3c40f",
+      "chars": 69,
+      "part": "§Ⅵ"
+    },
+    {
+      "law_id": "GUIDE_DECL",
+      "type": "doc_part",
+      "key": "§Ⅵ.7",
+      "title": "7. 사업장폐기물처리 위ㆍ수탁 계약가. 사업장폐기물처리 위ㆍ수탁 계약을 ",
+      "effective": "20251231",
+      "hash": "2793fcc80b427139",
+      "chars": 1308,
+      "part": "§Ⅵ"
+    }
+  ],
+  "ref_check": {
+    "refs": 9,
+    "inside": 9,
+    "outside": {},
+    "old_effective": {}
+  }
+}

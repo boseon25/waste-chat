@@ -1,0 +1,78 @@
+{
+ "schema_version": "1.0",
+ "case_id": "295e4ea1-cc7d-55ad-b542-ab62af13790d",
+ "case_version": 0,
+ "synthetic": false,
+ "name": "제품 포장용 PE 필름 자투리",
+ "process_description": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+ "classification": {
+  "reported_code": "51-03-01",
+  "selected_code": "51-03-01",
+  "status": "part1_supported"
+ },
+ "waste_code_candidates": [],
+ "components": [
+  {
+   "material": "PE (사용한 포장재 라벨 기준)",
+   "share_pct": null,
+   "separable": null,
+   "waste_code": null,
+   "status": "reported"
+  }
+ ],
+ "mixed_with_other": false,
+ "foreign_matter": {
+  "items": [],
+  "separable": null
+ },
+ "material_form": "파쇄",
+ "contamination": {
+  "level": "깨끗",
+  "substances": []
+ },
+ "hazardous_suspect": null,
+ "analysis": {
+  "heating_value_kcal": null,
+  "moisture_pct": null,
+  "chlorine_pct": null,
+  "leaching_ok": null
+ },
+ "quantity": {
+  "monthly_ton": [],
+  "unit": "ton",
+  "status": "needs_info",
+  "current_lot": {
+   "value": 200.0,
+   "unit": "kg"
+  }
+ },
+ "region": {
+  "sido": "전북",
+  "sigungu": "전주시",
+  "address": "전주시 가상산업로 10, A동 자재창고 (가상 주소)"
+ },
+ "missing": [
+  "hazard_declaration",
+  "hazardous_suspect",
+  "photos.close",
+  "photos.full",
+  "quantity.measured_at",
+  "quantity.monthly_ton"
+ ],
+ "not_applicable": [],
+ "part1_v2": {
+  "case_id": "295e4ea1-cc7d-55ad-b542-ab62af13790d",
+  "draft_revision": 0,
+  "limitations": [
+   "DRAFT_DB_EXPORT_NOT_PUBLISHED",
+   "USER_REVIEW_REQUIRED",
+   "NO_REVIEWED_CLASSIFICATION_RULES",
+   "HAZARD_UNVERIFIED",
+   "PHOTOS_NOT_UPLOADED",
+   "BUSINESS_REGISTRATION_NOT_VERIFIED"
+  ],
+  "physical_state": "마른 투명 비닐 조각",
+  "industry": null,
+  "site_id": "df0d86b0-5c4e-50c2-b748-5b5703b4e6fa"
+ }
+}

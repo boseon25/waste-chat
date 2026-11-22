@@ -1,0 +1,1593 @@
+{
+  "case_id": "PRE-02",
+  "region": {
+    "sido": "전북특별자치도",
+    "sigungu": "전주시",
+    "address": "전주시 가상산업로 10 (가상 주소)"
+  },
+  "routes": [
+    {
+      "gate": 2,
+      "tier": "reuse",
+      "route_type": "mixed_recycle",
+      "title": "재사용 (R-2-1)",
+      "waste_codes": [
+        "04-02-00"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "수리·수선 재사용",
+          "role": "recycler",
+          "treatment_codes": [
+            "2002"
+          ],
+          "r_codes": [
+            "R-2-1"
+          ],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 04-02-00에 R-2-1 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-2-1",
+          "tier": "reuse",
+          "pre_analysis": false,
+          "description": "단순 수리ㆍ수선, 건조 및 세척을 통해 본래의 용도로 재사용하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 2,
+      "tier": "material_recycle",
+      "route_type": "mixed_recycle",
+      "title": "재생이용 (R-3-2, R-4-6)",
+      "waste_codes": [
+        "04-02-00"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "원료 제조 / 직접 제품제조",
+          "role": "recycler",
+          "treatment_codes": [
+            "2003",
+            "2004"
+          ],
+          "r_codes": [
+            "R-3-2",
+            "R-4-6"
+          ],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 04-02-00에 R-3-2, R-4-6 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-3-2",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "용융, 용해, 반응, 추출 등의 공정을 통해 폐기물에서 금속 또는비금속 자원을 회수하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        },
+        {
+          "r_code": "R-4-6",
+          "tier": "material_recycle",
+          "pre_analysis": false,
+          "description": "재생유기용제, 재생윤활유 등 석유정제물을 제조하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 2,
+      "tier": "energy_recovery",
+      "route_type": "mixed_recycle",
+      "title": "에너지 회수 (R-9-2)",
+      "waste_codes": [
+        "04-02-00"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "연료·고형연료제품 제조",
+          "role": "recycler",
+          "treatment_codes": [
+            "2009"
+          ],
+          "r_codes": [
+            "R-9-2"
+          ],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 04-02-00에 R-9-2 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-9-2",
+          "tier": "energy_recovery",
+          "pre_analysis": false,
+          "description": "정제, 유화 등의 물리ㆍ화학적 처리방법으로 정제연료유나 재생연료유 등 유류를 만들거나 유화정제연료유로 사용하는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 2,
+      "tier": null,
+      "route_type": "mixed_recycle",
+      "title": "중간 가공 (R-10) (R-10-1)",
+      "waste_codes": [
+        "04-02-00"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "중간가공폐기물 제조",
+          "role": "preprocessor",
+          "treatment_codes": [
+            "2010"
+          ],
+          "r_codes": [
+            "R-10-1"
+          ],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        }
+      ],
+      "regulatory": "confirmed",
+      "reasons": [
+        "별표 4의3에서 04-02-00에 R-10-1 허용"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "중간가공폐기물을 받을 최종 재활용처를 계약 시 확인",
+          "basis": "폐기물관리법 시행규칙 별표 4의2 R-10",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "지정폐기물 재활용 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [
+        {
+          "r_code": "R-10-1",
+          "tier": null,
+          "pre_analysis": false,
+          "description": "R-3부터 R-9까지의 재활용 유형에 따라 재활용하기 위한 중간가공폐기물을 만드는 유형",
+          "basis": "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+        }
+      ],
+      "evidence_ids": [
+        "WMA_RULE:B4의3@20261002#7aeb303d9fe8dcf0"
+      ],
+      "basis_status": "확정"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "소각: 일반소각 / 고온소각",
+      "waste_codes": [
+        "04-02-00"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "일반소각 / 고온소각",
+          "role": "treatment",
+          "treatment_codes": [
+            "2101",
+            "2102"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2다4 그 밖의 폐유기용제(액체): 소각 / 증발·농축·정제·반응 후 잔재물 소각",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    },
+    {
+      "gate": 4,
+      "tier": "disposal",
+      "route_type": "alternative_treatment",
+      "title": "중간처분: 증발농축 / 기타 / 중화",
+      "waste_codes": [
+        "04-02-00"
+      ],
+      "waste_status": "designated",
+      "steps": [
+        {
+          "order": 1,
+          "process": "수집·운반",
+          "role": "transporter",
+          "treatment_codes": [],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        },
+        {
+          "order": 2,
+          "process": "증발농축 / 기타 / 중화",
+          "role": "treatment",
+          "treatment_codes": [
+            "2109",
+            "2119",
+            "2116"
+          ],
+          "r_codes": [],
+          "waste_codes": [
+            "04-02-00"
+          ]
+        }
+      ],
+      "regulatory": "conditional",
+      "reasons": [
+        "별표 5 D4-2다4 그 밖의 폐유기용제(액체): 소각 / 증발·농축·정제·반응 후 잔재물 소각",
+        "처분 방법 표가 초안(사람 검토 전)이라 conditional"
+      ],
+      "questions": [],
+      "conditions": [
+        {
+          "text": "처리 후 남은 잔재물은 소각",
+          "basis": "WMA_RULE:B5:4@20261002#411b754165931f67",
+          "basis_status": "검토 대기"
+        },
+        {
+          "text": "지정폐기물 처분업 허가 업체에만 위탁",
+          "basis": "폐기물관리법 제25조",
+          "basis_status": "확인됨"
+        },
+        {
+          "text": "재활용이 가능하면 재활용(관문 1·2)이 우선",
+          "basis": "폐기물관리법 제13조의2",
+          "basis_status": "확인됨"
+        }
+      ],
+      "required_tests": [],
+      "r_code_detail": [],
+      "evidence_ids": [
+        "WMA_RULE:B5:4@20261002#411b754165931f67"
+      ],
+      "basis_status": "검토 대기"
+    }
+  ],
+  "matches": [
+    {
+      "route_index": 0,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "recycler",
+          "candidates": [
+            {
+              "company_id": "유광드럼|익산시",
+              "name": "(주)유광드럼",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "익산시",
+              "address": "전북 익산시 석암로1길 149 (팔봉동,(주)유광드림)",
+              "phone": "063-838-0001",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#542",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2002"
+              ],
+              "r_codes": [
+                "R-2"
+              ],
+              "accepts_designated": [
+                "01-01",
+                "02-01",
+                "04-02",
+                "05",
+                "06",
+                "09"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.96155023,
+                "lng": 127.0071206,
+                "basis": "업체 좌표",
+                "distance_km": 19.3
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2002 수리ㆍ수선 재사용"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "지티산업|김제시",
+              "name": "(주)지티산업",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "김제시",
+              "address": "전북 김제시 백산면 대동공단2길 34-50 (수록리 968)",
+              "phone": "063-544-9114",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#543",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2002"
+              ],
+              "r_codes": [
+                "R-2"
+              ],
+              "accepts_designated": [
+                "01-01",
+                "02-01",
+                "04-02",
+                "05",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.79186260791441,
+                "lng": 126.90979402566849,
+                "basis": "시군구 중심점",
+                "distance_km": 20.1
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2002 수리ㆍ수선 재사용"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "에코|군산시",
+              "name": "(유)에코",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전북 군산시 서수면 상장곤윗길 58 ((유)에코)",
+              "phone": "063-451-0192",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#537",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2002"
+              ],
+              "r_codes": [
+                "R-2"
+              ],
+              "accepts_designated": [
+                "01-01",
+                "02-01",
+                "02-02",
+                "04-02",
+                "05",
+                "06",
+                "09"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.01173839,
+                "lng": 126.8843432,
+                "basis": "업체 좌표",
+                "distance_km": 30.8
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2002 수리ㆍ수선 재사용"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "충청화학에너지|논산시",
+              "name": "충청화학에너지(주)",
+              "role": "recycler",
+              "sido": "충남",
+              "sigungu": "논산시",
+              "address": "충남 논산시 가야곡면 동안로 1274-10 충청화학에너지(주)",
+              "phone": "041-742-5182",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#439",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2002"
+              ],
+              "r_codes": [
+                "R-2"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.20178341472384,
+                "lng": 127.15726613293327,
+                "basis": "시군구 중심점",
+                "distance_km": 42.6
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2002 수리ㆍ수선 재사용"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "인코케미컬|청주시 흥덕구",
+              "name": "(주)인코케미컬",
+              "role": "recycler",
+              "sido": "충북",
+              "sigungu": "청주시 흥덕구",
+              "address": "충북 청주시 흥덕구 강내면 황탄리길 130",
+              "phone": "043-231-3636",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#420",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2002"
+              ],
+              "r_codes": [
+                "R-2"
+              ],
+              "accepts_designated": [
+                "04-01",
+                "04-02",
+                "05",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.64338263874095,
+                "lng": 127.37869301309901,
+                "basis": "시군구 중심점",
+                "distance_km": 94.3
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2002 수리ㆍ수선 재사용"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 41,
+          "rejected_summary": {
+            "처리 방법 다름": 145,
+            "자가처리만 신고": 2
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 1,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "recycler",
+          "candidates": [
+            {
+              "company_id": "세호|익산시",
+              "name": "(주)세호",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "익산시",
+              "address": "전북 익산시 낭산면 미륵사지로 900 (용기리, 세호테크익산공장)",
+              "phone": "063-858-9961",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#541",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2003",
+                "2004"
+              ],
+              "r_codes": [
+                "R-3",
+                "R-4"
+              ],
+              "accepts_designated": [
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.04541954,
+                "lng": 126.9903236,
+                "basis": "업체 좌표",
+                "distance_km": 28.1
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2003 원료 제조, 2004 직접 제품제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "큐바이오텍정읍지사|정읍시",
+              "name": "큐바이오텍(주)정읍지사",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "정읍시",
+              "address": "전북 정읍시 북면 3산단3길 84 큐바이오텍(주) 정읍지사",
+              "phone": "063-927-0904",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#546",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2003"
+              ],
+              "r_codes": [
+                "R-3"
+              ],
+              "accepts_designated": [
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.610287945477324,
+                "lng": 126.9068592144633,
+                "basis": "시군구 중심점",
+                "distance_km": 30.7
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2003 원료 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "교우산업군산지점|군산시",
+              "name": "(주)교우산업 군산지점",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전북 군산시 소룡동 1650-2",
+              "phone": "063-467-8667",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#538",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2004"
+              ],
+              "r_codes": [
+                "R-4"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "05"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2004 직접 제품제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "한농화성|군산시",
+              "name": "(주)한농화성",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전북 군산시 외항1길 24 (소룡동, 한농화성)",
+              "phone": "063-462-2455",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#544",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2003"
+              ],
+              "r_codes": [
+                "R-3"
+              ],
+              "accepts_designated": [
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2003 원료 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "충청화학에너지|논산시",
+              "name": "충청화학에너지(주)",
+              "role": "recycler",
+              "sido": "충남",
+              "sigungu": "논산시",
+              "address": "충남 논산시 가야곡면 동안로 1274-10 충청화학에너지(주)",
+              "phone": "041-742-5182",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#439",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2004"
+              ],
+              "r_codes": [
+                "R-4"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.20178341472384,
+                "lng": 127.15726613293327,
+                "basis": "시군구 중심점",
+                "distance_km": 42.6
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2004 직접 제품제조"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 91,
+          "rejected_summary": {
+            "처리 방법 다름": 95,
+            "자가처리만 신고": 2
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 2,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "recycler",
+          "candidates": [
+            {
+              "company_id": "세호|익산시",
+              "name": "(주)세호",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "익산시",
+              "address": "전북 익산시 낭산면 미륵사지로 900 (용기리, 세호테크익산공장)",
+              "phone": "063-858-9961",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#541",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2009"
+              ],
+              "r_codes": [
+                "R-9"
+              ],
+              "accepts_designated": [
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.04541954,
+                "lng": 126.9903236,
+                "basis": "업체 좌표",
+                "distance_km": 28.1
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2009 연료ㆍ고형연료제품 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "리더스환경|정읍시",
+              "name": "(주)리더스환경",
+              "role": "recycler",
+              "sido": "전북",
+              "sigungu": "정읍시",
+              "address": "전북 정읍시 2산단5길 10 (하북동)",
+              "phone": "063-538-5186",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#539",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2009"
+              ],
+              "r_codes": [
+                "R-9"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.610287945477324,
+                "lng": 126.9068592144633,
+                "basis": "시군구 중심점",
+                "distance_km": 30.7
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2009 연료ㆍ고형연료제품 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "충청화학에너지|논산시",
+              "name": "충청화학에너지(주)",
+              "role": "recycler",
+              "sido": "충남",
+              "sigungu": "논산시",
+              "address": "충남 논산시 가야곡면 동안로 1274-10 충청화학에너지(주)",
+              "phone": "041-742-5182",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#439",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2009"
+              ],
+              "r_codes": [
+                "R-9"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.20178341472384,
+                "lng": 127.15726613293327,
+                "basis": "시군구 중심점",
+                "distance_km": 42.6
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2009 연료ㆍ고형연료제품 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "램테크놀러지|금산군",
+              "name": "램테크놀러지(주)",
+              "role": "recycler",
+              "sido": "충남",
+              "sigungu": "금산군",
+              "address": "충남 금산군 군북면 군북로 1056 (램테크놀러지(주))",
+              "phone": "041-754-6470",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#425",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2009"
+              ],
+              "r_codes": [
+                "R-9"
+              ],
+              "accepts_designated": [
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.12526562232754,
+                "lng": 127.46977363800492,
+                "basis": "시군구 중심점",
+                "distance_km": 45.8
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2009 연료ㆍ고형연료제품 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "에스엠유화|영광군",
+              "name": "(주)에스엠유화",
+              "role": "recycler",
+              "sido": "전남",
+              "sigungu": "영광군",
+              "address": "전남 영광군 군서면 군서로 364-16",
+              "phone": "061-352-5211",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#522",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2009"
+              ],
+              "r_codes": [
+                "R-9"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.29907071585091,
+                "lng": 126.49198707284314,
+                "basis": "시군구 중심점",
+                "distance_km": 81.7
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2009 연료ㆍ고형연료제품 제조"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 68,
+          "rejected_summary": {
+            "처리 방법 다름": 118,
+            "자가처리만 신고": 2
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 3,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "preprocessor",
+          "candidates": [
+            {
+              "company_id": "교우산업군산지점|군산시",
+              "name": "(주)교우산업 군산지점",
+              "role": "preprocessor",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전북 군산시 소룡동 1650-2",
+              "phone": "063-467-8667",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#538",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "05"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "호남자원|광산구",
+              "name": "호남자원(광산구)",
+              "role": "preprocessor",
+              "sido": "광주",
+              "sigungu": "광산구",
+              "address": "광주 광산구 안청동 737-3",
+              "phone": "062-945-4455",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#534",
+              "permit_type": "허가",
+              "registration_type": "중간 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 35.16430673289368,
+                "lng": 126.73928980623381,
+                "basis": "시군구 중심점",
+                "distance_km": 80.9
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "금강리싸이클링|세종",
+              "name": "금강리싸이클링",
+              "role": "preprocessor",
+              "sido": "세종",
+              "sigungu": "",
+              "address": "세종 부강면 시목부강로 453 (등곡리)",
+              "phone": "044-277-6684",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#423",
+              "permit_type": "허가",
+              "registration_type": "중간 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "04-02",
+                "06"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.570293323225656,
+                "lng": 127.26972573995928,
+                "basis": "시군구 중심점",
+                "distance_km": 84.5
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "이녹스에코엠|천안시 동남구",
+              "name": "(주)이녹스에코엠",
+              "role": "preprocessor",
+              "sido": "충남",
+              "sigungu": "천안시 동남구",
+              "address": "충남 천안시 동남구 성남면 용원1길 10 96-1, 96-3, 96-4",
+              "phone": "041-584-1222",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#416",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "04-02"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.756008583419174,
+                "lng": 127.22705522624419,
+                "basis": "시군구 중심점",
+                "distance_km": 104.5
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "에스엠(SM)환경산업|구미시",
+              "name": "에스엠(SM)환경산업",
+              "role": "preprocessor",
+              "sido": "경북",
+              "sigungu": "구미시",
+              "address": "경북 구미시 장천면 학신로 278-11 학신로",
+              "phone": "054-471-7825",
+              "data_date": "2024",
+              "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_지정#515",
+              "permit_type": "허가",
+              "registration_type": "종합 재활용업",
+              "waste_group": "04-02 폐유기용제",
+              "treatment_codes": [
+                "2010"
+              ],
+              "r_codes": [
+                "R-10"
+              ],
+              "accepts_designated": [
+                "02-01",
+                "04-02",
+                "09"
+              ],
+              "scope_text": null,
+              "capacity": null,
+              "match_confidence": null,
+              "location": {
+                "lat": 36.211292388548195,
+                "lng": 128.3641669097103,
+                "basis": "시군구 중심점",
+                "distance_km": 119.3
+              },
+              "reasons": [
+                "04-02 위탁 재활용 허가",
+                "처리방법 2010 중간가공폐기물 제조"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 24,
+          "rejected_summary": {
+            "처리 방법 다름": 162,
+            "자가처리만 신고": 2
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 4,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [
+            {
+              "company_id": "케이씨환경서비스전주사업부|전주시 덕진구",
+              "name": "케이씨환경서비스(주)전주사업부",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "전주시 덕진구",
+              "address": "전북특별자치도 전주시 덕진구 서귀로(여의동)",
+              "phone": "063-212-5261",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#39",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "04",
+                "06"
+              ],
+              "scope_text": "◦폐유, 기타 폐유기용제, 폐합성고분자화합물",
+              "capacity": {
+                "시설용량_톤일": "62.4",
+                "2023_처리량": "3114.4"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.852242982179106,
+                "lng": 127.12545064041294,
+                "basis": "시군구 중심점",
+                "distance_km": 3.7
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "엔아이티군산사업소|군산시",
+              "name": "㈜엔아이티 군산사업소",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전라북도 군산시 서해로(소룡동, 환경관리공단(군산사업소))",
+              "phone": "063-468-2286",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#38",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2102"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "*"
+              ],
+              "scope_text": "◦지정폐기물",
+              "capacity": {
+                "시설용량_톤일": "90",
+                "2023_처리량": "13927.164"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.934158821543456,
+                "lng": 126.74658519748189,
+                "basis": "시군구 중심점",
+                "distance_km": 36.8
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2102 / 고온소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "엔아이티|군산시",
+              "name": "㈜엔아이티",
+              "role": "treatment",
+              "sido": "전북",
+              "sigungu": "군산시",
+              "address": "전북특별자치도 군산시 서해로(소룡동, 엔아이티)",
+              "phone": "063-467-4142",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#37",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-03",
+                "03-07",
+                "03-08",
+                "04",
+                "04-01",
+                "05",
+                "06",
+                "09"
+              ],
+              "scope_text": "◦폐유, 폐유기용제(기타, 할로겐족), 폐페인트, 폐락카, 폐농약, 폐촉매, 폐흡착제, 폐흡수제, 폐유독물",
+              "capacity": {
+                "시설용량_톤일": "340.8",
+                "2023_처리량": "8361.7"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 35.97090463,
+                "lng": 126.5783603,
+                "basis": "업체 좌표",
+                "distance_km": 52.5
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "다나에너지솔루션|청주시 청원구",
+              "name": "(주)다나에너지솔루션",
+              "role": "treatment",
+              "sido": "충북",
+              "sigungu": "청주시 청원구",
+              "address": "충청북도 청주시 청원구 오창읍 여천길.",
+              "phone": "043-241-7887",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#27",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-02",
+                "03-08",
+                "04",
+                "04-01",
+                "06"
+              ],
+              "scope_text": "◦폐흡수제, 폐흡착제, 공정오니, 폐수처리오니,폐유, 폐유기용제(비할로겐족)",
+              "capacity": {
+                "시설용량_톤일": "91.2",
+                "2023_처리량": "4055.28"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.7775143,
+                "lng": 127.5049049,
+                "basis": "업체 좌표",
+                "distance_km": 111.7
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            },
+            {
+              "company_id": "경북환경에너지|구미시",
+              "name": "경북환경에너지주식회사",
+              "role": "treatment",
+              "sido": "경북",
+              "sigungu": "구미시",
+              "address": "경상북도 구미시 4공단로 44",
+              "phone": "054-475-4141",
+              "data_date": "2023",
+              "source": "폐기물 중간처분업(지정폐기물 의료 제외) - 소각.xlsx#34",
+              "permit_type": "허가",
+              "registration_type": "중간처분_소각",
+              "waste_group": "지정",
+              "treatment_codes": [
+                "2101"
+              ],
+              "r_codes": [],
+              "accepts_designated": [
+                "01-01",
+                "04",
+                "06"
+              ],
+              "scope_text": "◦폐합성고분자화합물, 폐유, 폐유기용제",
+              "capacity": {
+                "시설용량_톤일": "14.2",
+                "2023_처리량": "6661.39"
+              },
+              "match_confidence": null,
+              "location": {
+                "lat": 36.211292388548195,
+                "lng": 128.3641669097103,
+                "basis": "시군구 중심점",
+                "distance_km": 119.3
+              },
+              "reasons": [
+                "중간처분_소각 (지정)",
+                "처리방법 2101 / 일반소각"
+              ],
+              "status": "needs_info"
+            }
+          ],
+          "total_found": 34,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 183,
+            "영업 중단": 5,
+            "처리 방법 다름": 4
+          },
+          "questions": [
+            {
+              "field": "acceptance",
+              "to": "partner",
+              "text": "반입 기준(성상·수분·크기)과 월 반입 가능 물량, 처리 단가를 알려주세요."
+            }
+          ],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    },
+    {
+      "route_index": 5,
+      "steps": [
+        {
+          "step_order": 1,
+          "role": "transporter",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {},
+          "questions": [
+            {
+              "field": "not_matched_yet",
+              "to": "part2",
+              "text": "transporter 업체 매칭은 다음 단계에서 연결"
+            }
+          ],
+          "optional": false
+        },
+        {
+          "step_order": 2,
+          "role": "treatment",
+          "candidates": [],
+          "total_found": 0,
+          "rejected_summary": {
+            "건설폐기물만": 590,
+            "대상 폐기물 다름": 198,
+            "영업 중단": 5,
+            "처리 방법 다름": 23
+          },
+          "questions": [],
+          "optional": false
+        }
+      ],
+      "pending": true,
+      "secured": null
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "table": "plan_check_targets",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/plan_check_targets.csv",
+  "rows": 29,
+  "confirmed": 29,
+  "parts": {
+    "WMA_RULE": [
+      "18의2"
+    ]
+  },
+  "config": [
+    "plan_check_items.csv"
+  ],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "article",
+      "key": "18의2",
+      "title": "지정폐기물 처리계획의 확인",
+      "effective": "20261112",
+      "hash": "abcf412cfd752115",
+      "chars": 2633,
+      "part": "18의2"
+    }
+  ],
+  "ref_check": {
+    "refs": 29,
+    "inside": 29,
+    "outside": {},
+    "old_effective": {}
+  }
+}

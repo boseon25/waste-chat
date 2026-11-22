@@ -1,0 +1,127 @@
+{
+  "case_id": "PRE-18",
+  "case_version": 1,
+  "preliminary": {
+    "waste_case_id": "PRE-18",
+    "classification": {
+      "status": "PARENT_CLASS",
+      "input_waste_code": "5103",
+      "normalized_waste_code": "51-03",
+      "waste_name": "폐합성고분자화합물",
+      "matched": false,
+      "warnings": [
+        "4자리 폐기물코드는 중분류 연결 코드로 해석했습니다. 말단 분류번호를 추가 확인해야 합니다.",
+        "입력 명칭이 없어 Crosswalk의 명칭을 참고해 표시했습니다."
+      ],
+      "source": "waste_codes_4.csv",
+      "classification_level": "중분류",
+      "parent_code": "51",
+      "is_terminal": false,
+      "official_name": "폐합성고분자화합물",
+      "waste_category_code": "5103",
+      "terminal_codes": [
+        "51-03-01",
+        "51-03-02",
+        "51-03-03",
+        "51-03-04",
+        "51-03-05",
+        "51-03-06",
+        "51-03-07",
+        "51-03-08",
+        "51-03-99"
+      ],
+      "hazardous_designation": "N"
+    },
+    "restriction": {
+      "status": "NOT_EVALUATED",
+      "recycling_blocked": false,
+      "allowed_rcodes": [],
+      "restricted_rcodes": [],
+      "matched_rules": [],
+      "required_inputs": [],
+      "questions": [],
+      "review_required": false,
+      "warnings": [
+        "분류번호가 공식 말단 분류로 확정되지 않아 제한 규칙 검사를 실행하지 않았습니다."
+      ]
+    },
+    "hazardous": {
+      "status": "NOT_EVALUATED",
+      "matched": false,
+      "waste_code": null,
+      "rule": null,
+      "required_inputs": [],
+      "questions": [],
+      "warnings": [
+        "분류번호가 공식 말단 분류로 확정되지 않아 지정폐기물 검사를 실행하지 않았습니다."
+      ]
+    },
+    "mixture": {
+      "status": "SINGLE",
+      "is_mixed": false,
+      "component_count": 1,
+      "share_total_pct": null,
+      "separable": null,
+      "component_codes_missing": [],
+      "warnings": [],
+      "questions": []
+    },
+    "gate_plan": {
+      "gate1": {
+        "action": "NEEDS_INFO",
+        "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.",
+        "conditions": []
+      },
+      "gate2": {
+        "action": "NEEDS_INFO",
+        "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.",
+        "conditions": []
+      },
+      "gate3": {
+        "action": "NEEDS_INFO",
+        "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.",
+        "conditions": []
+      },
+      "gate4": {
+        "action": "NEEDS_INFO",
+        "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.",
+        "conditions": []
+      }
+    },
+    "status": "NEEDS_INFO",
+    "required_information": [
+      "waste_code"
+    ],
+    "warnings": [
+      "4자리 폐기물코드는 중분류 연결 코드로 해석했습니다. 말단 분류번호를 추가 확인해야 합니다.",
+      "입력 명칭이 없어 Crosswalk의 명칭을 참고해 표시했습니다.",
+      "분류번호가 공식 말단 분류로 확정되지 않아 제한 규칙 검사를 실행하지 않았습니다.",
+      "분류번호가 공식 말단 분류로 확정되지 않아 지정폐기물 검사를 실행하지 않았습니다."
+    ],
+    "case_version": 1,
+    "schema_version": "1.0",
+    "waste_status": null,
+    "hazardous_basis": null,
+    "component_results": [],
+    "questions": []
+  },
+  "routes": [],
+  "skipped": {
+    "gate1": {
+      "action": "NEEDS_INFO",
+      "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다."
+    },
+    "gate2": {
+      "action": "NEEDS_INFO",
+      "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다."
+    },
+    "gate4": {
+      "action": "NEEDS_INFO",
+      "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다."
+    },
+    "gate3": {
+      "action": "NEEDS_INFO",
+      "reason": "말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다."
+    }
+  }
+}

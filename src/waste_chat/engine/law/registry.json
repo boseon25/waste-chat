@@ -1,0 +1,695 @@
+{
+ "WMA": {
+  "name": "폐기물관리법",
+  "grade": 1,
+  "serial": "279797",
+  "id": "001771",
+  "effective": "20261112",
+  "promulgated": "20251111",
+  "number": "21129",
+  "checked": "2026-11-17",
+  "watched": {
+   "WMA_2": {
+    "hash": "f0a7834ff79e7eec",
+    "title": "정의"
+   },
+   "WMA_13의2": {
+    "hash": "d5a26ead3e4715cd",
+    "title": "폐기물의 재활용 원칙 및 준수사항"
+   },
+   "WMA_17": {
+    "hash": "fc450a15cecc4500",
+    "title": "사업장폐기물배출자의 의무 등"
+   },
+   "WMA_18": {
+    "hash": "3d3f300677cbd1bc",
+    "title": "사업장폐기물의 처리"
+   },
+   "WMA_25": {
+    "hash": "25bcbe6fbec4618e",
+    "title": "폐기물처리업"
+   },
+   "WMA_45": {
+    "hash": "d616924a9f18e260",
+    "title": "폐기물 인계ㆍ인수 내용 등의 전산 처리"
+   },
+   "WMA_46": {
+    "hash": "030df5ad656e9a58",
+    "title": "폐기물처리 신고"
+   }
+  },
+  "all_hash": "3f250402edcfa76b"
+ },
+ "WMA_DEC": {
+  "name": "폐기물관리법 시행령",
+  "grade": 1,
+  "serial": "291813",
+  "id": "005353",
+  "effective": "20261112",
+  "promulgated": "20261110",
+  "number": "36811",
+  "checked": "2026-11-17",
+  "watched": {
+   "WMA_DEC_3": {
+    "hash": "1c2a6694f1744f8b",
+    "title": "지정폐기물의 종류"
+   },
+   "WMA_DEC_5": {
+    "hash": "9bcb49811155abbf",
+    "title": "폐기물처리시설"
+   },
+   "WMA_DEC_7": {
+    "hash": "aaf075e5b429d952",
+    "title": "폐기물의 처리기준 등"
+   },
+   "WMA_DEC_7의2": {
+    "hash": "fb8865cece9d917d",
+    "title": "폐기물의 재활용 준수사항"
+   },
+   "WMA_DEC_7의3": {
+    "hash": "212f09ddee276b4b",
+    "title": "재활용이 금지 또는 제한되는 폐기물"
+   },
+   "WMA_DEC_B1": {
+    "hash": "72e3426369134a0f",
+    "title": "지정폐기물의 종류(제3조 관련)"
+   },
+   "WMA_DEC_B3": {
+    "hash": "dbb683cd1de442b7",
+    "title": "폐기물 처리시설의 종류(제5조 관련)"
+   },
+   "WMA_DEC_B4의2": {
+    "hash": "c474965d1bf2256e",
+    "title": "폐기물의 재활용 준수사항(제7조의2 관련)"
+   },
+   "WMA_DEC_B4의3": {
+    "hash": "8a5307b106a38e52",
+    "title": "재활용이 금지되거나 제한되는 폐기물(제7조의3 관련)"
+   }
+  },
+  "all_hash": "8c506c528ff71b39"
+ },
+ "WMA_RULE": {
+  "name": "폐기물관리법 시행규칙",
+  "grade": 1,
+  "serial": "291947",
+  "id": "008567",
+  "effective": "20261112",
+  "promulgated": "20261112",
+  "number": "00070",
+  "checked": "2026-11-17",
+  "watched": {
+   "WMA_RULE_3": {
+    "hash": "c0bde95f4bdec78f",
+    "title": "에너지 회수기준 등"
+   },
+   "WMA_RULE_9": {
+    "hash": "6a594bac53b7a8c9",
+    "title": "폐기물 수집ㆍ운반업자 등의 운반기준"
+   },
+   "WMA_RULE_14의3": {
+    "hash": "6648ee9a95af4c7d",
+    "title": "폐기물의 재활용 기준 및 준수사항 등"
+   },
+   "WMA_RULE_16의13": {
+    "hash": "2fad9980685937f5",
+    "title": "위탁ㆍ수탁의 기준 및 절차"
+   },
+   "WMA_RULE_17의2": {
+    "hash": "27c7ef5cf4d02e5a",
+    "title": "사업장폐기물배출자의 확인 등"
+   },
+   "WMA_RULE_18": {
+    "hash": "cc8185e3d0e221c8",
+    "title": "사업장폐기물배출자의 신고"
+   },
+   "WMA_RULE_18의2": {
+    "hash": "abcf412cfd752115",
+    "title": "지정폐기물 처리계획의 확인"
+   },
+   "WMA_RULE_66": {
+    "hash": "475fc0736ff7c91d",
+    "title": "폐기물처리 신고대상"
+   },
+   "WMA_RULE_B1": {
+    "hash": "fe8ffa0a6facae72",
+    "title": "지정폐기물에 함유된 유해물질(제2조제1항 관련)"
+   },
+   "WMA_RULE_B4": {
+    "hash": "9bce159b174f5897",
+    "title": "폐기물의 종류별 세부분류(제4조의2제1항 관련)"
+   },
+   "WMA_RULE_B4의2": {
+    "hash": "c8bb1dbe954caea3",
+    "title": "폐기물의 재활용 유형별 세부분류(제4조의2제2항 관련)"
+   },
+   "WMA_RULE_B4의3": {
+    "hash": "7aeb303d9fe8dcf0",
+    "title": "폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)"
+   },
+   "WMA_RULE_B5": {
+    "hash": "695d2a42f6e491a1",
+    "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)"
+   },
+   "WMA_RULE_B5의3": {
+    "hash": "cd47dfd19b7218b6",
+    "title": "폐기물의 재활용 기준(제14조의3제1항 관련)"
+   },
+   "WMA_RULE_B5의4": {
+    "hash": "d808ab1786e42c95",
+    "title": "폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련)"
+   },
+   "WMA_RULE_B16": {
+    "hash": "4522d625abb1e9bd",
+    "title": "폐기물처리 신고를 하고 폐기물을 재활용할 수 있는 자(제66조제2항 관련)"
+   },
+   "WMA_RULE_B17": {
+    "hash": "8c53974492eb4997",
+    "title": "폐기물처리 신고자가 갖추어야 할 보관시설 및 재활용시설(제66조제1항 관련)"
+   },
+   "WMA_RULE_B17의2": {
+    "hash": "f9e4dfd8a858ea86",
+    "title": "폐기물처리 신고자의 준수사항(제67조의2 관련)"
+   },
+   "WMA_RULE_BF5": {
+    "hash": "d4c50ceb8f6c77bb",
+    "title": "수탁처리능력 확인서, 폐기물 수탁확인서"
+   }
+  },
+  "all_hash": "31b826f0ae4e9206"
+ },
+ "CEA": {
+  "name": "순환경제사회 전환 촉진법",
+  "grade": 1,
+  "serial": "283397",
+  "id": "012567",
+  "effective": "20260219",
+  "promulgated": "20260219",
+  "number": "21381",
+  "checked": "2026-11-17",
+  "watched": {
+   "CEA_3": {
+    "hash": "1646eb3a1d2416cc",
+    "title": "기본원칙"
+   },
+   "CEA_21": {
+    "hash": "6db307db4b9fb448",
+    "title": "순환자원의 인정"
+   },
+   "CEA_23": {
+    "hash": "dac2d9348e0b0897",
+    "title": "순환자원의 고시"
+   }
+  },
+  "all_hash": "92972207e12fadd6"
+ },
+ "CEA_DEC": {
+  "name": "순환경제사회 전환 촉진법 시행령",
+  "grade": 1,
+  "serial": "283785",
+  "id": "013056",
+  "effective": "20260303",
+  "promulgated": "20260303",
+  "number": "36161",
+  "checked": "2026-11-17",
+  "watched": {
+   "CEA_DEC_11": {
+    "hash": "0c93fa16be4994e3",
+    "title": "순환자원의 인정기준"
+   }
+  },
+  "all_hash": "5613f02483921545"
+ },
+ "CEA_RULE": {
+  "name": "순환경제사회 전환 촉진법 시행규칙",
+  "grade": 1,
+  "serial": "282245",
+  "id": "013061",
+  "effective": "20251230",
+  "promulgated": "20251230",
+  "number": "00014",
+  "checked": "2026-11-17",
+  "watched": {
+   "CEA_RULE_12": {
+    "hash": "aa6509e95f81320a",
+    "title": "순환자원의 인정 시 고려 사항"
+   }
+  },
+  "all_hash": "bc52fa3e4209024c"
+ },
+ "RRA_RULE": {
+  "name": "자원의 절약과 재활용촉진에 관한 법률 시행규칙",
+  "grade": 1,
+  "serial": "287435",
+  "id": "007953",
+  "effective": "20260622",
+  "promulgated": "20260622",
+  "number": "00042",
+  "checked": "2026-11-17",
+  "watched": {
+   "RRA_RULE_13": {
+    "hash": "ea81656d5c86c345",
+    "title": "재활용의무 면제대상 입증"
+   },
+   "RRA_RULE_20의2": {
+    "hash": "f9d276827c77169e",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항1": {
+    "hash": "6fa344a26bbbbd5a",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항2/호1": {
+    "hash": "a59c38776b4f3771",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항2/호2": {
+    "hash": "f04bcca03c263489",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항2/호3": {
+    "hash": "367b74a6f0809b4d",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항2/호4": {
+    "hash": "05ce5542a7c3f115",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항2": {
+    "hash": "d2e1f60c535bfd4d",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항3": {
+    "hash": "afe81a10dd0a3212",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항4": {
+    "hash": "2591a6c50b590c19",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의2/항5": {
+    "hash": "69dcba676b91d413",
+    "title": "고형연료제품의 품질기준 등"
+   },
+   "RRA_RULE_20의3/항1": {
+    "hash": "f2a2c4f3d9f2b1d1",
+    "title": "고형연료제품의 품질검사 절차 등"
+   },
+   "RRA_RULE_20의3/항2": {
+    "hash": "767b3b3819f0631a",
+    "title": "고형연료제품의 품질검사 절차 등"
+   },
+   "RRA_RULE_20의3/항3": {
+    "hash": "2a89049172735421",
+    "title": "고형연료제품의 품질검사 절차 등"
+   },
+   "RRA_RULE_20의5/항1": {
+    "hash": "30acf24fd856389f",
+    "title": "고형연료제품의 품질확인 절차 및 주기 등"
+   },
+   "RRA_RULE_20의5/항2": {
+    "hash": "c69b20b66969e593",
+    "title": "고형연료제품의 품질확인 절차 및 주기 등"
+   },
+   "RRA_RULE_20의5/항3": {
+    "hash": "6550dd9e3fd9fb67",
+    "title": "고형연료제품의 품질확인 절차 및 주기 등"
+   },
+   "RRA_RULE_20의5/항4": {
+    "hash": "940f699f6e75d2dd",
+    "title": "고형연료제품의 품질확인 절차 및 주기 등"
+   },
+   "RRA_RULE_20의5/항5": {
+    "hash": "53ca3f85df64e1a4",
+    "title": "고형연료제품의 품질확인 절차 및 주기 등"
+   },
+   "RRA_RULE_20의6/항1": {
+    "hash": "6da0b927731e71e6",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항2/호1": {
+    "hash": "64a32dcf63ebc030",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항2/호2": {
+    "hash": "61f326f7328204c8",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항2/호3": {
+    "hash": "d10d9411dc1a0ccb",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항2/호4": {
+    "hash": "ad4a41ed48b8a8ac",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항2": {
+    "hash": "e95a74f4f3f5160c",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항3": {
+    "hash": "43791609bcb7a83f",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항4/호1": {
+    "hash": "50e07580f7c662fa",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항4/호2": {
+    "hash": "7c2a6dec91bcec52",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항4": {
+    "hash": "654637bc3b17fe05",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_20의6/항5": {
+    "hash": "8de9f6e289d0ebf7",
+    "title": "고형연료제품의 품질표시 방법 등"
+   },
+   "RRA_RULE_B7:1.": {
+    "hash": "ee111038da696be6",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:1._2": {
+    "hash": "33a56bc005dd946e",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:2.": {
+    "hash": "e66bfddc489011d7",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:3.": {
+    "hash": "9e8bc5d6e0cb40c7",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:4.": {
+    "hash": "8d163eec3be76397",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:2._2": {
+    "hash": "25d32a29855bf412",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:1._3": {
+    "hash": "33a56bc005dd946e",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:2._3": {
+    "hash": "e66bfddc489011d7",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:3._2": {
+    "hash": "156acdff0e3eb32c",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7:4._2": {
+    "hash": "caf21b0600ecc673",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B7": {
+    "hash": "9239153713c44057",
+    "title": "고형연료제품의 품질기준(제20조의2 관련)"
+   },
+   "RRA_RULE_B8": {
+    "hash": "46cffc5114ac395e",
+    "title": "고형연료제품의 품질검사 수수료(제20조의4 관련)"
+   }
+  },
+  "all_hash": "27e75af9418d3b0d"
+ },
+ "CEA_DESIG": {
+  "name": "순환자원 지정 등에 관한 고시",
+  "grade": 1,
+  "serial": "2100000279034",
+  "id": "87620",
+  "effective": "20260514",
+  "promulgated": "20260514",
+  "number": "2026-116",
+  "checked": "2026-11-17",
+  "watched": {
+   "CEA_DESIG_B1:8.": {
+    "hash": "6c6bb9c131e7b39b",
+    "title": "순환자원 지정대상(제2조제1항 관련)"
+   },
+   "CEA_DESIG_B1:9.": {
+    "hash": "ec6166236d79c4ca",
+    "title": "순환자원 지정대상(제2조제1항 관련)"
+   },
+   "CEA_DESIG_B1:10.": {
+    "hash": "06bb67bff2965e7d",
+    "title": "순환자원 지정대상(제2조제1항 관련)"
+   },
+   "CEA_DESIG_B1:11.": {
+    "hash": "4e1aec8f5f298cc2",
+    "title": "순환자원 지정대상(제2조제1항 관련)"
+   },
+   "CEA_DESIG_B1:12.": {
+    "hash": "cb564586864c1f41",
+    "title": "순환자원 지정대상(제2조제1항 관련)"
+   },
+   "CEA_DESIG_B1": {
+    "hash": "b62dcf38ca197525",
+    "title": "순환자원 지정대상(제2조제1항 관련)"
+   },
+   "CEA_DESIG_B2": {
+    "hash": "3d33178ae5e198d9",
+    "title": "순환이용의 용도, 방법 및 기준 등(제3조 관련)"
+   },
+   "CEA_DESIG_B1:1.": {
+    "hash": "febf1862a87cddd1",
+    "title": "순환자원(전기자동차 폐이차전지) 이력 관리 대장(발생자, 사용자)"
+   },
+   "CEA_DESIG_B1:2.": {
+    "hash": "c242f44017c1ff19",
+    "title": "순환자원(전기자동차 폐이차전지) 이력 관리 대장(발생자, 사용자)"
+   },
+   "CEA_DESIG_B1:3.": {
+    "hash": "9d52a4ee8e9b0ce4",
+    "title": "순환자원(전기자동차 폐이차전지) 이력 관리 대장(발생자, 사용자)"
+   },
+   "CEA_DESIG_B1:4.": {
+    "hash": "087fbb35d155e07a",
+    "title": "순환자원(전기자동차 폐이차전지) 이력 관리 대장(발생자, 사용자)"
+   },
+   "CEA_DESIG_B1:5.": {
+    "hash": "93623b84c11348c4",
+    "title": "순환자원(전기자동차 폐이차전지) 이력 관리 대장(발생자, 사용자)"
+   },
+   "CEA_DESIG_B1_2": {
+    "hash": "bcdf2b4511c10863",
+    "title": "순환자원(전기자동차 폐이차전지) 이력 관리 대장(발생자, 사용자)"
+   }
+  },
+  "all_hash": "5e008407c4bbfce1"
+ },
+ "CEA_RECOG": {
+  "name": "순환자원 인정 절차 및 방법 등에 관한 고시",
+  "grade": 2,
+  "serial": "2100000266418",
+  "id": "61390",
+  "effective": "20251001",
+  "promulgated": "20251001",
+  "number": "2025-165",
+  "checked": "2026-11-17",
+  "watched": {
+   "CEA_RECOG_전체": {
+    "hash": "03f66fa00dd2173a",
+    "title": "순환자원 인정 절차 및 방법 등에 관한 고시"
+   }
+  },
+  "all_hash": "3272bd8f164ac66a"
+ },
+ "ALLBARO_NOTICE": {
+  "name": "폐기물 전자정보처리 프로그램 운영 및 사용 등에 관한 고시",
+  "grade": 2,
+  "serial": "2100000266794",
+  "id": "36692",
+  "effective": "20251001",
+  "promulgated": "20251001",
+  "number": "2025-165",
+  "checked": "2026-11-17",
+  "watched": {
+   "ALLBARO_NOTICE_11": {
+    "hash": "46b55adc106536dc",
+    "title": "배출자의 전자인계서 작성 및 인계번호 전달"
+   },
+   "ALLBARO_NOTICE_13": {
+    "hash": "f79b71b340c18553",
+    "title": "처분 또는 재활용하는 자의 전자인계서 작성 및 처리실적 입력"
+   }
+  },
+  "all_hash": "f204555c45aafc4d"
+ },
+ "GUIDE_DECL": {
+  "name": "사업장폐기물 배출자신고 및 처리계획 확인 업무처리지침",
+  "grade": 2,
+  "serial": "2100000270272",
+  "id": "33358",
+  "effective": "20251231",
+  "promulgated": "20251222",
+  "number": "10",
+  "checked": "2026-11-17",
+  "watched": {
+   "GUIDE_DECL_전체": {
+    "hash": "389075b7169b0eee",
+    "title": "사업장폐기물 배출자신고 및 처리계획 확인 업무처리지침"
+   }
+  },
+  "all_hash": "10701004156fcc31"
+ },
+ "RRA": {
+  "name": "자원의 절약과 재활용촉진에 관한 법률",
+  "grade": 2,
+  "serial": "283445",
+  "id": "000155",
+  "effective": "20260820",
+  "promulgated": "20260219",
+  "number": "21370",
+  "checked": "2026-11-17",
+  "watched": {
+   "RRA_12의3": {
+    "hash": "fe5c26cb17d5ed84",
+    "title": "폐기물배출자의 분리 보관 등"
+   },
+   "RRA_13": {
+    "hash": "45edffe659c1fd1c",
+    "title": "재활용가능자원의 분리수거"
+   },
+   "RRA_16": {
+    "hash": "6b624ccc8c274fd7",
+    "title": "제조업자 등의 재활용의무"
+   },
+   "RRA_18": {
+    "hash": "915cfcb3ad55c176",
+    "title": "회수 및 재활용 의무이행계획서의 제출 등"
+   }
+  },
+  "all_hash": "3fb093c9fa428d5d"
+ },
+ "RRA_DEC": {
+  "name": "자원의 절약과 재활용촉진에 관한 법률 시행령",
+  "grade": 2,
+  "serial": "285563",
+  "id": "004610",
+  "effective": "20260512",
+  "promulgated": "20260421",
+  "number": "36269",
+  "checked": "2026-11-17",
+  "watched": {
+   "RRA_DEC_18": {
+    "hash": "e5726e0dc61d6842",
+    "title": "재활용의무 대상 제품ㆍ포장재"
+   }
+  },
+  "all_hash": "451bb303a28126de"
+ },
+ "CWA": {
+  "name": "건설폐기물의 재활용촉진에 관한 법률",
+  "grade": 2,
+  "serial": "276695",
+  "id": "009592",
+  "effective": "20251001",
+  "promulgated": "20251001",
+  "number": "21065",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "e316f9ea856dedbc"
+ },
+ "CWA_DEC": {
+  "name": "건설폐기물의 재활용촉진에 관한 법률 시행령",
+  "grade": 2,
+  "serial": "278497",
+  "id": "009857",
+  "effective": "20251001",
+  "promulgated": "20251001",
+  "number": "35804",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "690032322b56362b"
+ },
+ "CWA_RULE": {
+  "name": "건설폐기물의 재활용촉진에 관한 법률 시행규칙",
+  "grade": 2,
+  "serial": "287419",
+  "id": "009880",
+  "effective": "20260622",
+  "promulgated": "20260622",
+  "number": "00042",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "e7d4df5e198037fb"
+ },
+ "EWA": {
+  "name": "전기ㆍ전자제품 및 자동차의 자원순환에 관한 법률",
+  "grade": 2,
+  "serial": "284411",
+  "id": "010437",
+  "effective": "20260317",
+  "promulgated": "20260317",
+  "number": "21470",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "03b5d0544e4a84fb"
+ },
+ "EWA_DEC": {
+  "name": "전기ㆍ전자제품 및 자동차의 자원순환에 관한 법률 시행령",
+  "grade": 2,
+  "serial": "284849",
+  "id": "010613",
+  "effective": "20260324",
+  "promulgated": "20260324",
+  "number": "36220",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "859359113b739e5a"
+ },
+ "EWA_RULE": {
+  "name": "전기ㆍ전자제품 및 자동차의 자원순환에 관한 법률 시행규칙",
+  "grade": 2,
+  "serial": "287437",
+  "id": "010622",
+  "effective": "20260622",
+  "promulgated": "20260622",
+  "number": "00042",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "862786b669b9133c"
+ },
+ "CMA": {
+  "name": "화학물질관리법",
+  "grade": 2,
+  "serial": "285367",
+  "id": "000162",
+  "effective": "20261008",
+  "promulgated": "20260407",
+  "number": "21531",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "a52101ee73e1488d"
+ },
+ "CMA_DEC": {
+  "name": "화학물질관리법 시행령",
+  "grade": 2,
+  "serial": "290837",
+  "id": "004390",
+  "effective": "20261008",
+  "promulgated": "20261006",
+  "number": "36744",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "12f52e1f6d286bd1"
+ },
+ "CMA_RULE": {
+  "name": "화학물질관리법 시행규칙",
+  "grade": 2,
+  "serial": "279031",
+  "id": "007845",
+  "effective": "20251001",
+  "promulgated": "20251001",
+  "number": "00001",
+  "checked": "2026-11-17",
+  "watched": {},
+  "all_hash": "29f287d7103b40d0"
+ }
+}

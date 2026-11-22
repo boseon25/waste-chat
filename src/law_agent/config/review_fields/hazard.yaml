@@ -1,0 +1,24 @@
+# waste-chat 문서 hazard (제14호의4 폐기물 유해성 정보자료) → hazard_info
+# waste-chat 은 9칸만 연결. ⑧ 이후 유해특성·성분·취급·방제 칸은 아직 없음 (분석·근거 자료로만 채움)
+doc: hazard
+doc_type: hazard_info
+title: 제14호의4 폐기물 유해성 정보자료
+fields:
+  record: record_no
+  date: provided_date
+  company: provider.name
+  registration: provider.biz_no
+  representative: provider.representative
+  contact: provider.contact
+  address: provider.address
+  quantity: waste.ton_year
+  process: waste.process
+  hazard_waste_code: waste.waste_code                  # 서식에 아직 없음
+  packaging: waste.packaging                           # 서식에 아직 없음
+  hazard_properties: hazard.properties                 # 서식에 아직 없음
+  hazard_leaching: hazard.leaching                     # 서식에 아직 없음
+  hazard_reactive: hazard.reactive                     # 서식에 아직 없음
+  handling_protection: handling.protection             # 서식에 아직 없음
+  storage_method: handling.storage                     # 서식에 아직 없음
+  emergency_measures: accident.first_aid               # 서식에 아직 없음
+not_in_form: [hazard_waste_code, packaging, hazard_properties, hazard_leaching, hazard_reactive, handling_protection, storage_method, emergency_measures]

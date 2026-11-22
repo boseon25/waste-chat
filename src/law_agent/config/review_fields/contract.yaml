@@ -1,0 +1,30 @@
+# waste-chat 문서 contract (위·수탁계약서 초안, 자체 양식) → entrust_contract
+# waste-chat 서식에 분류번호·체결일 칸이 없음 → 해당 검토 결과는 form_field: null (서식에 칸 추가 필요)
+doc: contract
+doc_type: entrust_contract
+title: 위·수탁계약서
+fields:
+  generator_name: consignor.name
+  receiver_name: consignee.name
+  hauler_name: consignee2.name
+  waste_name: waste_items[0].name
+  waste_classification: waste_items[0].waste_code      # 서식에 아직 없음 (추가 요청)
+  waste_state: waste_items[0].properties
+  precautions: waste_items[0].handling_cautions
+  treatment_method: waste_items[0].treatment_code
+  contract_signed_date: contract.signed_date          # 서식에 아직 없음 (추가 요청)
+not_in_form: [waste_classification, contract_signed_date]   # waste-chat 서식에 아직 없는 칸
+derive:
+  # 글자 한 칸을 검토 칸 여러 개로 나눔. 결과의 칸 이름은 원래 waste-chat 칸으로 돌려줌
+  - from: contract_period
+    to: ["contract.start_date", "contract.end_date"]
+    fn: period
+  - from: contract_quantity
+    to: ["waste_items[0].quantity_ton_year"]
+    fn: ton_year
+  - from: [processing_price, transport_price, payer]
+    to: ["contract.fee"]
+    fn: first
+attachments:
+  form5_processor: capacity_check
+  form5_c: capacity_check

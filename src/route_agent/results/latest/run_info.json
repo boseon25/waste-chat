@@ -1,0 +1,29 @@
+{
+  "run_at": "2026-11-18T00:16:26",
+  "input": "/tmp/part2_input_u8ks.json",
+  "feedback": null,
+  "agent": false,
+  "partners": true,
+  "top": 5,
+  "data_dir": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active",
+  "law_dir": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/chunk_v2",
+  "law_status": {
+    "last_check": "2026-11-17T12:04:13",
+    "days_since_check": 0,
+    "pending": [],
+    "status": "ok",
+    "warning": null
+  },
+  "cases": [
+    {
+      "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+      "case_version": 0,
+      "routes": 7
+    },
+    {
+      "case_id": "671dcb92-d0f3-5520-b2f5-4257c86c9f9e",
+      "case_version": 0,
+      "routes": 6
+    }
+  ]
+}

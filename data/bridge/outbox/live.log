@@ -1,0 +1,312 @@
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)
+감시 종료
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)
+■ 15:26:10 test_152603.json
+
+▶ ac0bea9e-78dc-5110-b92f-607e0dbbf172  제품 포장용 PE 필름 자투리
+ [1] 입력 검사: ok
+ [2] 법률 매칭 (차례마다: 조문 찾기 → 근거 묶음 → 모델 판단 → 검증)
+  · planner: 질문 30개 (묻지 않음 14)
+  ▶ 차례 1: 질문 3개 A-1, A-2, A-4
+    · retriever      1.5초  questions 3, empty []
+    · judge          0.4초  questions 3, calls 0, cached 7, escalated 1
+    · verifier       0.0초  agreed 3, not_applicable 2
+   ─ 차례 1: 질문 3개 (표 답 0), 호출 0회 (캐시 7, 3번째 모델 1), 토큰 0, 1.9초
+       A-1      agreed         yes          
+       A-2      agreed         no           
+       A-4      agreed         no           
+  ▶ 차례 2: 질문 7개 A-3, B-1, B-2, G-1, G-2, G-3, H-1
+    · retriever      0.4초  questions 7, empty []
+    · attach         0.0초  attached ['G-1', 'G-3']
+    · judge          0.1초  questions 5, calls 0, cached 8, escalated 1
+    · verifier       0.0초  agreed 5, not_applicable 1
+   ─ 차례 2: 질문 7개 (표 답 0), 호출 0회 (캐시 8, 3번째 모델 1), 토큰 0, 0.6초
+       A-3      agreed         no           
+       B-1      agreed         no           
+       B-2      agreed         no           
+       G-1      agreed         yes          
+       G-2      agreed         conditional   빠진 사실 ['사업장폐기물 해당 여부(배출처가 사업장인지)']
+       G-3      agreed         yes          
+       H-1      agreed         no           
+  ▶ 차례 3: 질문 1개 D-1
+    · table_answer   0.0초  answered ['D-1']
+    · retriever      0.1초  questions 2, empty []
+    · attach         0.0초  attached ['D-3', 'D-4']
+    · verifier       0.0초  
+   ─ 차례 3: 질문 1개 (표 답 1), 호출 0회 (캐시 0, 3번째 모델 0), 토큰 0, 0.2초
+       D-1      agreed         yes          ['R-1', 'R-2', 'R-3-2', 'R-3-3', 'R-3-4', 'R-4-4',
+ [3] 경로 1개, 만들지 않은 관문 ['gate1', 'scope']
+ [4] 업체 매칭·순위·운송 탄소
+ 감사 기록: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law_agent/audit/ac0bea9e-78dc-5110-b92f-607e0dbbf172/20261118T152613.jsonl
+  ✔ ac0bea9e-78dc-5110-b92f-607e0dbbf172 v0: 관문2 conditional · 파트 1 질문 1개 · 호출 0회
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)
+■ 15:40:07 demo_154001.json
+
+▶ ac0bea9e-78dc-5110-b92f-607e0dbbf172  제품 포장용 PE 필름 자투리
+ [1] 입력 검사: ok
+ [2] 법률 매칭 (차례마다: 조문 찾기 → 근거 묶음 → 모델 판단 → 검증)
+■ 법률 검토 시작: 확인할 질문 16가지 (이 사례와 상관없는 14가지는 건너뜀)
+
+▶ 1번째 검토: 3가지 확인
+     - 분류번호 확인 (A-1)
+     - 지정폐기물 여부 (A-2)
+     - 혼합 여부·분리 (A-4)
+■ 15:40:08 demo_154001.json
+
+▶ ac0bea9e-78dc-5110-b92f-607e0dbbf172  제품 포장용 PE 필름 자투리
+ [1] 입력 검사: ok
+ [2] 법률 매칭 (차례마다: 조문 찾기 → 근거 묶음 → 모델 판단 → 검증)
+  · planner: 질문 30개 (묻지 않음 14)
+  ▶ 차례 1: 질문 3개 A-1, A-2, A-4
+    · retriever      0.2초  questions 3, empty []
+    · judge          0.1초  questions 3, calls 0, cached 7, escalated 1
+    · verifier       0.0초  agreed 3, not_applicable 2
+   ─ 차례 1: 질문 3개 (표 답 0), 호출 0회 (캐시 7, 3번째 모델 1), 토큰 0, 0.3초
+       A-1      agreed         yes          
+       A-2      agreed         no           
+       A-4      agreed         no           
+  ▶ 차례 2: 질문 7개 A-3, B-1, B-2, G-1, G-2, G-3, H-1
+     법령 찾기: 폐기물관리법 시행규칙 별표 4, 폐기물관리법 제2조, 폐기물관리법 시행령 별표 1, 폐기물관리법 시행령 제7조 (조문 28개)
+    · retriever      0.5초  questions 7, empty []
+    · attach         0.0초  attached ['G-1', 'G-3']
+    · judge          0.0초  questions 5, calls 0, cached 8, escalated 1
+    · verifier       0.0초  agreed 5, not_applicable 1
+   ─ 차례 2: 질문 7개 (표 답 0), 호출 0회 (캐시 8, 3번째 모델 1), 토큰 0, 0.6초
+       A-3      agreed         no           
+       B-1      agreed         no           
+       B-2      agreed         no           
+       G-1      agreed         yes          
+       G-2      agreed         conditional   빠진 사실 ['사업장폐기물 해당 여부(배출처가 사업장인지)']
+       G-3      agreed         yes          
+       H-1      agreed         no           
+  ▶ 차례 3: 질문 1개 D-1
+    · table_answer   0.0초  answered ['D-1']
+    · retriever      0.1초  questions 2, empty []
+    · attach         0.0초  attached ['D-3', 'D-4']
+    · verifier       0.0초  
+   ─ 차례 3: 질문 1개 (표 답 1), 호출 0회 (캐시 0, 3번째 모델 0), 토큰 0, 0.2초
+       D-1      agreed         yes          ['R-1', 'R-2', 'R-3-2', 'R-3-3', 'R-3-4', 'R-4-4',
+ [3] 경로 1개, 만들지 않은 관문 ['gate1', 'scope']
+ [4] 업체 매칭·순위·운송 탄소
+     AI 판단 (서로 다른 회사 모델 2~3개): 3가지
+     ✔ 분류번호 확인 → 예
+     ✔ 지정폐기물 여부 → 아니오
+     ✔ 혼합 여부·분리 → 아니오
+
+▶ 2번째 검토: 7가지 확인
+     - 위탁 전 지정 여부 분석 대상 (A-3)
+     - 재활용 금지 여부 (B-1)
+     - 재활용 제한 여부 (B-2)
+     - 위탁 기준·절차 (G-1)
+     - 올바로 전자인계 대상 (G-2)
+     - 운반 기준 (G-3)
+     - 배출자 신고 대상 (H-1)
+ 감사 기록: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law_agent/audit/ac0bea9e-78dc-5110-b92f-607e0dbbf172/20261118T154009.jsonl
+  ✔ ac0bea9e-78dc-5110-b92f-607e0dbbf172 v0: 관문2 conditional · 파트 1 질문 1개 · 호출 0회
+     법령 찾기: 폐기물관리법 시행규칙 제17조의2, 사업장폐기물 배출자신고 및 처리계획 확인 업무처리지침 Ⅵ.1, 폐기물관리법 제13조의2, 폐기물관리법 시행규칙 제14조의3 … (조문 71개)
+     원문 첨부: 위탁 기준·절차 ← 폐기물관리법 제18조, 폐기물관리법 시행규칙 제16조의13
+     원문 첨부: 운반 기준 ← 폐기물관리법 시행령 제7조, 폐기물관리법 시행규칙 제9조
+     AI 판단 (서로 다른 회사 모델 2~3개): 5가지
+     ✔ 위탁 전 지정 여부 분석 대상 → 아니오
+     ✔ 재활용 금지 여부 → 아니오
+     ✔ 재활용 제한 여부 → 아니오
+     ✔ 올바로 전자인계 대상 → 조건부
+     ✔ 배출자 신고 대상 → 아니오
+
+▶ 3번째 검토: 1가지 확인
+     - 허용 재활용 유형(R코드)·사전 분석 (D-1)
+     ✔ 판정표로 답: 허용 재활용 유형(R코드)·사전 분석 → R-1, R-2, R-3-2, R-3-3, R-3-4, R-4-4 …
+     법령 찾기: 폐기물관리법 시행규칙 별표 5의3, 폐기물관리법 시행규칙 별표 5의4 (조문 20개)
+     원문 첨부: 재활용 기준 ← 폐기물관리법 시행규칙 별표 5의3
+     원문 첨부: 재활용 업체 준수사항 ← 폐기물관리법 시행규칙 별표 5의4
+ [3] 경로 1개, 만들지 않은 관문 ['gate1', 'scope']
+ [4] 업체 매칭·순위·운송 탄소
+ 감사 기록: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law_agent/audit/ac0bea9e-78dc-5110-b92f-607e0dbbf172/20261118T154010.jsonl
+  ✔ ac0bea9e-78dc-5110-b92f-607e0dbbf172 v0: 관문2 conditional · 파트 1 질문 1개 · 호출 0회
+Traceback (most recent call last):
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 853, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154001.json' -> '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/done/demo_154001.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/bridge/watch.py", line 92, in scan
+    shutil.move(str(path), done / path.name)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 873, in move
+    copy_function(src, real_dst)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 448, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 256, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154001.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 853, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154001.json' -> '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/failed/demo_154001.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/cli.py", line 345, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/cli.py", line 340, in main
+    a.f(a)
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/cli.py", line 237, in m_start
+    watch.main(["--inbox", str(INBOX), "--outbox", str(OUTBOX)] + (["-" + "v" * a.verbose] if a.verbose else []))
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/bridge/watch.py", line 133, in main
+    scan(inbox, outbox, partner_data, factors, sizes, a.once, a.verbose)
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/bridge/watch.py", line 96, in scan
+    shutil.move(str(path), failed / path.name)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 873, in move
+    copy_function(src, real_dst)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 448, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 256, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154001.json'
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)
+■ 15:41:49 demo_154143.json
+
+▶ ac0bea9e-78dc-5110-b92f-607e0dbbf172  제품 포장용 PE 필름 자투리
+ [1] 입력 검사: ok
+ [2] 법률 매칭 (차례마다: 조문 찾기 → 근거 묶음 → 모델 판단 → 검증)
+■ 법률 검토 시작: 확인할 질문 16가지 (이 사례와 상관없는 14가지는 건너뜀)
+
+▶ 1번째 검토: 3가지 확인
+     - 분류번호 확인 (A-1)
+     - 지정폐기물 여부 (A-2)
+     - 혼합 여부·분리 (A-4)
+■ 15:41:49 demo_154143.json
+
+▶ ac0bea9e-78dc-5110-b92f-607e0dbbf172  제품 포장용 PE 필름 자투리
+ [1] 입력 검사: ok
+ [2] 법률 매칭 (차례마다: 조문 찾기 → 근거 묶음 → 모델 판단 → 검증)
+  · planner: 질문 30개 (묻지 않음 14)
+  ▶ 차례 1: 질문 3개 A-1, A-2, A-4
+    · retriever      0.2초  questions 3, empty []
+    · judge          0.1초  questions 3, calls 0, cached 7, escalated 1
+    · verifier       0.0초  agreed 3, not_applicable 2
+   ─ 차례 1: 질문 3개 (표 답 0), 호출 0회 (캐시 7, 3번째 모델 1), 토큰 0, 0.3초
+       A-1      agreed         yes          
+       A-2      agreed         no           
+       A-4      agreed         no           
+  ▶ 차례 2: 질문 7개 A-3, B-1, B-2, G-1, G-2, G-3, H-1
+    · retriever      0.5초  questions 7, empty []
+    · attach         0.0초  attached ['G-1', 'G-3']
+    · judge          0.0초  questions 5, calls 0, cached 8, escalated 1
+    · verifier       0.0초  agreed 5, not_applicable 1
+   ─ 차례 2: 질문 7개 (표 답 0), 호출 0회 (캐시 8, 3번째 모델 1), 토큰 0, 0.8초
+       A-3      agreed         no           
+       B-1      agreed         no           
+       B-2      agreed         no           
+       G-1      agreed         yes          
+       G-2      agreed         conditional   빠진 사실 ['사업장폐기물 해당 여부(배출처가 사업장인지)']
+       G-3      agreed         yes          
+       H-1      agreed         no           
+  ▶ 차례 3: 질문 1개 D-1
+    · table_answer   0.0초  answered ['D-1']
+    · retriever      0.1초  questions 2, empty []
+    · attach         0.0초  attached ['D-3', 'D-4']
+    · verifier       0.0초  
+   ─ 차례 3: 질문 1개 (표 답 1), 호출 0회 (캐시 0, 3번째 모델 0), 토큰 0, 0.2초
+       D-1      agreed         yes          ['R-1', 'R-2', 'R-3-2', 'R-3-3', 'R-3-4', 'R-4-4',
+ [3] 경로 1개, 만들지 않은 관문 ['gate1', 'scope']
+ [4] 업체 매칭·순위·운송 탄소
+     법령 찾기: 폐기물관리법 시행규칙 별표 4, 폐기물관리법 제2조, 폐기물관리법 시행령 별표 1, 폐기물관리법 시행령 제7조 (조문 28개)
+ 감사 기록: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law_agent/audit/ac0bea9e-78dc-5110-b92f-607e0dbbf172/20261118T154151.jsonl
+  ✔ ac0bea9e-78dc-5110-b92f-607e0dbbf172 v0: 관문2 conditional · 파트 1 질문 1개 · 호출 0회
+     AI 판단 (서로 다른 회사 모델 2~3개): 3가지
+     ✔ 분류번호 확인 → 예
+     ✔ 지정폐기물 여부 → 아니오
+     ✔ 혼합 여부·분리 → 아니오
+
+▶ 2번째 검토: 7가지 확인
+     - 위탁 전 지정 여부 분석 대상 (A-3)
+     - 재활용 금지 여부 (B-1)
+     - 재활용 제한 여부 (B-2)
+     - 위탁 기준·절차 (G-1)
+     - 올바로 전자인계 대상 (G-2)
+     - 운반 기준 (G-3)
+     - 배출자 신고 대상 (H-1)
+     법령 찾기: 폐기물관리법 시행규칙 제17조의2, 사업장폐기물 배출자신고 및 처리계획 확인 업무처리지침 Ⅵ.1, 폐기물관리법 제13조의2, 폐기물관리법 시행규칙 제14조의3 … (조문 71개)
+     원문 첨부: 위탁 기준·절차 ← 폐기물관리법 제18조, 폐기물관리법 시행규칙 제16조의13
+     원문 첨부: 운반 기준 ← 폐기물관리법 시행령 제7조, 폐기물관리법 시행규칙 제9조
+     AI 판단 (서로 다른 회사 모델 2~3개): 5가지
+     ✔ 위탁 전 지정 여부 분석 대상 → 아니오
+     ✔ 재활용 금지 여부 → 아니오
+     ✔ 재활용 제한 여부 → 아니오
+     ✔ 올바로 전자인계 대상 → 조건부
+     ✔ 배출자 신고 대상 → 아니오
+
+▶ 3번째 검토: 1가지 확인
+     - 허용 재활용 유형(R코드)·사전 분석 (D-1)
+     ✔ 판정표로 답: 허용 재활용 유형(R코드)·사전 분석 → R-1, R-2, R-3-2, R-3-3, R-3-4, R-4-4 …
+     법령 찾기: 폐기물관리법 시행규칙 별표 5의3, 폐기물관리법 시행규칙 별표 5의4 (조문 20개)
+     원문 첨부: 재활용 기준 ← 폐기물관리법 시행규칙 별표 5의3
+     원문 첨부: 재활용 업체 준수사항 ← 폐기물관리법 시행규칙 별표 5의4
+ [3] 경로 1개, 만들지 않은 관문 ['gate1', 'scope']
+ [4] 업체 매칭·순위·운송 탄소
+ 감사 기록: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law_agent/audit/ac0bea9e-78dc-5110-b92f-607e0dbbf172/20261118T154152.jsonl
+  ✔ ac0bea9e-78dc-5110-b92f-607e0dbbf172 v0: 관문2 conditional · 파트 1 질문 1개 · 호출 0회
+Traceback (most recent call last):
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 853, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154143.json' -> '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/done/demo_154143.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/bridge/watch.py", line 92, in scan
+    shutil.move(str(path), done / path.name)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 873, in move
+    copy_function(src, real_dst)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 448, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 256, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154143.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 853, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154143.json' -> '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/failed/demo_154143.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/cli.py", line 345, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/cli.py", line 340, in main
+    a.f(a)
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/cli.py", line 237, in m_start
+    watch.main(["--inbox", str(INBOX), "--outbox", str(OUTBOX)] + (["-" + "v" * a.verbose] if a.verbose else []))
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/bridge/watch.py", line 133, in main
+    scan(inbox, outbox, partner_data, factors, sizes, a.once, a.verbose)
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_agent/bridge/watch.py", line 96, in scan
+    shutil.move(str(path), failed / path.name)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 873, in move
+    copy_function(src, real_dst)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 448, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/shutil.py", line 256, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox/demo_154143.json'
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)
+감시 종료
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)

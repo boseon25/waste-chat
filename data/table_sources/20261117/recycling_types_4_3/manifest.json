@@ -1,0 +1,33 @@
+{
+  "table": "recycling_types_4_3",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/recycling_types_4_3.csv",
+  "rows": 2324,
+  "confirmed": 0,
+  "parts": {
+    "WMA_RULE": [
+      "B4의3"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "4의3",
+      "title": "폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)",
+      "effective": "20261112",
+      "hash": "7aeb303d9fe8dcf0",
+      "chars": 131212,
+      "part": "B4의3"
+    }
+  ],
+  "ref_check": {
+    "refs": 2324,
+    "inside": 2324,
+    "outside": {},
+    "old_effective": {}
+  }
+}

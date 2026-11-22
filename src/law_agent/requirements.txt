@@ -1,0 +1,6 @@
+# law_agent 실행에 필요한 패키지 (파트 1 은 src/part1/requirements.txt 따로)
+httpx
+openai
+pyyaml
+langgraph
+pytest

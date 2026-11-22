@@ -1,0 +1,25 @@
+# 파이썬·uv
+__pycache__/
+*.pyc
+.venv/
+.python-version
+
+# 비밀값 (인증키는 환경변수로만 쓰지만 혹시 파일로 만들 경우 대비)
+.env
+*.key
+
+# API 원문 그대로 저장한 파일: 응답 안의 상세링크에 인증키(OC=)가 들어 있음 → 절대 올리지 않음
+data/raw/
+data/registry.json
+
+# LLM 응답 캐시·로그 (다시 만들 수 있고 용량만 큼)
+data/llm_cache/
+data/staged/*/llm_log_*.jsonl
+
+# 별표 PDF 원본, 이전 판 백업
+data/watched/pdf/
+data/old/
+
+# 엑셀·임시 파일
+~$*
+*.tmp

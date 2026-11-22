@@ -1,0 +1,35 @@
+{
+  "table": "treatment_code_map",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/treatment_code_map.csv",
+  "rows": 69,
+  "confirmed": null,
+  "parts": {
+    "WMA_RULE": [
+      "BF5"
+    ]
+  },
+  "config": [
+    "treatment_design.csv"
+  ],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "F5",
+      "title": "수탁처리능력 확인서, 폐기물 수탁확인서",
+      "effective": "20261112",
+      "hash": "d4c50ceb8f6c77bb",
+      "chars": 21985,
+      "part": "BF5"
+    }
+  ],
+  "ref_check": {
+    "refs": 0,
+    "inside": 0,
+    "outside": {},
+    "old_effective": {}
+  }
+}

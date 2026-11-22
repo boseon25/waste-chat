@@ -1,0 +1,237 @@
+
+■ PRE-01
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            needs_info  미확보          (없음)                    
+   G2-energy_recovery-single_material_recycle   confirmed   확보   (주)미래페이퍼 (없음)                    
+   G2-intermediate-single_material_recycle      conditional 확보   (유)우리산업에 conditional 확보   (유)우리산업에
+   G2-material_recycle-single_material_recycle  confirmed   확보   (유)엘림이엔 (없음)                    
+   G2-reuse-direct_use                          conditional 확보   제이엠     (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   G4-landfill-alternative_treatment            conditional 확보   (유)진등산업 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-1, R-2), 관문2 재생이용 (R-3-2, R-3-3, R-3-4, R-4-4), 관문2 에너지 회수 (R-8-1, R-8-2, R-9-1, R-9-3), 관문4 처분 (방법 미정)
+
+■ PRE-02
+   경로                                           route_agent              law_agent               
+   G2-energy_recovery-mixed_recycle             confirmed   확보   (주)세호   (없음)                    
+   G2-intermediate-mixed_recycle                confirmed   확보   (주)교우산업  confirmed   확보   호남자원(광산구
+   G2-material_recycle-mixed_recycle            confirmed   확보   (주)세호   (없음)                    
+   G2-reuse-mixed_recycle                       confirmed   확보   (주)유광드럼 (없음)                    
+   G4-incineration-alternative_treatment        confirmed   확보   케이씨환경서비스 (없음)                    
+   G4-intermediate-alternative_treatment        conditional 미확보  (유)금솔   (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-2-1), 관문2 재생이용 (R-3-2, R-4-6), 관문2 에너지 회수 (R-9-2), 관문4 처분 (방법 미정)
+
+■ PRE-03
+   경로                                           route_agent              law_agent               
+   G4-landfill-alternative_treatment            conditional 확보   (주)보림씨에스 (없음)                    
+   [route_agent] gate1 SKIP: 재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.
+   [route_agent] gate2 SKIP: 재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] gate2 RUN: 허용 재활용 유형 없음 (D-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문4 처분 (방법 미정)
+
+■ PRE-04
+   경로                                           route_agent              law_agent               
+   G4-disposal-alternative_treatment            needs_info  -    (유)월드환경 (없음)                    
+   [route_agent] gate1 SKIP: 재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.
+   [route_agent] gate2 SKIP: 재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] gate2 RUN: 허용 재활용 유형 없음 (D-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문4 처분 (방법 미정)
+
+■ PRE-05
+   경로                                           route_agent              law_agent               
+   G2-material_recycle-single_material_recycle  confirmed   확보   녹십자웰빙 음성 (없음)                    
+   G4-disposal-alternative_treatment            needs_info  -    (유)월드환경 (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-4-10), 관문4 처분 (방법 미정)
+
+■ PRE-06
+   경로                                           route_agent              law_agent               
+   G2-energy_recovery-single_material_recycle   needs_info  확보   (주)국제   (없음)                    
+   G2-intermediate-single_material_recycle      needs_info  확보   사회복지법인 미 needs_info  확보   사회복지법인 미
+   G2-material_recycle-single_material_recycle  needs_info  확보   (주)씨에스캠 (없음)                    
+   G4-incineration-alternative_treatment        confirmed   확보   케이씨환경서비스 (없음)                    
+   G4-intermediate-alternative_treatment        conditional 확보   승우산업개발(주 (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-1, R-3-2, R-4-6), 관문2 에너지 회수 (R-9-2), 관문4 처분 (방법 미정)
+
+■ PRE-07
+   경로                                           route_agent              law_agent               
+   G2-material_recycle-single_material_recycle  needs_info  미확보  (유)삼우환경개 (없음)                    
+   G4-landfill-alternative_treatment            conditional 확보   ㈜케이비아이국인 (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] gate2 RUN: 허용 재활용 유형 없음 (D-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문4 처분 (방법 미정)
+
+■ PRE-08
+   경로                                           route_agent              law_agent               
+   G2-energy_recovery-single_material_recycle   needs_info  확보   (주)미래페이퍼 (없음)                    
+   G2-intermediate-single_material_recycle      conditional 확보   (유)우리산업에 conditional 확보   (유)우리산업에
+   G2-material_recycle-single_material_recycle  conditional 확보   (유)엘림이엔 (없음)                    
+   G2-reuse-direct_use                          conditional 확보   제이엠     (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   G4-landfill-alternative_treatment            conditional 확보   (유)진등산업 (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물 의심으로 지정폐기물 기준을 적용합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-1, R-2), 관문2 재생이용 (R-3-2, R-3-3, R-3-4, R-4-4), 관문2 에너지 회수 (R-8-1, R-8-2, R-9-1, R-9-3), 관문4 처분 (방법 미정)
+
+■ PRE-09
+   경로                                           route_agent              law_agent               
+   G2-intermediate-single_material_recycle      conditional 확보   (유)풍성산업 conditional 확보   (유)풍성산업
+   G2-material_recycle-single_material_recycle  conditional 확보   제이엠     (없음)                    
+   G4-landfill-alternative_treatment            conditional 확보   (유)진등산업 (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물 의심으로 지정폐기물 기준을 적용합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-3, R-4-1), 관문4 처분 (방법 미정)
+
+■ PRE-10
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            confirmed   확보   (주)필자임  (없음)                    
+   G2-energy_recovery-single_material_recycle   confirmed   미확보  주식회사 성운 (없음)                    
+   G2-intermediate-single_material_recycle      conditional 미확보  주식회사 성운 conditional 미확보  주식회사 성운
+   G2-material_recycle-single_material_recycle  confirmed   확보   (유)금성상공 (없음)                    
+   G2-reuse-direct_use                          conditional 확보   (주)상신테크 (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-1-2), 관문2 재생이용 (R-4-2, R-4-5, R-5-1, R-5-2, R-5-3, R-5-4, R-6-1), 관문2 에너지 회수 (R-8-2, R-9-1, R-9-3), 관문4 처분 (방법 미정)
+
+■ PRE-11
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            needs_info  확보   (주)전주페이퍼 (없음)                    
+   G2-energy_recovery-single_material_recycle   confirmed   확보   유유리싸이클링( (없음)                    
+   G2-intermediate-single_material_recycle      conditional 확보   동양수지    conditional 확보   동양수지   
+   G2-material_recycle-single_material_recycle  confirmed   확보   (유)제이와이산 (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-3, R-4-3), 관문2 에너지 회수 (R-8-2, R-9-1), 관문4 처분 (방법 미정)
+
+■ PRE-12
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            confirmed   확보   (주)선진금속 (없음)                    
+   G2-intermediate-single_material_recycle      confirmed   확보   (유)풍성산업 confirmed   확보   (유)풍성산업
+   G2-material_recycle-single_material_recycle  confirmed   확보   제이엠     (없음)                    
+   G4-landfill-alternative_treatment            conditional 확보   (유)진등산업 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-1, R-3-2, R-3-3, R-4-1), 관문4 처분 (방법 미정)
+
+■ PRE-13
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            confirmed   확보   (주)이맥솔루션 (없음)                    
+   G2-energy_recovery-single_material_recycle   needs_info  확보   (유)세웅바이오 (없음)                    
+   G2-intermediate-single_material_recycle      conditional 확보   (주)다시   conditional 확보   주식회사 대경바
+   G2-material_recycle-single_material_recycle  confirmed   확보   (주)에스씨(정 (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-3, R-4-8, R-5-1, R-5-2, R-5-4), 관문2 에너지 회수 (R-9-2, R-9-4), 관문4 처분 (방법 미정)
+
+■ PRE-14
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            needs_info  미확보          (없음)                    
+   G2-energy_recovery-separate_then_recycle     needs_info  확보   (주)미래페이퍼 (없음)                    
+   G2-intermediate-separate_then_recycle        conditional 확보   (유)우리산업에 conditional 확보   (유)우리산업에
+   G2-material_recycle-separate_then_recycle    confirmed   확보   (유)엘림이엔 (없음)                    
+   G2-reuse-separate_then_recycle               conditional 확보   제이엠     (없음)                    
+   G4-disposal-alternative_treatment            conditional 확보   케이씨환경서비스 (없음)                    
+   G4-disposal-alternative_treatment-2          conditional 확보   (유)진등산업 (없음)                    
+   G4-disposal-alternative_treatment-3          conditional 확보   케이씨환경서비스 (없음)                    
+   G4-disposal-alternative_treatment-4          conditional 확보   (유)진등산업 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-1, R-1-1, R-2, R-2-1), 관문2 재생이용 (R-3-2, R-3-3, R-3-4, R-4-4), 관문2 에너지 회수 (R-8-1, R-8-2, R-9-1, R-9-3), 관문4 처분 (방법 미정)
+
+■ PRE-15
+   경로                                           route_agent              law_agent               
+   G2-intermediate-mixed_recycle                confirmed   미확보  대우비철    (없음)                    
+   G2-material_recycle-mixed_recycle            confirmed   미확보  수지자원    (없음)                    
+   G4-disposal-alternative_treatment            conditional 확보   케이씨환경서비스 (없음)                    
+   G4-disposal-alternative_treatment-2          conditional 확보   (유)진등산업 (없음)                    
+   G4-disposal-alternative_treatment-3          conditional 확보   케이씨환경서비스 (없음)                    
+   G4-disposal-alternative_treatment-4          conditional 확보   ㈜케이비아이국인 (없음)                    
+   [route_agent] gate1 SKIP: 지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] gate2 RUN: 재활용 유형 판단 보류 (D-1 needs_info)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문4 처분 (방법 미정)
+
+■ PRE-16
+   경로                                           route_agent              law_agent               
+   G4-disposal-alternative_treatment            conditional 확보   케이씨환경서비스 (없음)                    
+   G4-disposal-alternative_treatment-2          conditional 확보   (주)보림씨에스 (없음)                    
+   [route_agent] gate1 SKIP: 재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.
+   [route_agent] gate2 SKIP: 재활용 금지 규칙(BLOCK_TO_GATE4)이 적용되었습니다.
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] gate2 RUN: 재활용 유형 판단 보류 (D-1 needs_info)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문4 처분 (방법 미정)
+
+■ PRE-17
+   경로                                           route_agent              law_agent               
+   [route_agent] gate1 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate2 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate4 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [law_agent] all NEEDS_INFO: 입력 형식 검사에서 멈춤
+
+■ PRE-18
+   경로                                           route_agent              law_agent               
+   [route_agent] gate1 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate2 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate4 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [law_agent] all NEEDS_INFO: 입력 형식 검사에서 멈춤
+
+■ PRE-19
+   경로                                           route_agent              law_agent               
+   [route_agent] gate1 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate2 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate4 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [law_agent] all NEEDS_INFO: 입력 형식 검사에서 멈춤
+
+■ PRE-20
+   경로                                           route_agent              law_agent               
+   [route_agent] gate1 REVIEW: 폐기물 분류번호와 명칭의 불일치 또는 데이터 검토가 필요합니다.
+   [route_agent] gate2 REVIEW: 폐기물 분류번호와 명칭의 불일치 또는 데이터 검토가 필요합니다.
+   [route_agent] gate4 REVIEW: 폐기물 분류번호와 명칭의 불일치 또는 데이터 검토가 필요합니다.
+   [law_agent] all NEEDS_REVIEW: 입력 형식 검사에서 멈춤
+
+■ PRE-21
+   경로                                           route_agent              law_agent               
+   [route_agent] gate1 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate2 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [route_agent] gate4 NEEDS_INFO: 말단 분류번호가 확인되지 않아 Gate 판정을 보류합니다.
+   [law_agent] all NEEDS_INFO: 입력 형식 검사에서 멈춤
+
+■ PRE-22
+   경로                                           route_agent              law_agent               
+   G2-energy_recovery-single_material_recycle   conditional 확보   (유)신진환경산 (없음)                    
+   G2-intermediate-single_material_recycle      conditional 확보   (유)신진환경산 conditional 확보   (유)우리산업에
+   G2-material_recycle-single_material_recycle  conditional 확보   (주)한솔홈데코 (없음)                    
+   G2-reuse-direct_use                          conditional 확보   (유)신그린  (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   [route_agent] gate1 RUN: 실행했지만 해당 경로 없음
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-1-1, R-2-1), 관문2 재생이용 (R-3-4, R-4-2, R-4-3, R-4-5, R-5-1, R-5-2, R-5-3), 관문2 에너지 회수 (R-8-1, R-8-2, R-9-1, R-9-3), 관문4 처분 (방법 미정)
+
+■ PRE-23
+   경로                                           route_agent              law_agent               
+   G2-intermediate-single_material_recycle      needs_info  확보   (유)천만금  needs_info  확보   제이에스산업 
+   G2-material_recycle-single_material_recycle  needs_info  확보   제이엠     (없음)                    
+   G4-incineration-alternative_treatment        confirmed   확보   케이씨환경서비스 (없음)                    
+   G4-landfill-alternative_treatment            conditional 확보   (유)진등산업 (없음)                    
+   [route_agent] gate1 RUN: 실행했지만 해당 경로 없음
+   [law_agent] gate1 SKIP: 지정폐기물(의심 포함)은 순환자원 판매 대상 아님
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-1, R-3-2, R-3-3, R-3-4, R-4-1, R-4-2), 관문4 처분 (방법 미정)
+
+■ PRE-24
+   경로                                           route_agent              law_agent               
+   G1-designated_resource-direct_use            confirmed   확보   (주)필자임  (없음)                    
+   G2-energy_recovery-single_material_recycle   confirmed   확보   전주김제완주축산 (없음)                    
+   G2-intermediate-single_material_recycle      conditional 확보   양화농장    conditional 확보   (유)삼오유지산
+   G2-material_recycle-single_material_recycle  confirmed   확보   고산농협 경-축 (없음)                    
+   G2-reuse-direct_use                          conditional 확보   (주)정다운  (없음)                    
+   G4-incineration-alternative_treatment        conditional 확보   케이씨환경서비스 (없음)                    
+   [law_agent] gate1 RUN: 순환자원 지정 고시 품목 아님 (C-1 판단)
+   [law_agent] scope SKIP: 서비스 범위 밖 (중간재활용업만): 관문2 재사용 (R-2-2), 관문2 재생이용 (R-4-2, R-4-5, R-4-7, R-4-8, R-5-1, R-5-2, R-5-3, R-5-4, R-6-1), 관문2 에너지 회수 (R-8-2, R-9-1, R-9-3, R-9-4, R-9-5), 관문4 처분 (방법 미정)
+
+경로 85개: 상태 같음 13 (15%), 위험 0

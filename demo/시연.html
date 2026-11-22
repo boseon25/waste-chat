@@ -1,0 +1,856 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>law_agent 시연</title><style>
+:root{--ok:#1d7a4f;--ok-bg:#e7f5ee;--warn:#9a5b00;--warn-bg:#fdf3e1;--bad:#b4232a;--bad-bg:#fcebec;
+--info:#1f5fa8;--info-bg:#e8f1fb;--muted:#5f5e5a;--muted-bg:#f1efe8;--line:#e4e2dc;--text:#1f1f1d;--sub:#6b6a66}
+*{box-sizing:border-box}body{margin:0;background:#f7f6f3;color:var(--text);
+font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:15px;font-weight:500;color:var(--sub);margin:0 0 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.concl{border-left:5px solid var(--c);}
+.badge{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--bg);color:var(--c)}
+.ok{--c:var(--ok);--bg:var(--ok-bg)}.warn{--c:var(--warn);--bg:var(--warn-bg)}.bad{--c:var(--bad);--bg:var(--bad-bg)}
+.info{--c:var(--info);--bg:var(--info-bg)}.muted{--c:var(--muted);--bg:var(--muted-bg)}
+.concl .main{font-size:19px;font-weight:600;margin:10px 0 6px}
+.concl ul{margin:6px 0 0;padding-left:18px;color:#3d3d3a}.concl li{margin:2px 0}
+h2{font-size:15px;font-weight:600;margin:0 0 10px}
+details{border-top:1px solid var(--line)}details:first-of-type{border-top:none}
+summary{cursor:pointer;list-style:none;padding:11px 2px;display:flex;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary .arrow{color:var(--sub);font-size:12px;width:12px;transition:transform .15s}
+details[open]>summary .arrow{transform:rotate(90deg)}
+.num{width:22px;height:22px;border-radius:50%;background:var(--muted-bg);color:var(--muted);font-size:12px;
+display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ttl{font-weight:500}.when{color:var(--sub);font-size:13px;margin-left:auto;text-align:right}
+.body{padding:2px 4px 14px 34px;font-size:14px;color:#3d3d3a}
+.body p{margin:4px 0}.k{color:var(--sub);font-size:12px;margin-right:6px}
+.small{font-size:12px;color:var(--sub)}
+.std{border-top:1px solid var(--line);padding:8px 0}.std:first-of-type{border-top:none}
+.stdh{display:flex;justify-content:space-between;gap:8px;margin-bottom:4px}
+.stdl{background:#f6f8fb;border-left:3px solid var(--info);padding:6px 10px;margin:4px 0;font-size:14px;line-height:1.55}
+.stdl .draft,.plain .draft{margin-left:8px;font-size:11px;color:#9a5b00;background:#fdf3e1;border-radius:4px;padding:1px 5px;white-space:nowrap}
+.plain{background:#eef6f1;border-left:3px solid #1d9e75;padding:7px 10px;margin:4px 0 6px;font-size:14px;line-height:1.55}
+.plain .draft{margin-left:8px;font-size:11px;color:#9a5b00;background:#fdf3e1;border-radius:4px;padding:1px 5px;white-space:nowrap}
+.quote{background:#faf9f6;border-left:3px solid var(--line);padding:6px 10px;margin:4px 0 8px;font-size:13px;color:#4a4946}
+.ref{font-size:13px;margin-top:8px}
+.ico{width:22px;height:22px;border-radius:50%;background:var(--bg);color:var(--c);font-size:12px;font-weight:700;
+display:inline-flex;align-items:center;justify-content:center;flex:none}
+.check{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.check:first-of-type{border-top:none}
+.more>summary{font-weight:600;font-size:15px;padding:4px 2px}
+.note{font-size:12px;color:var(--sub);margin-top:18px}
+.full{white-space:pre-wrap;font-size:13px;color:#4a4946;background:#faf9f6;padding:8px 10px;border-radius:6px}
+.body details{border-top:none}.body summary{padding:2px 0}
+
+.funnel{margin:6px 0 10px;font-size:13px}
+.funnel .row{display:flex;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line)}
+.funnel .row b{min-width:62px;text-align:right}
+.funnel .row .why{flex:1}.funnel .row .law{color:var(--sub);font-size:12px}
+.funnel .keep b{color:var(--ok)}
+.cks{margin:4px 0 6px;font-size:13px}.ck{display:flex;gap:8px;padding:3px 0;align-items:baseline}
+.ck .y{color:var(--ok);font-weight:700}.ck .s{color:var(--sub)}.ck .w{color:var(--bad);font-weight:700}.ck .q{color:var(--warn);font-weight:700}
+.ck .law{margin-left:auto;color:var(--sub);font-size:11px;text-align:right}
+.top{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+.top a{font-size:14px;text-decoration:none;color:var(--text);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.notice{font-size:12px;color:var(--warn);background:var(--warn-bg);border-radius:8px;padding:8px 12px;margin-bottom:18px}
+.case{margin:0 0 42px}
+.case>h2{font-size:21px;margin:0 0 4px}
+.case>.sub{color:var(--sub);font-size:13px;margin:0 0 12px}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 14px;font-size:14px}
+.facts div span{display:block;font-size:12px;color:var(--sub)}
+table.p{width:100%;border-collapse:collapse;font-size:14px}
+table.p th{font-size:12px;color:var(--sub);font-weight:500;text-align:left;padding:6px 6px;border-bottom:1px solid var(--line)}
+table.p td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+table.p td.r{text-align:right;white-space:nowrap}
+.rank{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--ok-bg);color:var(--ok);font-size:12px;
+font-weight:700;align-items:center;justify-content:center}
+.small{font-size:12px;color:var(--sub)}
+</style></head><body><div class="wrap"><h1 style="font-size:24px;color:var(--text);font-weight:700">law_agent 시연 — 법률 판단 · 업체 추천</h1><div class="notice">개발 테스트용 가상 보완 완료 예시. 원본 입력서도 가상 자료이며, 추가 답변·대장·기관 회신·시험·인정 내용은 이 예시를 위해 작성한 모의 기록이다.</div><div class="top"><a href="#c-3adf8cad-b6ee-54f4-aa08-e85b8be09f68">제품 포장용 PE 필름 자투리</a><a href="#c-fb4df6cd-52d4-56e2-b3d1-42ff03e3a688">기계 세척 후 남은 세척액</a></div><section class="case" id="c-3adf8cad-b6ee-54f4-aa08-e85b8be09f68"><h2>제품 포장용 PE 필름 자투리</h2><p class="sub">사례 3adf8cad-b6ee-54f4-aa08-e85b8be09f68</p><div class="card"><h2>분류 에이전트가 준 정보</h2><div class="facts"><div><span>폐기물</span>제품 포장용 PE 필름 자투리</div><div><span>분류번호</span>51-03-01 폐합성수지류(폐염화비닐수지류는 제외한다)</div><div><span>지정폐기물</span>지정폐기물 아님</div><div><span>월 평균 발생량</span>195 kg</div><div><span>성상</span>필름 조각</div><div><span>오염</span>오염 안 보임</div><div><span>발생 공정</span>제품 포장 후 남은 필름을 절단·수거하는 작업</div><div><span>지역</span>전북특별자치도 전주시</div></div></div><div class="card concl warn"><span class="badge">조건부 가능</span><div class="main">이 폐기물은 중간 가공(R-10) 재활용업체에 맡길 수 있습니다.</div><ul><li>성분에 따라 맡기기 전에 분석이 필요할 수 있습니다.</li><li>조건에 맞는 추천 업체 5곳을 찾았습니다.</li></ul></div><div class="card"><h2>추천 업체</h2><h3 style="font-size:14px;margin:14px 0 6px">운반 업체 <span class="small">(조건에 맞는 6473곳 중 가까운 순)</span></h3><div class="funnel"><div class="row"><b>9808곳</b><span class="why">같은 폐기물 분류를 다루는 업체</span></div><div class="row"><b>−1814곳</b><span class="why">건설폐기물만 운반하는 업체<div class="law">근거: 건설폐기물법 (별도 허가)</div></span></div><div class="row"><b>−1362곳</b><span class="why">허가받은 운반 대상 폐기물이 아님<div class="law">근거: 폐기물관리법 제25조 (허가 범위)</div></span></div><div class="row"><b>−159곳</b><span class="why">영업 중이 아님<div class="law">근거: 폐기물관리법 제25조 (허가 유지)</div></span></div><div class="row keep"><b>6473곳</b><span class="why">법적으로 맡길 수 있는 업체 → 도로 거리 순 상위 5곳<div class="law">순위 기준: 도로 거리 (서비스 기준, 법 아님)</div></span></div></div><table class="p"><tr><th></th><th>업체</th><th>처리방법 코드</th><th style="text-align:right">거리</th></tr><tr><td><span class="rank">1</span></td><td><b>(유)부솔</b><div class="small">전주시 덕진구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 4건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 생활·사업장일반 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): 폐도자기조각, 가정용폐전기전자제품, 산업용폐전기전자제품, 프린트토너 및 카트리지폐부속품, 폐받침목, 그 밖의 폐목재류, 폐천연섬유 등; 비배출시설계<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="w">!</span>비배출시설계 폐기물만 운반합니다 — 배출 사업장이 배출시설계면 맡길 수 없습니다 (배출시설계 여부 확인)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>보유 차량 수·종류가 자료에 없습니다 — 운반 가능한 차량을 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">2.4 km (도로)</td></tr><tr><td><span class="rank">2</span></td><td><b>(유)대운물류</b><div class="small">전주시 완산구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 4건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 생활·사업장일반 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): 폐합성수지류, 폐합성고무류, 그 밖의 폐합성고분자화합물, 제재부산물, 목재가공공장 부산물, 폐가구류 폐도장목 폐목재포장재 폐전선드럼, 폐합성섬유, 고철, 비철금속, 폐금속용기류, 폐유리; 배출시설계<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="w">!</span>배출시설계 폐기물만 운반합니다 — 배출 사업장이 비배출시설계면 맡길 수 없습니다 (배출시설계 여부 확인)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>보유 차량 수·종류가 자료에 없습니다 — 운반 가능한 차량을 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">2.7 km (도로)</td></tr><tr><td><span class="rank">3</span></td><td><b>(유)대성환경산업</b><div class="small">전주시 완산구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 3건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 생활·사업장일반 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): 폐수처리오니, 하수처리오니, 건설오니, 폐합성수지류, 폐합성고무류, 폐폴리염화비닐수지류, 폐폴리우레탄폼류, 등; 배출시설계·비배출시설계<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 2023_운반량_톤 261.5<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>보유 차량 수·종류가 자료에 없습니다 — 운반 가능한 차량을 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">3.5 km (도로)</td></tr><tr><td><span class="rank">4</span></td><td><b>(유)에이치앤케이물류</b><div class="small">전주시 완산구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 4건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 생활·사업장일반 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): 소각재; 배출시설계<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="w">!</span>배출시설계 폐기물만 운반합니다 — 배출 사업장이 비배출시설계면 맡길 수 없습니다 (배출시설계 여부 확인)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>보유 차량 수·종류가 자료에 없습니다 — 운반 가능한 차량을 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">4.6 km (도로)</td></tr><tr><td><span class="rank">5</span></td><td><b>(유)유한건설</b><div class="small">전주시 완산구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 4건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 생활·사업장일반 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): 하수준설토, 오염하천 오염해양준설토; 비배출시설계<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 2023_운반량_톤 291.7<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>비배출시설계 폐기물만 운반합니다 — 배출 사업장이 배출시설계면 맡길 수 없습니다 (배출시설계 여부 확인)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>보유 차량 수·종류가 자료에 없습니다 — 운반 가능한 차량을 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">4.6 km (도로)</td></tr></table><h3 style="font-size:14px;margin:14px 0 6px">중간 가공 업체 <span class="small">(조건에 맞는 631곳 중 가까운 순)</span></h3><div class="funnel"><div class="row"><b>729곳</b><span class="why">같은 폐기물 분류를 다루는 업체 (서비스 범위: 중간재활용업 등록 업체)</span></div><div class="row"><b>−64곳</b><span class="why">허가받은 처리방법이 다름<div class="law">근거: 폐기물관리법 제25조 (허가 범위)</div></span></div><div class="row"><b>−34곳</b><span class="why">남의 폐기물을 위탁받지 않는 업체<div class="law">근거: 폐기물관리법 제18조 제1항 (허가·신고한 처리업자에게만 위탁)</div></span></div><div class="row keep"><b>631곳</b><span class="why">법적으로 맡길 수 있는 업체 → 도로 거리 순 상위 5곳<div class="law">순위 기준: 도로 거리 (서비스 기준, 법 아님)</div></span></div></div><table class="p"><tr><th></th><th>업체</th><th>처리방법 코드</th><th style="text-align:right">거리</th></tr><tr><td><span class="rank">1</span></td><td><b>동양수지</b><div class="small">전주시 덕진구 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 51-03 폐합성고분자화합물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.195톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">7.5 km (도로)</td></tr><tr><td><span class="rank">2</span></td><td><b>미래산업-전주</b><div class="small">전주시 덕진구 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 51-03 폐합성고분자화합물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.195톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">7.6 km (도로)</td></tr><tr><td><span class="rank">3</span></td><td><b>(유)풍성산업</b><div class="small">전주시 덕진구 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 51-03 폐합성고분자화합물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.195톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">8.9 km (도로)</td></tr><tr><td><span class="rank">4</span></td><td><b>(유)우리산업에스이엔</b><div class="small">전주시 덕진구 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 51-03 폐합성고분자화합물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.195톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">11.0 km (도로)</td></tr><tr><td><span class="rank">5</span></td><td><b>희망에너지</b><div class="small">완주군 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 51-03 폐합성고분자화합물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.195톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">17.1 km (도로)</td></tr></table><p class="small" style="margin-top:10px">허가 범위(분류번호·처리방법·재활용 유형)가 맞는 업체만 남기고 도로 거리 순으로 정렬. 처리 단가·반입 기준은 업체 회신으로 확인합니다.</p></div><div class="card"><h2>해야 할 일</h2><details><summary><span class="arrow">▶</span><span class="num">1</span><span class="ttl">맡기기 전 분석 확인</span><span class="when">폐기물을 맡기기 전</span></summary><div class="body"><p>성분에 따라 재활용 전에 분석이 필요할 수 있습니다. 처리업체와 분석이 필요한지 확인합니다.</p><p><span class="k">근거</span>폐기물관리법 시행규칙 별표 4의3</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 4의3 (2026.11.12 시행)</div><div class="quote">51-03-01 폐합성수지류(폐염화비닐수지류는 제외한다): R-1, R-2, R-3-2, R-3-3, R-3-4, R-4-4, R-9-3, R-10, R-8-1, R-8-2, R-9-1</div></div></details><details><summary><span class="arrow">▶</span><span class="num">2</span><span class="ttl">수탁처리능력 확인서 받기</span><span class="when">폐기물을 맡기기 전</span></summary><div class="body"><p>처리업체에서 수탁처리능력 확인서를 받습니다.</p><p><span class="k">서류</span>별지 제5호서식 (수탁처리능력 확인서)</p><p><span class="k">근거</span>폐기물관리법 제17조제1항제3호 · 시행규칙 제16조의13 제1호</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 제1호</div><div class="plain">집단급식소를 운영하는 자와 시행규칙에서 정한 각 호의 어느 하나에 해당하는 자는 폐기물 처리를 위탁·수탁할 때 수탁자로부터 별지 제5호서식의 수탁처리능력 확인서를 제출받아야 한다. 이 확인서에는 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본과 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본이 포함되어야 한다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본</div></details></div></details><details><summary><span class="arrow">▶</span><span class="num">3</span><span class="ttl">위탁계약서 쓰기</span><span class="when">폐기물을 맡기기 전</span></summary><div class="body"><p>처리업체와 서면으로 위탁계약을 맺습니다. 계약서에 폐기물 종류·수량, 계약 기간·위탁 비용, 폐기물의 성질·상태·취급 시 주의사항을 넣습니다.</p><p><span class="k">서류</span>위·수탁 계약서</p><p><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 제3호</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 제3호</div><div class="plain">집단급식소를 운영하는 자 등 이 조문이 정한 배출자는 폐기물 처리를 위탁할 때 수탁자와 서면으로 위탁계약을 체결해야 합니다. 계약에는 위탁 폐기물의 종류 및 수량, 계약 기간 및 위탁 비용, 폐기물의 성질과 상태 및 취급 시 주의사항이 포함되어야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 3. 수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것 가. 위탁하는 폐기물의 종류 및 수량 나. 계약 기간 및 위탁 비용 다. 위탁하는 폐기물의 성질과 상태 및 취급 시 주의사항</div></details></div></details><details><summary><span class="arrow">▶</span><span class="num">4</span><span class="ttl">올바로에 인계·인수 입력</span><span class="when"></span></summary><div class="body"><p>폐기물을 넘길 때 올바로(폐기물 전자정보처리프로그램)에 인계·인수 내용을 입력합니다.</p><p><span class="k">근거</span>폐기물관리법 제18조 제3항</p><div class="ref"><span class="k">근거</span>폐기물관리법 제18조 제3항</div><div class="plain">기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그때마다 인계ㆍ인수 사항과 계량값, 위치정보, 영상정보 등 폐기물처리현장정보를 부령에 따라 전자정보처리프로그램에 입력해야 한다. 다만 의료폐기물은 부령에 따라 무선주파수인식방법을 이용해 그 내용을 입력해야 한다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제18조(사업장폐기물의 처리) ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)를 기후에너지환경부령으로 정하는 바에 따라 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다. 다만, 의료폐기물은 기후에너지환경부령으로 정하는 바에 따라 무선주파수인식방법을 이용하여 그 내용을 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다.</div></details></div></details></div><div class="card"><h2>맡길 업체가 지켜야 할 기준</h2><p class="small">업체 의무입니다. 업체를 고를 때 지킬 수 있는 곳인지 확인하세요.</p><div class="std"><div class="stdh"><b>재활용 기준</b><span class="when">맡길 재활용업체 · 업체 고를 때</span></div><div class="stdl">회수·재생한 원료·중간가공 폐기물이 입자상·분말상으로 유출·비산될 우려가 있으면 규격 용기·상자(벌크백 포함)에 넣거나 포장하고, 유해물질·인체급성유해성물질등은 쓰지 마세요. 다만 사용이 불가피하면 사용 일자·양·유해성 등 기록을 3년간 보존해야 합니다. 재활용 유형별 세부기준(재활용환경성평가 받은 경우 제외)과 다른 법령 기준도 지켜야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 별표 5의3 제1호 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다. 나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학 물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6호의3 및 제7호부터 제9호까지의 규정에 따른 인체급성유해성물질, 인체만성유해성물 질, 생태유해성물질, 허가물질, 제한물질 및 금지물질(이하 이 표에서 “인체 급성유해성물질등”이라 한다)을 사용하지 않아야 한다. 다만, 해당 재활용을 위해 유해물질 또는 인체급성유해성물질등의 사용이 불가피한 경우에는 해 당 물질의 사용 일자와 양, 해당 물질의 유해성 등을 기록한 자료를 3년간 보존해야 한다. 다. 법 제13조의2에 따라 폐기물을 재활용하는 자(법 제13조의3제1항제2호에 따 라 재활용환경성평가를 받아 재활용하는 경우는 제외한다)는 별표 4의3에 따 른 폐기물의 종류별 재활용 가능 유형에 해당하는 유형으로 제2호에 따른 재 활용 유형별 재활용의 세부기준을 준수하여 재활용해야 한다. 라. 제2호에 따른 재활용 유형별 재활용의 세부기준에서 정하는 기준·규격 이외 에 「비료관리법」 제4조에 따라 설정 또는 지정된 보통비료의 공정규격 또 는 부산물비료의 규격 등 다른 법령에서 원재료 또는 제품 등에 대한 기준·규 격 등을 정하고 있는 경우에는 그 기준에 적합하게 재활용하도록 해야 한다. 마. 「자원의 절약과 재활용촉진에 관한 법률 시행령」 제18조에 따른 재활용 의 무대상 제품·포장재, 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시 행령」 제8조제1항에 따른 폐가전제품 및 같은 조 제2항에 따른 폐자동차는 각각 다음에 해당하는 방법 및 기준을 준수하여 재활용해야 한다. 1) 재활용 의무대상 제품·포장재: 「자원의 절약과 재활용촉진에 관한 법률 시 행규칙」 제13조의2에 따른 재활용의 방법과 기준 2) 폐가전제품: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행규 칙」 제5조에 따른 재활용 방법 및 기준 3) 폐자동차: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행령」 제 26조에 따른 재활용 방법 및 기준 바. 별표 4의2 제2호나목2)에 따른 재활용 유형으로 골재 제품을 제조해 별표 4 의2 제4호에 따른 유형으로 재활용하려는 경우에는 같은 표 제4호가목·나목· 다목 또는 바목에 따른 유형으로만 재활용할 수 있다.</div></details></div><div class="stdl">R-10-1 유형으로 재활용하려면 별표 4의3이 폐기물 종류별로 정한 재활용 가능 유형에 적합한 폐기물을 사용해야 한다. 이 유형에 적합하지 않은 폐기물은 사용해서는 안 된다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 별표 5의3 제2호 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능 유형에 적합한 폐기물을 사용하여야 한다.</div></details></div></div><div class="std"><div class="stdh"><b>재활용 업체 준수사항</b><span class="when">맡길 재활용업체 · 업체 고를 때</span></div><div class="stdl">폐기물을 재활용하는 자는 오염을 방지시설 등으로 처리해 배출허용기준 등 이내로 유지해야 하며, 대기·소음·진동·수질·악취 방법은 해당 배출시설이 설치된 경우에만 적용됩니다. 유해폐기물은 바닥 포장·유출방지장치를 갖추고 용기에 담아 분리 보관하며 표지판을 설치해야 합니다. 토양 등에 접촉시키는 재활용은 이물질을 분리하고, 고화처리물은 안정화기간을 거쳐 사용해야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 별표 5의4 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지 시설을 이용하여 처리할 것 라) 악취: 「악취방지법 시행규칙」 별표 4에 따라 악취방지계획을 수립하 여 처리할 것 마) 침출수: 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 처리하고, 폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는 경우에는 시험 ㆍ분석을 통해 침출수에 오염물질이 포함되어 있는지 확인하여 고화ㆍ고 형화ㆍ안정화 등의 방법으로 처리할 것 바) 토양오염물질: 폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는 경우에는 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 토양오염 물질을 처리할 것 사) 그 밖에 기후에너지환경부장관이 폐기물의 재활용에 따른 오염예방 및 저감을 위하여 필요하다고 인정하는 방법으로 처리할 것 2) 시ㆍ도지사, 시장ㆍ군수ㆍ구청장 또는 지방환경관서의 장은 「수도법」 제 7조에 따른 상수원보호구역의 수질이 악화되거나, 「환경정책기본법」 제12 조에 따른 환경기준 또는 「토양환경보전법」 제4조의2에 따른 토양오염의 우려기준을 준수하기 어렵게 되는 등 폐기물의 재활용으로 인하여 사람의 건강 또는 주변 환경에 미치는 영향이 크다고 인정하는 경우에는 폐기물을 재활용하는 자로 하여금 1)에 따른 오염예방 및 저감방법 이외의 필요한 오 염예방 및 저감조치를 하게 할 수 있다. 나. 오염예방 및 저감의 정도 1) 대기오염물질: 「대기환경보전법 시행규칙」 별표 8에 따른 대기오염물질 배출허용기준 이내 2) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 5에 따른 공장소음ㆍ진 동의 배출허용기준 및 같은 법 시행규칙 별표 8에 따른 생활소음ㆍ진동의 규제기준 이내 3) 수질오염물질: 「물환경보전법 시행규칙」 별표 13에 따른 수질오염물질 배출허용기준 이내 4) 악취: 「악취방지법 시행규칙」 별표 3에 따른 악취 배출허용기준 이내 5) 침출수: 별표 11 제2호나목2)가)에 따른 침출수 배출허용기준 이내 6) 토양오염물질: 「토양환경보전법 시행규칙」 별표 3에 따른 지역별 토양오 염우려기준 이내(별표 4의2 제4호가목, 나목 및 바목의 경우에는 재활용 대 상 부지는 제외한다) 2. 폐기물 재활용에 따른 취급기준과 방법 가. 공통사항 1) 영 별표 4의2 제3호에 따라 기후에너지환경부장관이 정하여 고시하는 폐기 물의 유해특성 허용 기준을 초과하는 폐기물(이하 &quot;유해폐기물&quot;이라 한다) 을 재활용하는 자는 폐기물이 지하로 침투하거나 주변 지역으로 유출ㆍ누출 되지 않도록 유해폐기물을 보관ㆍ저장ㆍ취급 또는 사용하는 장소에 바닥 포 장, 유출방지장치 설치 등 필요한 조치를 해야 한다. 2) 분말ㆍ미립자 형태의 고상상태 또는 액체상태인 폐기물은 비산되거나 외부 로 유출ㆍ누출되지 않도록 적절한 용기나 탱크, 상자(벌크백을 포함한다)에 넣어 보관해야 한다. 3) 재활용 대상 유해폐기물을 탱크나 용기에 보관하는 경우에는 유해폐기물 성상에 따라 적당한 재질, 두께 및 구조를 갖춘 탱크나 용기에 보관해야 하 며, 탱크나 용기 등이 부식ㆍ손상ㆍ노후화되지 아니하도록 유지ㆍ관리해야 한다. 4) 재활용 대상 유해폐기물은 유해특성을 고려하여 구분하여 별도의 분리된 장소에 보관해야 하며, 유해폐기물임을 알 수 있도록 폐기물의 종류와 유해 특성, 취급 시 주의사항을 기재한 표지판을 보관장소에 설치해야 한다. 5) 유해폐기물은 보관 또는 재활용 과정에서 화재ㆍ폭발, 유해가스 발생 등의 사고를 예방하기 위하여 화기ㆍ물 등과 접촉되지 않도록 적절하게 관리해야 하며, 유해가스 등이 발생할 경우 이를 중화 또는 배출할 수 있는 시설ㆍ 장 치 등을 갖추어야 한다. 6) 별표 4의3 비고 제3호에 따라 별표 5의3에 따른 폐기물의 구체적인 재활용 기준에 따라 재활용이 가능한 폐기물인지 여부 등을 사전 분석?확인하는 경우에는 그 분석?확인 결과를 배출자(생활폐기물배출자는 제외한다)에게 통보하여 배출자가 재활용 기준의 준수 여부를 확인할 수 있도록 해야 한다. 나. 개별사항 1) 폭발성이 있는 폐기물은 소량으로 분리ㆍ보관하고, 다른 폐기물이나 산화 제와 혼합ㆍ접촉하지 않아야 하며, 불티ㆍ불꽃ㆍ정전기 또는 고온체와의 접 근이나 충격ㆍ마찰을 피하고, 폐기물을 보관ㆍ취급 또는 사용하는 장소가 폭발이 유발되는 온도 이상으로 과열되지 않도록 해야 한다. 2) 인화성이 있는 폐기물은 불티ㆍ불꽃ㆍ정전기 또는 고온체와의 접근이나 충 격ㆍ마찰을 피하고, 폐기물을 보관ㆍ취급 또는 사용하는 장소가 화재가 유 발되는 온도 이상으로 과열되지 않도록 해야 한다. 3) 자연발화성이 있는 폐기물은 불티ㆍ불꽃ㆍ정전기 또는 고온체 등 발화유발 가능성이 있는 물질 및 공기와의 접촉을 피하고, 직사광선에 직접 노출되지 않도록 해야 한다. 4) 금수성이 있는 폐기물은 밀폐된 용기에 보관하는 등 물이나 증기와 접촉되 지 않도록 해야 한다. 5) 산화성이 있는 폐기물은 가연물 또는 분해를 촉진하는 물질과 접촉ㆍ혼합 되지 않도록 하고, 과열ㆍ충격ㆍ마찰 등이 발생되지 않도록 해야 한다. 6) 용출독성 또는 생태독성이 있는 폐기물은 유해물질이 누출ㆍ유출 또는 비 산되지 않도록 별도의 용기 등에 담아 보관해야 한다. 7) 부식성이 있는 폐기물은 내부식성을 갖는 용기에 보관하고, 누출ㆍ유출 또 는 비산되지 않도록 해야 한다. 8) 매체접촉형 재활용의 경우에는 다음의 사항을 준수해야 한다. 가) 대상폐기물과 재활용 할 수 없는 다른 폐기물이나 이물질 등을 혼합하 여 재활용 대상 부지에 반입하지 아니하고, 재활용하기 전에 이물질 등을 최대한 분리ㆍ제거해야 한다. 나) 혼합이 필요한 경우에는 지형 여건, 환경 위해성 여부, 공사 안전성 등을 종합적으로 고려하여 일반 토사류 등과 혼합하여 사용해야 하며, 폐기물 의 비산 또는 유ㆍ누출 등으로 인한 오염이나 피해가 발생되지 않는 장 소에서 혼합해야 한다. 다) 재활용 과정 또는 재활용한 후 침출수로 인한 2차 환경오염이 발생하지 않아야 하며, 재활용 이후 지반의 안정성이 유지되고 재활용 대상 폐기물 또는 폐기물과 토양 등과의 혼합물이 유실되지 않도록 해야 한다. 라) 재활용 대상 폐기물을 사업 부지 등에 보관할 경우 비산, 누ㆍ유출 등이 발생되지 않는 장소를 선정하여 보관해야 하며, 바닥포장, 덮개설치 등을 통해 폐기물의 비산, 누ㆍ유출 등을 방지해야 한다. 마) 수소이온농도를 중성수준으로 낮추기 위한 선별ㆍ파쇄ㆍ혼합ㆍ중화 등 의 재활용과정에서 새로운 부산물이 생성되는 경우에는 대상 폐기물과 부산물이 환경에 미치는 영향 등을 검토하여 오염 등의 영향이 없도록 혼합ㆍ중화해 사용해야 한다. 바) 고화제 등을 혼합하여 처리한 고화처리물을 사용하는 경우에는 혼합된 고화처리물의 건조ㆍ양생 등 안정화기간을 거쳐 사용해야 한다. 3. 기후에너지환경부장관은 폐기물의 재활용과정에서 오염예방 및 방지 등을 위하 여 필요한 경우 폐기물을 재활용하는 자가 지켜야 할 구체적인 준수사항을 별도 로 정하여 고시할 수 있다.</div></details></div></div><div class="std"><div class="stdh"><b>운반 기준</b><span class="when">운반업체 · 운반업체 고를 때</span></div><div class="stdl">폐기물은 종류·성질·상태별로 구분해 수집·운반·보관하되(의료폐기물이 아니면 같은 기준·시설 처리나 혼합 발생 등은 예외), 흩날림·누출·침출수 유출을 막아야 합니다. 처분·재활용시설에서 처리하고 적정 처리 장소 외로 운반하지 말며, 재활용 가능한 것은 재활용해야 합니다. 지정폐기물 연간 100톤 이상 배출 사업장폐기물배출자와 처리업자는 안전시설·방제장비·대응 매뉴얼을 갖춰야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행령 제7조 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구의 조례에 따라 그 구분을 다르게 정하는 경우 2. 수집ㆍ운반ㆍ보관의 과정에서 폐기물이 흩날리거나 누출되지 아니하도록 하고, 침출수(沈出水)가 유출되지 아니하도록 하며, 침출수가 생기는 경우에는 기후에너지환경부령으로 정하는 바에 따라 처리할 것 3. 해당 폐기물을 적정하게 처분, 재활용 또는 보관할 수 있는 장소 외의 장소로 운반하지 아니할 것. 다만, 다음 각 목의 어느 하나에 해당하는 자가 적재 능력이 작은 차량으로 폐기물을 수집하여 적재 능력이 큰 차량으로 옮겨 싣기 위하여 기후에너지환경부령으로 정하는 장소로 운반하는 경우에는 그러하지 아니하다. 가. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자 나. 법 제46조제1항제3호에 해당하는 폐기물처리 신고를 한 자 중 기후에너지환경부령으로 정하는 자 4. 재활용 또는 중간처분 과정에서 발생하는 폐기물과 법 제13조제1항 단서에 따른 중간가공 폐기물(이하 &quot;중간가공 폐기물&quot;이라 한다)은 새로 폐기물이 발생한 것으로 보아, 법 제17조제2항에 따른 신고 또는 같은 조 제5항에 따른 확인을 받고, 해당 폐기물의 처리방법에 따라 적정하게 처리할 것. 5. 폐기물은 폐기물 처분시설 또는 재활용시설에서 처리할 것. 다만, 생활폐기물 배출자가 법 제15조제1항에 따라 처리하는 경우 및 폐기물을 기후에너지환경부령으로 정하는 바에 따라 생활환경 보전상 지장이 없는 방법으로 적정하게 처리하는 경우에는 그러하지 아니하다. 6. 폐기물을 처분 또는 재활용하는 자가 폐기물을 보관하는 경우에는 그 폐기물 처분시설 또는 재활용시설과 같은 사업장에 있는 보관시설에 보관할 것. 다만, 법 제25조제5항제5호부터 제7호까지의 규정 중 어느 하나에 해당하는 폐기물 재활용업의 허가를 받은 자(이하 &quot;폐기물 재활용업자&quot;라 한다)가 사업장 폐기물을 재활용하는 경우로서 기후에너지환경부령으로 정하는 경우에는 그러하지 아니하다. 7. 법 제46조제1항에 따라 폐기물처리 신고를 한 자(이하 &quot;폐기물처리 신고자&quot;라 한다)와 법 제5조제1항에 따른 광역 폐기물처리시설 설치ㆍ운영자(법 제5조제2항에 따라 설치ㆍ운영을 위탁받은 자를 포함한다)는 기후에너지환경부령으로 정하는 기간 이내에 폐기물을 처리할 것. 다만, 화재, 중대한 사고, 노동쟁의, 방치 폐기물의 반입ㆍ보관 등 그 처리기간 이내에 처리하지 못할 부득이한 사유가 있는 경우로서 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장의 승인을 받은 때에는 그러하지 아니하다. 8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것 가. 폐산(廢酸)이나 폐알카리와 다른 폐기물이 혼합된 경우에는 중화처리한 후 적정하게 처리할 것 나. 일반소각대상 폐기물과 고온소각대상 폐기물이 혼합된 경우에는 고온소각할 것 9. 폐기물을 매립하는 경우에는 침출수와 가스의 유출로 인한 주변환경의 오염을 방지하기 위하여 차수시설(遮水施設), 집수시설(集水施設), 침출수 유량조정조(流量調整槽), 침출수 처리시설을 갖추고, 가스 소각시설이나 발전ㆍ연료화 처리시설을 갖춘 매립시설에서 처분할 것. 다만, 침출수나 가스가 발생하지 아니하거나 침출수나 가스의 발생으로 인한 주변 환경오염의 우려가 없다고 인정되는 경우로서 기후에너지환경부령으로 정하는 경우에는 위 시설의 전부 또는 일부를 갖추지 아니한 매립시설에서 이를 처분할 수 있다. 10. 분진ㆍ소각재ㆍ오니류(汚泥類)중 지정폐기물이 아닌 고체상태의 폐기물로서 수소이온 농도지수가 12.5 이상이거나 2.0 이하인 것을 매립처분하는 경우에는 관리형 매립시설의 차수시설과 침출수 처리시설의 성능에 지장을 초래하지 아니하도록 중화 등의 방법으로 중간처분한 후 매립할 것 11. 재활용이 가능한 폐기물은 재활용하도록 할 것 12. 폐산ㆍ폐알카리, 금속성 분진 또는 폐유독물질 등으로서 화재, 폭발 또는 유독가스 발생 등의 우려가 있다고 기후에너지환경부장관이 정하여 고시하는 폐기물은 제1호 각 목 외의 부분 단서 및 같은 호 가목에도 불구하고 그 처리 과정에서 다른 폐기물과 혼합되거나 수분과 접촉되지 아니하도록 할 것. 다만, 중화 등의 방법으로 중간처분하여 화재, 폭발 또는 유독가스 발생 등의 우려가 없는 경우에는 그러하지 아니하다. 13. 지정폐기물을 연간 100톤 이상 배출하는 법 제17조제1항에 따른 사업장폐기물배출자 및 법 제25조제3항에 따른 폐기물처리업의 허가를 받은 자(이하 &quot;폐기물처리업자&quot;라 하며, 폐기물처리업자 중 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자의 경우 제3호 각 목 외의 부분 단서에 따라 기후에너지환경부령으로 정하는 장소로 폐기물을 운반하는 자에 한정한다)는 지정폐기물을 처리하는 과정에서 다음 각 목의 기준을 준수할 것 가. 지정폐기물을 배출 또는 처리하는 과정에서 폐기물의 유출, 화재, 폭발 또는 유독가스 발생 등의 사고 발생을 예방하는 데 필요한 안전 시설ㆍ장치 등을 갖출 것 나. 폐기물의 유출, 화재, 폭발 또는 유독가스 발생 등의 사고 발생에 대비하여 방제 약품ㆍ장비 등과 사고대응 매뉴얼을 비치하고 근무자가 사용방법과 대응 요령을 숙지하도록 조치할 것 ②제1항에 따른 폐기물의 처리에 관한 구체적인 기준과 방법은 기후에너지환경부령으로 정한다. ③ 법 제13조제1항 단서에 따라 중간가공 폐기물에 적용되는 완화된 처리 기준과 방법은 다음 각 호와 같다. 1. 중간가공 폐기물을 운반하는 경우에는 폐기물수집ㆍ운반증을 붙이거나 가지고 있지 아니할 수 있다. 2. 중간가공 폐기물을 보관하는 경우에는 그 보관 기간을 연장할 수 있다. ④ 제3항에 따른 완화된 기준과 방법에 관한 구체적인 사항은 기후에너지환경부령으로 정한다.</div></details></div><div class="stdl">적재능력이 작은 차량에서 큰 차량으로 옮겨 싣기 위한 임시보관장소는 시·도지사 또는 지방환경관서의 장에게 승인받아야 하며, 수집·운반업자 등당 시·도별 1개소로 제한됩니다. 이 조문이 정한 수집·운반자는 중량 30톤 이하, 용적 300세제곱미터 이하, 5일 이내로 보관해야 합니다. 소재지(승인받은 관할구역 안만)·폐기물 종류·허용량을 바꾸려면 미리 변경승인을 받아야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 제9조 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;이라 한다)으로부터 승인받은 장소(이하 &quot;임시보관장소&quot;라 한다)로 운반하는 경우를 말한다. ② 영 제7조제1항제3호나목에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 다음 각 호의 자를 말한다. 1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자 2. 제66조제6항제3호에 따른 폐가전제품을 분리ㆍ해체하지 아니하고 그대로 수집ㆍ운반하는 자 3. 제66조제6항제5호에 따른 폐식용유를 수집ㆍ운반하는 자 4. 제66조제6항제9호에 따른 동ㆍ식물성 잔재물 중 동물성 잔재물과 커피찌꺼기에 해당하는 식물성 잔재물을 수집ㆍ운반하는 자 4의2. 제66조제6항제10호에 따른 1회용 컵을 수집ㆍ운반하는 자 4의3. 제66조제6항제11호에 따른 어업ㆍ양식업용 폐합성수지(이하 &quot;어업ㆍ양식업용 폐합성수지&quot;라 한다)를 수집ㆍ운반하는 자 5. 그 밖에 폐기물의 원활한 처리를 위하여 기후에너지환경부장관이 임시보관장소가 필요하다고 인정하여 고시하는 자 ③ 시ㆍ도지사 또는 지방환경관서의 장이 제1항에 따른 임시보관장소를 승인하는 경우에는 다음 각 호의 기준에 맞도록 하여야 한다. 1. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자(이하 &quot;폐기물 수집ㆍ운반업자&quot;라 한다) 또는 제2항 각 호의 자(이하 이 조에서 &quot;폐기물 수집ㆍ운반업자 등&quot;이라 한다)당 특별시ㆍ광역시ㆍ특별자치시ㆍ도 및 특별자치도(이하 &quot;시ㆍ도&quot;라 한다)별로 1개소로 제한할 것 2. 임시보관장소에서 보관할 수 있는 허용량 및 기간은 다음 각 목의 범위로 할 것 가. 폐기물 수집ㆍ운반업자: 제31조제1항제1호에 따른 양 및 기간 이내일 것 나. 제2항 각 호의 자 1) 허용량: 중량이 30톤 이하이고 용적이 300세제곱미터 이하일 것 2) 기간: 5일 이내일 것 ④ 제1항에 따른 승인을 받으려는 자는 별지 제1호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인신청서에 다음 각 호의 서류를 첨부하여 임시보관장소 설치예정지를 관할하는 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 하며, 시ㆍ도지사 또는 지방환경관서의 장은 임시보관장소의 설치를 승인하였을 때에는 별지 제2호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인서를 신청인에게 내주어야 한다. 1. 폐기물의 수집ㆍ운반 계획서 2. 보관장소의 규모를 확인할 수 있는 서류 3. 보관장소에 보관할 수 있는 폐기물의 양과 그 산출근거를 확인할 수 있는 서류 4. 폐기물의 보관과 관련하여 예상되는 환경오염에 대한 대책 5. 해당 토지나 건축물 등에 대한 적법한 사용권이 있음을 확인할 수 있는 서류 ⑤ 제4항에 따라 승인받은 자는 다음 각 호의 사유로 승인받은 사항을 변경하려면 미리 별지 제1호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 변경승인신청서에 설치승인서와 변경내용을 증명하는 서류를 첨부하여 승인받은 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 하며, 시ㆍ도지사 또는 지방환경관서의 장은 임시보관장소의 변경승인을 하면 별지 제2호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인서에 변경사항을 적어 신청인에게 내주어야 한다. 1. 임시보관장소 소재지의 변경(제4항에 따라 승인받은 행정기관의 관할구역 안에서의 소재지 변경만 해당한다) 2. 보관대상 폐기물 종류의 변경 3. 승인받은 허용량의 변경 ⑥ 제4항이나 제5항에 따라 임시보관장소를 승인하거나 변경승인한 시ㆍ도지사 또는 지방환경관서의 장은 승인하거나 변경승인한 내용을 즉시 해당 수집ㆍ운반업의 허가기관이나 폐기물처리 신고기관에 알려야 한다.</div></details></div></div></div><div class="card"><details class="more"><summary><span class="arrow">▶</span>판단 근거 보기 (13건)</summary><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">분류번호 확인</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>분류번호 51-03-01(폐합성수지류): 시행규칙 별표 4에 있는 번호이고, 폐기물 이름·성상과 맞습니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 4 (2026.11.12 시행)</div><div class="quote">51-03-01 폐합성수지류(폐염화비닐수지류는 제외한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">…-01-99 그 밖의 유기성오니
+51-02 무기성오니류
+51-02-01 폐수처리오니
+51-02-02 정수처리오니
+51-02-03 하수처리오니
+51-02-04 하수준설토
+51-02-05 건설오니
+51-02-06 석재·골재폐수처리오니(석재·골재 생산 시 발생한 폐수를 처리하
+는 과정에서 발생한 오니로 한정한다)
+51-02-07 유리식각공정오니
+51-02-08 실리콘공정오니
+51-02-09 보크사이트잔재물
+51-02-10 영농폐기물(농업활동 과정에서 배출된 농업용 폐플라스틱 필름
+ㆍ시트류에 한정한다) 폐수처리오니
+51-02-11 영농폐기물(농업활동 과정에서 배출된 농업용 폐플라스틱 필름
+ㆍ시트류에 한정한다) 공정오니
+51-02-19 그 밖의 공정오니
+51-02-99 그 밖의 무기성오니
+51-03 폐합성고분자화합물
+51-03-01 폐합성수지류(폐염화비닐수지류는 제외한다)
+51-03-02 폐합성고무류
+51-03-03 폐폴리염화비닐수지류
+51-03-04 폐폴리우레탄폼류
+51-03-05 양식용폐부자
+51-03-06 폐발포합성수지
+51-03-07 플라스틱폐포장재
+51-03-08 폐어망
+51-03-99 그 밖의 폐합성고분자화합물(합성수지류로 피복된 폐전선을 포
+함한다)
+51-04 광재류
+51-04-01 고로슬래그
+51-04-02 제강슬래그
+51-04-03 비철금속제련공정광재
+51-04-04 선광공정광재(기후에너지환경부장관이 정하는 방법에 따라 관리
+되는 것은 제외한다)
+51-04-99 그 밖의 광재류
+51-05 분진류(대기오염방지시설에서 포집된 것으로 한정하되, 소각시설에서
+발생하는 것은 제외한다)
+51-05-01 제철공정분진
+51-05-02 시멘트제조공정분진
+51-05-03 발전시설분진
+51-05-04 폐실리카 퓸(규소철 제조과정에서 발생된 분진을 말한다)
+51-05-99 그 밖의 분진
+51-06 폐주물사 및 폐사
+51-06-01 점토점결폐주물사
+51-06-02 화학점결폐주물사
+51-06-03 샌드블라스트폐사
+51-06-04 폐여과사
+51-06-99 그 밖의 폐사
+51-07 폐내화물 및 폐도자기조각
+51-07-01 폐내화물
+51-07-02 폐도자기조각
+51-08 소각재
+51-08-01 생활폐기물 소각시설 비산재
+51-08-02 사업장폐기물 소각시설 비산재
+51-08-03 생활폐기물 소각시설 바닥재
+51-08-04 사업장폐기물 소각시설 바닥재
+51-08-05 생활폐기물 소각시설 소각재(바닥재와 비산재가 혼합된 경우를
+말한다)
+…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">지정폐기물 여부</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>지정폐기물이 아닙니다 (사업장일반폐기물).</p><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행령 별표 1 (2026.11.12 시행)</div><div class="quote">가. 폐합성 고분자화합물 1) 폐합성 수지(고체상태의 것은 제외한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">지정폐기물의 종류(제3조 관련)
+1. 특정시설에서 발생되는 폐기물
+가. 폐합성 고분자화합물
+1) 폐합성 수지(고체상태의 것은 제외한다)
+2) 폐합성 고무(고체상태의 것은 제외한다)
+나. 오니류(수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인
+것으로 한정한다)
+1) 폐수처리 오니(기후에너지환경부령으로 정하는 물질을 함유한 것으로
+기후에너지환경부장관이 고시한 시설에서 발생되는 것으로 한정한다)
+2) 공정 오니(기후에너지환경부령으로 정하는 물질을 함유한 것으로 기후
+에너지환경부장관이 고시한 시설에서 발생되는 것으로 한정한다)
+다. 폐농약(농약의 제조·판매업소에서 발생되는 것으로 한정한다)
+2. 부식성 폐기물
+가. 폐산(액체상태의 폐기물로서 수소이온 농도지수가 2.0 이하인 것으로 한
+정한다)
+나. 폐알칼리(액체상태의 폐기물로서 수소이온 농도지수가 12.5 이상인 것으
+로 한정하며, 수산화칼륨 및 수산화나트륨을 포함한다)
+3. 유해물질함유 폐기물(기후에너지환경부령으로 정하는 물질을 함유한 것으로
+한정한다)
+가. 광재(鑛滓)[철광 원석의 사용으로 인한 고로(高爐)슬래그(slag)는 제외한
+다]
+나. 분진(대기오염 방지시설에서 포집된 것으로 한정하되, 소각시설에서 발생
+되는 것은 제외한다)
+다. 폐주물사 및 샌드블라스트 폐사(廢砂)
+라. 폐내화물(廢耐火物) 및 재벌구이 전에 유약을 바른 도자기 조각
+마. 소각재
+바. 안정화 또는 고형화·고화 처리물
+사. 폐촉매
+아. 폐흡착제 및 폐흡수제[광물유·동물유 및 식물유{폐식용유(식용을 목적으
+로 식품 재료와 원료를 제조ㆍ조리ㆍ가공하는 과정, 식용유를 유통ㆍ사용하
+는 과정 또는 음식물류 폐기물을 재활용하는 과정에서 발생하는 기름을 말
+한다. 이하 같다)는 제외한다}의 정제에 사용된 폐토사(廢土砂)를 포함한
+다]
+자. 삭제 &lt;2020. 7. 21.&gt;
+4. 폐유기용제
+가. 할로겐족(기후에너지환경부령으로 정하는 물질 또는 이를 함유한 물질로
+한정한다)
+나. 그 밖의 폐유기용제(가목 외의 유기용제를 말한다)
+5. 폐페인트 및 폐래커(다음 각 목의 것을 포함한다)
+가. 페인트 및 래커와 유기용제가 혼합된 것으로서 페인트 및 래커 제조업, 용
+적 5세제곱미터 이상 또는 동력 3마력 이상의 도장(塗裝)시설, 폐기물을
+재활용하는 시설에서 발생되는 것
+나. 페인트 보관용기에 남아 있는 페인트를 제거하기 위하여 유기용제와 혼합
+된 것
+다. 폐페인트 용기(용기 안에 남아 있는 페인트가 건…</div></details><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행령 제3조 (2026.11.12 시행)</div><div class="quote">제3조(지정폐기물의 종류) 법 제2조제4호에 따른 지정폐기물은 별표 1과 같다.</div></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">맡기기 전 지정폐기물 확인</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>맡기기 전 지정폐기물 확인 대상이 아닙니다.</p><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행규칙 제17조의2 (2026.11.12 시행)</div><div class="plain">사업장폐기물배출자는 사업장에서 나오는 폐기물이 지정폐기물인지 미리 확인해야 합니다. 이 확인 의무는 그 폐기물이 지정폐기물로 분류될 수 있는 경우로서, 정해진 각 호 중 어느 하나에 해당할 때 적용됩니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">사업장폐기물배출자는 법 제17조제1항제1호에 따라 사업장에서 발생하는 폐기물이 지정폐기물로 분류될 수 있는 경우로서 다음 각 호의 어느 하나에 해당하면 사업장에서 발생하는 폐기물이 지정폐기물에 해당되는지를 미리 확인해야 한다.</div><div class="full">제17조의2(사업장폐기물배출자의 확인 등)
+① 법 제17조제1항제1호에서 &quot;기후에너지환경부령으로 정하는 유해물질&quot;이란 별표 1에 따른 유해물질, 기름성분, 석면 또는 폴리클로리네이티드비페닐을 말한다.
+② 사업장폐기물배출자는 법 제17조제1항제1호에 따라 사업장에서 발생하는 폐기물이 지정폐기물로 분류될 수 있는 경우로서 다음 각 호의 어느 하나에 해당하면 사업장에서 발생하는 폐기물이 지정폐기물에 해당되는지를 미리 확인해야 한다.
+1. 법 제17조제2항에 따라 사업장폐기물배출자 신고 또는 변경신고[제18조제4항제2호ㆍ제5호(대상폐기물의 종류가 변경된 경우만 해당한다) 및 제8호에 해당하는 사유가 발생한 경우만 해당한다]를 하는 경우
+2. 사용 원료, 생산 또는 배출 공정 등의 변경으로 폐기물의 종류 또는 성상이 변경되는 경우(제1호에 해당하는 경우는 제외한다)
+3. 처리 대상 폐기물의 종류 또는 성상이 변경되는 경우</div></details><div class="ref"><span class="k">확인한 기준</span>사업장폐기물 배출자신고 및 처리계획 확인 업무처리지침 Ⅵ (2025.12.31 시행)</div><div class="quote">광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화ㆍ고체화 처리물, 폐촉매, 수은함유폐기물 처리잔재물</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">Ⅵ. 사업장폐기물 배출자의 확인의무1. 지정폐기물 해당여부 확인(법 제17조제1항)가. 확인대상 폐기물(규칙 제17조의2제1항)○ 오니류, 폐흡착제, 폐흡수제○ 광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화ㆍ고체화 처리물, 폐촉매, 수은함유폐기물 처리잔재물○ 기름성분○ 폐석면○ 폴리클로리네이티드비페닐나. 확인시기(규칙 제17조의2제2항)○ 법 제17조제2항에 따라 사업장폐기물배출자 신고 또는 변경신고를 하는 경우○ 사용원료, 생산 또는 배출공정 등의 변경으로 폐기물의 종류 또는 성상이 변경되는 경우○ 처리 대상 폐기물의 종류 또는 성상이 변경되는 경우2. 수탁처리능력 사전확인대상 사업자(법 제17조제1항제3호 및 규칙 제16조의12)○ 규칙 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자3. 수탁처리능력확인서 발급 및 작성방법(법 제17조제1항제3호 및 규칙 제16조의12)가. 발급서식 : 규칙 별지 제5호서식나. 발급자○ 사업장폐기물배출자로부터 위탁 의뢰를 받은 수집ㆍ운반자, 처분업자(중간처분업자, 최종처분업자, 종합처분업자) 및 재활용업자(중간처분업자, 최종처분업자, 종합처분업자), 재활용업자(중간재활용업자, 최종재활용업자, 종합재활용업자) 및 폐기물처리 신고자가 각각 작성(수집ㆍ운반과 처분ㆍ재활용을 함께 위탁받는 경우 1장의 수탁처리능력확인서에 작성가능)다. 작성방법○ 해당 사업자별 기재항목- 폐기물 배출자(위탁자) : ① ~ ⑥- 폐기물 처분 및 재활용자(수탁자) : ⑦ ~ ⑭는 공통기재 사항ㆍ 수집ㆍ운반업자 : &lt;21&gt;, &lt;22&gt;, &lt;24&gt;ㆍ 중간처분업자, 재활용업자 및 폐기물처리 신고자 : &lt;19&gt;, &lt;21&gt;, &lt;22&gt;, &lt;24&gt;ㆍ 최종처분업자 : &lt;20&gt;, &lt;21&gt;, &lt;23&gt;, &lt;24&gt;ㆍ 종합처분업자 : &lt;19&gt; ~ &lt;24&gt;○ 방치폐기물처리이행보증(⑮)- 공제조합 가입자 : 공제조합 가입여부만 기재- 보증보험 가입자 : 보증보험 가입여부만 기재○ 수탁자의 허가 또는 신고사항 중 폐기물중간처분 또는 재활용시설(&lt;19&gt;)- 수탁대상폐기물의 처리방법에 따른 폐기물처리시설의 종류별(일반소각시설, 고온소각시설 등)로 산정(동종시설이 여러 기 있는 경우 합산)○ 최종처분업자외 수탁자의 처리능력(&lt;22&gt;, 허용보관량을 기준으로 기재)- 허용보관량 : 폐기물 종류별로 허가받은 허용보관량을 기재- 현재 폐기물보관량 : 발급일 전일을 기준으로 미처리되…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">혼합 여부</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>다른 폐기물과 섞이지 않은 폐기물입니다.</p><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행령 제7조 (2026.11.12 시행)</div><div class="plain">두 종류 이상의 폐기물이 섞여 분리가 어려우면 다음 방법으로 처리해야 합니다. 폐산이나 폐알카리가 다른 폐기물과 섞인 경우에는 중화처리한 후 적정하게 처리하고, 일반소각대상 폐기물과 고온소각대상 폐기물이 섞인 경우에는 고온소각해야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것 가. 폐산(廢酸)이나 폐알카리와 다른 폐기물이 혼합된 경우에는 중화처리한 후 적정하게 처리할 것 나. 일반소각대상 폐기물과 고온소각대상 폐기물이 혼합된 경우에는 고온소각할 것</div><div class="full">…활용업의 허가를 받은 자(이하 &quot;폐기물 재활용업자&quot;라 한다)가 사업장 폐기물을 재활용하는 경우로서 기후에너지환경부령으로 정하는 경우에는 그러하지 아니하다.
+7. 법 제46조제1항에 따라 폐기물처리 신고를 한 자(이하 &quot;폐기물처리 신고자&quot;라 한다)와 법 제5조제1항에 따른 광역 폐기물처리시설 설치ㆍ운영자(법 제5조제2항에 따라 설치ㆍ운영을 위탁받은 자를 포함한다)는 기후에너지환경부령으로 정하는 기간 이내에 폐기물을 처리할 것. 다만, 화재, 중대한 사고, 노동쟁의, 방치 폐기물의 반입ㆍ보관 등 그 처리기간 이내에 처리하지 못할 부득이한 사유가 있는 경우로서 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장의 승인을 받은 때에는 그러하지 아니하다.
+8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것
+가. 폐산(廢酸)이나 폐알카리와 다른 폐기물이 혼합된 경우에는 중화처리한 후 적정하게 처리할 것
+나. 일반소각대상 폐기물과 고온소각대상 폐기물이 혼합된 경우에는 고온소각할 것
+9. 폐기물을 매립하는 경우에는 침출수와 가스의 유출로 인한 주변환경의 오염을 방지하기 위하여 차수시설(遮水施設), 집수시설(集水施設), 침출수 유량조정조(流量調整槽), 침출수 처리시설을 갖추고, 가스 소각시설이나 발전ㆍ연료화 처리시설을 갖춘 매립시설에서 처분할 것. 다만, 침출수나 가스가 발생하지 아니하거나 침출수나 가스의 발생으로 인한 주변 환경오염의 우려가 없다고 인정되는 경우로서 기후에너지환경부령으로 정하는 경우에는 위 시설의 전부 또는 일부를 갖추지 아니한 매립시설에서 이를 처분할 수 있다.
+10. 분진ㆍ소각재ㆍ오니류(汚泥類)중 지정폐기물이 아닌 고체상태의 폐기물로서 수소이온 농도지수가 12.5 이상이거나 2.0 이하인 것을 매립처분하는 경우에는 관리형 매립시설의 차수시설과 침출수 처리시설의 성능에 지장을 초래하지 아니하도록 중화 등의 방법으로 중간처분한 후 매립할 것
+11. 재활용이 가능한 폐기물은 재활용하도록 할 것
+12. 폐산ㆍ폐알카리, 금속성 분진 또는 폐유독물질 등으로서 화재, 폭발 또는 유독가스 발생 등의 우려가 있다고 기후에너지환경부장관이 정하여 고시하는 폐기물은 제1호 각 목 외의 부분 단서 및 같은 호 가목에도 불구하고 그 처리 과정에서 다른 폐기물과 혼합되거나 수분과 접촉되지 아니하도록 할 것. 다만, 중화 등의 방…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">재활용 금지 여부</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>재활용 금지 대상이 아닙니다.</p><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 제13조의2 (2026.11.12 시행)</div><div class="plain">누구든 비산먼지·악취, 침출수·유해물질 유출, 소음·진동 피해가 없고 대통령령·기후에너지환경부령의 재활용 기준을 지키면 폐기물을 재활용할 수 있다. 폐석면, 부령 농도 이상 PCBs 폐기물, 의료폐기물(태반 제외), 폐유독물 등 위해가 매우 큰 폐기물 중 대통령령이 정한 것은 재활용이 금지·제한된다. 오염 예방·취급 방법은 부령을 따른다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">② 제1항에도 불구하고 다음 각 호의 어느 하나에 해당하는 폐기물은 재활용을 금지하거나 제한한다. 1. 폐석면 2. 폴리클로리네이티드비페닐(PCBs)이 기후에너지환경부령으로 정하는 농도 이상 들어있는 폐기물 3. 의료폐기물(태반은 제외한다) 4. 폐유독물 등 인체나 환경에 미치는 위해가 매우 높을 것으로 우려되는 폐기물 중 대통령령으로 정하는 폐기물</div><div class="full">제13조의2(폐기물의 재활용 원칙 및 준수사항)
+① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다.
+1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것
+2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것
+3. 소음 또는 진동이 발생하여 사람에게 피해를 주지 아니할 것
+4. 중금속 등 유해물질을 제거하거나 안정화하여 재활용제품이나 원료로 사용하는 과정에서 사람이나 환경에 위해를 미치지 아니하도록 하는 등 대통령령으로 정하는 사항을 준수할 것
+5. 그 밖에 기후에너지환경부령으로 정하는 재활용의 기준을 준수할 것
+② 제1항에도 불구하고 다음 각 호의 어느 하나에 해당하는 폐기물은 재활용을 금지하거나 제한한다.
+1. 폐석면
+2. 폴리클로리네이티드비페닐(PCBs)이 기후에너지환경부령으로 정하는 농도 이상 들어있는 폐기물
+3. 의료폐기물(태반은 제외한다)
+4. 폐유독물 등 인체나 환경에 미치는 위해가 매우 높을 것으로 우려되는 폐기물 중 대통령령으로 정하는 폐기물
+③ 제1항 및 제2항 각 호의 원칙을 지키기 위하여 필요한 오염 예방 및 저감방법의 종류와 정도, 폐기물의 취급 기준과 방법 등의 준수사항은 기후에너지환경부령으로 정한다.</div></details><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행규칙 제14조의3 (2026.11.12 시행)</div><div class="quote">가. 법 제13조의2제2항제1호ㆍ제2호 또는 제3호에 해당하는 폐기물</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제14조의3(폐기물의 재활용 기준 및 준수사항 등)
+① 법 제13조의2제1항제5호에서 &quot;기후에너지환경부령으로 정하는 재활용의 기준&quot;이란 별표 5의3에 따른 폐기물의 재활용 기준을 말한다.
+② 법 제13조의2제2항에 따라 재활용이 금지되거나 제한되는 폐기물은 다음 각 호의 구분에 따른다.
+1. 재활용이 금지되는 폐기물
+가. 법 제13조의2제2항제1호ㆍ제2호 또는 제3호에 해당하는 폐기물
+나. 영 별표 4의3 제1호가목 또는 나목에 해당하는 폐기물
+다. 영 별표 4의3 제2호ㆍ제3호ㆍ제4호 또는 제6호에 해당하는 폐기물
+라. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 금지하는 것으로 고시하는 폐기물
+2. 재활용이 제한되는 폐기물
+가. 영 별표 4의3 제1호다목에 해당하는 폐기물(제한된 용도의 제품이나 원료로 재활용하는 경우만 해당한다)
+나. 영 별표 4의3 제5호에 해당하는 폐기물
+다. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 제한하는 것으로 고시하는 폐기물
+③ 법 제13조의2제2항제2호에서 &quot;기후에너지환경부령으로 정하는 농도&quot;란 영 별표 1 제8호 각 목에 따라 지정폐기물에 해당하는 폴리클로리네이티드비페닐의 농도를 말한다.
+④ 제2항에도 불구하고 제37조제2항에 따라 폐기물 재활용시설 설치ㆍ운영계획서를 시ㆍ도지사나 지방환경관서의 장에게 제출하여 확인을 받은 자는 법 제13조의2제2항 각 호의 폐기물을 시험ㆍ연구 목적으로 재활용할 수 있다.
+⑤ 법 제13조의2제3항에 따른 폐기물을 재활용하는 자의 준수사항은 별표 5의4와 같다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">재활용 제한 여부</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>재활용 제한 대상이 아닙니다.</p><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행규칙 제14조의3 (2026.11.12 시행)</div><div class="quote">가. 영 별표 4의3 제1호다목에 해당하는 폐기물(제한된 용도의 제품이나 원료로 재활용하는 경우만 해당한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제14조의3(폐기물의 재활용 기준 및 준수사항 등)
+① 법 제13조의2제1항제5호에서 &quot;기후에너지환경부령으로 정하는 재활용의 기준&quot;이란 별표 5의3에 따른 폐기물의 재활용 기준을 말한다.
+② 법 제13조의2제2항에 따라 재활용이 금지되거나 제한되는 폐기물은 다음 각 호의 구분에 따른다.
+1. 재활용이 금지되는 폐기물
+가. 법 제13조의2제2항제1호ㆍ제2호 또는 제3호에 해당하는 폐기물
+나. 영 별표 4의3 제1호가목 또는 나목에 해당하는 폐기물
+다. 영 별표 4의3 제2호ㆍ제3호ㆍ제4호 또는 제6호에 해당하는 폐기물
+라. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 금지하는 것으로 고시하는 폐기물
+2. 재활용이 제한되는 폐기물
+가. 영 별표 4의3 제1호다목에 해당하는 폐기물(제한된 용도의 제품이나 원료로 재활용하는 경우만 해당한다)
+나. 영 별표 4의3 제5호에 해당하는 폐기물
+다. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 제한하는 것으로 고시하는 폐기물
+③ 법 제13조의2제2항제2호에서 &quot;기후에너지환경부령으로 정하는 농도&quot;란 영 별표 1 제8호 각 목에 따라 지정폐기물에 해당하는 폴리클로리네이티드비페닐의 농도를 말한다.
+④ 제2항에도 불구하고 제37조제2항에 따라 폐기물 재활용시설 설치ㆍ운영계획서를 시ㆍ도지사나 지방환경관서의 장에게 제출하여 확인을 받은 자는 법 제13조의2제2항 각 호의 폐기물을 시험ㆍ연구 목적으로 재활용할 수 있다.
+⑤ 법 제13조의2제3항에 따른 폐기물을 재활용하는 자의 준수사항은 별표 5의4와 같다.</div></details><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행령 별표 4의3 (2026.11.12 시행)</div><div class="quote">5. 법 제2조의2에 따른 폐기물의 재활용 유형에 관한 세부분류에 해당하지 않는</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">재활용이 금지되거나 제한되는 폐기물(제7조의3 관련)
+1. 다음 각 목의 어느 하나에 해당하는 물질 중 폐기되는 물질
+가. 「산업안전보건법」 제117조제1항에 따라 제조 등이 금지된 물질
+나. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 금지물
+질로 지정ㆍ고시된 물질
+다. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 제한물
+질로 지정ㆍ고시된 물질
+2. 폐농약(「농약관리법」 제2조제1호에 따른 농약 중 폐기되는 것을 말한다)
+3. 폐의약품(「약사법」 제2조제4호에 따른 의약품 중 폐기되는 것을 말한다)
+4. 의료폐기물을 멸균ㆍ분쇄한 잔재물
+5. 법 제2조의2에 따른 폐기물의 재활용 유형에 관한 세부분류에 해당하지 않는
+유형으로 재활용하려는 폐기물(재활용환경성평가를 받아 재활용하는 경우는
+제외한다)
+6. 천연방사성제품폐기물(「생활주변방사선 안전관리법」 제16조제1항에 따른 조
+치를 이행할 제조업자가 없는 제품의 폐기물을 포함한다) 및 천연방사성제품폐
+기물 소각재(「생활주변방사선 안전관리법」 제16조제1항에 따른 조치를 이행
+할 제조업자가 없는 제품의 폐기물 소각재를 포함한다)
+7. 그 밖에 기후에너지환경부장관이 재활용하는 경우 사람의 건강이나 환경에
+위해를 줄 수 있는 우려가 있다고 인정하여 고시하는 폐기물</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">재활용 가능 유형</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>51-03-01(폐합성수지류)에 허용된 재활용 유형: R-1, R-2, R-3-2, R-3-3, R-3-4, R-4-4, R-9-3, R-10, R-8-1, R-8-2, R-9-1. 중간 가공(R-10)이 포함됩니다. 다만 이 방식으로 맡길 때는 경우에 따라 사전 분석이 필요할 수 있습니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 4의3 (2026.11.12 시행)</div><div class="quote">51-03-01 폐합성수지류(폐염화비닐수지류는 제외한다): R-1, R-2, R-3-2, R-3-3, R-3-4, R-4-4, R-9-3, R-10, R-8-1, R-8-2, R-9-1</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)
+┌─────┬──────────────┬────────────┬───────┐1. 지정폐기물
+분류번호 | 폐기물의 종류 | 재활용 유형 | 사전
+분석·확인 필
+요 여부
+01 | 특정시설에서 발생하는 폐기물
+01-01 | 폐합성고분자화합물
+01-01-01 | 폐폴리에틸렌 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-02 | 폐폴리프로필렌 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-03 | 폐폴리염화비닐수지 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-04 | 폐폴리에틸렌테레프탈레이 | R-3-3, R-4-4, R-10 | 해당 없음
+트
+01-01-05 | 폐페놀수지 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-06 | 폐폴리우레탄 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-07 | 폐합성고무 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-08 | 폐폴리스티렌 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-09 | 폐아크리로니트릴브타디엔 | R-3-3, R-4-4, R-10 | 해당 없음
+스티렌(ABS수지)
+01-01-99 | 그 밖의 폐합성고분자화합 | R-3-3, R-4-4, R-10 | 해당 없음
+물
+01-02 | 오니류
+01-02-01 | 폐수처리오니 | R-3-1, R-3-2, R-3-3, | 해당 없음
+R-4-1, R-10
+01-02-02 | 유리식각공정오니 | R-3-1, R-3-2, R-3-3, | 해당 없음
+R-4-1, R-10
+01-02-03 | 제지공정오니 | R-3-1, R-3-2, R-3-3, | 해당 없음
+R-10
+01-02-04 | 실리콘제조공정오니 | R-3-1, R-3-2, R-3-4, | 해당 없음
+R-10
+01-02-05 | 보크사이트잔재물 | R-3-1, R-3-2, R-10 | 해당 없음
+01-02-99 | 그 밖의 공정 오니 | R-3-1, R-3-2, | 해당 없음
+R-3-3,R-3-4, R-4-1,
+R-10
+01-03 | 폐농약
+01-03-01 | 유기인계폐농약 | 재활용 금지
+01-03-02 | 유기염소계폐농약 | 재활용 금지
+01-03-03 | 카바메이트계(Carbamate) | 재활용 금지
+폐농약
+01-03-99 | 그 밖의 폐농약 | 재활용 금지
+02 | 부식성폐기물
+02-01 | 폐산…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">재활용 기준</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>맡길 재활용업체가 지켜야 할 기준입니다. 업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물의 재활용 기준(제14조의3제1항 관련): 1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다.</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물의 재활용 기준(제14조의3제1항 관련): 1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다. 나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학 물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6호의3 및 제7호부터 제9호까지의 규정에 따른 인체급성유해성물질, 인체만성유해성물 질, 생태유해성물질, 허가물질, 제한물질 및 금지물질(이하 이 표에서 “인체 급성유해성물질등”이라 한다)을 사용하지 않아야 한다. 다만, 해당 재활용을 위해 유해물질 또는 인체급성유해성물질등의 사용이 불가피한 경우에는 해 당 물질의 사용 일자와 양, 해당 물질의 유해성 등을  / 폐기물의 재활용 기준(제14조의3제1항 관련): R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능 유형에 적합한 폐기물을 사용하여야 한다.</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 5의3 제1호 (2026.11.12 시행)</div><div class="quote">1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다. 나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학 물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">1. 공통기준
+가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상
+으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌
+크백을 포함한다)에 넣거나 포장해야 한다.
+나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학
+물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6호의3 및
+제7호부터 제9호까지의 규정에 따른 인체급성유해성물질, 인체만성유해성물
+질, 생태유해성물질, 허가물질, 제한물질 및 금지물질(이하 이 표에서 “인체
+급성유해성물질등”이라 한다)을 사용하지 않아야 한다. 다만, 해당 재활용을
+위해 유해물질 또는 인체급성유해성물질등의 사용이 불가피한 경우에는 해
+당 물질의 사용 일자와 양, 해당 물질의 유해성 등을 기록한 자료를 3년간
+보존해야 한다.
+다. 법 제13조의2에 따라 폐기물을 재활용하는 자(법 제13조의3제1항제2호에 따
+라 재활용환경성평가를 받아 재활용하는 경우는 제외한다)는 별표 4의3에 따
+른 폐기물의 종류별 재활용 가능 유형에 해당하는 유형으로 제2호에 따른 재
+활용 유형별 재활용의 세부기준을 준수하여 재활용해야 한다.
+라. 제2호에 따른 재활용 유형별 재활용의 세부기준에서 정하는 기준·규격 이외
+에 「비료관리법」 제4조에 따라 설정 또는 지정된 보통비료의 공정규격 또
+는 부산물비료의 규격 등 다른 법령에서 원재료 또는 제품 등에 대한 기준·규
+격 등을 정하고 있는 경우에는 그 기준에 적합하게 재활용하도록 해야 한다.
+마. 「자원의 절약과 재활용촉진에 관한 법률 시행령」 제18조에 따른 재활용 의
+무대상 제품·포장재, 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시
+행령」 제8조제1항에 따른 폐가전제품 및 같은 조 제2항에 따른 폐자동차는
+각각 다음에 해당하는 방법 및 기준을 준수하여 재활용해야 한다.
+1) 재활용 의무대상 제품·포장재: 「자원의 절약과 재활용촉진에 관한 법률 시
+행규칙」 제13조의2에 따른 재활용의 방법과 기준
+2) 폐가전제품: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행규
+칙」 제5조에 따른 재활용 방법 및 기준
+3) 폐자동차: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행령」 제
+26조에 따른 재활용 방법 및 기준
+바. 별표 4의2 제2호나목2)에 따른 재활용 유형으로 골재 제품을 제조해 별표 4
+의2 제4호에 따른 유형으로 재활용하려는 경우에는 같은 표…</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 5의3 제2호 (2026.11.12 시행)</div><div class="quote">R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능 유형에 적합한 폐기물을 사용하여야 한다.</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">… 이하, 황분 함유량(건조된 상태 기준) 2퍼센트 이하, 길
+이(원형인 경우에는 지름) 40밀리미터 이하여야 한다. 다만, 화력발전
+소에서 연료로 사용하는 경우에는 회분 함유량이 35퍼센트를 초과할
+수 있다.
+(6) 연료로 재활용하는 유기성 오니, 커피찌꺼기 및 버섯폐배지는 「자원
+의 절약과 재활용촉진에 관한 법률 시행규칙」 제20조의3제3항에 따른
+고형연료제품의 품질 시험·분석방법에 따라 시험한 결과(건조된 상태
+를 기준으로 한다)가 다음의 기준에 적합해야 한다.
+(가) 수은: 킬로그램 당 1.20밀리그램 이하
+(나) 카드뮴: 킬로그램 당 9.0밀리그램 이하
+(다) 납: 킬로그램 당 200.0밀리그램 이하
+(라) 비소: 킬로그램 당 13.0밀리그램 이하
+바. 제품제조 등을 위한 중간가공폐기물을 만드는 유형
+R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능
+유형에 적합한 폐기물을 사용하여야 한다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">재활용 업체 준수사항</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>맡길 재활용업체가 지켜야 할 기준입니다. 업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의…</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지 시설을 이용하여 처리할 것 라) 악취:</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 5의4 (2026.11.12 시행)</div><div class="quote">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련)
+1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도
+가. 오염예방 및 저감방법
+1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거
+나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해
+야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치
+된 경우에만 해당한다.
+가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방
+지시설을 이용하여 처리할 것
+나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동
+방지시설을 이용하여 처리할 것
+다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지
+시설을 이용하여 처리할 것
+라) 악취: 「악취방지법 시행규칙」 별표 4에 따라 악취방지계획을 수립하
+여 처리할 것
+마) 침출수: 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 처리하고,
+폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는 경우에는 시험
+ㆍ분석을 통해 침출수에 오염물질이 포함되어 있는지 확인하여 고화ㆍ고
+형화ㆍ안정화 등의 방법으로 처리할 것
+바) 토양오염물질: 폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는
+경우에는 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 토양오염
+물질을 처리할 것
+사) 그 밖에 기후에너지환경부장관이 폐기물의 재활용에 따른 오염예방 및
+저감을 위하여 필요하다고 인정하는 방법으로 처리할 것
+2) 시ㆍ도지사, 시장ㆍ군수ㆍ구청장 또는 지방환경관서의 장은 「수도법」 제
+7조에 따른 상수원보호구역의 수질이 악화되거나, 「환경정책기본법」 제12
+조에 따른 환경기준 또는 「토양환경보전법」 제4조의2에 따른 토양오염의
+우려기준을 준수하기 어렵게 되는 등 폐기물의 재활용으로 인하여 사람의
+건강 또는 주변 환경에 미치는 영향이 크다고 인정하는 경우에는 폐기물을
+재활용하는 자로 하여금 1)에 따른 오염예방 및 저감방법 이외의 필요한 오
+염예방 및 저감조치를 하게 할 수 있다.
+나. 오염예방 및 저감의 정도
+1) 대기오염물질: 「대기환경보전법 시행규칙」 별표 8에 따른 대기오염물질
+배출허용기준 이내
+2) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 5에 따른 공장소음ㆍ진
+동의 배출허용기준 및 같은 법 시행규칙 별표 8에 따른 생활소음ㆍ진동의
+규제기준 이내
+3) 수질오염물질: 「물환경보전법 시행규칙」 별표 13에 따…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">위탁 기준·절차</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>폐기물을 맡길 때 지켜야 할 기준과 절차입니다. 배출자가 지킬 것(맡기기 전)이라 &#x27;해야 할 일&#x27;에 넣었습니다.</p><p><span class="k">내용</span>사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물…</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다. ② 삭제 &lt;2015.7.20&gt; ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기 / 위탁ㆍ수탁의 기준 및 절차: 제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본 2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 &quot;폐기물적정처리추진센터&quot;라 한다)에서 공개한 자료 </div></details><div class="ref"><span class="k">근거</span>폐기물관리법 제18조 (2026.11.12 시행)</div><div class="plain">사업장폐기물배출자는 폐기물을 스스로 처리하거나 허가·신고·등록을 갖춘 처리업자·처리시설 운영자 등에게 위탁해 처리해야 합니다. 정해진 사업장폐기물은 배출·수집운반·재활용·처분 때마다 인계·인수 사항과 계량값·위치·영상정보를 전자정보처리프로그램에 입력하되, 의료폐기물은 무선주파수인식방법으로 입력합니다. 공동 처리 시에는 공동 운영기구를 설치하고 대표자 1명을 선정합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴</div><div class="full">제18조(사업장폐기물의 처리)
+①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다.
+② 삭제 &lt;2015.7.20&gt;
+③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)를 기후에너지환경부령으로 정하는 바에 따라 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다. 다만, 의료폐기물은 기후에너지환경부령으로 정하는 바에 따라 무선주파수인식방법을 이용하여 그 내용을 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다.
+④ 기후에너지환경부장관은 제3항에 따라 입력된 폐기물 인계ㆍ인수 내용을 해당 폐기물을 배출하는 자, 수집ㆍ운반하는 자, 재활용하는 자 또는 처분하는 자가 확인ㆍ출력할 수 있도록 하여야 하며, 그 폐기물을 배출하는 자, 수집ㆍ운반하는 자, 재활용하는 자 또는 처분하는 자를 관할하는 시장ㆍ군수ㆍ구청장 또는 시ㆍ도지사가 그 폐기물의 배출, 수집ㆍ운반, 재활용 및 처분 과정을 검색ㆍ확인할 수 있도록 하여야 한다.
+⑤기후에너지환경부령으로 정하는 둘 이상의 사업장폐기물배출자는 각각의 사업장에서 발생하는 폐기물을 기후에너지환경부령으로 정하는 바에 따라 공동으로 수집, 운반, 재활용 또는 처분할 수 있다. 이 경우 사업장폐기물배출자는 공동 운영기구를 설치하고 그 중 1명을 공동 운영기구의 대표자로 선정하여야 하며, 폐기물처리시설을 공동으로 설치ㆍ운영할 수 있다.
+⑥ 삭제 &lt;2007.8.3&gt;</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 (2026.11.12 시행)</div><div class="plain">집단급식소 운영자 등 이 조문이 정한 위탁자는 수탁자에게서 허가증(또는 신고증명서) 사본과 방치폐기물 처리이행보증 서류 사본이 포함된 수탁처리능력 확인서를 받아야 합니다. 폐기물적정처리추진센터 공개 자료 등으로 적법한 수탁자인지 확인하고, 폐기물 종류·수량, 계약 기간·위탁 비용, 성질·상태·취급 주의사항을 담아 서면 계약해야 합니다. 계약서는 체결일부터 3년간 보관합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확 인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본</div><div class="full">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다.
+1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것
+가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본
+나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본
+2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 &quot;폐기물적정처리추진센터&quot;라 한다)에서 공개한 자료 등을 활용하여 적법한 수탁자에 해당하는지를 확인할 것
+3. 수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것
+가. 위탁하는 폐기물의 종류 및 수량
+나. 계약 기간 및 위탁 비용
+다. 위탁하는 폐기물의 성질과 상태 및 취급 시 주의사항
+4. 위탁계약서를 계약 체결일부터 3년간 보관할 것</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico warn">!</span><span class="ttl">올바로 입력</span><span class="when"><span class="badge warn">조건부</span></span></summary><div class="body"><p>아래 조건에 따라 올바로 입력이 필요합니다.</p><p><span class="k">조건</span>사업장 비(非)배출시설계 폐기물로서 시행규칙 별표 5 제3호가목2)에 따라 처리되는 경우에는 인계·인수 입력 대상에서 제외된다. 그 밖의 사업장폐기물이면 입력 대상이다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 제18조 (2026.11.12 시행)</div><div class="quote">기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제18조(사업장폐기물의 처리)
+①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다.
+② 삭제 &lt;2015.7.20&gt;
+③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)를 기후에너지환경부령으로 정하는 바에 따라 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다. 다만, 의료폐기물은 기후에너지환경부령으로 정하는 바에 따라 무선주파수인식방법을 이용하여 그 내용을 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다.
+④ 기후에너지환경부장관은 제3항에 따라 입력된 폐기물 인계ㆍ인수 내용을 해당 폐기물을 배출하는 자, 수집ㆍ운반하는 자, 재활용하는 자 또는 처분하는 자가 확인ㆍ출력할 수 있도록 하여야 하며, 그 폐기물을 배출하는 자, 수집ㆍ운반하는 자, 재활용하는 자 또는 처분하는 자를 관할하는 시장ㆍ군수ㆍ구청장 또는 시ㆍ도지사가 그 폐기물의 배출, 수집ㆍ운반, 재활용 및 처분 과정을 검색ㆍ확인할 수 있도록 하여야 한다.
+⑤기후에너지환경부령으로 정하는 둘 이상의 사업장폐기물배출자는 각각의 사업장에서 발생하는 폐기물을 기후에너지환경부령으로 정하는 바에 따라 공동으로 수집, 운반, 재활용 또는 처분할 수 있다. 이 경우 사업장폐기물배출자는 공동 운영기구를 설치하고 그 중 1명을 공동 운영기구의 대표자로 선정하여야 하며, 폐기물처리시설을 공동으로 설치ㆍ운영할 수 있다.
+⑥ 삭제 &lt;2007.8.3&gt;</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제20조 (2026.11.12 시행)</div><div class="plain">이 호가 다루는 대상은 앞서 정한 각 호의 사업장폐기물이다. 중간가공 폐기물도 포함하지만, 생활폐기물로 만든 중간가공 폐기물은 포함하지 않는다. 다만 별표에 정해진 방법에 따라 처리되는 사업장비(非)배출시설계 폐기물은 제외한다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">1. 제18조제1항 각 호의 사업장폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함하되, 별표 5 제3호가목2)에 따라 처리되는 사업장비(非)배출시설계 폐기물은 제외한다)</div><div class="full">제20조(사업장폐기물의 인계ㆍ인수)
+① 법 제18조제3항 본문에서 &quot;기후에너지환경부령으로 정하는 사업장폐기물&quot;이란 다음 각 호의 폐기물을 말한다. 다만, 폐지, 고철, 왕겨, 쌀겨 및 그 밖에 기후에너지환경부장관이 정하여 고시하는 폐기물은 제외한다.
+1. 제18조제1항 각 호의 사업장폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함하되, 별표 5 제3호가목2)에 따라 처리되는 사업장비(非)배출시설계 폐기물은 제외한다)
+2. 제18조의2제1항 각 호의 지정폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함한다)
+3. 제21조제1항 각 호의 자가 공동으로 처리하는 지정폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함한다)
+4. 삭제&lt;2011.9.27&gt;
+5. 삭제&lt;2011.1.21&gt;
+② 법 제18조제3항 본문에서 &quot;계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)&quot;란 다음 각 호의 정보를 말한다.
+1. 계량값
+2. 위치정보
+3. 영상정보
+4. 그 밖에 폐기물의 인계ㆍ인수의 현장 확인을 위하여 필요한 정보로서 기후에너지환경부장관이 정하여 고시하는 정보
+③ 법 제18조제3항 본문에 따른 폐기물의 인계ㆍ인수 사항과 폐기물처리현장정보의 입력방법 및 절차는 별표 6과 같다.
+④ 법 제18조제3항 단서에 따른 무선주파수인식방법을 이용한 의료폐기물의 인계ㆍ인수사항의 입력방법 및 절차는 별표 6의2와 같다.</div></details><div class="ref"><span class="k">근거</span>폐기물 전자정보처리 프로그램 운영 및 사용 등에 관한 고시 제14조의2 (2025.10.01 시행)</div><div class="quote">장부를 올바로시스템에 입력해야 하는 사용자는 그 사실이 발생한 날로부터 10일 이내에 그 내용을 올바로시스템에 입력해야 한다.</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제14조의2(폐기물관리대장 등 전자장부의 기록 및 확인) ① 전산처리기구의 장은 「폐기물관리법」 제36조, 「건설폐기물법」 제32조 및 「폐기물국가간이동법」 제21조의2에 따라 장부를 작성해야 하는 사용자가 올바로시스템을 사용하려는 경우 전자장부를 통해 폐기물의 발생ㆍ배출ㆍ처리상황 등을 입력할 수 있도록 전산시스템을 구축ㆍ운영해야 한다.② 사용자는 전자인계서 입력 시 폐기물 발생량 및 폐기물 인계ㆍ인수에 관한 내용과 올바로시스템 상의 전자장부에 기록된 폐기물 인계ㆍ인수 사항 및 보관량을 확인해야 한다.③ 「폐기물관리법」 제36조제3항에 따라 장부를 올바로시스템에 입력해야 하는 사용자는 그 사실이 발생한 날로부터 10일 이내에 그 내용을 올바로시스템에 입력해야 한다.④ 전산처리기구의 장은 시스템 및 통신망 등의 장애가 발생한 경우에는 그 사유와 복구시간 등을 지체없이 사용자에게 통보하여야 하며, 사용자는 장애기간 동안 입력하지 못한 장부를 장애복구 후 10일 이내에 입력해야 한다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">운반 기준</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>운반업체가 지켜야 할 기준입니다. 운반업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물의 처리기준 등: 제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다.</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물의 처리기준 등: 제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구 / 폐기물 수집ㆍ운반업자 등의 운반기준: 제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;이라 한다)으로부터 승인받은 장소(이하 &quot;임시보관장소&quot;라 한다)로 운반하는 경우를 말한다. ② 영 제7조제1항제3호나목에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 다음 각 호의 자를 말한다. 1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자 2. 제66조제6항제3호에 따른 폐가전제품</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행령 제7조 (2026.11.12 시행)</div><div class="quote">제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법 이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구의 조례에 따라 그 구분을 다르게 정하는 경우</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제7조(폐기물의 처리기준 등)
+①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다.
+1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다.
+가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우
+나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우
+다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구의 조례에 따라 그 구분을 다르게 정하는 경우
+2. 수집ㆍ운반ㆍ보관의 과정에서 폐기물이 흩날리거나 누출되지 아니하도록 하고, 침출수(沈出水)가 유출되지 아니하도록 하며, 침출수가 생기는 경우에는 기후에너지환경부령으로 정하는 바에 따라 처리할 것
+3. 해당 폐기물을 적정하게 처분, 재활용 또는 보관할 수 있는 장소 외의 장소로 운반하지 아니할 것. 다만, 다음 각 목의 어느 하나에 해당하는 자가 적재 능력이 작은 차량으로 폐기물을 수집하여 적재 능력이 큰 차량으로 옮겨 싣기 위하여 기후에너지환경부령으로 정하는 장소로 운반하는 경우에는 그러하지 아니하다.
+가. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자
+나. 법 제46조제1항제3호에 해당하는 폐기물처리 신고를 한 자 중 기후에너지환경부령으로 정하는 자
+4. 재활용 또는 중간처분 과정에서 발생하는 폐기물과 법 제13조제1항 단서에 따른 중간가공 폐기물(이하 &quot;중간가공 폐기물&quot;이라 한다)은 새로 폐기물이 발생한 것으로 보아, 법 제17조제2항에 따른 신고 또는 같은 조 제5항에 따른 확인을 받고, 해당 폐기물의 처리방법에 따라 적정하게 처리할 것.
+5. 폐기물은 폐기물 처분시설 또는 재활용시설에서 처리할 것. 다만, 생활폐기물 배출자가 법 제15조제1항에 따라 처리하는 경우 및 폐기물을 기후에너지환경부령으로 정하는 바에 따라 생활환경 보전상 지장이 없는 방법으로 적정하게 처리하는 경우에는 그러하지 아니하다.
+6. 폐기물을 처분 또는 재활용하는 자가 폐기물을 보관하는 경우에는 그 폐기물 처분시설 또는 재활용시설과 같은 사업장에 있는 보관시설…</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제9조 (2026.11.12 시행)</div><div class="plain">적재능력이 작은 차량에서 큰 차량으로 옮겨 싣기 위한 임시보관장소는 시·도지사 또는 지방환경관서의 장에게 승인받아야 하며, 수집·운반업자 등당 시·도별 1개소로 제한됩니다. 이 조문이 정한 수집·운반자는 중량 30톤 이하, 용적 300세제곱미터 이하, 5일 이내로 보관해야 합니다. 소재지(승인받은 관할구역 안만)·폐기물 종류·허용량을 바꾸려면 미리 변경승인을 받아야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;</div><div class="full">제9조(폐기물 수집ㆍ운반업자 등의 운반기준)
+① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;이라 한다)으로부터 승인받은 장소(이하 &quot;임시보관장소&quot;라 한다)로 운반하는 경우를 말한다.
+② 영 제7조제1항제3호나목에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 다음 각 호의 자를 말한다.
+1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자
+2. 제66조제6항제3호에 따른 폐가전제품을 분리ㆍ해체하지 아니하고 그대로 수집ㆍ운반하는 자
+3. 제66조제6항제5호에 따른 폐식용유를 수집ㆍ운반하는 자
+4. 제66조제6항제9호에 따른 동ㆍ식물성 잔재물 중 동물성 잔재물과 커피찌꺼기에 해당하는 식물성 잔재물을 수집ㆍ운반하는 자
+4의2. 제66조제6항제10호에 따른 1회용 컵을 수집ㆍ운반하는 자
+4의3. 제66조제6항제11호에 따른 어업ㆍ양식업용 폐합성수지(이하 &quot;어업ㆍ양식업용 폐합성수지&quot;라 한다)를 수집ㆍ운반하는 자
+5. 그 밖에 폐기물의 원활한 처리를 위하여 기후에너지환경부장관이 임시보관장소가 필요하다고 인정하여 고시하는 자
+③ 시ㆍ도지사 또는 지방환경관서의 장이 제1항에 따른 임시보관장소를 승인하는 경우에는 다음 각 호의 기준에 맞도록 하여야 한다.
+1. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자(이하 &quot;폐기물 수집ㆍ운반업자&quot;라 한다) 또는 제2항 각 호의 자(이하 이 조에서 &quot;폐기물 수집ㆍ운반업자 등&quot;이라 한다)당 특별시ㆍ광역시ㆍ특별자치시ㆍ도 및 특별자치도(이하 &quot;시ㆍ도&quot;라 한다)별로 1개소로 제한할 것
+2. 임시보관장소에서 보관할 수 있는 허용량 및 기간은 다음 각 목의 범위로 할 것
+가. 폐기물 수집ㆍ운반업자: 제31조제1항제1호에 따른 양 및 기간 이내일 것
+나. 제2항 각 호의 자
+1) 허용량: 중량이 30톤 이하이고 용적이 300세제곱미터 이하일 것
+2) 기간: 5일 이내일 것
+④ 제1항에 따른 승인을 받으려는 자는 별지 제1호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인신청서에 다음 각 호의 서류를 첨부하여 임시보관장소 설치예정지를 관할하는 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 하며, 시ㆍ도지사 또는…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">배출자 신고</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>사업장폐기물배출자 신고 대상이 아닙니다.</p><p><span class="k">내용</span>기준: 폐기물을 1일 평균 300킬로그램 이상 배출하는 자 (배출시설 등을 설치·운영하는 경우에도 1일 평균 100킬로그램 이상) / 이 사례: 6.5kg/day</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제18조 (2026.11.12 시행)</div><div class="quote">3. 폐기물을 1일 평균 300킬로그램 이상 배출하는 자</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제18조(사업장폐기물배출자의 신고)
+① 법 제17조제2항에서 &quot;기후에너지환경부령으로 정하는 사업장폐기물배출자&quot;란 지정폐기물 외의 사업장폐기물[생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물, 폐지, 고철(비철금속을 포함한다. 이하 같다), 왕겨 및 쌀겨는 제외한다. 이하 이 조에서 같다]을 배출하는 자로서 다음 각 호의 어느 하나에 해당하는 자를 말한다.
+1. 「대기환경보전법」ㆍ「물환경보전법」 또는 「소음ㆍ진동관리법」에 따른 배출시설(이하 &quot;배출시설&quot;이라 한다)을 설치ㆍ운영하는 자로서 폐기물을 1일 평균 100킬로그램 이상 배출하는 자
+2. 영 제2조제1호부터 제5호까지의 시설을 설치ㆍ운영하는 자로서 폐기물을 1일 평균 100킬로그램 이상 배출하는 자
+3. 폐기물을 1일 평균 300킬로그램 이상 배출하는 자
+4. 영 제2조제8호의 건설공사 및 영 제2조제9호의 일련의 공사 또는 작업 등으로 인하여 폐기물을 5톤 이상 배출하는 자(공사의 경우에는 발주자로부터 최초로 공사의 전부를 도급받은 자를 포함한다)
+5. 사업장폐기물 공동처리 운영기구의 대표자(제21조제1항제7호 및 제8호에 해당하는 자는 제외한다)
+② 제1항 각 호의 어느 하나에 해당하는 자는 법 제17조제2항에 따라 별지 제6호서식, 별지 제7호서식 또는 별지 제8호서식에 따른 사업장폐기물배출자신고서에 별지 제5호서식의 수탁처리능력 확인서를 첨부(그 사업장에서 발생하는 폐기물을 위탁하여 처리하는 경우만 해당한다)하여 다음 각 호와 같이 사업장폐기물의 발생지(사업장폐기물 공동처리의 경우에는 그 운영기구 대표자의 사업장 소재지)를 관할하는 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장에게 신고해야 한다. 이 경우 제17조의2제2항에 따라 지정폐기물 여부를 미리 확인하여야 하는 자는 법 제17조의2제1항에 따른 폐기물분석전문기관(이하 &quot;폐기물분석전문기관&quot;이라 한다)이 작성한 폐기물분석결과서를 신고서에 첨부해야 한다.
+1. 제1항제1호부터 제3호까지의 규정에 해당하는 자의 경우 : 사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에 별지 제6호서식에 따른 신고
+2. 제1항제4호에 해당하는 자의 경우 : 폐기물의 배출 예정일(공사의 경우에는 착공일을 말한다)까지 별지 제7호서식에 따른 신고
+3. 제1항제5호에 해당하는 자의 경우 : 사업 개시일부터 7일 이내에 별지 제8호서식에 따른 신고
+③ 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장은 제2항에 …</div></details></div></details></details></div><div class="note">안내 문장은 초안입니다. 법령 원문이 우선합니다.</div></section><section class="case" id="c-fb4df6cd-52d4-56e2-b3d1-42ff03e3a688"><h2>기계 세척 후 남은 세척액</h2><p class="sub">사례 fb4df6cd-52d4-56e2-b3d1-42ff03e3a688</p><div class="card"><h2>분류 에이전트가 준 정보</h2><div class="facts"><div><span>폐기물</span>기계 세척 후 남은 세척액</div><div><span>분류번호</span>04-02-00 그 밖의 폐유기용제</div><div><span>지정폐기물</span>지정폐기물</div><div><span>월 평균 발생량</span>98 kg</div><div><span>성상</span>액상</div><div><span>오염</span>일부 오염 관찰</div><div><span>발생 공정</span>금속 부품 가공 기계를 세척제로 씻는 작업</div><div><span>지역</span>전북특별자치도 전주시</div></div></div><div class="card concl warn"><span class="badge">조건부 가능</span><div class="main">이 폐기물은 중간 가공(R-10) 재활용업체에 맡길 수 있습니다.</div><ul><li>지정폐기물이라 지정폐기물을 처리할 수 있는 허가 업체에만 맡길 수 있습니다.</li><li>재활용 금지 여부: PCB(폴리클로리네이티드비페닐)가 기준 농도 이상 들어 있지 않은지 · 농약이 섞여 있지 않은지 확인되면 &#x27;금지 아님&#x27;으로 확정됩니다 (AI 판단 3개 중 2개는 &#x27;금지 아님&#x27;, 나머지는 정보가 없어 보류)</li><li>조건에 맞는 추천 업체 5곳을 찾았습니다.</li></ul></div><div class="card"><h2>추천 업체</h2><h3 style="font-size:14px;margin:14px 0 6px">운반 업체 <span class="small">(조건에 맞는 439곳 중 가까운 순)</span></h3><div class="funnel"><div class="row"><b>9808곳</b><span class="why">같은 폐기물 분류를 다루는 업체</span></div><div class="row"><b>−7209곳</b><span class="why">허가받은 운반 대상 폐기물이 아님<div class="law">근거: 폐기물관리법 제25조 (허가 범위)</div></span></div><div class="row"><b>−1999곳</b><span class="why">건설폐기물만 운반하는 업체<div class="law">근거: 건설폐기물법 (별도 허가)</div></span></div><div class="row"><b>−161곳</b><span class="why">영업 중이 아님<div class="law">근거: 폐기물관리법 제25조 (허가 유지)</div></span></div><div class="row keep"><b>439곳</b><span class="why">법적으로 맡길 수 있는 업체 → 도로 거리 순 상위 5곳<div class="law">순위 기준: 도로 거리 (서비스 기준, 법 아님)</div></span></div></div><table class="p"><tr><th></th><th>업체</th><th>처리방법 코드</th><th style="text-align:right">거리</th></tr><tr><td><span class="rank">1</span></td><td><b>(유)삼우환경개발</b><div class="small">전주시 완산구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 3건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 지정 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 운반 허가 · 분류번호 04-02-00<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): ◦고상: 오니류, 폐농약, 광재, 분진, 폐주물사 및 폐사, 폐내화물 및 도자기조각, 소각재, 안정화 또는 고형화 처리물, 폐촉매, 폐흡착제 및 폐흡수제, 폐유기용제, 폐페인트 및 폐락카, 폐유, 폐석면, 폐유독물질<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 2023_운반량_톤 538<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>액상 폐기물입니다 — 탱크로리 또는 밀폐 용기(드럼)로 운반할 차량이 있는지 확인 (업체 자료에는 차량 대수만 있고 종류는 없음)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">4.3 km (도로)</td></tr><tr><td><span class="rank">2</span></td><td><b>(유)에스앤피</b><div class="small">전주시 덕진구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 3건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 지정 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 운반 허가 · 분류번호 04-02-00<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): ◦고상: 오니류, 광재, 분진, 폐주물사, 폐내화물, 소각재, 폐촉매, 폐흡착제 및 폐흡수제, 폐석면, 폐농약, 폐사, 폐유기용제, 폐페인트 및 폐래커, 폐유, 폐유독물, 안정화 또는 고형화 처리물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 2023_운반량_톤 2563<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>액상 폐기물입니다 — 탱크로리 또는 밀폐 용기(드럼)로 운반할 차량이 있는지 확인 (업체 자료에는 차량 대수만 있고 종류는 없음)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">7.4 km (도로)</td></tr><tr><td><span class="rank">3</span></td><td><b>(유)금솔</b><div class="small">전주시 덕진구 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 3건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 지정 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 운반 허가 · 분류번호 04-02-00<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): ◦고상: 폐산, 폐알칼리, 폐석면, 광재, 폐주물사 및 폐사, 폐내화물 및 도자기조각, 폐촉매, 분진, 소각재, 오니류, 폐유, 폐유기용제, 폐합성고분자화합물, 폐페인트 및 폐락카, 폐흡착제 및 폐흡수제, 폐농약<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 2023_운반량_톤 19316<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>액상 폐기물입니다 — 탱크로리 또는 밀폐 용기(드럼)로 운반할 차량이 있는지 확인 (업체 자료에는 차량 대수만 있고 종류는 없음)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">7.6 km (도로)</td></tr><tr><td><span class="rank">4</span></td><td><b>(유)클린환경산업</b><div class="small">익산시 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 3건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 지정 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 운반 허가 · 분류번호 04-02-00<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): ◦고상: 폐유, 폐유기용제, 폐페인트 및 폐락카, 분진, 오니류, 폐농약, 광재, 폐주물사 및 폐사, 소각재, 폐촉매, 폐흡착제 및 폐흡수제 액상 : 폐유, 폐유기용제, 폐페인트 및 폐락카, 폐농약, 폐산, 폐알카리, PCBs함유폐기물<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 보유차량 11 · 2023_운반량_톤 10349<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>액상 폐기물입니다 — 탱크로리 또는 밀폐 용기(드럼)로 운반할 차량이 있는지 확인 (업체 자료에는 차량 대수만 있고 종류는 없음)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">14.2 km (도로)</td></tr><tr><td><span class="rank">5</span></td><td><b>(유)제이와이산업</b><div class="small">익산시 · 수집운반</div><div class="small" style="color:var(--bad)">! 확인 필요 3건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>영업 상태: 영업 중<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 대상: 지정 (건설폐기물 전용 아님)<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 운반 허가 · 분류번호 04-02-00<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>영업 대상 (자료 원문): ◦고상: 유해물질 함유 폐기물, 폐페인트 및 폐락카, 폐합성고분자화합물, 폐유기용제, 폐농약, 폐산, 폐알칼리, 오니류, 폐광물유, 폐동식물유, 그밖의 폐유, 폐유독물질, 폐석면, PCBs함유폐기물 ◦액상: 폐농약, 폐산, 폐알칼리, 폐유기용제, 폐페인트 및 폐락카, 폐합성고분자화합물,<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>운반 능력: 보유차량 2 · 2023_운반량_톤 12730<span class="law">업체 자료</span></div><div class="ck"><span class="w">!</span>액상 폐기물입니다 — 탱크로리 또는 밀폐 용기(드럼)로 운반할 차량이 있는지 확인 (업체 자료에는 차량 대수만 있고 종류는 없음)<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>영업 구역(어느 지역까지 운반하는지)은 자료에 없습니다 — 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2023년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>-</td><td class="r">23.2 km (도로)</td></tr></table><h3 style="font-size:14px;margin:14px 0 6px">중간 가공 업체 <span class="small">(조건에 맞는 10곳 중 가까운 순)</span></h3><div class="funnel"><div class="row"><b>20곳</b><span class="why">같은 폐기물 분류를 다루는 업체 (서비스 범위: 중간재활용업 등록 업체)</span></div><div class="row"><b>−10곳</b><span class="why">허가받은 처리방법이 다름<div class="law">근거: 폐기물관리법 제25조 (허가 범위)</div></span></div><div class="row keep"><b>10곳</b><span class="why">법적으로 맡길 수 있는 업체 → 도로 거리 순 상위 5곳<div class="law">순위 기준: 도로 거리 (서비스 기준, 법 아님)</div></span></div></div><table class="p"><tr><th></th><th>업체</th><th>처리방법 코드</th><th style="text-align:right">거리</th></tr><tr><td><span class="rank">1</span></td><td><b>호남자원(광산구)</b><div class="small">광산구 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 04-02 폐유기용제<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 처리 허가 있음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.098톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">87.9 km (도로)</td></tr><tr><td><span class="rank">2</span></td><td><b>금강리싸이클링</b><div class="small"> · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 04-02 폐유기용제<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 처리 허가 있음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.098톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">115.4 km (도로)</td></tr><tr><td><span class="rank">3</span></td><td><b>해동이앤티(주)</b><div class="small">여수시 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 04-02 폐유기용제<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 처리 허가 있음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.098톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">140.5 km (도로)</td></tr><tr><td><span class="rank">4</span></td><td><b>진우산업(주)</b><div class="small">화성시 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 04-02 폐유기용제<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 처리 허가 있음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.098톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">185.7 km (도로)</td></tr><tr><td><span class="rank">5</span></td><td><b>경기알엔씨</b><div class="small">화성시 · 중간 재활용업</div><div class="small" style="color:var(--bad)">! 확인 필요 2건</div><details><summary><span class="arrow">▶</span><span class="k">확인표 보기</span></summary><div class="cks"><div class="ck"><span class="y">✓</span>위탁 처리: 다른 사업장 폐기물을 위탁받는 허가 업체<span class="law">폐기물관리법 제18조 제1항</span></div><div class="ck"><span class="y">✓</span>허가 폐기물: 04-02 폐유기용제<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>지정폐기물: 지정폐기물 처리 허가 있음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>처리방법 코드: 2010 중간가공폐기물 제조 — 업체가 허가받은 처리방법이 이번 경로(R-10)에 필요한 처리방법과 같음<span class="law">폐기물관리법 제25조</span></div><div class="ck"><span class="y">✓</span>재활용 유형: R-10 (법이 허용한 유형과 같음)<span class="law">시행규칙 별표 4의3</span></div><div class="ck"><span class="y">✓</span>등록 형태: 중간 재활용업<span class="law">서비스 범위 (중간재활용업)</span></div><div class="ck"><span class="w">!</span>처리 가능한 양은 자료에 없습니다 — 월 0.098톤을 받을 수 있는지 회신으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="w">!</span>자료 기준 2024년 — 지금도 같은 허가로 영업 중인지 허가증으로 확인<span class="law">확인 필요</span></div><div class="ck"><span class="q">?</span>허가증(신고증명서) 사본<span class="law">시행규칙 제16조의13 제1호 가목 — 업체에서 받기</span></div><div class="ck"><span class="q">?</span>수탁처리능력 확인서 (제5호서식)<span class="law">폐기물관리법 제17조제1항제3호 — 업체 회신</span></div></div></details></td><td>2010</td><td class="r">186.4 km (도로)</td></tr></table><p class="small" style="margin-top:10px">허가 범위(분류번호·처리방법·재활용 유형)가 맞는 업체만 남기고 도로 거리 순으로 정렬. 처리 단가·반입 기준은 업체 회신으로 확인합니다.</p></div><div class="card"><h2>해야 할 일</h2><details><summary><span class="arrow">▶</span><span class="num">1</span><span class="ttl">수탁처리능력 확인서 받기</span><span class="when">폐기물을 맡기기 전</span></summary><div class="body"><p>처리업체에서 수탁처리능력 확인서를 받습니다.</p><p><span class="k">서류</span>별지 제5호서식 (수탁처리능력 확인서)</p><p><span class="k">근거</span>폐기물관리법 제17조제1항제3호 · 시행규칙 제16조의13 제1호</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 제1호</div><div class="plain">집단급식소를 운영하는 자와 시행규칙에서 정한 각 호의 어느 하나에 해당하는 자는 폐기물 처리를 위탁·수탁할 때 수탁자로부터 별지 제5호서식의 수탁처리능력 확인서를 제출받아야 한다. 이 확인서에는 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본과 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본이 포함되어야 한다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본</div></details></div></details><details><summary><span class="arrow">▶</span><span class="num">2</span><span class="ttl">위탁계약서 쓰기</span><span class="when">폐기물을 맡기기 전</span></summary><div class="body"><p>처리업체와 서면으로 위탁계약을 맺습니다. 계약서에 폐기물 종류·수량, 계약 기간·위탁 비용, 폐기물의 성질·상태·취급 시 주의사항을 넣습니다.</p><p><span class="k">서류</span>위·수탁 계약서</p><p><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 제3호</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 제3호</div><div class="plain">집단급식소를 운영하는 자 등 이 조문이 정한 배출자는 폐기물 처리를 위탁할 때 수탁자와 서면으로 위탁계약을 체결해야 합니다. 계약에는 위탁 폐기물의 종류 및 수량, 계약 기간 및 위탁 비용, 폐기물의 성질과 상태 및 취급 시 주의사항이 포함되어야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 3. 수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것 가. 위탁하는 폐기물의 종류 및 수량 나. 계약 기간 및 위탁 비용 다. 위탁하는 폐기물의 성질과 상태 및 취급 시 주의사항</div></details></div></details><details><summary><span class="arrow">▶</span><span class="num">3</span><span class="ttl">지정폐기물 처리계획 확인받기</span><span class="when">사업 개시일 또는 폐기물이 발생한 날부터 1개월 안에</span></summary><div class="body"><p>폐기물 발생지를 관할하는 시·도지사 또는 지방환경관서의 장에게 처리계획서를 내고 확인받습니다.</p><p><span class="k">서류</span>별지 제12호서식 (지정폐기물 처리계획서)</p><p><span class="k">근거</span>폐기물관리법 제17조제5항 · 시행규칙 제18조의2제5항</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제18조의2 제5항</div><div class="plain">지정폐기물 처리계획 확인을 받으려는 자는 사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에 제출해야 합니다. 제출처는 폐기물 발생지를 관할하는 시·도지사 또는 지방환경관서의 장입니다. 사업장폐기물 공동처리의 경우 발생지는 그 운영기구 대표자의 사업장 소재지를 말합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제18조의2(지정폐기물 처리계획의 확인) ⑤ 법 제17조제5항에 따른 확인을 받으려는 자는 사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에 폐기물의 발생지(사업장폐기물 공동처리의 경우에는 그 운영기구 대표자의 사업장 소재지를 말한다. 이하 이 조에서 같다)를 관할하는 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 한다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="num">4</span><span class="ttl">올바로에 인계·인수 입력</span><span class="when"></span></summary><div class="body"><p>폐기물을 넘길 때 올바로(폐기물 전자정보처리프로그램)에 인계·인수 내용을 입력합니다.</p><p><span class="k">근거</span>폐기물관리법 제18조 제3항</p><div class="ref"><span class="k">근거</span>폐기물관리법 제18조 제3항</div><div class="plain">기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그때마다 인계ㆍ인수 사항과 계량값, 위치정보, 영상정보 등 폐기물처리현장정보를 부령에 따라 전자정보처리프로그램에 입력해야 한다. 다만 의료폐기물은 부령에 따라 무선주파수인식방법을 이용해 그 내용을 입력해야 한다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제18조(사업장폐기물의 처리) ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)를 기후에너지환경부령으로 정하는 바에 따라 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다. 다만, 의료폐기물은 기후에너지환경부령으로 정하는 바에 따라 무선주파수인식방법을 이용하여 그 내용을 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다.</div></details></div></details></div><div class="card"><h2>맡길 업체가 지켜야 할 기준</h2><p class="small">업체 의무입니다. 업체를 고를 때 지킬 수 있는 곳인지 확인하세요.</p><div class="std"><div class="stdh"><b>재활용 기준</b><span class="when">맡길 재활용업체 · 업체 고를 때</span></div><div class="stdl">회수·재생한 원료·중간가공 폐기물이 입자상·분말상으로 유출·비산될 우려가 있으면 규격 용기·상자(벌크백 포함)에 넣거나 포장하고, 유해물질·인체급성유해성물질등은 쓰지 마세요. 다만 사용이 불가피하면 사용 일자·양·유해성 등 기록을 3년간 보존해야 합니다. 재활용 유형별 세부기준(재활용환경성평가 받은 경우 제외)과 다른 법령 기준도 지켜야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 별표 5의3 제1호 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다. 나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학 물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6호의3 및 제7호부터 제9호까지의 규정에 따른 인체급성유해성물질, 인체만성유해성물 질, 생태유해성물질, 허가물질, 제한물질 및 금지물질(이하 이 표에서 “인체 급성유해성물질등”이라 한다)을 사용하지 않아야 한다. 다만, 해당 재활용을 위해 유해물질 또는 인체급성유해성물질등의 사용이 불가피한 경우에는 해 당 물질의 사용 일자와 양, 해당 물질의 유해성 등을 기록한 자료를 3년간 보존해야 한다. 다. 법 제13조의2에 따라 폐기물을 재활용하는 자(법 제13조의3제1항제2호에 따 라 재활용환경성평가를 받아 재활용하는 경우는 제외한다)는 별표 4의3에 따 른 폐기물의 종류별 재활용 가능 유형에 해당하는 유형으로 제2호에 따른 재 활용 유형별 재활용의 세부기준을 준수하여 재활용해야 한다. 라. 제2호에 따른 재활용 유형별 재활용의 세부기준에서 정하는 기준·규격 이외 에 「비료관리법」 제4조에 따라 설정 또는 지정된 보통비료의 공정규격 또 는 부산물비료의 규격 등 다른 법령에서 원재료 또는 제품 등에 대한 기준·규 격 등을 정하고 있는 경우에는 그 기준에 적합하게 재활용하도록 해야 한다. 마. 「자원의 절약과 재활용촉진에 관한 법률 시행령」 제18조에 따른 재활용 의 무대상 제품·포장재, 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시 행령」 제8조제1항에 따른 폐가전제품 및 같은 조 제2항에 따른 폐자동차는 각각 다음에 해당하는 방법 및 기준을 준수하여 재활용해야 한다. 1) 재활용 의무대상 제품·포장재: 「자원의 절약과 재활용촉진에 관한 법률 시 행규칙」 제13조의2에 따른 재활용의 방법과 기준 2) 폐가전제품: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행규 칙」 제5조에 따른 재활용 방법 및 기준 3) 폐자동차: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행령」 제 26조에 따른 재활용 방법 및 기준 바. 별표 4의2 제2호나목2)에 따른 재활용 유형으로 골재 제품을 제조해 별표 4 의2 제4호에 따른 유형으로 재활용하려는 경우에는 같은 표 제4호가목·나목· 다목 또는 바목에 따른 유형으로만 재활용할 수 있다.</div></details></div><div class="stdl">R-10-1 유형으로 재활용하려면 별표 4의3이 폐기물 종류별로 정한 재활용 가능 유형에 적합한 폐기물을 사용해야 한다. 이 유형에 적합하지 않은 폐기물은 사용해서는 안 된다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 별표 5의3 제2호 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능 유형에 적합한 폐기물을 사용하여야 한다.</div></details></div></div><div class="std"><div class="stdh"><b>재활용 업체 준수사항</b><span class="when">맡길 재활용업체 · 업체 고를 때</span></div><div class="stdl">폐기물을 재활용하는 자는 오염을 방지시설 등으로 처리해 배출허용기준 등 이내로 유지해야 하며, 대기·소음·진동·수질·악취 방법은 해당 배출시설이 설치된 경우에만 적용됩니다. 유해폐기물은 바닥 포장·유출방지장치를 갖추고 용기에 담아 분리 보관하며 표지판을 설치해야 합니다. 토양 등에 접촉시키는 재활용은 이물질을 분리하고, 고화처리물은 안정화기간을 거쳐 사용해야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 별표 5의4 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지 시설을 이용하여 처리할 것 라) 악취: 「악취방지법 시행규칙」 별표 4에 따라 악취방지계획을 수립하 여 처리할 것 마) 침출수: 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 처리하고, 폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는 경우에는 시험 ㆍ분석을 통해 침출수에 오염물질이 포함되어 있는지 확인하여 고화ㆍ고 형화ㆍ안정화 등의 방법으로 처리할 것 바) 토양오염물질: 폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는 경우에는 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 토양오염 물질을 처리할 것 사) 그 밖에 기후에너지환경부장관이 폐기물의 재활용에 따른 오염예방 및 저감을 위하여 필요하다고 인정하는 방법으로 처리할 것 2) 시ㆍ도지사, 시장ㆍ군수ㆍ구청장 또는 지방환경관서의 장은 「수도법」 제 7조에 따른 상수원보호구역의 수질이 악화되거나, 「환경정책기본법」 제12 조에 따른 환경기준 또는 「토양환경보전법」 제4조의2에 따른 토양오염의 우려기준을 준수하기 어렵게 되는 등 폐기물의 재활용으로 인하여 사람의 건강 또는 주변 환경에 미치는 영향이 크다고 인정하는 경우에는 폐기물을 재활용하는 자로 하여금 1)에 따른 오염예방 및 저감방법 이외의 필요한 오 염예방 및 저감조치를 하게 할 수 있다. 나. 오염예방 및 저감의 정도 1) 대기오염물질: 「대기환경보전법 시행규칙」 별표 8에 따른 대기오염물질 배출허용기준 이내 2) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 5에 따른 공장소음ㆍ진 동의 배출허용기준 및 같은 법 시행규칙 별표 8에 따른 생활소음ㆍ진동의 규제기준 이내 3) 수질오염물질: 「물환경보전법 시행규칙」 별표 13에 따른 수질오염물질 배출허용기준 이내 4) 악취: 「악취방지법 시행규칙」 별표 3에 따른 악취 배출허용기준 이내 5) 침출수: 별표 11 제2호나목2)가)에 따른 침출수 배출허용기준 이내 6) 토양오염물질: 「토양환경보전법 시행규칙」 별표 3에 따른 지역별 토양오 염우려기준 이내(별표 4의2 제4호가목, 나목 및 바목의 경우에는 재활용 대 상 부지는 제외한다) 2. 폐기물 재활용에 따른 취급기준과 방법 가. 공통사항 1) 영 별표 4의2 제3호에 따라 기후에너지환경부장관이 정하여 고시하는 폐기 물의 유해특성 허용 기준을 초과하는 폐기물(이하 &quot;유해폐기물&quot;이라 한다) 을 재활용하는 자는 폐기물이 지하로 침투하거나 주변 지역으로 유출ㆍ누출 되지 않도록 유해폐기물을 보관ㆍ저장ㆍ취급 또는 사용하는 장소에 바닥 포 장, 유출방지장치 설치 등 필요한 조치를 해야 한다. 2) 분말ㆍ미립자 형태의 고상상태 또는 액체상태인 폐기물은 비산되거나 외부 로 유출ㆍ누출되지 않도록 적절한 용기나 탱크, 상자(벌크백을 포함한다)에 넣어 보관해야 한다. 3) 재활용 대상 유해폐기물을 탱크나 용기에 보관하는 경우에는 유해폐기물 성상에 따라 적당한 재질, 두께 및 구조를 갖춘 탱크나 용기에 보관해야 하 며, 탱크나 용기 등이 부식ㆍ손상ㆍ노후화되지 아니하도록 유지ㆍ관리해야 한다. 4) 재활용 대상 유해폐기물은 유해특성을 고려하여 구분하여 별도의 분리된 장소에 보관해야 하며, 유해폐기물임을 알 수 있도록 폐기물의 종류와 유해 특성, 취급 시 주의사항을 기재한 표지판을 보관장소에 설치해야 한다. 5) 유해폐기물은 보관 또는 재활용 과정에서 화재ㆍ폭발, 유해가스 발생 등의 사고를 예방하기 위하여 화기ㆍ물 등과 접촉되지 않도록 적절하게 관리해야 하며, 유해가스 등이 발생할 경우 이를 중화 또는 배출할 수 있는 시설ㆍ 장 치 등을 갖추어야 한다. 6) 별표 4의3 비고 제3호에 따라 별표 5의3에 따른 폐기물의 구체적인 재활용 기준에 따라 재활용이 가능한 폐기물인지 여부 등을 사전 분석?확인하는 경우에는 그 분석?확인 결과를 배출자(생활폐기물배출자는 제외한다)에게 통보하여 배출자가 재활용 기준의 준수 여부를 확인할 수 있도록 해야 한다. 나. 개별사항 1) 폭발성이 있는 폐기물은 소량으로 분리ㆍ보관하고, 다른 폐기물이나 산화 제와 혼합ㆍ접촉하지 않아야 하며, 불티ㆍ불꽃ㆍ정전기 또는 고온체와의 접 근이나 충격ㆍ마찰을 피하고, 폐기물을 보관ㆍ취급 또는 사용하는 장소가 폭발이 유발되는 온도 이상으로 과열되지 않도록 해야 한다. 2) 인화성이 있는 폐기물은 불티ㆍ불꽃ㆍ정전기 또는 고온체와의 접근이나 충 격ㆍ마찰을 피하고, 폐기물을 보관ㆍ취급 또는 사용하는 장소가 화재가 유 발되는 온도 이상으로 과열되지 않도록 해야 한다. 3) 자연발화성이 있는 폐기물은 불티ㆍ불꽃ㆍ정전기 또는 고온체 등 발화유발 가능성이 있는 물질 및 공기와의 접촉을 피하고, 직사광선에 직접 노출되지 않도록 해야 한다. 4) 금수성이 있는 폐기물은 밀폐된 용기에 보관하는 등 물이나 증기와 접촉되 지 않도록 해야 한다. 5) 산화성이 있는 폐기물은 가연물 또는 분해를 촉진하는 물질과 접촉ㆍ혼합 되지 않도록 하고, 과열ㆍ충격ㆍ마찰 등이 발생되지 않도록 해야 한다. 6) 용출독성 또는 생태독성이 있는 폐기물은 유해물질이 누출ㆍ유출 또는 비 산되지 않도록 별도의 용기 등에 담아 보관해야 한다. 7) 부식성이 있는 폐기물은 내부식성을 갖는 용기에 보관하고, 누출ㆍ유출 또 는 비산되지 않도록 해야 한다. 8) 매체접촉형 재활용의 경우에는 다음의 사항을 준수해야 한다. 가) 대상폐기물과 재활용 할 수 없는 다른 폐기물이나 이물질 등을 혼합하 여 재활용 대상 부지에 반입하지 아니하고, 재활용하기 전에 이물질 등을 최대한 분리ㆍ제거해야 한다. 나) 혼합이 필요한 경우에는 지형 여건, 환경 위해성 여부, 공사 안전성 등을 종합적으로 고려하여 일반 토사류 등과 혼합하여 사용해야 하며, 폐기물 의 비산 또는 유ㆍ누출 등으로 인한 오염이나 피해가 발생되지 않는 장 소에서 혼합해야 한다. 다) 재활용 과정 또는 재활용한 후 침출수로 인한 2차 환경오염이 발생하지 않아야 하며, 재활용 이후 지반의 안정성이 유지되고 재활용 대상 폐기물 또는 폐기물과 토양 등과의 혼합물이 유실되지 않도록 해야 한다. 라) 재활용 대상 폐기물을 사업 부지 등에 보관할 경우 비산, 누ㆍ유출 등이 발생되지 않는 장소를 선정하여 보관해야 하며, 바닥포장, 덮개설치 등을 통해 폐기물의 비산, 누ㆍ유출 등을 방지해야 한다. 마) 수소이온농도를 중성수준으로 낮추기 위한 선별ㆍ파쇄ㆍ혼합ㆍ중화 등 의 재활용과정에서 새로운 부산물이 생성되는 경우에는 대상 폐기물과 부산물이 환경에 미치는 영향 등을 검토하여 오염 등의 영향이 없도록 혼합ㆍ중화해 사용해야 한다. 바) 고화제 등을 혼합하여 처리한 고화처리물을 사용하는 경우에는 혼합된 고화처리물의 건조ㆍ양생 등 안정화기간을 거쳐 사용해야 한다. 3. 기후에너지환경부장관은 폐기물의 재활용과정에서 오염예방 및 방지 등을 위하 여 필요한 경우 폐기물을 재활용하는 자가 지켜야 할 구체적인 준수사항을 별도 로 정하여 고시할 수 있다.</div></details></div></div><div class="std"><div class="stdh"><b>지정폐기물 재활용 업체 허가</b><span class="when">맡길 재활용업체 · 업체 고를 때</span></div><div class="stdl">폐기물처리업을 하려는 자(폐기물처리 신고자 등 제외)는 사업계획서를 지정폐기물은 기후에너지환경부장관, 그 밖은 시·도지사에게 내 적합통보를 받고, 2년(수집·운반업 6개월, 소각·매립시설 필요 시 3년) 내 시설·장비·기술능력을 갖춰 허가받아야 합니다. 허가업자는 성명·상호 사용이나 허가증 대여를 해서는 안 됩니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 제25조 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제25조(폐기물처리업) ①폐기물의 수집ㆍ운반, 재활용 또는 처분을 업(이하 &quot;폐기물처리업&quot;이라 한다)으로 하려는 자(음식물류 폐기물을 제외한 생활폐기물을 재활용하려는 자와 폐기물처리 신고자는 제외한다)는 기후에너지환경부령으로 정하는 바에 따라 지정폐기물을 대상으로 하는 경우에는 폐기물 처리 사업계획서를 기후에너지환경부장관에게 제출하고, 그 밖의 폐기물을 대상으로 하는 경우에는 시ㆍ도지사에게 제출하여야 한다. 기후에너지환경부령으로 정하는 중요 사항을 변경하려는 때에도 또한 같다. ② 기후에너지환경부장관이나 시ㆍ도지사는 제1항에 따라 제출된 폐기물 처리사업계획서를 다음 각 호의 사항에 관하여 검토한 후 그 적합 여부를 폐기물처리사업계획서를 제출한 자에게 통보하여야 한다. 1. 폐기물처리업 허가를 받으려는 자(법인의 경우에는 임원을 포함한다)가 제26조에 따른 결격사유에 해당하는지 여부 2. 폐기물처리시설의 입지 등이 다른 법률에 저촉되는지 여부 3. 폐기물처리사업계획서상의 시설ㆍ장비와 기술능력이 제3항에 따른 허가기준에 맞는지 여부 4. 폐기물처리시설의 설치ㆍ운영으로 「수도법」 제7조에 따른 상수원보호구역의 수질이 악화되거나 「환경정책기본법」 제12조에 따른 환경기준의 유지가 곤란하게 되는 등 사람의 건강이나 주변 환경에 영향을 미치는지 여부 ③제2항에 따라 적합통보를 받은 자는 그 통보를 받은 날부터 2년(제5항제1호에 따른 폐기물 수집ㆍ운반업의 경우에는 6개월, 폐기물처리업 중 소각시설과 매립시설의 설치가 필요한 경우에는 3년) 이내에 기후에너지환경부령으로 정하는 기준에 따른 시설ㆍ장비 및 기술능력을 갖추어 업종, 영업대상 폐기물 및 처리분야별로 지정폐기물을 대상으로 하는 경우에는 기후에너지환경부장관의, 그 밖의 폐기물을 대상으로 하는 경우에는 시ㆍ도지사의 허가를 받아야 한다. 이 경우 기후에너지환경부장관 또는 시ㆍ도지사는 제2항에 따라 적합통보를 받은 자가 그 적합통보를 받은 사업계획에 따라 시설ㆍ장비 및 기술인력 등의 요건을 갖추어 허가신청을 한 때에는 지체 없이 허가하여야 한다. ④ 기후에너지환경부장관 또는 시ㆍ도지사는 천재지변이나 그 밖의 부득이한 사유로 제3항의 기간 내에 허가신청을 하지 못한 자에 대하여는 신청에 따라 총 연장기간 1년(제5항제1호에 따른 폐기물 수집ㆍ운반업의 경우에는 총 연장기간 6개월, 같은 항 제3호에 따른 폐기물 최종처분업과 같은 항 제4호에 따른 폐기물 종합처분업의 경우에는 총 연장기간 2년)의 범위에서 허가신청기간을 연장할 수 있다. ⑤ 폐기물처리업의 업종 구분과 영업 내용은 다음과 같다. 1. 폐기물 수집ㆍ운반업: 폐기물을 수집하여 재활용 또는 처분 장소로 운반하거나 폐기물을 수출하기 위하여 수집ㆍ운반하는 영업 2. 폐기물 중간처분업: 폐기물 중간처분시설을 갖추고 폐기물을 소각 처분, 기계적 처분, 화학적 처분, 생물학적 처분, 그 밖에 기후에너지환경부장관이 폐기물을 안전하게 중간처분할 수 있다고 인정하여 고시하는 방법으로 중간처분하는 영업 3. 폐기물 최종처분업: 폐기물 최종처분시설을 갖추고 폐기물을 매립 등(해역 배출은 제외한다)의 방법으로 최종처분하는 영업 4. 폐기물 종합처분업: 폐기물 중간처분시설 및 최종처분시설을 갖추고 폐기물의 중간처분과 최종처분을 함께 하는 영업 5. 폐기물 중간재활용업: 폐기물 재활용시설을 갖추고 중간가공 폐기물을 만드는 영업 6. 폐기물 최종재활용업: 폐기물 재활용시설을 갖추고 중간가공 폐기물을 제13조의2에 따른 폐기물의 재활용 원칙 및 준수사항에 따라 재활용하는 영업 7. 폐기물 종합재활용업: 폐기물 재활용시설을 갖추고 중간재활용업과 최종재활용업을 함께 하는 영업 ⑥제5항제2호부터 제7호까지의 규정에 해당하는 폐기물처리업 허가를 받은 자는 같은 항 제1호에 따른 폐기물 수집ㆍ운반업의 허가를 받지 아니하고 그 처리 대상 폐기물을 스스로 수집ㆍ운반할 수 있다. ⑦기후에너지환경부장관 또는 시ㆍ도지사는 제3항에 따른 허가 또는 제11항에 따른 변경허가를 할 때에는 주민생활의 편익, 주변 환경보호 및 폐기물처리업의 효율적 관리 등을 위하여 필요한 조건을 붙일 수 있다. 다만, 영업 구역을 제한하는 조건은 생활폐기물의 수집ㆍ운반업에 대하여 붙일 수 있으며, 이 경우 시ㆍ도지사는 시ㆍ군ㆍ구 단위 미만으로 제한하여서는 아니 된다. ⑧제3항에 따른 폐기물처리업의 허가를 받은 자(이하 &quot;폐기물처리업자&quot;라 한다)는 다른 사람에게 자기의 성명이나 상호를 사용하여 폐기물을 처리하게 하거나 그 허가증을 다른 사람에게 빌려주어서는 아니 된다. ⑨ 폐기물처리업자는 다음 각 호의 준수사항을 지켜야 한다. 1. 기후에너지환경부령으로 정하는 바에 따라 폐기물을 허가받은 사업장 내 보관시설이나 승인받은 임시보관시설 등 적정한 장소에 보관할 것 2. 기후에너지환경부령으로 정하는 양 또는 기간을 초과하여 폐기물을 보관하지 말 것 3. 자신의 처리시설에서 처리가 어렵거나 처리능력을 초과하는 경우에는 폐기물의 처리를 위탁받지 말 것 4. 보관ㆍ매립 중인 폐기물에 대하여 영상정보처리기기의 설치ㆍ관리 및 영상정보의 수집ㆍ보관 등 기후에너지환경부령으로 정하는 화재예방조치를 할 것(폐기물 수집ㆍ운반업을 하는 자는 제외한다) 5. 제39조의2, 제39조의3, 제40조제2항ㆍ제3항, 제47조의2 또는 제48조에 따른 처리명령, 반입정지명령 또는 조치명령 등 처분이 내려진 장소로 폐기물을 운반하지 아니할 것 6. 그 밖에 폐기물 처리 계약 시 계약서 작성ㆍ보관 등 기후에너지환경부령으로 정하는 준수사항을 지킬 것 ⑩의료폐기물의 수집ㆍ운반 또는 처분을 업(業)으로 하려는 자는 다른 폐기물과 분리하여 별도로 수집ㆍ운반 또는 처분하는 시설ㆍ장비 및 사업장을 설치ㆍ운영하여야 한다. ⑪제3항에 따라 허가를 받은 자가 기후에너지환경부령으로 정하는 중요사항을 변경하려면 변경허가를 받아야 하고, 그 밖의 사항 중 기후에너지환경부령으로 정하는 사항을 변경하려면 변경신고를 하여야 한다. ⑫ 기후에너지환경부장관 또는 시ㆍ도지사는 제11항에 따른 변경신고를 받은 날부터 20일 이내에 변경신고수리 여부를 신고인에게 통지하여야 한다. ⑬ 기후에너지환경부장관 또는 시ㆍ도지사가 제12항에서 정한 기간 내에 변경신고수리 여부나 민원 처리 관련 법령에 따른 처리 기간의 연장을 신고인에게 통지하지 아니하면 그 기간이 끝난 날의 다음 날에 변경신고를 수리한 것으로 본다. ⑭지정폐기물과 지정폐기물 외의 폐기물을 동일한 폐기물처리시설에서 처리하려는 자가 지정폐기물과 관련하여 다음 각 호의 어느 하나에 해당하면 지정폐기물 외의 폐기물과 관련하여 각각 그에 해당하는 시ㆍ도지사의 적합 통보ㆍ허가ㆍ변경허가 또는 적합성확인을 받거나 시ㆍ도지사에게 변경 신고를 한 것으로 본다. 1. 제2항에 따라 기후에너지환경부장관으로부터 폐기물 처리 사업계획서의 적합 통보를 받은 경우 2. 제3항에 따라 기후에너지환경부장관으로부터 폐기물처리업의 허가를 받은 경우 3. 제11항에 따라 기후에너지환경부장관으로부터 폐기물처리업의 변경허가를 받거나 기후에너지환경부장관에게 변경신고를 한 경우 4. 제25조의3에 따라 기후에너지환경부장관으로부터 적합성확인을 받은 경우 ⑮지정폐기물 외의 폐기물과 관련하여 제14항에 따른 시ㆍ도지사의 적합 통보ㆍ허가ㆍ변경허가ㆍ변경신고ㆍ적합성확인의 의제(擬制)를 받으려는 자는 기후에너지환경부장관에게 폐기물 처리 사업계획서의 제출, 폐기물처리업의 허가신청, 변경허가 신청, 변경신고 또는 적합성확인 신청을 할 때에 기후에너지환경부령으로 정하는 관련 서류를 함께 제출하여야 한다. &lt;16&gt;기후에너지환경부장관은 제15항에 따라 관련 서류를 제출받으면 관할 시ㆍ도지사의 의견을 들어야 하며, 적합통보ㆍ허가ㆍ변경허가ㆍ적합성확인을 하거나 변경신고를 받으면 관할 시ㆍ도지사에게 그 내용을 알려야 한다. &lt;17&gt; 폐기물처리업을 하려는 자 중 다음 각 호의 어느 하나에 해당하는 자는 제1항 및 제2항에 따른 절차를 거치지 아니하고 제3항에 따른 허가를 신청할 수 있다. 1. 「산업입지 및 개발에 관한 법률」 제2조제8호에 따른 산업단지에서 폐기물처리업을 하려는 자 2. 「자원의 절약과 재활용촉진에 관한 법률」 제34조에 따른 재활용단지에서 폐기물처리업을 하려는 자 3. 제5항제5호부터 제7호까지의 규정에 따른 폐기물 재활용업을 하려는 자</div></details></div></div><div class="std"><div class="stdh"><b>운반 기준</b><span class="when">운반업체 · 운반업체 고를 때</span></div><div class="stdl">폐기물은 종류·성질·상태별로 구분해 수집·운반·보관하되(의료폐기물이 아니면 같은 기준·시설 처리나 혼합 발생 등은 예외), 흩날림·누출·침출수 유출을 막아야 합니다. 처분·재활용시설에서 처리하고 적정 처리 장소 외로 운반하지 말며, 재활용 가능한 것은 재활용해야 합니다. 지정폐기물 연간 100톤 이상 배출 사업장폐기물배출자와 처리업자는 안전시설·방제장비·대응 매뉴얼을 갖춰야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행령 제7조 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구의 조례에 따라 그 구분을 다르게 정하는 경우 2. 수집ㆍ운반ㆍ보관의 과정에서 폐기물이 흩날리거나 누출되지 아니하도록 하고, 침출수(沈出水)가 유출되지 아니하도록 하며, 침출수가 생기는 경우에는 기후에너지환경부령으로 정하는 바에 따라 처리할 것 3. 해당 폐기물을 적정하게 처분, 재활용 또는 보관할 수 있는 장소 외의 장소로 운반하지 아니할 것. 다만, 다음 각 목의 어느 하나에 해당하는 자가 적재 능력이 작은 차량으로 폐기물을 수집하여 적재 능력이 큰 차량으로 옮겨 싣기 위하여 기후에너지환경부령으로 정하는 장소로 운반하는 경우에는 그러하지 아니하다. 가. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자 나. 법 제46조제1항제3호에 해당하는 폐기물처리 신고를 한 자 중 기후에너지환경부령으로 정하는 자 4. 재활용 또는 중간처분 과정에서 발생하는 폐기물과 법 제13조제1항 단서에 따른 중간가공 폐기물(이하 &quot;중간가공 폐기물&quot;이라 한다)은 새로 폐기물이 발생한 것으로 보아, 법 제17조제2항에 따른 신고 또는 같은 조 제5항에 따른 확인을 받고, 해당 폐기물의 처리방법에 따라 적정하게 처리할 것. 5. 폐기물은 폐기물 처분시설 또는 재활용시설에서 처리할 것. 다만, 생활폐기물 배출자가 법 제15조제1항에 따라 처리하는 경우 및 폐기물을 기후에너지환경부령으로 정하는 바에 따라 생활환경 보전상 지장이 없는 방법으로 적정하게 처리하는 경우에는 그러하지 아니하다. 6. 폐기물을 처분 또는 재활용하는 자가 폐기물을 보관하는 경우에는 그 폐기물 처분시설 또는 재활용시설과 같은 사업장에 있는 보관시설에 보관할 것. 다만, 법 제25조제5항제5호부터 제7호까지의 규정 중 어느 하나에 해당하는 폐기물 재활용업의 허가를 받은 자(이하 &quot;폐기물 재활용업자&quot;라 한다)가 사업장 폐기물을 재활용하는 경우로서 기후에너지환경부령으로 정하는 경우에는 그러하지 아니하다. 7. 법 제46조제1항에 따라 폐기물처리 신고를 한 자(이하 &quot;폐기물처리 신고자&quot;라 한다)와 법 제5조제1항에 따른 광역 폐기물처리시설 설치ㆍ운영자(법 제5조제2항에 따라 설치ㆍ운영을 위탁받은 자를 포함한다)는 기후에너지환경부령으로 정하는 기간 이내에 폐기물을 처리할 것. 다만, 화재, 중대한 사고, 노동쟁의, 방치 폐기물의 반입ㆍ보관 등 그 처리기간 이내에 처리하지 못할 부득이한 사유가 있는 경우로서 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장의 승인을 받은 때에는 그러하지 아니하다. 8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것 가. 폐산(廢酸)이나 폐알카리와 다른 폐기물이 혼합된 경우에는 중화처리한 후 적정하게 처리할 것 나. 일반소각대상 폐기물과 고온소각대상 폐기물이 혼합된 경우에는 고온소각할 것 9. 폐기물을 매립하는 경우에는 침출수와 가스의 유출로 인한 주변환경의 오염을 방지하기 위하여 차수시설(遮水施設), 집수시설(集水施設), 침출수 유량조정조(流量調整槽), 침출수 처리시설을 갖추고, 가스 소각시설이나 발전ㆍ연료화 처리시설을 갖춘 매립시설에서 처분할 것. 다만, 침출수나 가스가 발생하지 아니하거나 침출수나 가스의 발생으로 인한 주변 환경오염의 우려가 없다고 인정되는 경우로서 기후에너지환경부령으로 정하는 경우에는 위 시설의 전부 또는 일부를 갖추지 아니한 매립시설에서 이를 처분할 수 있다. 10. 분진ㆍ소각재ㆍ오니류(汚泥類)중 지정폐기물이 아닌 고체상태의 폐기물로서 수소이온 농도지수가 12.5 이상이거나 2.0 이하인 것을 매립처분하는 경우에는 관리형 매립시설의 차수시설과 침출수 처리시설의 성능에 지장을 초래하지 아니하도록 중화 등의 방법으로 중간처분한 후 매립할 것 11. 재활용이 가능한 폐기물은 재활용하도록 할 것 12. 폐산ㆍ폐알카리, 금속성 분진 또는 폐유독물질 등으로서 화재, 폭발 또는 유독가스 발생 등의 우려가 있다고 기후에너지환경부장관이 정하여 고시하는 폐기물은 제1호 각 목 외의 부분 단서 및 같은 호 가목에도 불구하고 그 처리 과정에서 다른 폐기물과 혼합되거나 수분과 접촉되지 아니하도록 할 것. 다만, 중화 등의 방법으로 중간처분하여 화재, 폭발 또는 유독가스 발생 등의 우려가 없는 경우에는 그러하지 아니하다. 13. 지정폐기물을 연간 100톤 이상 배출하는 법 제17조제1항에 따른 사업장폐기물배출자 및 법 제25조제3항에 따른 폐기물처리업의 허가를 받은 자(이하 &quot;폐기물처리업자&quot;라 하며, 폐기물처리업자 중 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자의 경우 제3호 각 목 외의 부분 단서에 따라 기후에너지환경부령으로 정하는 장소로 폐기물을 운반하는 자에 한정한다)는 지정폐기물을 처리하는 과정에서 다음 각 목의 기준을 준수할 것 가. 지정폐기물을 배출 또는 처리하는 과정에서 폐기물의 유출, 화재, 폭발 또는 유독가스 발생 등의 사고 발생을 예방하는 데 필요한 안전 시설ㆍ장치 등을 갖출 것 나. 폐기물의 유출, 화재, 폭발 또는 유독가스 발생 등의 사고 발생에 대비하여 방제 약품ㆍ장비 등과 사고대응 매뉴얼을 비치하고 근무자가 사용방법과 대응 요령을 숙지하도록 조치할 것 ②제1항에 따른 폐기물의 처리에 관한 구체적인 기준과 방법은 기후에너지환경부령으로 정한다. ③ 법 제13조제1항 단서에 따라 중간가공 폐기물에 적용되는 완화된 처리 기준과 방법은 다음 각 호와 같다. 1. 중간가공 폐기물을 운반하는 경우에는 폐기물수집ㆍ운반증을 붙이거나 가지고 있지 아니할 수 있다. 2. 중간가공 폐기물을 보관하는 경우에는 그 보관 기간을 연장할 수 있다. ④ 제3항에 따른 완화된 기준과 방법에 관한 구체적인 사항은 기후에너지환경부령으로 정한다.</div></details></div><div class="stdl">적재능력이 작은 차량에서 큰 차량으로 옮겨 싣기 위한 임시보관장소는 시·도지사 또는 지방환경관서의 장에게 승인받아야 하며, 수집·운반업자 등당 시·도별 1개소로 제한됩니다. 이 조문이 정한 수집·운반자는 중량 30톤 이하, 용적 300세제곱미터 이하, 5일 이내로 보관해야 합니다. 소재지(승인받은 관할구역 안만)·폐기물 종류·허용량을 바꾸려면 미리 변경승인을 받아야 합니다.<span class="draft">AI 요약 · 검수 전</span><div class="small">폐기물관리법 시행규칙 제9조 (2026.11.12 시행)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;이라 한다)으로부터 승인받은 장소(이하 &quot;임시보관장소&quot;라 한다)로 운반하는 경우를 말한다. ② 영 제7조제1항제3호나목에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 다음 각 호의 자를 말한다. 1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자 2. 제66조제6항제3호에 따른 폐가전제품을 분리ㆍ해체하지 아니하고 그대로 수집ㆍ운반하는 자 3. 제66조제6항제5호에 따른 폐식용유를 수집ㆍ운반하는 자 4. 제66조제6항제9호에 따른 동ㆍ식물성 잔재물 중 동물성 잔재물과 커피찌꺼기에 해당하는 식물성 잔재물을 수집ㆍ운반하는 자 4의2. 제66조제6항제10호에 따른 1회용 컵을 수집ㆍ운반하는 자 4의3. 제66조제6항제11호에 따른 어업ㆍ양식업용 폐합성수지(이하 &quot;어업ㆍ양식업용 폐합성수지&quot;라 한다)를 수집ㆍ운반하는 자 5. 그 밖에 폐기물의 원활한 처리를 위하여 기후에너지환경부장관이 임시보관장소가 필요하다고 인정하여 고시하는 자 ③ 시ㆍ도지사 또는 지방환경관서의 장이 제1항에 따른 임시보관장소를 승인하는 경우에는 다음 각 호의 기준에 맞도록 하여야 한다. 1. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자(이하 &quot;폐기물 수집ㆍ운반업자&quot;라 한다) 또는 제2항 각 호의 자(이하 이 조에서 &quot;폐기물 수집ㆍ운반업자 등&quot;이라 한다)당 특별시ㆍ광역시ㆍ특별자치시ㆍ도 및 특별자치도(이하 &quot;시ㆍ도&quot;라 한다)별로 1개소로 제한할 것 2. 임시보관장소에서 보관할 수 있는 허용량 및 기간은 다음 각 목의 범위로 할 것 가. 폐기물 수집ㆍ운반업자: 제31조제1항제1호에 따른 양 및 기간 이내일 것 나. 제2항 각 호의 자 1) 허용량: 중량이 30톤 이하이고 용적이 300세제곱미터 이하일 것 2) 기간: 5일 이내일 것 ④ 제1항에 따른 승인을 받으려는 자는 별지 제1호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인신청서에 다음 각 호의 서류를 첨부하여 임시보관장소 설치예정지를 관할하는 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 하며, 시ㆍ도지사 또는 지방환경관서의 장은 임시보관장소의 설치를 승인하였을 때에는 별지 제2호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인서를 신청인에게 내주어야 한다. 1. 폐기물의 수집ㆍ운반 계획서 2. 보관장소의 규모를 확인할 수 있는 서류 3. 보관장소에 보관할 수 있는 폐기물의 양과 그 산출근거를 확인할 수 있는 서류 4. 폐기물의 보관과 관련하여 예상되는 환경오염에 대한 대책 5. 해당 토지나 건축물 등에 대한 적법한 사용권이 있음을 확인할 수 있는 서류 ⑤ 제4항에 따라 승인받은 자는 다음 각 호의 사유로 승인받은 사항을 변경하려면 미리 별지 제1호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 변경승인신청서에 설치승인서와 변경내용을 증명하는 서류를 첨부하여 승인받은 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 하며, 시ㆍ도지사 또는 지방환경관서의 장은 임시보관장소의 변경승인을 하면 별지 제2호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인서에 변경사항을 적어 신청인에게 내주어야 한다. 1. 임시보관장소 소재지의 변경(제4항에 따라 승인받은 행정기관의 관할구역 안에서의 소재지 변경만 해당한다) 2. 보관대상 폐기물 종류의 변경 3. 승인받은 허용량의 변경 ⑥ 제4항이나 제5항에 따라 임시보관장소를 승인하거나 변경승인한 시ㆍ도지사 또는 지방환경관서의 장은 승인하거나 변경승인한 내용을 즉시 해당 수집ㆍ운반업의 허가기관이나 폐기물처리 신고기관에 알려야 한다.</div></details></div></div></div><div class="card"><h2>확인할 것</h2><div class="check info"><span class="ico">…</span><div><b>자료를 내 주세요</b> · 농약이 섞여 있지 않은지 확인 — 낼 자료: 사용 원료·세척제 성분자료(MSDS) (근거: 폐기물관리법 시행령 별표 4의3 (2026.11.12 시행))</div></div><div class="check info"><span class="ico">…</span><div><b>자료를 내 주세요</b> · PCB(폴리클로리네이티드비페닐)가 기준 농도 이상 들어 있지 않은지 확인 — 낼 자료: PCB 분석 결과, 또는 세척제·기름 성분자료(MSDS) (근거: 폐기물관리법 제13조의2 (2026.11.12 시행))</div></div><div class="check bad"><span class="ico">?</span><div><b>담당자 확인</b> · 혼합 여부: 법령만으로 자동 판단하기 어려워 담당자가 확인합니다.</div></div></div><div class="card"><details class="more"><summary><span class="arrow">▶</span>판단 근거 보기 (15건)</summary><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">분류번호 확인</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>분류번호 04-02-00(그 밖의 폐유기용제): 시행규칙 별표 4에 있는 번호이고, 폐기물 이름·성상과 맞습니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 4 (2026.11.12 시행)</div><div class="quote">04-02-00 그 밖의 폐유기용제</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">…우로 한정
+한다)
+03-06-99 그 밖의 고형화·고화처리물
+03-07 폐촉매
+03-07-01 금속성폐촉매
+03-07-02 비금속성폐촉매
+03-08 폐흡착제 및 폐흡수제
+03-08-01 폐흡착제
+03-08-02 폐흡수제
+03-10 폐전지류
+03-10-01 황산이 포함된 폐이차전지
+03-10-02 알칼리가 포함된 폐이차전지
+03-10-03 리튬계 폐이차전지(침수ㆍ화재ㆍ변형ㆍ파손 등이 발생한 것과
+셀이 훼손되어 유해물질이 유출되거나 화재ㆍ폭발의 위험이 있
+는 것으로 한정한다)
+03-10-04 이차전지 스크랩
+03-10-99 그 밖의 폐이차전지(침수ㆍ화재ㆍ변형ㆍ파손 등이 발생한 것
+과 셀이 훼손되어 유해물질이 유출되거나 화재ㆍ폭발의 위험이
+있는 것으로 한정한다)
+04 폐유기용제
+04-01-00 할로겐족 폐유기용제
+04-02-00 그 밖의 폐유기용제
+05 폐페인트 및 폐락카
+05-01-00 폐유성페인트
+05-02-00 폐수성페인트
+05-03-00 폐락카
+06 폐유
+06-01 폐광물유
+06-01-01 폐윤활유(「자원의 절약과 재활용촉진에 관한 법률 시행령」
+제18조에 따른 재활용의무 대상 제품·포장재인 기어유 및 내연
+기관용 윤활유를 말한다)
+06-01-02 폐연마유·비수용성폐절삭유·폐열처리유(금속가공과정에서 발
+생된 것을 말한다)
+06-01-03 폐기계유·폐작동유(공업용 기계유·냉동기유·터어빈유·베어링윤
+활유·압축기유·유압작동유·열매체유 및 프로세스유 등을 말한
+다)
+06-01-04 폐연료유
+06-01-05 폐오일필터
+06-01-06 기름함유 폐전선·폐케이블
+06-01-07 폐절연유(폴리클로리네이티드비페닐 함유 폐기물을 제외한다)
+06-01-99 그 밖의 폐광물유[아스팔트유·그리스(grease)·방청유 및 수용
+성절삭유, 20퍼센트 이상의 이물질이 함유된 폐유, 고체상태의
+폐유 등을 말한다]
+06-02-00 폐동식물유
+06-03-00 그 밖의 폐유
+07 폐석면
+07-01 제품·설비(뿜칠로 사용된 것을 포함한다) 등의 해체·제거 시 발생되
+는 폐석면
+07-01-01 흩날릴 우려가 없는 폐석면
+07-01-02 흩날릴 우려가 있는 폐석면
+07-02-00 석면제품 등의 연마·절단·가공 공정에서 발생된 부스러기 및 연
+마·절단·가공 시설의 집진기에서 모아진 분진
+07-03-00 석면의 제거작업에 사용된 모든 비닐시트·방진마스크·작업복·집
+진필터 등
+08 폴리클로리네이티드비페닐 함유 폐기물
+08-01-00 폴리클로리네이티드비페닐…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">지정폐기물 여부</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>지정폐기물입니다. 지정폐기물을 처리할 수 있는 허가 업체에만 맡길 수 있습니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행령 제3조 (2026.11.12 시행)</div><div class="quote">제3조(지정폐기물의 종류) 법 제2조제4호에 따른 지정폐기물은 별표 1과 같다.</div><div class="ref"><span class="k">근거</span>폐기물관리법 시행령 별표 1 (2026.11.12 시행)</div><div class="quote">나. 그 밖의 폐유기용제(가목 외의 유기용제를 말한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">…제외한
+다]
+나. 분진(대기오염 방지시설에서 포집된 것으로 한정하되, 소각시설에서 발생
+되는 것은 제외한다)
+다. 폐주물사 및 샌드블라스트 폐사(廢砂)
+라. 폐내화물(廢耐火物) 및 재벌구이 전에 유약을 바른 도자기 조각
+마. 소각재
+바. 안정화 또는 고형화·고화 처리물
+사. 폐촉매
+아. 폐흡착제 및 폐흡수제[광물유·동물유 및 식물유{폐식용유(식용을 목적으
+로 식품 재료와 원료를 제조ㆍ조리ㆍ가공하는 과정, 식용유를 유통ㆍ사용하
+는 과정 또는 음식물류 폐기물을 재활용하는 과정에서 발생하는 기름을 말
+한다. 이하 같다)는 제외한다}의 정제에 사용된 폐토사(廢土砂)를 포함한
+다]
+자. 삭제 &lt;2020. 7. 21.&gt;
+4. 폐유기용제
+가. 할로겐족(기후에너지환경부령으로 정하는 물질 또는 이를 함유한 물질로
+한정한다)
+나. 그 밖의 폐유기용제(가목 외의 유기용제를 말한다)
+5. 폐페인트 및 폐래커(다음 각 목의 것을 포함한다)
+가. 페인트 및 래커와 유기용제가 혼합된 것으로서 페인트 및 래커 제조업, 용
+적 5세제곱미터 이상 또는 동력 3마력 이상의 도장(塗裝)시설, 폐기물을
+재활용하는 시설에서 발생되는 것
+나. 페인트 보관용기에 남아 있는 페인트를 제거하기 위하여 유기용제와 혼합
+된 것
+다. 폐페인트 용기(용기 안에 남아 있는 페인트가 건조되어 있고, 그 잔존량이
+용기 바닥에서 6밀리미터를 넘지 아니하는 것은 제외한다)
+6. 폐유[기름성분을 5퍼센트 이상 함유한 것을 포함하며, 폴리클로리네이티드비
+페닐(PCBs)함유 폐기물, 폐식용유와 그 잔재물, 폐흡착제 및 폐흡수제는 제
+외한다]
+7. 폐석면
+가. 건조고형물의 함량을 기준으로 하여 석면이 1퍼센트 이상 함유된 제품·
+설비(뿜칠로 사용된 것은 포함한다) 등의 해체·제거 시 발생되는 것
+나. 슬레이트 등 고형화된 석면 제품 등의 연마·절단·가공 공정에서 발생된
+부스러기 및 연마·절단·가공 시설의 집진기에서 모아진 분진
+다. 석면의 제거작업에 사용된 바닥비닐시트(뿜칠로 사용된 석면의 해체·제
+거작업에 사용된 경우에는 모든 비닐시트)·방진마스크·작업복 등
+8. 폴리클로리네이티드비페닐 함유 폐기물
+가. 액체상태의 것(1리터당 2밀리그램 이상 함유한 것으로 한정한다)
+나. 액체상태 외의 것(용출액 1리터당 0.003밀리그램 이상 함유한 것으로 한
+정한다)
+9. 폐유독물질[「화학물질관리법」 제2조제2호ㆍ제2호의2ㆍ제2호의3 및 같은
+조 제3호부터 제6호까지에 따른 인체급성유해성물…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico bad">?</span><span class="ttl">혼합 여부</span><span class="when"><span class="badge bad">담당자 확인 필요</span></span></summary><div class="body"><p>법령 원문만으로 판단하지 못해 담당자 확인이 필요합니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행령 제7조 (2026.11.12 시행)</div><div class="plain">두 종류 이상의 폐기물이 섞여 분리가 어려우면 다음 방법으로 처리해야 합니다. 폐산이나 폐알카리가 다른 폐기물과 섞인 경우에는 중화처리한 후 적정하게 처리하고, 일반소각대상 폐기물과 고온소각대상 폐기물이 섞인 경우에는 고온소각해야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것 가. 폐산(廢酸)이나 폐알카리와 다른 폐기물이 혼합된 경우에는 중화처리한 후 적정하게 처리할 것 나. 일반소각대상 폐기물과 고온소각대상 폐기물이 혼합된 경우에는 고온소각할 것</div><div class="full">…활용업의 허가를 받은 자(이하 &quot;폐기물 재활용업자&quot;라 한다)가 사업장 폐기물을 재활용하는 경우로서 기후에너지환경부령으로 정하는 경우에는 그러하지 아니하다.
+7. 법 제46조제1항에 따라 폐기물처리 신고를 한 자(이하 &quot;폐기물처리 신고자&quot;라 한다)와 법 제5조제1항에 따른 광역 폐기물처리시설 설치ㆍ운영자(법 제5조제2항에 따라 설치ㆍ운영을 위탁받은 자를 포함한다)는 기후에너지환경부령으로 정하는 기간 이내에 폐기물을 처리할 것. 다만, 화재, 중대한 사고, 노동쟁의, 방치 폐기물의 반입ㆍ보관 등 그 처리기간 이내에 처리하지 못할 부득이한 사유가 있는 경우로서 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장의 승인을 받은 때에는 그러하지 아니하다.
+8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것
+가. 폐산(廢酸)이나 폐알카리와 다른 폐기물이 혼합된 경우에는 중화처리한 후 적정하게 처리할 것
+나. 일반소각대상 폐기물과 고온소각대상 폐기물이 혼합된 경우에는 고온소각할 것
+9. 폐기물을 매립하는 경우에는 침출수와 가스의 유출로 인한 주변환경의 오염을 방지하기 위하여 차수시설(遮水施設), 집수시설(集水施設), 침출수 유량조정조(流量調整槽), 침출수 처리시설을 갖추고, 가스 소각시설이나 발전ㆍ연료화 처리시설을 갖춘 매립시설에서 처분할 것. 다만, 침출수나 가스가 발생하지 아니하거나 침출수나 가스의 발생으로 인한 주변 환경오염의 우려가 없다고 인정되는 경우로서 기후에너지환경부령으로 정하는 경우에는 위 시설의 전부 또는 일부를 갖추지 아니한 매립시설에서 이를 처분할 수 있다.
+10. 분진ㆍ소각재ㆍ오니류(汚泥類)중 지정폐기물이 아닌 고체상태의 폐기물로서 수소이온 농도지수가 12.5 이상이거나 2.0 이하인 것을 매립처분하는 경우에는 관리형 매립시설의 차수시설과 침출수 처리시설의 성능에 지장을 초래하지 아니하도록 중화 등의 방법으로 중간처분한 후 매립할 것
+11. 재활용이 가능한 폐기물은 재활용하도록 할 것
+12. 폐산ㆍ폐알카리, 금속성 분진 또는 폐유독물질 등으로서 화재, 폭발 또는 유독가스 발생 등의 우려가 있다고 기후에너지환경부장관이 정하여 고시하는 폐기물은 제1호 각 목 외의 부분 단서 및 같은 호 가목에도 불구하고 그 처리 과정에서 다른 폐기물과 혼합되거나 수분과 접촉되지 아니하도록 할 것. 다만, 중화 등의 방…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico warn">!</span><span class="ttl">재활용 금지 여부</span><span class="when"><span class="badge warn">조건부</span></span></summary><div class="body"><p>아래 조건에 해당하면 재활용이 금지됩니다.</p><p><span class="k">조건</span>다음 정보가 확인되면 확정됩니다: 세척용제의 구체 성분</p><div class="ref"><span class="k">근거</span>폐기물관리법 제13조의2 (2026.11.12 시행)</div><div class="plain">누구든 비산먼지·악취, 침출수·유해물질 유출, 소음·진동 피해가 없고 대통령령·기후에너지환경부령의 재활용 기준을 지키면 폐기물을 재활용할 수 있다. 폐석면, 부령 농도 이상 PCBs 폐기물, 의료폐기물(태반 제외), 폐유독물 등 위해가 매우 큰 폐기물 중 대통령령이 정한 것은 재활용이 금지·제한된다. 오염 예방·취급 방법은 부령을 따른다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">② 제1항에도 불구하고 다음 각 호의 어느 하나에 해당하는 폐기물은 재활용을 금지하거나 제한한다. 1. 폐석면 2. 폴리클로리네이티드비페닐(PCBs)이 기후에너지환경부령으로 정하는 농도 이상 들어있는 폐기물 3. 의료폐기물(태반은 제외한다) 4. 폐유독물 등 인체나 환경에 미치는 위해가 매우 높을 것으로 우려되는 폐기물 중 대통령령으로 정하는 폐기물</div><div class="full">제13조의2(폐기물의 재활용 원칙 및 준수사항)
+① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다.
+1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것
+2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것
+3. 소음 또는 진동이 발생하여 사람에게 피해를 주지 아니할 것
+4. 중금속 등 유해물질을 제거하거나 안정화하여 재활용제품이나 원료로 사용하는 과정에서 사람이나 환경에 위해를 미치지 아니하도록 하는 등 대통령령으로 정하는 사항을 준수할 것
+5. 그 밖에 기후에너지환경부령으로 정하는 재활용의 기준을 준수할 것
+② 제1항에도 불구하고 다음 각 호의 어느 하나에 해당하는 폐기물은 재활용을 금지하거나 제한한다.
+1. 폐석면
+2. 폴리클로리네이티드비페닐(PCBs)이 기후에너지환경부령으로 정하는 농도 이상 들어있는 폐기물
+3. 의료폐기물(태반은 제외한다)
+4. 폐유독물 등 인체나 환경에 미치는 위해가 매우 높을 것으로 우려되는 폐기물 중 대통령령으로 정하는 폐기물
+③ 제1항 및 제2항 각 호의 원칙을 지키기 위하여 필요한 오염 예방 및 저감방법의 종류와 정도, 폐기물의 취급 기준과 방법 등의 준수사항은 기후에너지환경부령으로 정한다.</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행령 별표 4의3 (2026.11.12 시행)</div><div class="quote">2. 폐농약(「농약관리법」 제2조제1호에 따른 농약 중 폐기되는 것을 말한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">재활용이 금지되거나 제한되는 폐기물(제7조의3 관련)
+1. 다음 각 목의 어느 하나에 해당하는 물질 중 폐기되는 물질
+가. 「산업안전보건법」 제117조제1항에 따라 제조 등이 금지된 물질
+나. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 금지물
+질로 지정ㆍ고시된 물질
+다. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 제한물
+질로 지정ㆍ고시된 물질
+2. 폐농약(「농약관리법」 제2조제1호에 따른 농약 중 폐기되는 것을 말한다)
+3. 폐의약품(「약사법」 제2조제4호에 따른 의약품 중 폐기되는 것을 말한다)
+4. 의료폐기물을 멸균ㆍ분쇄한 잔재물
+5. 법 제2조의2에 따른 폐기물의 재활용 유형에 관한 세부분류에 해당하지 않는
+유형으로 재활용하려는 폐기물(재활용환경성평가를 받아 재활용하는 경우는
+제외한다)
+6. 천연방사성제품폐기물(「생활주변방사선 안전관리법」 제16조제1항에 따른 조
+치를 이행할 제조업자가 없는 제품의 폐기물을 포함한다) 및 천연방사성제품폐
+기물 소각재(「생활주변방사선 안전관리법」 제16조제1항에 따른 조치를 이행
+할 제조업자가 없는 제품의 폐기물 소각재를 포함한다)
+7. 그 밖에 기후에너지환경부장관이 재활용하는 경우 사람의 건강이나 환경에
+위해를 줄 수 있는 우려가 있다고 인정하여 고시하는 폐기물</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제14조의3 (2026.11.12 시행)</div><div class="plain">폐기물을 재활용하는 자는 정해진 재활용 기준과 준수사항을 지켜야 합니다. 재활용이 금지되는 폐기물은 재활용하면 안 되고, 제한되는 폐기물은 그 제한에 따라야 합니다. 다만 재활용시설 설치·운영계획서를 시·도지사나 지방환경관서의 장에게 제출해 확인을 받은 자는 시험·연구 목적으로는 재활용할 수 있습니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">② 법 제13조의2제2항에 따라 재활용이 금지되거나 제한되는 폐기물은 다음 각 호의 구분에 따른다. 1. 재활용이 금지되는 폐기물 가. 법 제13조의2제2항제1호ㆍ제2호 또는 제3호에 해당하는 폐기물 나. 영 별표 4의3 제1호가목 또는 나목에 해당하는 폐기물 다. 영 별표 4의3 제2호ㆍ제3호ㆍ제4호 또는 제6호에 해당하는 폐기물 라. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 금지하는 것으로 고시하는 폐기물 2. 재활용이 제한되는 폐기물 가. 영 별표 4의3 제1호다목에 해당하는 폐기물(제한된 용도의 제품이나 원료로 재활용하는 경우만 해당한다) 나. 영 별표 4의3 제5호에 해당하는 폐기물 다. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 제한하는 것으로 고시하는 폐기물</div><div class="full">제14조의3(폐기물의 재활용 기준 및 준수사항 등)
+① 법 제13조의2제1항제5호에서 &quot;기후에너지환경부령으로 정하는 재활용의 기준&quot;이란 별표 5의3에 따른 폐기물의 재활용 기준을 말한다.
+② 법 제13조의2제2항에 따라 재활용이 금지되거나 제한되는 폐기물은 다음 각 호의 구분에 따른다.
+1. 재활용이 금지되는 폐기물
+가. 법 제13조의2제2항제1호ㆍ제2호 또는 제3호에 해당하는 폐기물
+나. 영 별표 4의3 제1호가목 또는 나목에 해당하는 폐기물
+다. 영 별표 4의3 제2호ㆍ제3호ㆍ제4호 또는 제6호에 해당하는 폐기물
+라. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 금지하는 것으로 고시하는 폐기물
+2. 재활용이 제한되는 폐기물
+가. 영 별표 4의3 제1호다목에 해당하는 폐기물(제한된 용도의 제품이나 원료로 재활용하는 경우만 해당한다)
+나. 영 별표 4의3 제5호에 해당하는 폐기물
+다. 영 별표 4의3 제7호에 해당하는 폐기물 중 기후에너지환경부장관이 재활용을 제한하는 것으로 고시하는 폐기물
+③ 법 제13조의2제2항제2호에서 &quot;기후에너지환경부령으로 정하는 농도&quot;란 영 별표 1 제8호 각 목에 따라 지정폐기물에 해당하는 폴리클로리네이티드비페닐의 농도를 말한다.
+④ 제2항에도 불구하고 제37조제2항에 따라 폐기물 재활용시설 설치ㆍ운영계획서를 시ㆍ도지사나 지방환경관서의 장에게 제출하여 확인을 받은 자는 법 제13조의2제2항 각 호의 폐기물을 시험ㆍ연구 목적으로 재활용할 수 있다.
+⑤ 법 제13조의2제3항에 따른 폐기물을 재활용하는 자의 준수사항은 별표 5의4와 같다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">재활용 제한 여부</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>재활용 제한 대상이 아닙니다.</p><div class="ref"><span class="k">확인한 기준</span>폐기물관리법 시행령 별표 4의3 (2026.11.12 시행)</div><div class="quote">2. 폐농약(「농약관리법」 제2조제1호에 따른 농약 중 폐기되는 것을 말한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">재활용이 금지되거나 제한되는 폐기물(제7조의3 관련)
+1. 다음 각 목의 어느 하나에 해당하는 물질 중 폐기되는 물질
+가. 「산업안전보건법」 제117조제1항에 따라 제조 등이 금지된 물질
+나. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 금지물
+질로 지정ㆍ고시된 물질
+다. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 제한물
+질로 지정ㆍ고시된 물질
+2. 폐농약(「농약관리법」 제2조제1호에 따른 농약 중 폐기되는 것을 말한다)
+3. 폐의약품(「약사법」 제2조제4호에 따른 의약품 중 폐기되는 것을 말한다)
+4. 의료폐기물을 멸균ㆍ분쇄한 잔재물
+5. 법 제2조의2에 따른 폐기물의 재활용 유형에 관한 세부분류에 해당하지 않는
+유형으로 재활용하려는 폐기물(재활용환경성평가를 받아 재활용하는 경우는
+제외한다)
+6. 천연방사성제품폐기물(「생활주변방사선 안전관리법」 제16조제1항에 따른 조
+치를 이행할 제조업자가 없는 제품의 폐기물을 포함한다) 및 천연방사성제품폐
+기물 소각재(「생활주변방사선 안전관리법」 제16조제1항에 따른 조치를 이행
+할 제조업자가 없는 제품의 폐기물 소각재를 포함한다)
+7. 그 밖에 기후에너지환경부장관이 재활용하는 경우 사람의 건강이나 환경에
+위해를 줄 수 있는 우려가 있다고 인정하여 고시하는 폐기물</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">재활용 가능 유형</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>04-02-00(그 밖의 폐유기용제)에 허용된 재활용 유형: R-2-1, R-3-2, R-4-6, R-9-2, R-10. 중간 가공(R-10)이 포함됩니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 4의3 (2026.11.12 시행)</div><div class="quote">04-02-00 그 밖의 폐유기용제: R-2-1, R-3-2, R-4-6, R-9-2, R-10</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)
+┌─────┬──────────────┬────────────┬───────┐1. 지정폐기물
+분류번호 | 폐기물의 종류 | 재활용 유형 | 사전
+분석·확인 필
+요 여부
+01 | 특정시설에서 발생하는 폐기물
+01-01 | 폐합성고분자화합물
+01-01-01 | 폐폴리에틸렌 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-02 | 폐폴리프로필렌 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-03 | 폐폴리염화비닐수지 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-04 | 폐폴리에틸렌테레프탈레이 | R-3-3, R-4-4, R-10 | 해당 없음
+트
+01-01-05 | 폐페놀수지 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-06 | 폐폴리우레탄 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-07 | 폐합성고무 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-08 | 폐폴리스티렌 | R-3-3, R-4-4, R-10 | 해당 없음
+01-01-09 | 폐아크리로니트릴브타디엔 | R-3-3, R-4-4, R-10 | 해당 없음
+스티렌(ABS수지)
+01-01-99 | 그 밖의 폐합성고분자화합 | R-3-3, R-4-4, R-10 | 해당 없음
+물
+01-02 | 오니류
+01-02-01 | 폐수처리오니 | R-3-1, R-3-2, R-3-3, | 해당 없음
+R-4-1, R-10
+01-02-02 | 유리식각공정오니 | R-3-1, R-3-2, R-3-3, | 해당 없음
+R-4-1, R-10
+01-02-03 | 제지공정오니 | R-3-1, R-3-2, R-3-3, | 해당 없음
+R-10
+01-02-04 | 실리콘제조공정오니 | R-3-1, R-3-2, R-3-4, | 해당 없음
+R-10
+01-02-05 | 보크사이트잔재물 | R-3-1, R-3-2, R-10 | 해당 없음
+01-02-99 | 그 밖의 공정 오니 | R-3-1, R-3-2, | 해당 없음
+R-3-3,R-3-4, R-4-1,
+R-10
+01-03 | 폐농약
+01-03-01 | 유기인계폐농약 | 재활용 금지
+01-03-02 | 유기염소계폐농약 | 재활용 금지
+01-03-03 | 카바메이트계(Carbamate) | 재활용 금지
+폐농약
+01-03-99 | 그 밖의 폐농약 | 재활용 금지
+02 | 부식성폐기물
+02-01 | 폐산…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">재활용 기준</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>맡길 재활용업체가 지켜야 할 기준입니다. 업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물의 재활용 기준(제14조의3제1항 관련): 1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다.</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물의 재활용 기준(제14조의3제1항 관련): 1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다. 나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학 물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6호의3 및 제7호부터 제9호까지의 규정에 따른 인체급성유해성물질, 인체만성유해성물 질, 생태유해성물질, 허가물질, 제한물질 및 금지물질(이하 이 표에서 “인체 급성유해성물질등”이라 한다)을 사용하지 않아야 한다. 다만, 해당 재활용을 위해 유해물질 또는 인체급성유해성물질등의 사용이 불가피한 경우에는 해 당 물질의 사용 일자와 양, 해당 물질의 유해성 등을  / 폐기물의 재활용 기준(제14조의3제1항 관련): R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능 유형에 적합한 폐기물을 사용하여야 한다.</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 5의3 제1호 (2026.11.12 시행)</div><div class="quote">1. 공통기준 가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상 으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌 크백을 포함한다)에 넣거나 포장해야 한다. 나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학 물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">1. 공통기준
+가. 재활용 과정에서 회수·재생한 원료나 중간가공 폐기물이 입자상이나 분말상
+으로 유출되거나 비산될 우려가 있는 경우에는 일정한 규격의 용기나 상자(벌
+크백을 포함한다)에 넣거나 포장해야 한다.
+나. 재활용 과정에서 별표 1 제1호 및 제2호에 해당하는 유해물질이나 「화학
+물질의 등록 및 평가 등에 관한 법률」 제2조제6호, 제6호의2, 제6호의3 및
+제7호부터 제9호까지의 규정에 따른 인체급성유해성물질, 인체만성유해성물
+질, 생태유해성물질, 허가물질, 제한물질 및 금지물질(이하 이 표에서 “인체
+급성유해성물질등”이라 한다)을 사용하지 않아야 한다. 다만, 해당 재활용을
+위해 유해물질 또는 인체급성유해성물질등의 사용이 불가피한 경우에는 해
+당 물질의 사용 일자와 양, 해당 물질의 유해성 등을 기록한 자료를 3년간
+보존해야 한다.
+다. 법 제13조의2에 따라 폐기물을 재활용하는 자(법 제13조의3제1항제2호에 따
+라 재활용환경성평가를 받아 재활용하는 경우는 제외한다)는 별표 4의3에 따
+른 폐기물의 종류별 재활용 가능 유형에 해당하는 유형으로 제2호에 따른 재
+활용 유형별 재활용의 세부기준을 준수하여 재활용해야 한다.
+라. 제2호에 따른 재활용 유형별 재활용의 세부기준에서 정하는 기준·규격 이외
+에 「비료관리법」 제4조에 따라 설정 또는 지정된 보통비료의 공정규격 또
+는 부산물비료의 규격 등 다른 법령에서 원재료 또는 제품 등에 대한 기준·규
+격 등을 정하고 있는 경우에는 그 기준에 적합하게 재활용하도록 해야 한다.
+마. 「자원의 절약과 재활용촉진에 관한 법률 시행령」 제18조에 따른 재활용 의
+무대상 제품·포장재, 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시
+행령」 제8조제1항에 따른 폐가전제품 및 같은 조 제2항에 따른 폐자동차는
+각각 다음에 해당하는 방법 및 기준을 준수하여 재활용해야 한다.
+1) 재활용 의무대상 제품·포장재: 「자원의 절약과 재활용촉진에 관한 법률 시
+행규칙」 제13조의2에 따른 재활용의 방법과 기준
+2) 폐가전제품: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행규
+칙」 제5조에 따른 재활용 방법 및 기준
+3) 폐자동차: 「전기·전자제품 및 자동차의 자원순환에 관한 법률 시행령」 제
+26조에 따른 재활용 방법 및 기준
+바. 별표 4의2 제2호나목2)에 따른 재활용 유형으로 골재 제품을 제조해 별표 4
+의2 제4호에 따른 유형으로 재활용하려는 경우에는 같은 표…</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 5의3 제2호 (2026.11.12 시행)</div><div class="quote">R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능 유형에 적합한 폐기물을 사용하여야 한다.</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">… 이하, 황분 함유량(건조된 상태 기준) 2퍼센트 이하, 길
+이(원형인 경우에는 지름) 40밀리미터 이하여야 한다. 다만, 화력발전
+소에서 연료로 사용하는 경우에는 회분 함유량이 35퍼센트를 초과할
+수 있다.
+(6) 연료로 재활용하는 유기성 오니, 커피찌꺼기 및 버섯폐배지는 「자원
+의 절약과 재활용촉진에 관한 법률 시행규칙」 제20조의3제3항에 따른
+고형연료제품의 품질 시험·분석방법에 따라 시험한 결과(건조된 상태
+를 기준으로 한다)가 다음의 기준에 적합해야 한다.
+(가) 수은: 킬로그램 당 1.20밀리그램 이하
+(나) 카드뮴: 킬로그램 당 9.0밀리그램 이하
+(다) 납: 킬로그램 당 200.0밀리그램 이하
+(라) 비소: 킬로그램 당 13.0밀리그램 이하
+바. 제품제조 등을 위한 중간가공폐기물을 만드는 유형
+R-10-1 유형의 재활용 기준: 별표 4의3에 따른 폐기물의 종류별 재활용 가능
+유형에 적합한 폐기물을 사용하여야 한다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">재활용 업체 준수사항</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>맡길 재활용업체가 지켜야 할 기준입니다. 업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의…</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지 시설을 이용하여 처리할 것 라) 악취:</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 별표 5의4 (2026.11.12 시행)</div><div class="quote">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련)
+1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도
+가. 오염예방 및 저감방법
+1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거
+나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해
+야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치
+된 경우에만 해당한다.
+가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방
+지시설을 이용하여 처리할 것
+나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동
+방지시설을 이용하여 처리할 것
+다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지
+시설을 이용하여 처리할 것
+라) 악취: 「악취방지법 시행규칙」 별표 4에 따라 악취방지계획을 수립하
+여 처리할 것
+마) 침출수: 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 처리하고,
+폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는 경우에는 시험
+ㆍ분석을 통해 침출수에 오염물질이 포함되어 있는지 확인하여 고화ㆍ고
+형화ㆍ안정화 등의 방법으로 처리할 것
+바) 토양오염물질: 폐기물을 토양 등에 접촉시켜 성토재 등으로 재활용하는
+경우에는 물리적ㆍ화학적 또는 생물학적 처리 방법을 이용하여 토양오염
+물질을 처리할 것
+사) 그 밖에 기후에너지환경부장관이 폐기물의 재활용에 따른 오염예방 및
+저감을 위하여 필요하다고 인정하는 방법으로 처리할 것
+2) 시ㆍ도지사, 시장ㆍ군수ㆍ구청장 또는 지방환경관서의 장은 「수도법」 제
+7조에 따른 상수원보호구역의 수질이 악화되거나, 「환경정책기본법」 제12
+조에 따른 환경기준 또는 「토양환경보전법」 제4조의2에 따른 토양오염의
+우려기준을 준수하기 어렵게 되는 등 폐기물의 재활용으로 인하여 사람의
+건강 또는 주변 환경에 미치는 영향이 크다고 인정하는 경우에는 폐기물을
+재활용하는 자로 하여금 1)에 따른 오염예방 및 저감방법 이외의 필요한 오
+염예방 및 저감조치를 하게 할 수 있다.
+나. 오염예방 및 저감의 정도
+1) 대기오염물질: 「대기환경보전법 시행규칙」 별표 8에 따른 대기오염물질
+배출허용기준 이내
+2) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 5에 따른 공장소음ㆍ진
+동의 배출허용기준 및 같은 법 시행규칙 별표 8에 따른 생활소음ㆍ진동의
+규제기준 이내
+3) 수질오염물질: 「물환경보전법 시행규칙」 별표 13에 따…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">지정폐기물 재활용 업체 허가</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>맡길 재활용업체가 지켜야 할 기준입니다. 업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물처리업: 제25조(폐기물처리업) ①폐기물의 수집ㆍ운반, 재활용 또는 처분을 업(이하 &quot;폐기물처리업&quot;이라 한다)으로 하려는 자(음식물류 폐기물을 제외한 생활폐기물을 재활용하려는 자와 폐기물처리 신고자는 제외한다)는 기후에너지환경부령으로 정하는 바에 따라 지정폐기물을…</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물처리업: 제25조(폐기물처리업) ①폐기물의 수집ㆍ운반, 재활용 또는 처분을 업(이하 &quot;폐기물처리업&quot;이라 한다)으로 하려는 자(음식물류 폐기물을 제외한 생활폐기물을 재활용하려는 자와 폐기물처리 신고자는 제외한다)는 기후에너지환경부령으로 정하는 바에 따라 지정폐기물을 대상으로 하는 경우에는 폐기물 처리 사업계획서를 기후에너지환경부장관에게 제출하고, 그 밖의 폐기물을 대상으로 하는 경우에는 시ㆍ도지사에게 제출하여야 한다. 기후에너지환경부령으로 정하는 중요 사항을 변경하려는 때에도 또한 같다. ② 기후에너지환경부장관이나 시ㆍ도지사는 제1항에 따라 제출된 폐기물 처리사업계획서를 다음 각 호의 사항에 관하여 검토한 후 그 적합 여부를 폐기물처리사업계획서를 제출한 자에게 통보하여야 한다. 1. 폐기물처리업 허가를 받으려는 자(법</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 제25조 (2026.11.12 시행)</div><div class="quote">제25조(폐기물처리업) ①폐기물의 수집ㆍ운반, 재활용 또는 처분을 업(이하 &quot;폐기물처리업&quot;이라 한다)으로 하려는 자(음식물류 폐기물을 제외한 생활폐기물을 재활용하려는 자와 폐기물처리 신고자는 제외한다)는 기후에너지환경부령으로 정하는 바에 따라 지정폐기물을 대상으로 하는 경우에는 폐기물 처리 사업계획서를 기후에너지환경부장관에게 제출하고, 그 밖의 폐기물을 대</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제25조(폐기물처리업)
+①폐기물의 수집ㆍ운반, 재활용 또는 처분을 업(이하 &quot;폐기물처리업&quot;이라 한다)으로 하려는 자(음식물류 폐기물을 제외한 생활폐기물을 재활용하려는 자와 폐기물처리 신고자는 제외한다)는 기후에너지환경부령으로 정하는 바에 따라 지정폐기물을 대상으로 하는 경우에는 폐기물 처리 사업계획서를 기후에너지환경부장관에게 제출하고, 그 밖의 폐기물을 대상으로 하는 경우에는 시ㆍ도지사에게 제출하여야 한다. 기후에너지환경부령으로 정하는 중요 사항을 변경하려는 때에도 또한 같다.
+② 기후에너지환경부장관이나 시ㆍ도지사는 제1항에 따라 제출된 폐기물 처리사업계획서를 다음 각 호의 사항에 관하여 검토한 후 그 적합 여부를 폐기물처리사업계획서를 제출한 자에게 통보하여야 한다.
+1. 폐기물처리업 허가를 받으려는 자(법인의 경우에는 임원을 포함한다)가 제26조에 따른 결격사유에 해당하는지 여부
+2. 폐기물처리시설의 입지 등이 다른 법률에 저촉되는지 여부
+3. 폐기물처리사업계획서상의 시설ㆍ장비와 기술능력이 제3항에 따른 허가기준에 맞는지 여부
+4. 폐기물처리시설의 설치ㆍ운영으로 「수도법」 제7조에 따른 상수원보호구역의 수질이 악화되거나 「환경정책기본법」 제12조에 따른 환경기준의 유지가 곤란하게 되는 등 사람의 건강이나 주변 환경에 영향을 미치는지 여부
+③제2항에 따라 적합통보를 받은 자는 그 통보를 받은 날부터 2년(제5항제1호에 따른 폐기물 수집ㆍ운반업의 경우에는 6개월, 폐기물처리업 중 소각시설과 매립시설의 설치가 필요한 경우에는 3년) 이내에 기후에너지환경부령으로 정하는 기준에 따른 시설ㆍ장비 및 기술능력을 갖추어 업종, 영업대상 폐기물 및 처리분야별로 지정폐기물을 대상으로 하는 경우에는 기후에너지환경부장관의, 그 밖의 폐기물을 대상으로 하는 경우에는 시ㆍ도지사의 허가를 받아야 한다. 이 경우 기후에너지환경부장관 또는 시ㆍ도지사는 제2항에 따라 적합통보를 받은 자가 그 적합통보를 받은 사업계획에 따라 시설ㆍ장비 및 기술인력 등의 요건을 갖추어 허가신청을 한 때에는 지체 없이 허가하여야 한다.
+④ 기후에너지환경부장관 또는 시ㆍ도지사는 천재지변이나 그 밖의 부득이한 사유로 제3항의 기간 내에 허가신청을 하지 못한 자에 대하여는 신청에 따라 총 연장기간 1년(제5항제1호에 따른 폐기물 수집ㆍ운반업의 경우에는 총 연장기간 6개월, 같은 항 제3호에 따른 폐기물 최종처분업과 같은 항 제4호에 따른 폐기물 종합처분업의 경우에는 …</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">위탁 기준·절차</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>폐기물을 맡길 때 지켜야 할 기준과 절차입니다. 배출자가 지킬 것(맡기기 전)이라 &#x27;해야 할 일&#x27;에 넣었습니다.</p><p><span class="k">내용</span>사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물…</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다. ② 삭제 &lt;2015.7.20&gt; ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기 / 위탁ㆍ수탁의 기준 및 절차: 제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본 2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 &quot;폐기물적정처리추진센터&quot;라 한다)에서 공개한 자료 </div></details><div class="ref"><span class="k">근거</span>폐기물관리법 제18조 (2026.11.12 시행)</div><div class="plain">사업장폐기물배출자는 폐기물을 스스로 처리하거나 허가·신고·등록을 갖춘 처리업자·처리시설 운영자 등에게 위탁해 처리해야 합니다. 정해진 사업장폐기물은 배출·수집운반·재활용·처분 때마다 인계·인수 사항과 계량값·위치·영상정보를 전자정보처리프로그램에 입력하되, 의료폐기물은 무선주파수인식방법으로 입력합니다. 공동 처리 시에는 공동 운영기구를 설치하고 대표자 1명을 선정합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴</div><div class="full">제18조(사업장폐기물의 처리)
+①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다.
+② 삭제 &lt;2015.7.20&gt;
+③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)를 기후에너지환경부령으로 정하는 바에 따라 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다. 다만, 의료폐기물은 기후에너지환경부령으로 정하는 바에 따라 무선주파수인식방법을 이용하여 그 내용을 제45조제2항에 따른 전자정보처리프로그램에 입력하여야 한다.
+④ 기후에너지환경부장관은 제3항에 따라 입력된 폐기물 인계ㆍ인수 내용을 해당 폐기물을 배출하는 자, 수집ㆍ운반하는 자, 재활용하는 자 또는 처분하는 자가 확인ㆍ출력할 수 있도록 하여야 하며, 그 폐기물을 배출하는 자, 수집ㆍ운반하는 자, 재활용하는 자 또는 처분하는 자를 관할하는 시장ㆍ군수ㆍ구청장 또는 시ㆍ도지사가 그 폐기물의 배출, 수집ㆍ운반, 재활용 및 처분 과정을 검색ㆍ확인할 수 있도록 하여야 한다.
+⑤기후에너지환경부령으로 정하는 둘 이상의 사업장폐기물배출자는 각각의 사업장에서 발생하는 폐기물을 기후에너지환경부령으로 정하는 바에 따라 공동으로 수집, 운반, 재활용 또는 처분할 수 있다. 이 경우 사업장폐기물배출자는 공동 운영기구를 설치하고 그 중 1명을 공동 운영기구의 대표자로 선정하여야 하며, 폐기물처리시설을 공동으로 설치ㆍ운영할 수 있다.
+⑥ 삭제 &lt;2007.8.3&gt;</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제16조의13 (2026.11.12 시행)</div><div class="plain">집단급식소 운영자 등 이 조문이 정한 위탁자는 수탁자에게서 허가증(또는 신고증명서) 사본과 방치폐기물 처리이행보증 서류 사본이 포함된 수탁처리능력 확인서를 받아야 합니다. 폐기물적정처리추진센터 공개 자료 등으로 적법한 수탁자인지 확인하고, 폐기물 종류·수량, 계약 기간·위탁 비용, 성질·상태·취급 주의사항을 담아 서면 계약해야 합니다. 계약서는 체결일부터 3년간 보관합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확 인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본</div><div class="full">제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다.
+1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것
+가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본
+나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본
+2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 &quot;폐기물적정처리추진센터&quot;라 한다)에서 공개한 자료 등을 활용하여 적법한 수탁자에 해당하는지를 확인할 것
+3. 수탁자와 서면으로 다음 각 목의 사항이 포함된 위탁계약을 체결할 것
+가. 위탁하는 폐기물의 종류 및 수량
+나. 계약 기간 및 위탁 비용
+다. 위탁하는 폐기물의 성질과 상태 및 취급 시 주의사항
+4. 위탁계약서를 계약 체결일부터 3년간 보관할 것</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">올바로 입력</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>올바로(전자정보처리프로그램)에 인계·인수 내용을 입력해야 합니다.</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제20조 (2026.11.12 시행)</div><div class="quote">2. 제18조의2제1항 각 호의 지정폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함한다)</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제20조(사업장폐기물의 인계ㆍ인수)
+① 법 제18조제3항 본문에서 &quot;기후에너지환경부령으로 정하는 사업장폐기물&quot;이란 다음 각 호의 폐기물을 말한다. 다만, 폐지, 고철, 왕겨, 쌀겨 및 그 밖에 기후에너지환경부장관이 정하여 고시하는 폐기물은 제외한다.
+1. 제18조제1항 각 호의 사업장폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함하되, 별표 5 제3호가목2)에 따라 처리되는 사업장비(非)배출시설계 폐기물은 제외한다)
+2. 제18조의2제1항 각 호의 지정폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함한다)
+3. 제21조제1항 각 호의 자가 공동으로 처리하는 지정폐기물(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 포함한다)
+4. 삭제&lt;2011.9.27&gt;
+5. 삭제&lt;2011.1.21&gt;
+② 법 제18조제3항 본문에서 &quot;계량값, 위치정보, 영상정보 등 기후에너지환경부령으로 정하는 폐기물 처리 현장정보(이하 &quot;폐기물처리현장정보&quot;라 한다)&quot;란 다음 각 호의 정보를 말한다.
+1. 계량값
+2. 위치정보
+3. 영상정보
+4. 그 밖에 폐기물의 인계ㆍ인수의 현장 확인을 위하여 필요한 정보로서 기후에너지환경부장관이 정하여 고시하는 정보
+③ 법 제18조제3항 본문에 따른 폐기물의 인계ㆍ인수 사항과 폐기물처리현장정보의 입력방법 및 절차는 별표 6과 같다.
+④ 법 제18조제3항 단서에 따른 무선주파수인식방법을 이용한 의료폐기물의 인계ㆍ인수사항의 입력방법 및 절차는 별표 6의2와 같다.</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">운반 기준</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>운반업체가 지켜야 할 기준입니다. 운반업체 고를 때 확인하세요.</p><p><span class="k">내용</span>폐기물의 처리기준 등: 제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다.</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">폐기물의 처리기준 등: 제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구 / 폐기물 수집ㆍ운반업자 등의 운반기준: 제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;이라 한다)으로부터 승인받은 장소(이하 &quot;임시보관장소&quot;라 한다)로 운반하는 경우를 말한다. ② 영 제7조제1항제3호나목에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 다음 각 호의 자를 말한다. 1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자 2. 제66조제6항제3호에 따른 폐가전제품</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행령 제7조 (2026.11.12 시행)</div><div class="quote">제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법 이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구의 조례에 따라 그 구분을 다르게 정하는 경우</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제7조(폐기물의 처리기준 등)
+①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다.
+1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다.
+가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우
+나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우
+다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구의 조례에 따라 그 구분을 다르게 정하는 경우
+2. 수집ㆍ운반ㆍ보관의 과정에서 폐기물이 흩날리거나 누출되지 아니하도록 하고, 침출수(沈出水)가 유출되지 아니하도록 하며, 침출수가 생기는 경우에는 기후에너지환경부령으로 정하는 바에 따라 처리할 것
+3. 해당 폐기물을 적정하게 처분, 재활용 또는 보관할 수 있는 장소 외의 장소로 운반하지 아니할 것. 다만, 다음 각 목의 어느 하나에 해당하는 자가 적재 능력이 작은 차량으로 폐기물을 수집하여 적재 능력이 큰 차량으로 옮겨 싣기 위하여 기후에너지환경부령으로 정하는 장소로 운반하는 경우에는 그러하지 아니하다.
+가. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자
+나. 법 제46조제1항제3호에 해당하는 폐기물처리 신고를 한 자 중 기후에너지환경부령으로 정하는 자
+4. 재활용 또는 중간처분 과정에서 발생하는 폐기물과 법 제13조제1항 단서에 따른 중간가공 폐기물(이하 &quot;중간가공 폐기물&quot;이라 한다)은 새로 폐기물이 발생한 것으로 보아, 법 제17조제2항에 따른 신고 또는 같은 조 제5항에 따른 확인을 받고, 해당 폐기물의 처리방법에 따라 적정하게 처리할 것.
+5. 폐기물은 폐기물 처분시설 또는 재활용시설에서 처리할 것. 다만, 생활폐기물 배출자가 법 제15조제1항에 따라 처리하는 경우 및 폐기물을 기후에너지환경부령으로 정하는 바에 따라 생활환경 보전상 지장이 없는 방법으로 적정하게 처리하는 경우에는 그러하지 아니하다.
+6. 폐기물을 처분 또는 재활용하는 자가 폐기물을 보관하는 경우에는 그 폐기물 처분시설 또는 재활용시설과 같은 사업장에 있는 보관시설…</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제9조 (2026.11.12 시행)</div><div class="plain">적재능력이 작은 차량에서 큰 차량으로 옮겨 싣기 위한 임시보관장소는 시·도지사 또는 지방환경관서의 장에게 승인받아야 하며, 수집·운반업자 등당 시·도별 1개소로 제한됩니다. 이 조문이 정한 수집·운반자는 중량 30톤 이하, 용적 300세제곱미터 이하, 5일 이내로 보관해야 합니다. 소재지(승인받은 관할구역 안만)·폐기물 종류·허용량을 바꾸려면 미리 변경승인을 받아야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;</div><div class="full">제9조(폐기물 수집ㆍ운반업자 등의 운반기준)
+① 영 제7조제1항제3호 단서에서 &quot;기후에너지환경부령으로 정하는 장소로 운반하는 경우&quot;란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 &quot;지방환경관서의 장&quot;이라 한다)으로부터 승인받은 장소(이하 &quot;임시보관장소&quot;라 한다)로 운반하는 경우를 말한다.
+② 영 제7조제1항제3호나목에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 다음 각 호의 자를 말한다.
+1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자
+2. 제66조제6항제3호에 따른 폐가전제품을 분리ㆍ해체하지 아니하고 그대로 수집ㆍ운반하는 자
+3. 제66조제6항제5호에 따른 폐식용유를 수집ㆍ운반하는 자
+4. 제66조제6항제9호에 따른 동ㆍ식물성 잔재물 중 동물성 잔재물과 커피찌꺼기에 해당하는 식물성 잔재물을 수집ㆍ운반하는 자
+4의2. 제66조제6항제10호에 따른 1회용 컵을 수집ㆍ운반하는 자
+4의3. 제66조제6항제11호에 따른 어업ㆍ양식업용 폐합성수지(이하 &quot;어업ㆍ양식업용 폐합성수지&quot;라 한다)를 수집ㆍ운반하는 자
+5. 그 밖에 폐기물의 원활한 처리를 위하여 기후에너지환경부장관이 임시보관장소가 필요하다고 인정하여 고시하는 자
+③ 시ㆍ도지사 또는 지방환경관서의 장이 제1항에 따른 임시보관장소를 승인하는 경우에는 다음 각 호의 기준에 맞도록 하여야 한다.
+1. 법 제25조제5항제1호에 해당하는 폐기물 수집ㆍ운반업의 허가를 받은 자(이하 &quot;폐기물 수집ㆍ운반업자&quot;라 한다) 또는 제2항 각 호의 자(이하 이 조에서 &quot;폐기물 수집ㆍ운반업자 등&quot;이라 한다)당 특별시ㆍ광역시ㆍ특별자치시ㆍ도 및 특별자치도(이하 &quot;시ㆍ도&quot;라 한다)별로 1개소로 제한할 것
+2. 임시보관장소에서 보관할 수 있는 허용량 및 기간은 다음 각 목의 범위로 할 것
+가. 폐기물 수집ㆍ운반업자: 제31조제1항제1호에 따른 양 및 기간 이내일 것
+나. 제2항 각 호의 자
+1) 허용량: 중량이 30톤 이하이고 용적이 300세제곱미터 이하일 것
+2) 기간: 5일 이내일 것
+④ 제1항에 따른 승인을 받으려는 자는 별지 제1호서식의 폐기물 수집ㆍ운반업자 등의 임시보관장소 설치승인신청서에 다음 각 호의 서류를 첨부하여 임시보관장소 설치예정지를 관할하는 시ㆍ도지사 또는 지방환경관서의 장에게 제출하여야 하며, 시ㆍ도지사 또는…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">배출자 신고</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>사업장폐기물배출자 신고 대상이 아닙니다.</p><p><span class="k">내용</span>기준: 지정폐기물 외의 사업장폐기물을 1일 평균 300킬로그램 이상(배출시설 설치·운영자 등은 100킬로그램 이상) 배출 / 이 사례: 3.3kg/day</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제18조 (2026.11.12 시행)</div><div class="quote">법 제17조제2항에서 &quot;기후에너지환경부령으로 정하는 사업장폐기물배출자&quot;란 지정폐기물 외의 사업장폐기물</div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="full">제18조(사업장폐기물배출자의 신고)
+① 법 제17조제2항에서 &quot;기후에너지환경부령으로 정하는 사업장폐기물배출자&quot;란 지정폐기물 외의 사업장폐기물[생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물, 폐지, 고철(비철금속을 포함한다. 이하 같다), 왕겨 및 쌀겨는 제외한다. 이하 이 조에서 같다]을 배출하는 자로서 다음 각 호의 어느 하나에 해당하는 자를 말한다.
+1. 「대기환경보전법」ㆍ「물환경보전법」 또는 「소음ㆍ진동관리법」에 따른 배출시설(이하 &quot;배출시설&quot;이라 한다)을 설치ㆍ운영하는 자로서 폐기물을 1일 평균 100킬로그램 이상 배출하는 자
+2. 영 제2조제1호부터 제5호까지의 시설을 설치ㆍ운영하는 자로서 폐기물을 1일 평균 100킬로그램 이상 배출하는 자
+3. 폐기물을 1일 평균 300킬로그램 이상 배출하는 자
+4. 영 제2조제8호의 건설공사 및 영 제2조제9호의 일련의 공사 또는 작업 등으로 인하여 폐기물을 5톤 이상 배출하는 자(공사의 경우에는 발주자로부터 최초로 공사의 전부를 도급받은 자를 포함한다)
+5. 사업장폐기물 공동처리 운영기구의 대표자(제21조제1항제7호 및 제8호에 해당하는 자는 제외한다)
+② 제1항 각 호의 어느 하나에 해당하는 자는 법 제17조제2항에 따라 별지 제6호서식, 별지 제7호서식 또는 별지 제8호서식에 따른 사업장폐기물배출자신고서에 별지 제5호서식의 수탁처리능력 확인서를 첨부(그 사업장에서 발생하는 폐기물을 위탁하여 처리하는 경우만 해당한다)하여 다음 각 호와 같이 사업장폐기물의 발생지(사업장폐기물 공동처리의 경우에는 그 운영기구 대표자의 사업장 소재지)를 관할하는 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장에게 신고해야 한다. 이 경우 제17조의2제2항에 따라 지정폐기물 여부를 미리 확인하여야 하는 자는 법 제17조의2제1항에 따른 폐기물분석전문기관(이하 &quot;폐기물분석전문기관&quot;이라 한다)이 작성한 폐기물분석결과서를 신고서에 첨부해야 한다.
+1. 제1항제1호부터 제3호까지의 규정에 해당하는 자의 경우 : 사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에 별지 제6호서식에 따른 신고
+2. 제1항제4호에 해당하는 자의 경우 : 폐기물의 배출 예정일(공사의 경우에는 착공일을 말한다)까지 별지 제7호서식에 따른 신고
+3. 제1항제5호에 해당하는 자의 경우 : 사업 개시일부터 7일 이내에 별지 제8호서식에 따른 신고
+③ 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장은 제2항에 …</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico ok">✓</span><span class="ttl">처리계획 확인</span><span class="when"><span class="badge ok">확인됨</span></span></summary><div class="body"><p>지정폐기물 처리계획 확인 대상입니다.</p><p><span class="k">내용</span>기준: 폐유기용제 각각 월 평균 50킬로그램 이상 (합계 월 평균 130킬로그램 이상) / 이 사례: 98.3kg/월</p><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제18조의2 (2026.11.12 시행)</div><div class="plain">이 조문이 정한 대상은 폐농약, 광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화처리물, 폐촉매, 폐흡착제, 폐흡수제, 폐유기용제, 폐유를 배출하는 사업자입니다. 이들을 각각 월 평균 50킬로그램 이상, 또는 합계 월 평균 130킬로그램 이상 배출하면 해당됩니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">폐농약, 광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화처리물, 폐촉매, 폐흡착제, 폐흡수제, 폐유기용제 또는 폐유를 각각 월 평균 50킬로그램 또는 합계 월 평균 130킬로그램 이상 배출하는 사업자</div><div class="full">제18조의2(지정폐기물 처리계획의 확인)
+① 법 제17조제5항 각 호 외의 부분 본문에서 &quot;기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자&quot;란 다음 각 호의 어느 하나에 해당하는 사업자(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 배출하는 사업자는 제외한다. 이하 이 조에서 같다)를 말한다.
+1. 오니를 월 평균 500킬로그램 이상 배출하는 사업자
+2. 폐농약, 광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화처리물, 폐촉매, 폐흡착제, 폐흡수제, 폐유기용제 또는 폐유를 각각 월 평균 50킬로그램 또는 합계 월 평균 130킬로그램 이상 배출하는 사업자
+3. 폐합성고분자화합물, 폐산, 폐알칼리, 폐페인트 또는 폐래커를 각각 월 평균 100킬로그램 또는 합계 월 평균 200킬로그램 이상 배출하는 사업자
+3의2. 폐석면을 월 평균 20킬로그램 이상 배출하는 사업자. 이 경우 축사 등 기후에너지환경부장관이 정하여 고시하는 시설물을 운영하는 사업자가 5톤 미만의 슬레이트 지붕 철거ㆍ제거 작업을 전부 도급한 경우에는 수급인(하수급인은 제외한다)이 사업자를 갈음하여 지정폐기물 처리계획의 확인을 받을 수 있다.
+4. 폴리클로리네이티드비페닐 함유폐기물을 배출하는 사업자
+5. 폐유독물질을 배출하는 사업자
+6. 의료폐기물을 배출하는 사업자
+7. 수은폐기물을 배출하는 사업자
+8. 천연방사성제품폐기물을 배출하는 사업자
+9. 영 별표 1 제12호에 따라 고시된 지정폐기물을 기후에너지환경부장관이 정하여 고시하는 양 이상으로 배출하는 사업자
+② 법 제17조제5항 각 호 외의 부분 단서에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 제21조제1항 각 호(제7호는 제외한다)의 자를 말한다.
+③ 법 제17조제5항제1호마목에서 &quot;그 밖에 기후에너지환경부령으로 정하는 사항&quot;이란 다음 각 호의 사항을 말한다.
+1. 주 원료명 및 사용량
+2. 주 생산품명 및 생산량
+3. 제조공정
+④ 법 제17조제5항제1호에 따른 폐기물처리계획서는 별지 제12호서식에 따르고, 같은 항 제2호에 따른 폐기물 분석결과서는 별지 제13호서식에 따르며, 같은 항 제3호에 따른 수탁확인서는 별지 제5호서식에 따른다.
+⑤ 법 제17조제5항에 따른 확인을 받으려는 자는 사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에 폐기물의 발생지(사업장폐기물 공동처리의 경우에는 그 운영기구 대표자의 사업장 소재지를 말한다. 이하 이 조에서…</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 제17조 (2026.11.12 시행)</div><div class="plain">사업장폐기물배출자는 지정폐기물 해당 여부를 분석전문기관에 미리 확인하고, 모든 폐기물을 처리 기준에 맞게 처리하며 발생을 최대한 억제해야 합니다. 처리를 위탁할 때는 정해진 위탁·수탁 기준과 절차를 따라야 합니다. 기후에너지환경부령으로 정한 배출자는 폐기물 종류·발생량을 시장·군수·구청장에게 신고(변경 시도 같음)하고, 정해진 지정폐기물 배출자는 처리 전 처리계획서 등을 제출해 확인받아야 합<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자는 그 지정폐기물을 제18조제1항에 따라 처리하기 전에 다음 각 호의 서류를 기후에너지환경부장관에게 제출하여 확인을 받아야 한다. 다만, 「자동차관리법」 제2조제8호에 따른 자동차정비업을 하는 자 등 기후에너지환경부령으로 정하는 자가 지정폐기물을 공동으로 수집ㆍ운반하는 경우에는 그 대표자가 기후에너지환경부장관에게 제출하여 확인을 받아야 한다. 1. 다음 각 목의 사항을 적은 폐기물처리계획서 가. 상호, 사업장 소재지 및 업종 나. 폐기물의 종류, 배출량 및 배출주기 다. 폐기물의 운반 및 처리 계획 라. 폐기물의 공동 처리에 관한 계획(공동 처리하는 경우만 해당한다) 마. 그 밖에 기후에너지환경부령으로 정하는 사항 2. 제17조의2제1항에 따른 폐기물분석전문기관이 작성한 폐기물분석결과서 3. 지정폐기물의 처리를 위탁하는 경우에는 수탁처리자의 수탁확인서</div><div class="full">…는 자에게 위탁하는 경우에는 그러하지 아니하다.
+②기후에너지환경부령으로 정하는 사업장폐기물배출자는 사업장폐기물의 종류와 발생량 등을 기후에너지환경부령으로 정하는 바에 따라 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장에게 신고하여야 한다. 신고한 사항 중 기후에너지환경부령으로 정하는 사항을 변경할 때에도 또한 같다.
+③ 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장은 제2항에 따른 신고 또는 변경신고를 받은 날부터 20일 이내에 신고수리 여부를 신고인에게 통지하여야 한다.
+④ 특별자치시장, 특별자치도지사, 시장ㆍ군수ㆍ구청장이 제3항에서 정한 기간 내에 신고수리 여부나 민원 처리 관련 법령에 따른 처리기간의 연장을 신고인에게 통지하지 아니하면 그 기간이 끝난 날의 다음 날에 신고를 수리한 것으로 본다.
+⑤ 기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자는 그 지정폐기물을 제18조제1항에 따라 처리하기 전에 다음 각 호의 서류를 기후에너지환경부장관에게 제출하여 확인을 받아야 한다. 다만, 「자동차관리법」 제2조제8호에 따른 자동차정비업을 하는 자 등 기후에너지환경부령으로 정하는 자가 지정폐기물을 공동으로 수집ㆍ운반하는 경우에는 그 대표자가 기후에너지환경부장관에게 제출하여 확인을 받아야 한다.
+1. 다음 각 목의 사항을 적은 폐기물처리계획서
+가. 상호, 사업장 소재지 및 업종
+나. 폐기물의 종류, 배출량 및 배출주기
+다. 폐기물의 운반 및 처리 계획
+라. 폐기물의 공동 처리에 관한 계획(공동 처리하는 경우만 해당한다)
+마. 그 밖에 기후에너지환경부령으로 정하는 사항
+2. 제17조의2제1항에 따른 폐기물분석전문기관이 작성한 폐기물분석결과서
+3. 지정폐기물의 처리를 위탁하는 경우에는 수탁처리자의 수탁확인서
+⑥ 제5항에 따른 확인을 받은 자는 다음 각 호의 어느 하나에 해당하는 경우에는 그와 관련된 서류를 기후에너지환경부장관에게 제출하여 변경확인을 받아야 한다.
+1. 상호를 변경하려는 경우
+2. 사업장 소재지를 변경하려는 경우
+3. 지정폐기물의 월평균 배출량(확인 또는 변경확인을 받은 후 1년간의 배출량을 기준으로 산정한다)이 100분의 10 이상으로서 기후에너지환경부령으로 정하는 비율 이상 증가하는 경우
+4. 새로 배출되거나 추가로 배출되는 지정폐기물의 양(추가로 배출되는 경우는 종전에 배출되던 양을 더하여 산정한다)이 제3항에 따른 지정폐기물 처리계획 확인을 받아야 하는 경우에 해당하는 경우
+5. 지정폐기…</div></details></div></details><details><summary><span class="arrow">▶</span><span class="ico info">≡</span><span class="ttl">처리계획 제출</span><span class="when"><span class="badge info">기준 찾음</span></span></summary><div class="body"><p>처리계획 확인을 받을 때 낼 서류, 제출처, 기한입니다. 배출자가 지킬 것(사업 시작·발생일부터 1개월 안)이라 &#x27;해야 할 일&#x27;에 넣었습니다.</p><p><span class="k">내용</span>지정폐기물 처리계획의 확인: 제18조의2(지정폐기물 처리계획의 확인) ① 법 제17조제5항 각 호 외의 부분 본문에서 &quot;기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자&quot;란 다음 각 호의 어느 하나에 해당하는 사업자(생활폐기물로 만든 중간가공 폐기물 외의 중간가…</p><details><summary><span class="arrow">▶</span><span class="k">내용 전체 보기</span></summary><div class="full">지정폐기물 처리계획의 확인: 제18조의2(지정폐기물 처리계획의 확인) ① 법 제17조제5항 각 호 외의 부분 본문에서 &quot;기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자&quot;란 다음 각 호의 어느 하나에 해당하는 사업자(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 배출하는 사업자는 제외한다. 이하 이 조에서 같다)를 말한다. 1. 오니를 월 평균 500킬로그램 이상 배출하는 사업자 2. 폐농약, 광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화처리물, 폐촉매, 폐흡착제, 폐흡수제, 폐유기용제 또는 폐유를 각각 월 평균 50킬로그램 또는 합계 월 평균 130킬로그램 이상 배출하는 사업자 3. 폐합성고분자화합물, 폐산, 폐알칼리, 폐페인트 또는 폐래커를 각각 월 평균 100킬로그램 또는 합</div></details><div class="ref"><span class="k">근거</span>폐기물관리법 시행규칙 제18조의2 (2026.11.12 시행)</div><div class="plain">이 조문이 정한 지정폐기물 배출 사업자(생활폐기물로 만든 것 외의 중간가공 폐기물 배출자는 제외)는 사업 개시일 또는 폐기물 발생일부터 1개월 이내 발생지 관할 시·도지사나 지방환경관서의 장에게 처리계획 확인을 받아야 합니다. 확인증명서는 신청받은 날부터 5일 이내 내주되 시기가 조정될 수 있습니다. 변경 사유가 생기면 30일 이내(그 전에 처리하면 처리 전까지) 변경 서류를 내야 합니다.<span class="draft">AI 요약 · 검수 전</span></div><details><summary><span class="arrow">▶</span><span class="k">원문 보기</span></summary><div class="quote">제18조의2(지정폐기물 처리계획의 확인) ① 법 제17조제5항 각 호 외의 부분 본문에서 &quot;기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자&quot;란 다음 각 호의 어느 하나에 해당하는 사업자(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 배출하는 사업자는 제외한다. 이하 이 조에서 같다)를 말한다. 1. 오니를 월 평균 500킬로그램 이상 배</div><div class="full">제18조의2(지정폐기물 처리계획의 확인)
+① 법 제17조제5항 각 호 외의 부분 본문에서 &quot;기후에너지환경부령으로 정하는 지정폐기물을 배출하는 사업자&quot;란 다음 각 호의 어느 하나에 해당하는 사업자(생활폐기물로 만든 중간가공 폐기물 외의 중간가공 폐기물을 배출하는 사업자는 제외한다. 이하 이 조에서 같다)를 말한다.
+1. 오니를 월 평균 500킬로그램 이상 배출하는 사업자
+2. 폐농약, 광재, 분진, 폐주물사, 폐사, 폐내화물, 도자기조각, 소각재, 안정화 또는 고형화처리물, 폐촉매, 폐흡착제, 폐흡수제, 폐유기용제 또는 폐유를 각각 월 평균 50킬로그램 또는 합계 월 평균 130킬로그램 이상 배출하는 사업자
+3. 폐합성고분자화합물, 폐산, 폐알칼리, 폐페인트 또는 폐래커를 각각 월 평균 100킬로그램 또는 합계 월 평균 200킬로그램 이상 배출하는 사업자
+3의2. 폐석면을 월 평균 20킬로그램 이상 배출하는 사업자. 이 경우 축사 등 기후에너지환경부장관이 정하여 고시하는 시설물을 운영하는 사업자가 5톤 미만의 슬레이트 지붕 철거ㆍ제거 작업을 전부 도급한 경우에는 수급인(하수급인은 제외한다)이 사업자를 갈음하여 지정폐기물 처리계획의 확인을 받을 수 있다.
+4. 폴리클로리네이티드비페닐 함유폐기물을 배출하는 사업자
+5. 폐유독물질을 배출하는 사업자
+6. 의료폐기물을 배출하는 사업자
+7. 수은폐기물을 배출하는 사업자
+8. 천연방사성제품폐기물을 배출하는 사업자
+9. 영 별표 1 제12호에 따라 고시된 지정폐기물을 기후에너지환경부장관이 정하여 고시하는 양 이상으로 배출하는 사업자
+② 법 제17조제5항 각 호 외의 부분 단서에서 &quot;기후에너지환경부령으로 정하는 자&quot;란 제21조제1항 각 호(제7호는 제외한다)의 자를 말한다.
+③ 법 제17조제5항제1호마목에서 &quot;그 밖에 기후에너지환경부령으로 정하는 사항&quot;이란 다음 각 호의 사항을 말한다.
+1. 주 원료명 및 사용량
+2. 주 생산품명 및 생산량
+3. 제조공정
+④ 법 제17조제5항제1호에 따른 폐기물처리계획서는 별지 제12호서식에 따르고, 같은 항 제2호에 따른 폐기물 분석결과서는 별지 제13호서식에 따르며, 같은 항 제3호에 따른 수탁확인서는 별지 제5호서식에 따른다.
+⑤ 법 제17조제5항에 따른 확인을 받으려는 자는 사업 개시일 또는 폐기물이 발생한 날부터 1개월 이내에 폐기물의 발생지(사업장폐기물 공동처리의 경우에는 그 운영기구 대표자의 사업장 소재지를 말한다. 이하 이 조에서…</div></details></div></details></details></div><div class="note">안내 문장은 초안입니다. 법령 원문이 우선합니다.</div></section></div></body></html>

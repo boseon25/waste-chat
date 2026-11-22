@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.key
+
+# 법령 API 원본: 응답 상세링크에 인증키(OC=)가 들어 있음 → 절대 올리지 않음
+data/law/raw/
+data/law/registry.json
+data/law/llm_cache/
+data/law/watched/pdf/
+
+# 비법령 원문 엑셀 (공개 자료, 다시 받을 수 있음)
+data/nonlaw/raw/
+
+# 이전 판 백업, LLM 로그
+data/tables/old/
+data/tables/staged/*/llm_log_*.jsonl
+~$*
+
+# 키가 든 백업 env 파일
+*.env.save
+.env.*
+!.env.example
+
+# 대용량 행정구역 경계 .shp (100MB 안팎, 별도 보관)
+*.shp

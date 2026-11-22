@@ -1,0 +1,88 @@
+{
+  "table": "disposal_methods_5",
+  "method": "llm",
+  "builder": "draft_tables.py draft disposal_methods_5",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/disposal_methods_5.csv",
+  "rows": 50,
+  "confirmed": 50,
+  "parts": {
+    "WMA_RULE": [
+      "B5:3",
+      "B5:4",
+      "B5:6.가.7)"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex_part",
+      "key": "B5:3.",
+      "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)",
+      "effective": "20261112",
+      "hash": "4cea368c90e99174",
+      "chars": 15725,
+      "part": "B5:3"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex_part",
+      "key": "B5:3._2",
+      "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)",
+      "effective": "20261112",
+      "hash": "e5aba12008eb5fb5",
+      "chars": 1806,
+      "part": "B5:3"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex_part",
+      "key": "B5:3._3",
+      "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)",
+      "effective": "20261112",
+      "hash": "e843863bfc526b76",
+      "chars": 5524,
+      "part": "B5:3"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex_part",
+      "key": "B5:3._4",
+      "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)",
+      "effective": "20261112",
+      "hash": "33e059dd877ecd35",
+      "chars": 2743,
+      "part": "B5:3"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex_part",
+      "key": "B5:4.",
+      "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)",
+      "effective": "20261112",
+      "hash": "0cf32345d8ddc893",
+      "chars": 20856,
+      "part": "B5:4"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex_part",
+      "key": "B5:6.",
+      "title": "폐기물의 처리에 관한 구체적 기준 및 방법(제14조 관련)",
+      "effective": "20261112",
+      "hash": "58944e463b4817aa",
+      "chars": 1375,
+      "part": "B5:6.가.7)"
+    }
+  ],
+  "ref_check": {
+    "refs": 50,
+    "inside": 50,
+    "outside": {},
+    "old_effective": {
+      "WMA_RULE:B5:4@20261002 (지금 20261112)": 30,
+      "WMA_RULE:B5:3@20261002 (지금 20261112)": 20
+    }
+  }
+}

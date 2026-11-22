@@ -1,0 +1,38 @@
+# waste-chat 문서 dplan (제12호 지정폐기물 처리계획(변경)서) → treatment_plan
+# 서식에 사업 개시일·제출일 칸이 없음 → TP-19(1개월 기한)는 form_field: null
+doc: dplan
+doc_type: treatment_plan
+title: 제12호 지정폐기물 처리계획서
+fields:
+  generator_name: submitter.name
+  generator_registration: submitter.biz_no
+  generator_address: submitter.address
+  generator_birthdate: submitter.birthdate
+  generator_phone: submitter.phone
+  waste_legal_name: waste_items[0].name
+  designated_transport_tons_year: waste_items[0].transport_ton_year
+  designated_treatment_tons_year: waste_items[0].treatment_ton_year
+  medical_facility_type: medical.facility_type
+  generator_representative: submitter.representative
+  industrial_park: submitter.industrial_park
+  designated_industry: business.industry
+  raw_materials_annual: business.main_materials
+  products_annual: business.main_products
+  manufacturing_process: business.process
+  designated_waste_code: waste_items[0].waste_code
+  designated_kg_month: waste_items[0].kg_month
+  designated_tons_year: waste_items[0].ton_year
+  designated_cycle: waste_items[0].cycle
+  designated_state: waste_items[0].state
+  designated_transporter: waste_items[0].transporter
+  designated_treatment_mode: waste_items[0].treatment_type
+  designated_processor: waste_items[0].treatment_company
+  designated_treatment_method: waste_items[0].treatment_code
+  business_start_date: start_date                      # 서식에 아직 없음 (추가 요청)
+  submit_date: submit_date                             # 서식에 아직 없음 (추가 요청)
+not_in_form: [business_start_date, submit_date]
+attachments:
+  designated_acceptance: capacity_check
+  form5_processor: capacity_check
+  analysis: analysis_result
+  lab_result: analysis_result

@@ -1,0 +1,128 @@
+=====================================================================
+ waste_agent 를 다른 사람·다른 폴더에서 쓸 때 바꿀 것        2026.11.18 · step53 기준
+ 리눅스·맥·윈도우 공통. 윈도우는 맨 아래 6번부터 보면 됨.
+=====================================================================
+
+요약: 코드 안에는 고정 경로가 없다. 바꿀 곳은 경로 설정 파일 1개 + 키 파일 1개 + 가상환경뿐.
+      실행 파일(waste.sh / waste.bat …)은 자기 위치를 waste_agent 폴더로 알아서 잡는다.
+
+  경로 설정 파일은 둘 중 하나 (둘 다 있으면 waste.env 가 env.sh 를 덮음)
+    env.sh     리눅스 서버에서 원래 쓰던 것 (셸 문법)
+    waste.env  윈도우·리눅스 공통 (K=값 만). 새로 받는 사람은 이것을 권장
+               틀: src/law_agent/bin/waste.env.example
+
+
+---------------------------------------------------------------------
+1. env.sh 또는 waste.env  (waste_agent 폴더 바로 아래)  ← 가장 중요
+---------------------------------------------------------------------
+경로가 원래 서버 기준 절대경로로 적혀 있으면 새 위치로 고친다.
+
+  변수                     가리킬 곳                              없으면
+  WASTE_LAW_DIR           법령 조각 폴더   data/law/chunk_v2        법률 판단 불가 (오류)
+  WASTE_DATA_DIR          업체 표 폴더     data/tables/active       업체 찾기 불가 (--no-partners 로만)
+  WASTE_REFERENCE_DIR     참고 자료 폴더   data/reference           생략 가능 (WASTE_DATA_DIR 기준으로 찾음)
+  LAW_AGENT_DATA_DIR      캐시·기록 폴더   data/law_agent           캐시 켜져 있으면 오류
+  LAW_OC                  법령 API 키      (각자 발급)               법령 자동 갱신만 안 됨. 판단은 됨
+
+  권장: 절대경로 대신 waste_agent 기준으로 적기 → 폴더를 옮겨도 안 고쳐도 됨
+    export WASTE_LAW_DIR="$ROOT/data/law/chunk_v2"
+    export WASTE_DATA_DIR="$ROOT/data/tables/active"
+    export WASTE_REFERENCE_DIR="$ROOT/data/reference"
+    export LAW_AGENT_DATA_DIR="$ROOT/data/law_agent"
+  ($ROOT 는 waste.sh 가 env.sh 를 읽기 전에 waste_agent 폴더로 정해 둔다)
+
+  * env.sh 에 route_agent·law_api 용 다른 경로가 있으면 그것도 같은 방식으로 고친다.
+  * LAW_OC 값은 공유본에서 지우고 각자 넣는다.
+
+
+---------------------------------------------------------------------
+2. src/law_agent/llm/.env  ← 키 (공유본에는 넣지 않음, 각자 만든다)
+---------------------------------------------------------------------
+  TIMELY_BASE_URL=...      Timely 주소
+  TIMELY_API_KEY=...       각자 발급한 키
+  KAKAO_REST_API_KEY=...   카카오 REST 키 (도로 거리). 없으면 직선 × 1.3 추정으로 자동 대체
+
+  없으면: 실제 모델 호출 불가. 화면 흐름만 볼 때는
+    WASTE_DRY=1 ./waste.sh send        (가짜 답, 캐시에 안 남음)
+
+
+---------------------------------------------------------------------
+3. 가상환경 (파이썬 패키지)
+---------------------------------------------------------------------
+  찾는 순서: WASTE_VENV → waste_agent/.venv → $HOME/5.Agent_System/.venv-ai-agent (원래 서버)
+  가장 쉬운 방법: python3 src/law_agent/launch.py setup  → waste_agent/.venv 를 만들고 패키지까지 설치
+  다른 곳이면 둘 중 하나:
+    (가) 실행할 때마다:   WASTE_VENV=/내/가상환경 ./waste.sh …
+    (나) 한 번 고정:      env.sh 맨 위가 아니라, 셸 설정(~/.bashrc 등)에
+                          export WASTE_VENV=/내/가상환경
+         (env.sh 는 가상환경을 켠 뒤에 읽히므로 env.sh 에 넣으면 안 먹는다)
+    (다) 가상환경을 먼저 켜고 실행하면 그대로 씀 (source 경로/bin/activate)
+
+  새로 만들 때:
+    python3 -m venv .venv && source .venv/bin/activate
+    pip install httpx openai pyyaml langgraph pytest
+    pip install -r src/part1/requirements.txt
+    export WASTE_VENV="$PWD/.venv"
+
+
+---------------------------------------------------------------------
+4. 고칠 필요 없는 것 (자동)
+---------------------------------------------------------------------
+  ROOT (waste_agent 위치)     waste.sh 위치로 자동
+  PART1_DIR (파트 1 패키지)   기본 src/part1. 다른 곳에 두었을 때만 export PART1_DIR=…
+  PYTHONPATH                  자동 (src)
+  사용자 작업 폴더             data/waste/ (입력서·파트 1 DB·상태) — 없으면 자동 생성
+  파트 2 감시 폴더             data/bridge/inbox, outbox — 자동 생성
+  웹 화면 주소                 기본 127.0.0.1:8765
+                               다른 PC에서 접속하게 하려면: ./waste-admin.sh web --host 0.0.0.0
+                               포트가 겹치면:               ./waste-admin.sh web --port 8800
+
+
+---------------------------------------------------------------------
+5. 처음 받은 사람 확인 순서
+---------------------------------------------------------------------
+  cd 받은/waste_agent
+  bash src/law_agent/bin/install.sh        # waste.sh · waste-admin.sh 깔기
+  (env.sh 경로 고치기, llm/.env 키 넣기, 가상환경 준비)
+  python3 src/law_agent/launch.py doctor   # 경로·키·패키지 점검 (키 값은 안 보임)
+  ./waste-admin.sh test                    # 431 passed 면 코드·패키지 정상
+  ./waste-admin.sh models                  # 키·모델 연결 확인 (OK 나와야 함)
+  ./waste-admin.sh web                     # 브라우저 http://127.0.0.1:8765/
+
+  자주 나는 오류
+    "환경변수 WASTE_LAW_DIR 가 비어 있음"        → env.sh 경로 / env.sh 가 waste_agent 바로 아래 있는지
+    "WASTE_DATA_DIR 환경변수에 … 지정하세요"      → 업체 표 경로
+    "파트 1 스크립트가 없습니다"                  → src/part1 위치 또는 PART1_DIR
+    No module named 'langgraph' / 'httpx'        → 가상환경이 안 켜짐 (WASTE_VENV 확인)
+    모델 호출 실패 (401·403)                      → llm/.env 키
+
+
+=====================================================================
+6. 윈도우에서 쓰기
+=====================================================================
+준비: 파이썬 3.10 이상 (python.org 설치 시 "Add python.exe to PATH" 체크)
+      명령 프롬프트(cmd) 또는 PowerShell 에서, waste_agent 폴더로 이동한 뒤 실행.
+
+  cd C:\…\waste_agent
+  py -3 src\law_agent\launch.py setup     # ① .venv 만들기 + 패키지 설치
+                                           #    waste.bat · waste-admin.bat · waste.env · llm\.env(빈 키) 생성
+  notepad waste.env                        # ② 데이터 경로 확인 (기본 ${ROOT}\data\… 이면 그대로)
+  notepad src\law_agent\llm\.env           # ③ 각자 받은 키 넣기 (TIMELY_BASE_URL, TIMELY_API_KEY)
+  py -3 src\law_agent\launch.py doctor    # ④ 점검 — "문제 없음." 나오면 끝
+  waste-admin.bat test                     # ⑤ 테스트 (431 passed)
+  waste-admin.bat web                      # ⑥ 화면 → 브라우저 http://127.0.0.1:8765/
+
+  사용자 명령은 리눅스와 같고 이름만 다름
+    ./waste.sh new 입력서.docx       →  waste.bat new 입력서.docx
+    ./waste-admin.sh detail --q B-1  →  waste-admin.bat detail --q B-1
+    (PowerShell 에서는 앞에 .\ 를 붙임:  .\waste.bat next)
+
+  윈도우에서만 주의
+    * 한글: waste.bat 이 UTF-8 모드를 켠다. python -m law_agent… 로 직접 부르면 한글 파일이 깨질 수 있으니
+            항상 waste.bat / waste-admin.bat / launch.py 로 실행.
+    * 경로에 한글·공백이 있어도 되지만, 문제가 나면 C:\waste_agent 같은 짧은 영문 경로로.
+    * waste.env 안에서는 역슬래시(\)·슬래시(/) 둘 다 됨. ${ROOT} 은 waste_agent 폴더.
+    * 키 없이 화면 흐름만:  set WASTE_DRY=1  후  waste-admin.bat web
+    * 방화벽 창이 뜨면: 내 PC에서만 쓰면 "취소"해도 됨 (127.0.0.1). 다른 PC 접속은 --host 0.0.0.0 + 허용.
+    * 감시(start)·로그(log)는 창 두 개로: 한 창 waste-admin.bat start -v, 다른 창 waste-admin.bat log
+    * 실제 윈도우 PC 에서는 아직 한 번도 돌려 보지 않았다. 처음 쓰는 사람은 doctor 결과를 공유해 줄 것.

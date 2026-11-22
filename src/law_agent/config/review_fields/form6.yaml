@@ -1,0 +1,34 @@
+# waste-chat 문서 form6 (제6호 사업장폐기물배출자 신고서, 시행규칙 제18조제2항제1호) → emitter_report
+# waste-chat 서식은 최초 신고의 폐기물 1행 중심. ⑦⑧⑨(원료·생산품·공정)와 ⑩구분 칸은 아직 없음
+doc: form6
+doc_type: emitter_report
+title: 제6호 사업장폐기물배출자 신고서
+fields:
+  generator_name: reporter.name
+  generator_registration: reporter.biz_no
+  generator_representative: reporter.representative
+  generator_address: reporter.address
+  generator_birthdate: reporter.birthdate
+  generator_phone: reporter.phone
+  generator_industry: business.industry
+  raw_materials_annual: business.main_materials        # 서식에 아직 없음
+  products_annual: business.main_products              # 서식에 아직 없음
+  manufacturing_process: business.process             # 서식에 아직 없음
+  waste_category: waste_items[0].category              # 서식에 아직 없음 (⑩구분 1·2)
+  waste_legal_name: waste_items[0].name
+  waste_classification: waste_items[0].waste_code
+  waste_state_code: waste_items[0].state
+  monthly_tons: waste_items[0].ton_month
+  annual_tons: waste_items[0].ton_year
+  hauler_name: waste_items[0].transporter
+  haul_amount: waste_items[0].haul_amount
+  treatment_type: waste_items[0].treatment_type
+  receiver_name: waste_items[0].treatment_company
+  treatment_method: waste_items[0].treatment_code
+  treatment_amount: waste_items[0].treatment_ton_year
+not_in_form: [raw_materials_annual, products_annual, manufacturing_process, waste_category]
+attachments:
+  form5_processor: capacity_check
+  form5_c: capacity_check
+  lab_result: analysis_result
+  analysis: analysis_result

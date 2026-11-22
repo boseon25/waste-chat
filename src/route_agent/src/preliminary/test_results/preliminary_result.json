@@ -1,0 +1,100 @@
+{
+  "waste_case_id": "JSON-CASE-002",
+  "classification": {
+    "status": "MATCHED",
+    "input_waste_code": "01-01-01",
+    "normalized_waste_code": "01-01-01",
+    "waste_name": "폐폴리에틸렌",
+    "matched": true,
+    "warnings": [
+      "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다."
+    ],
+    "source": "waste_codes_4.csv",
+    "classification_level": "세분류",
+    "parent_code": "01-01",
+    "is_terminal": true,
+    "official_name": "폐폴리에틸렌",
+    "waste_category_code": null,
+    "terminal_codes": [],
+    "hazardous_designation": "Y"
+  },
+  "restriction": {
+    "status": "NO_MATCH",
+    "recycling_blocked": false,
+    "allowed_rcodes": [],
+    "restricted_rcodes": [],
+    "matched_rules": [],
+    "required_inputs": [],
+    "questions": [],
+    "review_required": false,
+    "warnings": []
+  },
+  "hazardous": {
+    "status": "HAZARDOUS",
+    "matched": true,
+    "waste_code": "01-01-01",
+    "rule": {
+      "분류번호": "01-01-01",
+      "폐기물_구분": "지정폐기물",
+      "단계": "세분류",
+      "상위": "01-01",
+      "명칭": "폐폴리에틸렌",
+      "지정폐기물": "Y",
+      "근거": "WMA_RULE:B4@20261112#9bce159b174f5897",
+      "말단": "Y"
+    },
+    "required_inputs": [],
+    "questions": [],
+    "warnings": [
+      "공식 지정폐기물 목록과 일치했습니다. 개별 법령의 예외·분석 조건은 별도 확인이 필요합니다."
+    ]
+  },
+  "mixture": {
+    "status": "SINGLE",
+    "is_mixed": false,
+    "component_count": 0,
+    "share_total_pct": null,
+    "separable": true,
+    "component_codes_missing": [],
+    "warnings": [],
+    "questions": []
+  },
+  "gate_plan": {
+    "gate1": {
+      "action": "SKIP",
+      "reason": "지정폐기물로 확인되어 Gate 1 대상에서 제외합니다.",
+      "conditions": []
+    },
+    "gate2": {
+      "action": "RUN",
+      "reason": "재활용 유형별 허용 조건을 확인합니다.",
+      "conditions": [
+        "지정폐기물 기준으로 판정합니다 (지정폐기물 재활용 허가 업체만)."
+      ]
+    },
+    "gate3": {
+      "action": "SKIP",
+      "reason": "지정폐기물(의심 포함)은 Gate 3 후보에서 제외합니다.",
+      "conditions": []
+    },
+    "gate4": {
+      "action": "RUN",
+      "reason": "처분 방법 및 세부 기준을 확인합니다.",
+      "conditions": [
+        "지정폐기물 처분 기준을 적용합니다."
+      ]
+    }
+  },
+  "status": "READY",
+  "required_information": [],
+  "warnings": [
+    "입력 명칭이 없어 공식 분류표의 명칭을 사용했습니다.",
+    "공식 지정폐기물 목록과 일치했습니다. 개별 법령의 예외·분석 조건은 별도 확인이 필요합니다."
+  ],
+  "case_version": null,
+  "schema_version": null,
+  "waste_status": "designated",
+  "hazardous_basis": "분류번호",
+  "component_results": [],
+  "questions": []
+}

@@ -1,0 +1,20 @@
+{
+ "case_id": "여기에_사례번호",
+ "doc": "contract",
+ "version": 1,
+ "values": {
+  "generator_name": "다온산업",
+  "receiver_name": "미래환경수지",
+  "hauler_name": "새만금운수",
+  "waste_name": "PE 필름 자투리",
+  "waste_state": "고체(파쇄)",
+  "precautions": "비 맞지 않게 보관, 화기 주의",
+  "treatment_method": "2009",
+  "contract_period": "2026-12-01 ~ 2027-11-30",
+  "contract_quantity": "월 1.2톤",
+  "processing_price": "120원/kg"
+ },
+ "attachments": [
+  "form5_processor"
+ ]
+}

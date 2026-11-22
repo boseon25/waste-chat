@@ -1,0 +1,1662 @@
+{
+  "schema_version": "1.0",
+  "export_kind": "part2_preliminary_testset",
+  "synthetic": true,
+  "notice": "사전검증 시험용 가상 데이터. 실제 사업장·신고·분석 결과가 아님.",
+  "cases": [
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-01",
+      "name": "제품 포장용 PE 필름 자투리",
+      "process_description": "포장 후 남은 필름 절단·수거",
+      "classification": {
+        "reported_code": "51-03-01",
+        "selected_code": "51-03-01",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "제품 포장용 PE 필름 자투리",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": true,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "액상",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-02",
+      "name": "기계 세척 후 남은 세척액",
+      "process_description": "금속 부품 가공 기계 세척",
+      "classification": {
+        "reported_code": "04-02-00",
+        "selected_code": "04-02-00",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "유기계 세척용제",
+          "share_pct": 90,
+          "separable": "아니오",
+          "waste_code": null,
+          "status": "confirmed"
+        },
+        {
+          "material": "혼입된 기계유",
+          "share_pct": 10,
+          "separable": "아니오",
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": true,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "오염",
+        "substances": [
+          "석면"
+        ]
+      },
+      "material_form": "원형보존",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-03",
+      "name": "건물 해체 슬레이트 지붕재",
+      "process_description": "노후 창고 지붕 철거",
+      "classification": {
+        "reported_code": "07-01-01",
+        "selected_code": "07-01-01",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "건물 해체 슬레이트 지붕재",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": true,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "혼합",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-04",
+      "name": "수술 후 조직물",
+      "process_description": "병원 수술실",
+      "classification": {
+        "reported_code": "10-12-01",
+        "selected_code": "10-12-01",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "수술 후 조직물",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "원형보존",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-05",
+      "name": "재활용용 태반",
+      "process_description": "산부인과 분만실 (재활용 목적 분리 보관)",
+      "classification": {
+        "reported_code": "10-12-06",
+        "selected_code": "10-12-06",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "재활용용 태반",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "액상",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-06",
+      "name": "변압기 교체 후 폐절연유",
+      "process_description": "변전설비 정비",
+      "classification": {
+        "reported_code": "06-01-07",
+        "selected_code": "06-01-07",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "변압기 교체 후 폐절연유",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "원형보존",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-07",
+      "name": "석면 고형화 처리물",
+      "process_description": "석면 폐기물 고형화 시설",
+      "classification": {
+        "reported_code": "03-06-05",
+        "selected_code": "03-06-05",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "석면 고형화 처리물",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": true,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "오염",
+        "substances": [
+          "도료"
+        ]
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-08",
+      "name": "도료가 묻은 플라스틱 받침대",
+      "process_description": "도장 라인 지그 교체",
+      "classification": {
+        "reported_code": "51-03-01",
+        "selected_code": "51-03-01",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "도료가 묻은 플라스틱 받침대",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "오염",
+        "substances": [
+          "절삭유"
+        ]
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-09",
+      "name": "절삭유가 묻은 철 스크랩",
+      "process_description": "금속 절삭 가공",
+      "classification": {
+        "reported_code": "51-29-01",
+        "selected_code": "51-29-01",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "절삭유가 묻은 철 스크랩",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "designated_waste_status": "designated"
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": true
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "분말",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": "톤백, 실내",
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-10",
+      "name": "도정 공장 쌀겨",
+      "process_description": "벼 도정",
+      "classification": {
+        "reported_code": "51-19-00",
+        "selected_code": "51-19-00",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "도정 공장 쌀겨",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-11",
+      "name": "포장 박스 폐지",
+      "process_description": "입고 자재 포장 해체",
+      "classification": {
+        "reported_code": "51-28-02",
+        "selected_code": "51-28-02",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "포장 박스 폐지",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": "알루미늄",
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-12",
+      "name": "알루미늄 절삭 스크랩",
+      "process_description": "알루미늄 부품 가공",
+      "classification": {
+        "reported_code": "51-29-02",
+        "selected_code": "51-29-02",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "알루미늄 절삭 스크랩",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": null,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "액상",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-13",
+      "name": "구내식당 폐식용유",
+      "process_description": "구내식당 튀김 조리",
+      "classification": {
+        "reported_code": "51-16-00",
+        "selected_code": "51-16-00",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "구내식당 폐식용유",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-14",
+      "name": "플라스틱·고무 혼합 부품",
+      "process_description": "조립 불량품 해체",
+      "components": [
+        {
+          "material": "PP 하우징",
+          "share_pct": 70,
+          "separable": "예",
+          "waste_code": "51-03-01",
+          "status": "confirmed"
+        },
+        {
+          "material": "고무 패킹",
+          "share_pct": 30,
+          "separable": "예",
+          "waste_code": "51-03-02",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-15",
+      "name": "일반 플라스틱과 지정 플라스틱 혼합",
+      "process_description": "특정시설 라인 정리",
+      "components": [
+        {
+          "material": "PE 필름",
+          "share_pct": 60,
+          "separable": "아니오",
+          "waste_code": "51-03-01",
+          "status": "confirmed"
+        },
+        {
+          "material": "특정시설 PE",
+          "share_pct": 40,
+          "separable": "아니오",
+          "waste_code": "01-01-01",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-16",
+      "name": "석면이 섞인 폐지",
+      "process_description": "해체 현장 정리",
+      "components": [
+        {
+          "material": "폐지",
+          "share_pct": 80,
+          "separable": "아니오",
+          "waste_code": "51-28-02",
+          "status": "confirmed"
+        },
+        {
+          "material": "석면 보온재",
+          "share_pct": 20,
+          "separable": "아니오",
+          "waste_code": "07-01-01",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-17",
+      "name": "합성수지류 (세부 분류 미정)",
+      "process_description": "생산 공정 전반",
+      "classification": {
+        "reported_code": "51-03",
+        "selected_code": "51-03",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "합성수지류 (세부 분류 미정)",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-18",
+      "name": "합성고분자 (4자리 코드)",
+      "process_description": "생산 공정 전반",
+      "classification": {
+        "reported_code": "5103",
+        "selected_code": "5103",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "합성고분자 (4자리 코드)",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-19",
+      "name": "분류번호를 모르는 폐기물",
+      "process_description": "창고 정리",
+      "components": [
+        {
+          "material": "분류번호를 모르는 폐기물",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-20",
+      "name": "형식이 잘못된 분류번호",
+      "process_description": "창고 정리",
+      "classification": {
+        "reported_code": "51-03-XX",
+        "selected_code": "51-03-XX",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "형식이 잘못된 분류번호",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-21",
+      "name": "표에 없는 분류번호",
+      "process_description": "창고 정리",
+      "classification": {
+        "reported_code": "99-99-99",
+        "selected_code": "99-99-99",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "표에 없는 분류번호",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "파쇄",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-22",
+      "name": "도장된 폐목재 팔레트",
+      "process_description": "입고 팔레트 폐기",
+      "classification": {
+        "reported_code": "51-20-24",
+        "selected_code": "51-20-23",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "도장된 폐목재 팔레트",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "혼합",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": null,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": null,
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-23",
+      "name": "금지 물질 의심 폐수처리오니",
+      "process_description": "도금 폐수 처리",
+      "classification": {
+        "reported_code": "51-02-01",
+        "selected_code": "51-02-01",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "금지 물질 의심 폐수처리오니",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ],
+      "banned_restricted_substance": true
+    },
+    {
+      "schema_version": "1.0",
+      "case_version": 1,
+      "synthetic": true,
+      "waste_code_candidates": [],
+      "hazardous_suspect": false,
+      "quantity": {
+        "monthly_ton": [
+          1.0,
+          1.1,
+          0.9
+        ],
+        "unit": "ton",
+        "status": "confirmed"
+      },
+      "region": {
+        "sido": "전북특별자치도",
+        "sigungu": "전주시",
+        "address": "전주시 가상산업로 10 (가상 주소)"
+      },
+      "item_specific": {
+        "ic_tray": null,
+        "nonferrous_material": null,
+        "grain_processor_registered": null
+      },
+      "foreign_matter": {
+        "items": [],
+        "separable": null
+      },
+      "mixed_with_other": false,
+      "contamination": {
+        "level": "깨끗",
+        "substances": []
+      },
+      "material_form": "분말",
+      "existing_declaration": {
+        "waste_code": null,
+        "treatment_code": null
+      },
+      "combustible": true,
+      "analysis": {
+        "heating_value_kcal": null,
+        "moisture_pct": null,
+        "chlorine_pct": null,
+        "leaching_ok": null
+      },
+      "storage_state": "밀폐 용기",
+      "missing": [],
+      "not_applicable": [],
+      "evidence": [],
+      "case_id": "PRE-24",
+      "name": "카페 커피찌꺼기",
+      "process_description": "사내 카페 추출",
+      "classification": {
+        "reported_code": "51-17-25",
+        "selected_code": "51-17-25",
+        "status": "mock_reviewed"
+      },
+      "components": [
+        {
+          "material": "카페 커피찌꺼기",
+          "share_pct": 100,
+          "separable": null,
+          "waste_code": null,
+          "status": "confirmed"
+        }
+      ]
+    }
+  ]
+}

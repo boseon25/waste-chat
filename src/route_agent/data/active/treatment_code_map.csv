@@ -1,0 +1,70 @@
+﻿code,처리구분,처리분류,세분류,근거,r_code,baseline,tier,carbon_factor_key,transport_needed,confidence,note
+1001,자가처리,재활용,원형 재사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-1,recycle,reuse,recycle_reuse,N,high,
+1002,자가처리,재활용,수리·수선 재사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-2,recycle,reuse,recycle_reuse,N,high,
+1003,자가처리,재활용,원료 제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-3,recycle,material_recycle,recycle_material,N,high,
+1004,자가처리,재활용,직접 제품제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-4,recycle,material_recycle,recycle_material,N,high,
+1005,자가처리,재활용,농업생산활동에 사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-5,recycle,material_recycle,recycle_material,N,high,
+1006,자가처리,재활용,토질개선에 사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-6,recycle,material_recycle,recycle_material,N,high,
+1007,자가처리,재활용,성토재·복토재 등으로 사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-7,recycle,material_recycle,recycle_material,N,high,
+1008,자가처리,재활용,직접 에너지회수,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-8,recycle,energy_recovery,energy_recovery,N,high,
+1009,자가처리,재활용,연료·고형연료제품 제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-9,recycle,energy_recovery,energy_recovery,N,high,
+1010,자가처리,재활용,중간가공폐기물 제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-10,recycle,,null,N,medium,"중간가공 → 최종 처리 미상, tier 미정"
+1011,자가처리,재활용,재활용환경성평가 승인을 받은 유형으로 재활용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-11,recycle,material_recycle,recycle_material,N,high,재활용환경성평가 승인 유형
+1101,자가처리,중간처분,일반소각,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,incineration,N,high,
+1102,자가처리,중간처분,고온소각,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,incineration_high_temp,N,high,
+1103,자가처리,중간처분,열분해,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,pyrolysis_disposal,N,high,
+1104,자가처리,중간처분,고온용융,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,melting_high_temp,N,high,
+1105,자가처리,중간처분,압축,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1106,자가처리,중간처분,파쇄·분쇄,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1107,자가처리,중간처분,절단,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1108,자가처리,중간처분,용융,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1109,자가처리,중간처분,증발농축,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1110,자가처리,중간처분,유수분리,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1111,자가처리,중간처분,탈수·건조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1112,자가처리,중간처분,멸균·분쇄,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null (의료폐기물)
+1113,자가처리,중간처분,고형화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1114,자가처리,중간처분,안정화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1115,자가처리,중간처분,소멸화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1116,자가처리,중간처분,중화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,최종 처분 미상 → carbon_saving=null
+1117,자가처리,중간처분,기타,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,N,low,
+1201,자가처리,매립,관리형 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill_managed,N,high,
+1202,자가처리,매립,차단형 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill_isolated,N,high,
+1203,자가처리,매립,기타 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill,N,high,
+1300,자가처리,해역배출,해역배출,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,ocean_disposal,,null,N,high,범위 밖
+1500,자가처리,수출,수출,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,export,,null,N,high,범위 밖
+2001,위탁처리,재활용,원형 재사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-1,recycle,reuse,recycle_reuse,Y,high,
+2002,위탁처리,재활용,수리·수선 재사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-2,recycle,reuse,recycle_reuse,Y,high,
+2003,위탁처리,재활용,원료 제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-3,recycle,material_recycle,recycle_material,Y,high,
+2004,위탁처리,재활용,직접 제품제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-4,recycle,material_recycle,recycle_material,Y,high,
+2005,위탁처리,재활용,농업생산활동에 사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-5,recycle,material_recycle,recycle_material,Y,high,
+2006,위탁처리,재활용,토질개선에 사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-6,recycle,material_recycle,recycle_material,Y,high,
+2007,위탁처리,재활용,성토재·복토재 등으로 사용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-7,recycle,material_recycle,recycle_material,Y,high,
+2008,위탁처리,재활용,직접 에너지회수,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-8,recycle,energy_recovery,energy_recovery,Y,high,
+2009,위탁처리,재활용,연료·고형연료제품 제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-9,recycle,energy_recovery,energy_recovery,Y,high,
+2010,위탁처리,재활용,중간가공폐기물 제조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-10,recycle,,null,Y,medium,"중간가공 → 최종 처리 미상, tier 미정"
+2011,위탁처리,재활용,재활용환경성평가 승인을 받은 유형으로 재활용,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,R-11,recycle,material_recycle,recycle_material,Y,high,재활용환경성평가 승인 유형
+2101,위탁처리,중간처분,일반소각,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,incineration,Y,high,
+2102,위탁처리,중간처분,고온소각,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,incineration_high_temp,Y,high,
+2103,위탁처리,중간처분,열분해,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,pyrolysis_disposal,Y,high,
+2104,위탁처리,중간처분,고온용융,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,melting_high_temp,Y,high,
+2105,위탁처리,중간처분,압축,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2106,위탁처리,중간처분,파쇄·분쇄,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2107,위탁처리,중간처분,절단,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2108,위탁처리,중간처분,용융,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2109,위탁처리,중간처분,증발농축,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2110,위탁처리,중간처분,유수분리,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2111,위탁처리,중간처분,탈수·건조,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2112,위탁처리,중간처분,멸균·분쇄,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null (의료폐기물)
+2113,위탁처리,중간처분,고형화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2114,위탁처리,중간처분,안정화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2115,위탁처리,중간처분,소멸화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2116,위탁처리,중간처분,중화,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,최종 처분 미상 → carbon_saving=null
+2117,위탁처리,중간처분,지방자치단체 소각,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,incineration,Y,high,
+2118,위탁처리,중간처분,국가 소각,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,incineration,disposal,incineration,Y,high,한국환경공단·수도권매립지관리공사 운영
+2119,위탁처리,중간처분,기타,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,intermediate_disposal,,null,Y,low,
+2201,위탁처리,매립,민간관리형 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill_managed,Y,high,
+2202,위탁처리,매립,민간차단형 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill_isolated,Y,high,
+2204,위탁처리,매립,기타 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill,Y,high,2203 결번
+2205,위탁처리,매립,지방자치단체 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill_managed,Y,high,
+2206,위탁처리,매립,국가 매립시설,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,landfill,disposal,landfill_managed,Y,high,
+2300,위탁처리,해역배출,해역배출,WMA_RULE:BF5@처리구분@20261002#e81367fb6f688ea6,,ocean_disposal,,null,Y,high,범위 밖

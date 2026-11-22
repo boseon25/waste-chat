@@ -1,0 +1,16 @@
+{
+  "total_targets": 1,
+  "success_count": 1,
+  "failed_count": 0,
+  "total_chunks": 943,
+  "success": [
+    {
+      "law_id": "WMA",
+      "name": "폐기물관리법",
+      "grade": 1,
+      "effective": "20261112",
+      "chunks": 943
+    }
+  ],
+  "failed": []
+}

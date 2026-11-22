@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+  "other_case_id": "671dcb92-d0f3-5520-b2f5-4257c86c9f9e",
+  "missing_fields": [
+    "analysis.chlorine",
+    "classification.conditions"
+  ],
+  "database_verification": {
+    "submission_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+    "status": "PASS",
+    "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+    "counts": {
+      "controls": 51,
+      "cells": 53,
+      "paragraphs": 17,
+      "companies": 1,
+      "sites": 2,
+      "case_candidates": 2
+    },
+    "checked": 6,
+    "unchecked": 14
+  },
+  "external_sent": false
+}

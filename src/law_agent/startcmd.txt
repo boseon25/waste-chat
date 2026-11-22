@@ -1,0 +1,112 @@
+law_agent 실행 명령어 (2026.11.17)
+=====================================
+※ 모든 명령은 waste_agent 폴더에서 실행한다.  pwd 가 …/waste_agent 로 끝나야 한다.
+※ 키 값은 이 파일에 적지 않는다 (src/law_agent/llm/.env 에만).
+
+
+0. 새 zip 받았을 때
+-------------------
+cd ~/5.Agent_System/프로젝트/waste_agent
+mv <받은 위치>/law_agent_stepNN_xxx.zip src/
+cd src && unzip -o law_agent_stepNN_xxx.zip && cd ..
+pwd
+python3 -m pytest -q src/law_agent/tests            # 전부 passed 여야 함 (LLM 안 씀)
+
+
+1. 매번 터미널 열면 먼저
+------------------------
+cd ~/5.Agent_System/프로젝트/waste_agent
+source env.sh                                        # 데이터 경로 (LAW_AGENT_DATA_DIR → 캐시·감사 기록 위치)
+set -a; . src/law_agent/llm/.env; set +a             # 타임리 키 (LLM 쓸 때만 필요)
+IN=src/route_agent/data/test_data/start/part1_sample.json     # 데모 사례 2건
+
+
+2. 실행 (사례 → 결과 JSON)
+--------------------------
+# 흐름만 확인 (LLM 안 부름, 돈 안 듦)
+PYTHONPATH=src python3 -m law_agent.run $IN --out /tmp/la_dry --no-partners --dry -v
+
+# 경로까지 (업체 매칭 없이) — 진행 과정 보면서
+PYTHONPATH=src python3 -m law_agent.run $IN --out data/law_agent/out --no-partners -v
+
+# 업체 매칭·순위·탄소까지 (위 판단은 캐시에서 꺼냄)
+PYTHONPATH=src python3 -m law_agent.run $IN --out data/law_agent/out -v
+
+# 사례 하나만
+PYTHONPATH=src python3 -m law_agent.run $IN --out data/law_agent/out --case DEMO-PART2-01 -v
+
+# 화면 출력도 파일로 남기기
+PYTHONPATH=src python3 -m law_agent.run $IN --out data/law_agent/out -v 2>&1 | tee data/law_agent/out/run_log.txt
+
+옵션
+  -v / --verbose   실행 중 단계·차례별 질문 상태를 찍는다
+  --no-partners    업체 매칭 없이 경로까지
+  --case ID        이 사례만 (쉼표로 여러 개)
+  --top 5          업체 후보 수
+  --mode escalate|single|all   판단 모델 수 (기본 escalate: 2개, 갈리면 3번째)
+  --dry            LLM 안 부름 (모든 판단 '모름')
+
+
+3. 과정 보기
+------------
+(1) 실행 중:  -v 를 붙이면 아래처럼 찍힌다
+      [1] 입력 검사: ok
+      [2] 법률 매칭
+         ─ 차례 1: 질문 18개, 호출 40회 …
+             A-1   agreed   yes
+             D-1   agreed   yes   ['R-1', 'R-2', 'R-3-2', …]
+             F-1   retry    unknown   재검색 대기 (…)
+      [3] 경로 4개 …
+      [4] 업체 매칭·순위·운송 탄소
+
+(2) 끝난 뒤 저장된 결과 보기 (LLM 안 씀, 다시 실행 안 함)
+PYTHONPATH=src python3 -m law_agent.eval.show_result data/law_agent/out/DEMO-PART2-01.json             # 차례·판단·경로·파트1 질문 요약
+PYTHONPATH=src python3 -m law_agent.eval.show_result data/law_agent/out/DEMO-PART2-01.json --q D-2,F-1  # 질문별: 근거 조문, 모델별 답·이유, 인용
+PYTHONPATH=src python3 -m law_agent.eval.show_result data/law_agent/out/DEMO-PART2-01.json --routes     # 경로별: 단계, 조건, 서류, 업체, 탄소
+
+(3) 질문 몇 개만 다시 돌려서 근거 원문까지 보기 (캐시 있으면 호출 0회)
+PYTHONPATH=src python3 -m law_agent.eval.explain DEMO-PART2-01 --path $IN --only A-1,A-2,B-1,D-1,D-2,F-1,F-2 --text
+
+(4) 근거 묶음만 보기 (LLM 안 씀 — 조문 찾기·자르기 확인용)
+PYTHONPATH=src python3 -m law_agent.eval.smoke_evidence $IN --case DEMO-PART2-01
+
+(5) 노드별 감사 기록 (law_agent.run 이 자동 저장, 한 실행 = 한 파일. 결과 JSON 의 run.audit_file 에 경로)
+ls $LAW_AGENT_DATA_DIR/audit/DEMO-PART2-01/
+#   한 줄 = 기록 하나: {"ts", "node", "question_id", "seconds", "summary", "output"}
+#   node: planner / retriever / evidence / judge / verifier (차례마다) → verdict (질문별 최종) → composer → output
+python3 -c "import json,sys; [print(r['node'], r.get('question_id') or '', r.get('summary')) for r in map(json.loads, open(sys.argv[1]))]" $(ls -t $LAW_AGENT_DATA_DIR/audit/DEMO-PART2-01/*.jsonl | head -1)
+
+
+4. route_agent 와 비교
+----------------------
+(cd src/route_agent/src && python3 pipline/pipeline.py ../../../$IN --out /tmp/ra_out)
+PYTHONPATH=src python3 -m law_agent.eval.compare_routes /tmp/ra_out data/law_agent/out
+#   ◀ 위험 = route_agent 는 확정이 아닌데 law_agent 가 confirmed
+
+
+5. 점검·평가
+------------
+PYTHONPATH=src python3 -m law_agent.eval.inspect_laws                        # 체크리스트 조문이 근거에 들어가는지 (OK/MOVED/MISMATCH/NONE)
+PYTHONPATH=src python3 -m law_agent.eval.inspect_laws --outline WMA_RULE B5  # 긴 별표 목차·조각
+PYTHONPATH=src python3 -m law_agent.eval.inspect_laws --find CEA 순환자원     # 제목에 말이 든 조문 찾기
+PYTHONPATH=src python3 -m law_agent.eval.testset_eval                         # 시험세트 24건 채점 (LLM 씀)
+
+
+6. 결과 파일
+------------
+data/law_agent/out/{case_id}.json
+  route_proposals      파트 3 RouteProposal v1.1
+  information_request  파트 1에 물을 것
+  recommendation       화면 추천 카드
+  law_review           질문별 판단 (모델별 답·이유·근거 조문·인용)
+  run                  차례별 호출·토큰·시간
+$LAW_AGENT_DATA_DIR/cache/   판단 캐시 (같은 근거·사실이면 다시 안 부름)
+$LAW_AGENT_DATA_DIR/audit/   노드별 감사 기록
+
+
+7. 자주 나는 실수
+-----------------
+- unzip 실패 → 그 뒤 명령이 src/ 안에서 실행됨 → "No module named" / "env.sh 없음". pwd 확인.
+- source env.sh 안 함 → 캐시가 안 맞아 매번 새로 호출 (비용).
+- 프롬프트가 바뀐 zip 이면 캐시가 안 맞는다 (처음 실행은 사례당 수십 회 호출).
+- zip 만들 때는 반드시 -x '*.env'.

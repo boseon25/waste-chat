@@ -1,0 +1,71 @@
+{
+ "schema_version": "1.0",
+ "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+ "case_version": 0,
+ "synthetic": false,
+ "name": "기계 세척 후 남은 세척액",
+ "process_description": "금속 부품 가공 기계를 세척제로 씻는 작업",
+ "classification": {
+  "reported_code": "04-02-00",
+  "selected_code": "04-02-00",
+  "status": "part1_supported"
+ },
+ "waste_code_candidates": [],
+ "components": [],
+ "mixed_with_other": null,
+ "foreign_matter": {
+  "items": [],
+  "separable": null
+ },
+ "material_form": "액상",
+ "contamination": {
+  "level": "오염",
+  "substances": []
+ },
+ "hazardous_suspect": null,
+ "analysis": {
+  "heating_value_kcal": null,
+  "moisture_pct": null,
+  "chlorine_pct": null,
+  "leaching_ok": null
+ },
+ "quantity": {
+  "monthly_ton": [],
+  "unit": "ton",
+  "status": "needs_info",
+  "current_lot": {
+   "value": 100.0,
+   "unit": "L"
+  }
+ },
+ "region": {
+  "sido": "전북",
+  "sigungu": "전주시",
+  "address": "전주시 가상산업로 10, A동 자재창고 (가상 주소)"
+ },
+ "missing": [
+  "hazard_declaration",
+  "hazardous_suspect",
+  "photos.close",
+  "photos.full",
+  "quantity.monthly_ton"
+ ],
+ "not_applicable": [],
+ "part1_v2": {
+  "case_id": "83b4e34a-883a-5161-9cf6-0f142b6b7534",
+  "draft_revision": 1,
+  "limitations": [
+   "DRAFT_DB_EXPORT_NOT_PUBLISHED",
+   "USER_REVIEW_REQUIRED",
+   "NO_REVIEWED_CLASSIFICATION_RULES",
+   "HAZARD_UNVERIFIED",
+   "PHOTOS_NOT_UPLOADED",
+   "BUSINESS_REGISTRATION_NOT_VERIFIED",
+   "NO_DENSITY_EVIDENCE",
+   "PHASE2_USER_REPORT_NOT_LEGAL_VERIFICATION:quantity.measured_at"
+  ],
+  "physical_state": "회색 액체이며 표면에 기름막이 일부 보임",
+  "industry": null,
+  "site_id": "df0d86b0-5c4e-50c2-b748-5b5703b4e6fa"
+ }
+}

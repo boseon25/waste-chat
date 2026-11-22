@@ -1,0 +1,120 @@
+{
+  "table": "reporter_scope",
+  "method": "llm",
+  "builder": "draft_tables.py draft reporter_scope",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/reporter_scope.csv",
+  "rows": 27,
+  "confirmed": 27,
+  "parts": {
+    "WMA": [
+      "46/항1",
+      "46/항5"
+    ],
+    "WMA_RULE": [
+      "66/항3",
+      "66/항4",
+      "66/항5",
+      "66/항6",
+      "B16",
+      "B17"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA",
+      "type": "article_part",
+      "key": "46/항1",
+      "title": "폐기물처리 신고",
+      "effective": "20261112",
+      "hash": "e9ee7607bdfedbd7",
+      "chars": 350,
+      "part": "46/항1"
+    },
+    {
+      "law_id": "WMA",
+      "type": "article_part",
+      "key": "46/항5",
+      "title": "폐기물처리 신고",
+      "effective": "20261112",
+      "hash": "9e2e2a5432ec1c35",
+      "chars": 172,
+      "part": "46/항5"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "article_part",
+      "key": "66/항3",
+      "title": "폐기물처리 신고대상",
+      "effective": "20261112",
+      "hash": "4da885a281f35632",
+      "chars": 399,
+      "part": "66/항3"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "article_part",
+      "key": "66/항4",
+      "title": "폐기물처리 신고대상",
+      "effective": "20261112",
+      "hash": "c251db8b8c475229",
+      "chars": 141,
+      "part": "66/항4"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "article_part",
+      "key": "66/항5",
+      "title": "폐기물처리 신고대상",
+      "effective": "20261112",
+      "hash": "145457320cbd165f",
+      "chars": 246,
+      "part": "66/항5"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "article_part",
+      "key": "66/항6",
+      "title": "폐기물처리 신고대상",
+      "effective": "20261112",
+      "hash": "f8229cb5d871f9fe",
+      "chars": 708,
+      "part": "66/항6"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "16",
+      "title": "폐기물처리 신고를 하고 폐기물을 재활용할 수 있는 자(제66조제2항 관련)",
+      "effective": "20261112",
+      "hash": "4522d625abb1e9bd",
+      "chars": 4313,
+      "part": "B16"
+    },
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "17",
+      "title": "폐기물처리 신고자가 갖추어야 할 보관시설 및 재활용시설(제66조제1항 관련)",
+      "effective": "20261112",
+      "hash": "8c53974492eb4997",
+      "chars": 1177,
+      "part": "B17"
+    }
+  ],
+  "ref_check": {
+    "refs": 27,
+    "inside": 27,
+    "outside": {},
+    "old_effective": {
+      "WMA_RULE:B16@20261002 (지금 20261112)": 18,
+      "WMA:46/항1@20260918 (지금 20261112)": 3,
+      "WMA_RULE:66/항5@20261002 (지금 20261112)": 2,
+      "WMA:46/항5@20260918 (지금 20261112)": 1,
+      "WMA_RULE:66/항3@20261002 (지금 20261112)": 1,
+      "WMA_RULE:66/항4@20261002 (지금 20261112)": 1,
+      "WMA_RULE:66/항6@20261002 (지금 20261112)": 1
+    }
+  }
+}

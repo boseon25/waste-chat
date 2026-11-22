@@ -1,0 +1,3 @@
+
+===== 2026-11-20 17:50:30 시작: /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python -m law_agent.cli admin start -v
+감시 시작: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/inbox → /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/bridge/outbox (5초 간격, 멈추려면 Ctrl+C)

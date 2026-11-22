@@ -1,0 +1,2560 @@
+{
+  "export_kind": "phase3-document-workflow-review",
+  "schema_version": "0.5.0",
+  "published": false,
+  "case_version": 0,
+  "draft_revision": 3,
+  "workflow_revision": 15,
+  "case": {
+    "schema_version": "2.0",
+    "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+    "case_version": 0,
+    "draft_revision": 3,
+    "company_id": "63881e86-f7fa-5d01-805c-c28764f5ae90",
+    "site_id": "fc748e9d-5606-562e-8738-1a7cbc67cc8b",
+    "submission_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+    "lot_id": "2e8c36ac-8294-598c-ad7a-6254b961e04d",
+    "synthetic": true,
+    "name": {
+      "value": "제품 포장용 PE 필름 자투리",
+      "raw_value": "제품 포장용 PE 필름 자투리",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "6c18574e-d43c-50b4-8c4f-47072290b0a3"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "process_description": {
+      "value": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+      "raw_value": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "ff6b8f43-2dcc-5d35-8147-25f1bf6e7cbc"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "industry": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-17T15:00:30.436664Z"
+    },
+    "physical_state": {
+      "value": "마른 투명 비닐 조각",
+      "raw_value": "마른 투명 비닐 조각",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "7e2e507b-5900-58c6-a93a-4f7d5fb4c231"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "components": [
+      {
+        "name": {
+          "value": "PE (사용한 포장재 라벨 기준)",
+          "raw_value": "PE (사용한 포장재 라벨 기준)",
+          "status": "conditional",
+          "basis": "user_report",
+          "verification": "unverified",
+          "evidence_ids": [
+            "dc15ca3d-bbeb-582a-b976-c07d3f170ca5"
+          ],
+          "applicability": "matched",
+          "updated_at": "2026-11-17T15:00:20.875904Z"
+        },
+        "proportion_percent": {
+          "value": null,
+          "raw_value": null,
+          "status": "needs_info",
+          "basis": null,
+          "verification": "unverified",
+          "evidence_ids": [],
+          "applicability": "unknown",
+          "updated_at": "2026-11-17T15:00:30.436524Z"
+        }
+      }
+    ],
+    "mixture_type": {
+      "value": "single",
+      "raw_value": "☒ | ☐ | ☐",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "fb1bed2f-27e4-517f-89e5-4551f9dcf8fc",
+        "c2b7be25-97a8-5133-910b-7bac0be229d5",
+        "105c064e-b05c-59e8-922a-76ba509059ff"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "separability": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-17T15:00:30.436678Z"
+    },
+    "quantity": {
+      "value": "200",
+      "raw_value": "200kg",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "c475a5ef-345c-5f66-a143-939d6eb5a555"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z",
+      "unit": "kg",
+      "dimension": "mass",
+      "scope": "current_lot",
+      "measured_at": {
+        "value": "2026-11-09",
+        "raw_value": "2026-11-09",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73"
+        ],
+        "applicability": "matched",
+        "updated_at": "2026-11-17T15:00:22.549397Z"
+      },
+      "method": {
+        "value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+        "raw_value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "96a08a88-7341-55c6-bf37-2bbb95cfe039"
+        ],
+        "applicability": "matched",
+        "updated_at": "2026-11-17T15:00:20.875904Z"
+      },
+      "net_weight": {
+        "value": true,
+        "raw_value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "96a08a88-7341-55c6-bf37-2bbb95cfe039"
+        ],
+        "applicability": "matched",
+        "updated_at": "2026-11-17T15:00:20.875904Z"
+      },
+      "conversion_rule": null
+    },
+    "generation": {
+      "amount": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-17T15:00:30.436702Z"
+      },
+      "unit": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-17T15:00:30.436706Z"
+      },
+      "period": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-17T15:00:30.436710Z"
+      },
+      "recurring": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-17T15:00:30.436714Z"
+      }
+    },
+    "visible_contamination": {
+      "value": "not_visible",
+      "raw_value": "☒ | ☐ | ☐ | ☐",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "6989cffd-8da2-57e2-94d4-06dcb17440f5",
+        "2e532f93-6e0a-5128-bee9-c93a6d8d5bea",
+        "f925e2ac-cf3a-5e7e-881e-540725bcbaf6",
+        "2d62cac0-b2cc-58a9-a565-8538e76aba56"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "hazard_declaration": {
+      "value": null,
+      "raw_value": "모름",
+      "status": "needs_info",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "ab2ac53c-783d-56f6-b1b9-d5b74741d783",
+        "d24569ea-f595-5d48-8639-e52537b37344",
+        "c885b1b8-d36f-5690-9085-a5ef21499676"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "substances": [],
+    "analysis_results": [],
+    "classification": {
+      "reported_code": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-17T15:00:30.436817Z"
+      },
+      "candidates": [],
+      "selected_code": null,
+      "rule_version": null,
+      "review_required": true
+    },
+    "evidence": [
+      {
+        "evidence_id": "aa1c33f2-e00c-55bb-9410-3654989e16ed",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": null,
+          "row": null,
+          "cell": null,
+          "tag": "source_form_date",
+          "paragraph": 1,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "2026-11-10",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "c479b995-3a32-5e51-b305-aefa50405e89",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 0,
+          "row": 0,
+          "cell": 1,
+          "tag": "company_name",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "가상순환산업 (가상 업체)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "2acab9b1-ef1c-5541-83e0-25fe6236d823",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 0,
+          "row": 1,
+          "cell": 1,
+          "tag": "business_number",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "000-00-00000 (테스트용)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "9d948dc4-c8bf-5a08-80ec-8429e845be32",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 0,
+          "row": 2,
+          "cell": 1,
+          "tag": "contact_name",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "김예시 (가상)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "12d747b1-aba2-5309-83e1-93bbaa92442b",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 0,
+          "row": 2,
+          "cell": 2,
+          "tag": "contact_phone",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "010-0000-0000 (테스트용)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "37dfc6c8-0432-5fe4-a7ce-d007634d7bc9",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 0,
+          "row": 3,
+          "cell": 1,
+          "tag": "site_address",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "전주시 가상산업로 10, A동 자재창고 (가상 주소)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "7980e6b7-3b86-599e-ba26-edc1d04b45b6",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 0,
+          "cell": 1,
+          "tag": "waste_1_site",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "6c18574e-d43c-50b4-8c4f-47072290b0a3",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 1,
+          "cell": 1,
+          "tag": "waste_1_name",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "제품 포장용 PE 필름 자투리",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "ff6b8f43-2dcc-5d35-8147-25f1bf6e7cbc",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 2,
+          "cell": 1,
+          "tag": "waste_1_process",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "c475a5ef-345c-5f66-a143-939d6eb5a555",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 3,
+          "cell": 1,
+          "tag": "waste_1_quantity",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "200kg",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "96a08a88-7341-55c6-bf37-2bbb95cfe039",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 4,
+          "cell": 1,
+          "tag": "waste_1_quantity_evidence",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "7e2e507b-5900-58c6-a93a-4f7d5fb4c231",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 5,
+          "cell": 1,
+          "tag": "waste_1_appearance",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "마른 투명 비닐 조각",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "fb1bed2f-27e4-517f-89e5-4551f9dcf8fc",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_1_mixture_0",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☒",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "c2b7be25-97a8-5133-910b-7bac0be229d5",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_1_mixture_1",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "105c064e-b05c-59e8-922a-76ba509059ff",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_1_mixture_2",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "dc15ca3d-bbeb-582a-b976-c07d3f170ca5",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_1_mixture_details",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "PE (사용한 포장재 라벨 기준)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "6989cffd-8da2-57e2-94d4-06dcb17440f5",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_1_contamination_0",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☒",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "2e532f93-6e0a-5128-bee9-c93a6d8d5bea",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_1_contamination_1",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "f925e2ac-cf3a-5e7e-881e-540725bcbaf6",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_1_contamination_2",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "2d62cac0-b2cc-58a9-a565-8538e76aba56",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_1_contamination_3",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "6890513e-b3a2-521a-aa6d-7618f2302d23",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_1_contamination_details",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "겉으로 묻은 이물질은 보이지 않음.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "ab2ac53c-783d-56f6-b1b9-d5b74741d783",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_1_hazard_0",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "d24569ea-f595-5d48-8639-e52537b37344",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_1_hazard_1",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "c885b1b8-d36f-5690-9085-a5ef21499676",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_1_hazard_2",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☒",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "e51380ac-f2f7-5478-8f80-aa3bebbb058d",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_1_hazard_details",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "모름. 성분분석서와 유해성 확인 자료 없음.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "dc93bb09-fbf9-55e5-95a5-ddc34a4e833f",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 9,
+          "cell": 1,
+          "tag": "waste_1_notes",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "주 1회 발생. 지붕 있는 창고에서 다른 폐기물과 분리 보관.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "efc571c4-cd89-5250-bc2c-c6316a8896c6",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 10,
+          "cell": 1,
+          "tag": "waste_1_photo_full",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "미제출 (사진 없음)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "6baea74c-709d-5fc8-87f2-2660dcf18644",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 1,
+          "row": 10,
+          "cell": 1,
+          "tag": "waste_1_photo_close",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "미제출 (사진 없음)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "750210fa-e2c0-51d0-9824-59953adf6436",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 0,
+          "cell": 1,
+          "tag": "waste_2_site",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "전주시 가상산업로 10, B동 세척실 (가상 주소)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "ee04ab51-c4be-58ae-a0e1-c28d69a9e4c7",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 1,
+          "cell": 1,
+          "tag": "waste_2_name",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "기계 세척 후 남은 세척액",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "c5e0c6d5-d823-598f-99f8-db4274002b51",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 2,
+          "cell": 1,
+          "tag": "waste_2_process",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "금속 부품 가공 기계를 세척제로 씻는 작업",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "1ceaa819-e5d9-58aa-bfa0-10aa6c4e70a0",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 3,
+          "cell": 1,
+          "tag": "waste_2_quantity",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "100L",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "4224de67-5e42-5e28-9671-4a70181aacfd",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 4,
+          "cell": 1,
+          "tag": "waste_2_quantity_evidence",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "자료 없음. 눈금 있는 용기로 실제 내용물 부피를 측정함.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "925329b1-ed24-503e-b8cb-b8dc7eae2ec4",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 5,
+          "cell": 1,
+          "tag": "waste_2_appearance",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "회색 액체이며 표면에 기름막이 일부 보임",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "edb75106-a24c-5e8a-997f-4c06692cdaf4",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_2_mixture_0",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "56844450-dce6-5077-9b70-6ae77c287a04",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_2_mixture_1",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "06a7dc10-b195-5529-a63f-e18c484716bd",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_2_mixture_2",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☒",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "2fc69776-3035-5957-854e-ab8bfc70dd10",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 6,
+          "cell": 1,
+          "tag": "waste_2_mixture_details",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "모름. 세척제와 작업 중 섞인 물질의 성분을 확인하지 못함.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "bcab0b3b-83d0-5ac8-b35a-acb2d68c7123",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_2_contamination_0",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "8c1fea92-f557-5dac-8476-5c309e8f8d02",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_2_contamination_1",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☒",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "cc46f0ec-b73c-5fec-821d-bca3b901fbff",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_2_contamination_2",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "cecc47e8-15f3-51c7-a849-54aba0c4a094",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_2_contamination_3",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "6855a78d-abcf-5042-a67b-ef416254f38d",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 7,
+          "cell": 1,
+          "tag": "waste_2_contamination_details",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "표면 일부에 기름막이 보임. 정확한 성분·함량은 모름.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "25dda66e-3ce8-5658-bb96-dc15bc30b31c",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_2_hazard_0",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "3f6c4db4-4093-599c-a4ea-02233aeb6d10",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_2_hazard_1",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☐",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "fa1c407b-0ee3-5ad8-ab38-1f90e77cc554",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_2_hazard_2",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "☒",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "bed5e8fa-b44e-5936-a190-8788fa61d4cd",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 8,
+          "cell": 1,
+          "tag": "waste_2_hazard_details",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "모름. 세척제 성분표와 성분분석서를 확보하지 못함.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "474fe099-a229-5741-b0b1-39aa1d8e132e",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 9,
+          "cell": 1,
+          "tag": "waste_2_notes",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "뚜껑 있는 전용 용기에 보관. 다른 폐기물과 섞지 않음.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "47190872-2e81-5fb4-90fa-4474b1bd9477",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 10,
+          "cell": 1,
+          "tag": "waste_2_photo_full",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "미제출 (사진 없음)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "d88cafc4-801c-5e42-b6f0-c09a150a0d92",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": 2,
+          "row": 10,
+          "cell": 1,
+          "tag": "waste_2_photo_close",
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "미제출 (사진 없음)",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "e4e0c1bb-e678-5d6b-80fc-dcce646d69e3",
+        "kind": "input_document",
+        "file_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+        "message_id": null,
+        "sha256": "54163d0ea88f6db96e294be264b20d5525c03a39b2c2bdd913387f7f9aeb6dce",
+        "source_locator": {
+          "kind": "docx",
+          "table": null,
+          "row": null,
+          "cell": null,
+          "tag": "supporting_documents_note",
+          "paragraph": 16,
+          "page": null,
+          "bbox": null,
+          "message_id": null,
+          "section": null
+        },
+        "raw_excerpt": "과거 신고증명서·성분분석서: 보유하지 않음. 첨부 자료 없음.",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+          "671dcb92-d0f3-5520-b2f5-4257c86c9f9e"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "4b1048f5-482c-51e1-b18c-270d7982ea5f",
+        "kind": "user_message",
+        "file_id": null,
+        "message_id": "4b1048f5-482c-51e1-b18c-270d7982ea5f",
+        "sha256": null,
+        "source_locator": {
+          "kind": "message",
+          "table": null,
+          "row": null,
+          "cell": null,
+          "tag": null,
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": "4b1048f5-482c-51e1-b18c-270d7982ea5f",
+          "section": null
+        },
+        "raw_excerpt": "자료 없음",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "74487b56-d59c-5fd8-b595-f1a0b4cef382",
+        "kind": "user_message",
+        "file_id": null,
+        "message_id": "74487b56-d59c-5fd8-b595-f1a0b4cef382",
+        "sha256": null,
+        "source_locator": {
+          "kind": "message",
+          "table": null,
+          "row": null,
+          "cell": null,
+          "tag": null,
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": "74487b56-d59c-5fd8-b595-f1a0b4cef382",
+          "section": null
+        },
+        "raw_excerpt": "2026-11-10",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      },
+      {
+        "evidence_id": "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73",
+        "kind": "user_message",
+        "file_id": null,
+        "message_id": "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73",
+        "sha256": null,
+        "source_locator": {
+          "kind": "message",
+          "table": null,
+          "row": null,
+          "cell": null,
+          "tag": null,
+          "paragraph": null,
+          "page": null,
+          "bbox": null,
+          "message_id": "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73",
+          "section": null
+        },
+        "raw_excerpt": "2026-11-09",
+        "document_date": null,
+        "issuer": null,
+        "sample_id": null,
+        "sampled_at": null,
+        "applicable_case_ids": [
+          "ac0bea9e-78dc-5110-b92f-607e0dbbf172"
+        ],
+        "applicability": "matched",
+        "checked_at": null
+      }
+    ],
+    "assertions": [
+      {
+        "assertion_id": "88850e02-5f14-530f-8ea4-5dabca584fb9",
+        "field_path": "intake.waste_1_name",
+        "raw_value": "제품 포장용 PE 필름 자투리",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "6c18574e-d43c-50b4-8c4f-47072290b0a3"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "6b813514-5296-5945-b5a3-02893f637b37",
+        "field_path": "intake.waste_1_process",
+        "raw_value": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "ff6b8f43-2dcc-5d35-8147-25f1bf6e7cbc"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "d9c14d38-af87-5cb1-94f5-1fa42982561d",
+        "field_path": "intake.waste_1_quantity",
+        "raw_value": "200kg",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "c475a5ef-345c-5f66-a143-939d6eb5a555"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "d078303f-a2c8-5497-949b-d69112d95193",
+        "field_path": "intake.waste_1_quantity_evidence",
+        "raw_value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "96a08a88-7341-55c6-bf37-2bbb95cfe039"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "c227a290-06dd-5a58-b801-edb08242e87c",
+        "field_path": "intake.waste_1_appearance",
+        "raw_value": "마른 투명 비닐 조각",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "7e2e507b-5900-58c6-a93a-4f7d5fb4c231"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "b498eee9-904b-5b93-9cda-6bc1afae4cf1",
+        "field_path": "intake.waste_1_mixture_0",
+        "raw_value": "☒",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "fb1bed2f-27e4-517f-89e5-4551f9dcf8fc"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "d1b04de6-19c7-5bfe-8fc6-b8ae954aa9fb",
+        "field_path": "intake.waste_1_mixture_details",
+        "raw_value": "PE (사용한 포장재 라벨 기준)",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "dc15ca3d-bbeb-582a-b976-c07d3f170ca5"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "75a40d86-abec-534c-92bb-426d6caecb77",
+        "field_path": "intake.waste_1_contamination_0",
+        "raw_value": "☒",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "6989cffd-8da2-57e2-94d4-06dcb17440f5"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "d2d79f3b-f72e-593a-904b-fc17f1592bb1",
+        "field_path": "intake.waste_1_contamination_details",
+        "raw_value": "겉으로 묻은 이물질은 보이지 않음.",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "6890513e-b3a2-521a-aa6d-7618f2302d23"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "36e8fed4-893e-5d74-92d9-7d18ea429db2",
+        "field_path": "intake.waste_1_hazard_2",
+        "raw_value": "☒",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "c885b1b8-d36f-5690-9085-a5ef21499676"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "18eb7437-3b4a-53b9-9908-63008b4e1406",
+        "field_path": "intake.waste_1_hazard_details",
+        "raw_value": "모름. 성분분석서와 유해성 확인 자료 없음.",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "e51380ac-f2f7-5478-8f80-aa3bebbb058d"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "754db846-fb8c-5a12-9c9a-505469d4c78c",
+        "field_path": "intake.waste_1_notes",
+        "raw_value": "주 1회 발생. 지붕 있는 창고에서 다른 폐기물과 분리 보관.",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "dc93bb09-fbf9-55e5-95a5-ddc34a4e833f"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "0d59485a-163e-5e79-b8a4-539d784ba4be",
+        "field_path": "intake.waste_1_photo_full",
+        "raw_value": "미제출 (사진 없음)",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "efc571c4-cd89-5250-bc2c-c6316a8896c6"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "b28bcc18-3371-5989-b541-bc6c624e7d4d",
+        "field_path": "intake.waste_1_photo_close",
+        "raw_value": "미제출 (사진 없음)",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "6baea74c-709d-5fc8-87f2-2660dcf18644"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "DOCX 원문 보존; 사용자 검토 전 후보"
+      },
+      {
+        "assertion_id": "0cee8035-a56d-5dfb-99e7-e933d55ea824",
+        "field_path": "supplement.classification",
+        "raw_value": "자료 없음",
+        "normalized_value_json": null,
+        "evidence_ids": [
+          "4b1048f5-482c-51e1-b18c-270d7982ea5f"
+        ],
+        "applicability": "unknown",
+        "disposition": "held",
+        "reason": "추가 답변/자료 접수. 의미·적용성 검토 전이며 사실값 자동 확정 금지."
+      },
+      {
+        "assertion_id": "e2b21962-5bf5-5e91-8aeb-005632f71805",
+        "field_path": "quantity.measured_at",
+        "raw_value": "2026-11-10",
+        "normalized_value_json": "\"2026-11-10\"",
+        "evidence_ids": [
+          "74487b56-d59c-5fd8-b595-f1a0b4cef382"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "사용자 최초 답변; 형식 검증을 통과한 사용자 진술이며 사실/법적 확정 아님"
+      },
+      {
+        "assertion_id": "23230b1a-335e-5009-be0a-07d6e3321681",
+        "field_path": "quantity.measured_at",
+        "raw_value": "2026-11-09",
+        "normalized_value_json": "\"2026-11-09\"",
+        "evidence_ids": [
+          "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73"
+        ],
+        "applicability": "matched",
+        "disposition": "proposed",
+        "reason": "가상 기록 재확인; 형식 검증을 통과한 사용자 진술이며 사실/법적 확정 아님"
+      }
+    ],
+    "conflicts": [],
+    "information_requests": [
+      {
+        "request_id": "7b65bfa0-0817-5e3f-8796-74e9789dd136",
+        "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+        "based_on_case_version": 0,
+        "requested_by": "part1",
+        "fields": [
+          "classification.reported_code",
+          "classification.selected_code"
+        ],
+        "trigger_rule_id": "acquisition-023-classification",
+        "reason": "2단계 규칙: 분류 근거자료의 현재 건 적용 자료 확인 [phase2-context:b0e8cd27-7634-56fe-a636-8a50a8ebb963]",
+        "question": "같은 현장·품목의 기존 신고자료 또는 현재 건의 적용 조건이 명시된 관할기관 회신이 있나요?",
+        "answer_type": "text",
+        "options": [
+          "자료 있음",
+          "자료 없음",
+          "모름"
+        ],
+        "acceptable_evidence": [
+          "사내 환경·안전 담당자에게 신고자료의 해당 품목 행 요청",
+          "자료가 없거나 적용이 불명확하면 배출 현장 관할 시·군·구 폐기물 담당 부서에 문의"
+        ],
+        "guidance_id": "guidance-023-classification",
+        "blocking_scope": "classification",
+        "status": "unavailable",
+        "answer_evidence_ids": [
+          "4b1048f5-482c-51e1-b18c-270d7982ea5f"
+        ],
+        "resolution_reason": null
+      },
+      {
+        "request_id": "67a65ca3-e60b-523c-86b1-c1e1e0f5d51f",
+        "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+        "based_on_case_version": 0,
+        "requested_by": "part1",
+        "fields": [
+          "quantity.measured_at"
+        ],
+        "trigger_rule_id": "phase2-0.3.0:quantity.measured_at",
+        "reason": "누락/불일치 규칙: quantity.measured_at. 사용자 진술과 증빙이 필요한 항목을 구분합니다.",
+        "question": "이번 처리량을 실제로 측정한 날짜를 YYYY-MM-DD로 알려 주세요. 작성일이나 업로드일과 다를 수 있습니다.",
+        "answer_type": "text",
+        "options": [],
+        "acceptable_evidence": [
+          "사용자 답변"
+        ],
+        "guidance_id": null,
+        "blocking_scope": "document:lot-quantity",
+        "status": "answered",
+        "answer_evidence_ids": [
+          "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73"
+        ],
+        "resolution_reason": null
+      }
+    ],
+    "missing_fields": [
+      "photos.full",
+      "photos.close",
+      "hazard_declaration"
+    ],
+    "limitations": [
+      "DRAFT_DB_EXPORT_NOT_PUBLISHED",
+      "USER_REVIEW_REQUIRED",
+      "NO_REVIEWED_CLASSIFICATION_RULES",
+      "HAZARD_UNVERIFIED",
+      "PHOTOS_NOT_UPLOADED",
+      "BUSINESS_REGISTRATION_NOT_VERIFIED",
+      "SUPPLEMENT_UNAVAILABLE:classification",
+      "PHASE2_USER_REPORT_NOT_LEGAL_VERIFICATION:quantity.measured_at"
+    ],
+    "readiness": {
+      "route_exploration": {
+        "status": "not_assessed",
+        "reasons": [],
+        "assessed_by": null
+      },
+      "partner_matching": {
+        "status": "not_assessed",
+        "reasons": [],
+        "assessed_by": null
+      },
+      "document_drafting": {
+        "status": "not_assessed",
+        "reasons": [],
+        "assessed_by": null
+      }
+    },
+    "extractor_version": "intake-db-0.2.0",
+    "rule_version": "none",
+    "source_form_date": {
+      "value": "2026-11-10",
+      "raw_value": "2026-11-10",
+      "status": "conditional",
+      "basis": "user_report",
+      "verification": "unverified",
+      "evidence_ids": [
+        "aa1c33f2-e00c-55bb-9410-3654989e16ed"
+      ],
+      "applicability": "matched",
+      "updated_at": "2026-11-17T15:00:20.875904Z"
+    },
+    "site_inherited": true,
+    "site_source_evidence_ids": [
+      "37dfc6c8-0432-5fe4-a7ce-d007634d7bc9"
+    ]
+  },
+  "source": {
+    "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+    "submission_id": "08f3cd3f-a30a-5883-862e-50ab36f24ade",
+    "site_id": "fc748e9d-5606-562e-8738-1a7cbc67cc8b",
+    "site_address": "전주시 가상산업로 10, A동 자재창고 (가상 주소)",
+    "company": {
+      "name": "가상순환산업 (가상 업체)",
+      "business_number": "000-00-00000 (테스트용)",
+      "contact_name": "김예시 (가상)",
+      "contact_phone": "010-0000-0000 (테스트용)"
+    },
+    "waste": {
+      "name": {
+        "value": "제품 포장용 PE 필름 자투리",
+        "evidence_ids": [
+          "6c18574e-d43c-50b4-8c4f-47072290b0a3"
+        ]
+      },
+      "process_description": {
+        "value": "제품 포장 후 남은 필름을 절단·수거하는 작업",
+        "evidence_ids": [
+          "ff6b8f43-2dcc-5d35-8147-25f1bf6e7cbc"
+        ]
+      },
+      "physical_state": {
+        "value": "마른 투명 비닐 조각",
+        "evidence_ids": [
+          "7e2e507b-5900-58c6-a93a-4f7d5fb4c231"
+        ]
+      },
+      "mixture_type": {
+        "value": "single",
+        "evidence_ids": [
+          "fb1bed2f-27e4-517f-89e5-4551f9dcf8fc",
+          "c2b7be25-97a8-5133-910b-7bac0be229d5",
+          "105c064e-b05c-59e8-922a-76ba509059ff"
+        ]
+      },
+      "hazard_declaration": {
+        "value": null,
+        "evidence_ids": [
+          "ab2ac53c-783d-56f6-b1b9-d5b74741d783",
+          "d24569ea-f595-5d48-8639-e52537b37344",
+          "c885b1b8-d36f-5690-9085-a5ef21499676"
+        ]
+      },
+      "quantity": {
+        "value": "200",
+        "raw_value": "200kg",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "c475a5ef-345c-5f66-a143-939d6eb5a555"
+        ],
+        "applicability": "matched",
+        "unit": "kg",
+        "dimension": "mass",
+        "scope": "current_lot",
+        "measured_at": {
+          "value": "2026-11-09",
+          "raw_value": "2026-11-09",
+          "status": "conditional",
+          "basis": "user_report",
+          "verification": "unverified",
+          "evidence_ids": [
+            "7e4e6e7f-7f0e-5e2e-819c-64f353f6cd73"
+          ],
+          "applicability": "matched"
+        },
+        "method": {
+          "value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+          "raw_value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+          "status": "conditional",
+          "basis": "user_report",
+          "verification": "unverified",
+          "evidence_ids": [
+            "96a08a88-7341-55c6-bf37-2bbb95cfe039"
+          ],
+          "applicability": "matched"
+        },
+        "net_weight": {
+          "value": true,
+          "raw_value": "자료 없음. 저울로 용기 무게를 제외하고 측정함.",
+          "status": "conditional",
+          "basis": "user_report",
+          "verification": "unverified",
+          "evidence_ids": [
+            "96a08a88-7341-55c6-bf37-2bbb95cfe039"
+          ],
+          "applicability": "matched"
+        },
+        "conversion_rule": null
+      },
+      "components": [
+        {
+          "name": {
+            "value": "PE (사용한 포장재 라벨 기준)",
+            "raw_value": "PE (사용한 포장재 라벨 기준)",
+            "status": "conditional",
+            "basis": "user_report",
+            "verification": "unverified",
+            "evidence_ids": [
+              "dc15ca3d-bbeb-582a-b976-c07d3f170ca5"
+            ],
+            "applicability": "matched"
+          },
+          "proportion_percent": {
+            "value": null,
+            "raw_value": null,
+            "status": "needs_info",
+            "basis": null,
+            "verification": "unverified",
+            "evidence_ids": [],
+            "applicability": "unknown"
+          }
+        }
+      ],
+      "substances": [],
+      "visible_contamination": {
+        "value": "not_visible",
+        "raw_value": "☒ | ☐ | ☐ | ☐",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "6989cffd-8da2-57e2-94d4-06dcb17440f5",
+          "2e532f93-6e0a-5128-bee9-c93a6d8d5bea",
+          "f925e2ac-cf3a-5e7e-881e-540725bcbaf6",
+          "2d62cac0-b2cc-58a9-a565-8538e76aba56"
+        ],
+        "applicability": "matched"
+      },
+      "separability": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown"
+      },
+      "industry": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown"
+      },
+      "reported_code": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown"
+      }
+    },
+    "synthetic": true
+  },
+  "document_packets": [
+    {
+      "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+      "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+      "context": "1ea3dabd1272ea98dd3bdc6f2ee6f840a663dee10e661ec950eda1edd523fd34",
+      "kind": "authority",
+      "purpose": "가상 시연: 분류 근거와 선택 경로의 필요 시험항목 확인",
+      "sample_id": "SAMPLE-A-1",
+      "created_at": "2026-11-17T15:00:25.383592+00:00",
+      "fields": [
+        "classification.applicability",
+        "classification.conditions",
+        "classification.reported_code"
+      ],
+      "documents": [
+        {
+          "document_id": "86f2da4d-429c-5184-b277-fc63275635b4",
+          "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+          "name": "authority_partial_response.docx",
+          "sha256": "1d326728286f1ab7f0a448334d8473e30783a73897097581677942b889a9c150",
+          "issuer": "가상 기관 (테스트)",
+          "document_date": "2026-11-14",
+          "sample_id": "SAMPLE-A-1",
+          "received_at": "2026-11-17T15:00:26.673560+00:00"
+        }
+      ],
+      "reviews": [
+        {
+          "review_id": 1,
+          "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+          "document_id": "86f2da4d-429c-5184-b277-fc63275635b4",
+          "field_id": "classification.reported_code",
+          "raw_value": "99-99-99",
+          "normalized_value": "99-99-99",
+          "unit": null,
+          "basis": null,
+          "method": null,
+          "locator": "결과표 classification.reported_code 행",
+          "status": "accepted_candidate",
+          "reviewer": "합성 시연 검토자",
+          "reason": "가상 원문 및 현장·품목·시료·기간 대조 시연",
+          "reviewed_at": "2026-11-17T15:00:27.489681+00:00"
+        },
+        {
+          "review_id": 2,
+          "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+          "document_id": "86f2da4d-429c-5184-b277-fc63275635b4",
+          "field_id": "classification.applicability",
+          "raw_value": "가상 A동의 PE 필름 자투리에 대한 조건부 검토 예시",
+          "normalized_value": "가상 A동의 PE 필름 자투리에 대한 조건부 검토 예시",
+          "unit": null,
+          "basis": null,
+          "method": null,
+          "locator": "결과표 classification.applicability 행",
+          "status": "accepted_candidate",
+          "reviewer": "합성 시연 검토자",
+          "reason": "가상 원문 및 현장·품목·시료·기간 대조 시연",
+          "reviewed_at": "2026-11-17T15:00:27.772759+00:00"
+        }
+      ],
+      "events": [
+        {
+          "event_id": 1,
+          "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+          "kind": "draft_created",
+          "reference": "75104f16cb801d1b8187da707173f161b8353b4a44ea0b79c3cee0b41e46296a",
+          "actor": "로컬 초안 생성",
+          "created_at": "2026-11-17T15:00:25.726566+00:00"
+        },
+        {
+          "event_id": 3,
+          "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+          "kind": "user_reported_submission",
+          "reference": "SYNTHETIC-RECEIPT-001 (실제 접수 아님)",
+          "actor": "가상 사용자",
+          "created_at": "2026-11-17T15:00:26.350313+00:00"
+        },
+        {
+          "event_id": 4,
+          "packet_id": "b3544cde-6f63-516e-83ab-97e5555ef1b2",
+          "kind": "document_received",
+          "reference": "86f2da4d-429c-5184-b277-fc63275635b4",
+          "actor": "사용자 첨부",
+          "created_at": "2026-11-17T15:00:26.673702+00:00"
+        }
+      ],
+      "stale": false
+    },
+    {
+      "packet_id": "b976f85c-ac9b-5160-9a95-12117417eaac",
+      "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+      "context": "1ea3dabd1272ea98dd3bdc6f2ee6f840a663dee10e661ec950eda1edd523fd34",
+      "kind": "lab",
+      "purpose": "가상 시연: 분류 근거와 선택 경로의 필요 시험항목 확인",
+      "sample_id": "SAMPLE-A-1",
+      "created_at": "2026-11-17T15:00:25.383655+00:00",
+      "fields": [
+        "analysis.chlorine",
+        "analysis.heating_value",
+        "analysis.moisture"
+      ],
+      "documents": [
+        {
+          "document_id": "2d85c44b-9724-59d4-aab7-03d1d0fecb14",
+          "packet_id": "b976f85c-ac9b-5160-9a95-12117417eaac",
+          "name": "lab_partial_response.docx",
+          "sha256": "170d4549b75a6356fec60b9393b64b6f710a46282fbe4080a9fd177f1d73f129",
+          "issuer": "가상 기관 (테스트)",
+          "document_date": "2026-11-14",
+          "sample_id": "SAMPLE-A-1",
+          "received_at": "2026-11-17T15:00:28.080245+00:00"
+        }
+      ],
+      "reviews": [
+        {
+          "review_id": 3,
+          "packet_id": "b976f85c-ac9b-5160-9a95-12117417eaac",
+          "document_id": "2d85c44b-9724-59d4-aab7-03d1d0fecb14",
+          "field_id": "analysis.heating_value",
+          "raw_value": "18.2",
+          "normalized_value": "18.2",
+          "unit": "MJ/kg",
+          "basis": "dry",
+          "method": "합성 시험방법 A",
+          "locator": "결과표 analysis.heating_value 행",
+          "status": "accepted_candidate",
+          "reviewer": "합성 시연 검토자",
+          "reason": "가상 원문 및 현장·품목·시료·기간 대조 시연",
+          "reviewed_at": "2026-11-17T15:00:28.870892+00:00"
+        },
+        {
+          "review_id": 4,
+          "packet_id": "b976f85c-ac9b-5160-9a95-12117417eaac",
+          "document_id": "2d85c44b-9724-59d4-aab7-03d1d0fecb14",
+          "field_id": "analysis.moisture",
+          "raw_value": "11.0",
+          "normalized_value": "11.0",
+          "unit": "%",
+          "basis": "wet",
+          "method": "합성 시험방법 B",
+          "locator": "결과표 analysis.moisture 행",
+          "status": "accepted_candidate",
+          "reviewer": "합성 시연 검토자",
+          "reason": "가상 원문 및 현장·품목·시료·기간 대조 시연",
+          "reviewed_at": "2026-11-17T15:00:29.158989+00:00"
+        }
+      ],
+      "events": [
+        {
+          "event_id": 2,
+          "packet_id": "b976f85c-ac9b-5160-9a95-12117417eaac",
+          "kind": "draft_created",
+          "reference": "7962338f87b2a644649e5d12905bfa2b23bcf43d2ae5dbdcbe2b5209dbd06443",
+          "actor": "로컬 초안 생성",
+          "created_at": "2026-11-17T15:00:26.068290+00:00"
+        },
+        {
+          "event_id": 5,
+          "packet_id": "b976f85c-ac9b-5160-9a95-12117417eaac",
+          "kind": "document_received",
+          "reference": "2d85c44b-9724-59d4-aab7-03d1d0fecb14",
+          "actor": "사용자 첨부",
+          "created_at": "2026-11-17T15:00:28.080377+00:00"
+        }
+      ],
+      "stale": false
+    },
+    {
+      "packet_id": "4fff0b9b-bd29-545a-b802-2e5708bba1f3",
+      "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+      "context": "1ea3dabd1272ea98dd3bdc6f2ee6f840a663dee10e661ec950eda1edd523fd34",
+      "kind": "authority",
+      "purpose": "가상 시연: 분류 근거와 선택 경로의 필요 시험항목 확인",
+      "sample_id": "SAMPLE-A-1",
+      "created_at": "2026-11-17T15:00:29.473608+00:00",
+      "fields": [
+        "classification.conditions"
+      ],
+      "documents": [],
+      "reviews": [],
+      "events": [
+        {
+          "event_id": 6,
+          "packet_id": "4fff0b9b-bd29-545a-b802-2e5708bba1f3",
+          "kind": "draft_created",
+          "reference": "0c1ad86e00287f639ff2a00f378ea9c1b1c8803f5bf5cec98400d7c93cd6b331",
+          "actor": "로컬 초안 생성",
+          "created_at": "2026-11-17T15:00:29.823263+00:00"
+        }
+      ],
+      "stale": false
+    },
+    {
+      "packet_id": "f179ad97-bd5a-55a7-8166-61091a51496f",
+      "case_id": "ac0bea9e-78dc-5110-b92f-607e0dbbf172",
+      "context": "1ea3dabd1272ea98dd3bdc6f2ee6f840a663dee10e661ec950eda1edd523fd34",
+      "kind": "lab",
+      "purpose": "가상 시연: 분류 근거와 선택 경로의 필요 시험항목 확인",
+      "sample_id": "SAMPLE-A-1",
+      "created_at": "2026-11-17T15:00:29.473778+00:00",
+      "fields": [
+        "analysis.chlorine"
+      ],
+      "documents": [],
+      "reviews": [],
+      "events": [
+        {
+          "event_id": 7,
+          "packet_id": "f179ad97-bd5a-55a7-8166-61091a51496f",
+          "kind": "draft_created",
+          "reference": "d697d574572525915c3d785a913d7d38e8c13ac29ccfde2cf2d8fd048be49f37",
+          "actor": "로컬 초안 생성",
+          "created_at": "2026-11-17T15:00:30.166020+00:00"
+        }
+      ],
+      "stale": false
+    }
+  ],
+  "intake_records": {
+    "available": false,
+    "raw_materials": {
+      "value": null,
+      "source": null,
+      "evidence_ids": []
+    },
+    "chemicals": {
+      "value": null,
+      "source": null,
+      "evidence_ids": []
+    },
+    "label_material": {
+      "value": null,
+      "source": null,
+      "evidence_ids": []
+    },
+    "feed_ratio": {
+      "value": null,
+      "source": null,
+      "evidence_ids": []
+    },
+    "components": [],
+    "monthly_generation": [],
+    "history": {
+      "status": "unknown",
+      "reference": null,
+      "evidence_ids": []
+    },
+    "issues": [],
+    "verification": "user_reported_from_intake"
+  },
+  "guidance_decisions": [],
+  "history_documents": [],
+  "note": "문서값 대조 목록은 법적 사실 승인/분류코드 확정과 별도입니다. 기존 DB-first export와 구분되는 건별 문서 워크플로 검토본입니다."
+}

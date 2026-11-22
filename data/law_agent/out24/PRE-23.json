@@ -1,0 +1,4416 @@
+{
+ "case_id": "PRE-23",
+ "case_version": 1,
+ "engine": "law_agent_v0",
+ "input_check": {
+  "status": "ok",
+  "issues": [],
+  "warnings": []
+ },
+ "preliminary": {
+  "status": "law_agent",
+  "waste_status": "designated",
+  "classification": {
+   "normalized_waste_code": "51-02-01",
+   "confirmed_by": "A-1"
+  },
+  "from": "law_agent 판단 (A-1·A-2)"
+ },
+ "routes": [
+  {
+   "gate": 2,
+   "tier": null,
+   "route_type": "single_material_recycle",
+   "title": "중간 가공 (R-10) (R-10)",
+   "waste_codes": [
+    "51-02-01"
+   ],
+   "waste_status": "designated",
+   "steps": [
+    {
+     "order": 1,
+     "process": "수집·운반",
+     "role": "transporter",
+     "treatment_codes": [],
+     "r_codes": [],
+     "waste_codes": [
+      "51-02-01"
+     ]
+    },
+    {
+     "order": 2,
+     "process": "중간가공폐기물 제조",
+     "role": "preprocessor",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "waste_codes": [
+      "51-02-01"
+     ]
+    }
+   ],
+   "regulatory": "needs_info",
+   "reasons": [
+    "D-1 판단: 51-02-01에 R-10 허용",
+    "분류번호(A-1): 조건부",
+    "지정폐기물 여부(A-2): 조건부",
+    "지정폐기물 의심: 성분 분석 결과에 따라 다시 판정",
+    "재활용 금지(B-1): 사실 확인 필요",
+    "재활용 제한(B-2): 사실 확인 필요",
+    "모든 재활용 유형이 사전 분석 대상 (D-1)"
+   ],
+   "questions": [
+    {
+     "field": "A-1.금지물질 종류 및 함유 여부",
+     "text": "분류번호 조건 확인에 필요한 사실: 금지물질 종류 및 함유 여부",
+     "to": "part1"
+    },
+    {
+     "field": "A-1.금지물질 함유 여부(분석 결과)",
+     "text": "분류번호 조건 확인에 필요한 사실: 금지물질 함유 여부(분석 결과)",
+     "to": "part1"
+    },
+    {
+     "field": "A-1.무기성 여부",
+     "text": "분류번호 조건 확인에 필요한 사실: 무기성 여부",
+     "to": "part1"
+    },
+    {
+     "field": "A-1.발생 공정",
+     "text": "분류번호 조건 확인에 필요한 사실: 발생 공정",
+     "to": "part1"
+    },
+    {
+     "field": "A-2.금지물질 등 해당 여부",
+     "text": "지정폐기물 여부 조건 확인에 필요한 사실: 금지물질 등 해당 여부",
+     "to": "part1"
+    },
+    {
+     "field": "A-2.기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+     "text": "지정폐기물 여부 조건 확인에 필요한 사실: 기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+     "to": "part1"
+    },
+    {
+     "field": "A-2.수분함량 또는 고형물함량",
+     "text": "지정폐기물 여부 조건 확인에 필요한 사실: 수분함량 또는 고형물함량",
+     "to": "part1"
+    },
+    {
+     "field": "A-2.수분함량(또는 고형물함량)",
+     "text": "지정폐기물 여부 조건 확인에 필요한 사실: 수분함량(또는 고형물함량)",
+     "to": "part1"
+    },
+    {
+     "field": "A-2.유해물질 함유 여부(용출시험 결과)",
+     "text": "지정폐기물 여부 조건 확인에 필요한 사실: 유해물질 함유 여부(용출시험 결과)",
+     "to": "part1"
+    },
+    {
+     "field": "analysis",
+     "text": "성분 분석으로 지정폐기물 해당 여부를 확인했나요?",
+     "to": "part1"
+    },
+    {
+     "field": "B-1.금지·제한물질 종류 및 실제 함유 여부",
+     "text": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지·제한물질 종류 및 실제 함유 여부",
+     "to": "part1"
+    },
+    {
+     "field": "B-1.금지물질 종류",
+     "text": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 종류",
+     "to": "part1"
+    },
+    {
+     "field": "B-1.금지물질 함유 여부(분석 결과)",
+     "text": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 함유 여부(분석 결과)",
+     "to": "part1"
+    },
+    {
+     "field": "B-1.발생 공정",
+     "text": "재활용 금지 판단에 필요한 사실을 알려 주세요: 발생 공정",
+     "to": "part1"
+    },
+    {
+     "field": "B-2.금지물질 종류 및 함유 여부",
+     "text": "재활용 제한 판단에 필요한 사실을 알려 주세요: 금지물질 종류 및 함유 여부",
+     "to": "part1"
+    },
+    {
+     "field": "B-2.발생 공정",
+     "text": "재활용 제한 판단에 필요한 사실을 알려 주세요: 발생 공정",
+     "to": "part1"
+    }
+   ],
+   "conditions": [
+    {
+     "text": "이 오니가 금지물질을 실제로 함유해 지정폐기물(폐유독물질 등)에 해당하는 것으로 확인되면 51-02-01(사업장 일반 무기성오니)이 아니라 지정폐기물 분류번호를 써야 한다.",
+     "basis": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "실제 성분과 발생 경위를 확인한 결과 지정폐기물이 아닌 무기성 폐수처리오니에 해당하는 경우에 51-02-01이 맞는다.",
+     "basis": "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "오니류는 수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 경우에만 지정폐기물이 될 수 있다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "폐수처리 오니는 기후에너지환경부령으로 정하는 물질을 함유한 것이어야 지정폐기물이 된다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "함유 요건에 더해 기후에너지환경부장관이 고시한 시설에서 발생한 것이어야 한다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 오니류로서 기후에너지환경부령으로 정하는 물질을 함유하고 기후에너지환경부장관이 고시한 시설에서 발생되는 폐수처리 오니인 경우 지정폐기물에 해당한다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "화학물질관리법에 따른 금지물질 등을 폐기하는 경우 폐유독물질로서 지정폐기물에 해당한다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "재활용 기준: 폐기물의 재활용 원칙 및 준수사항: 제13조의2(폐기물의 재활용 원칙 및 준수사항) ① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다. 1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것 2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것 3. 소음 또는 진동이 발생하여 사람에게 피해를 주지 아니할 것 4. 중금속 등 유해물질을 제거하거나 안정화하여 재활용제품이나 원료로 사용하는 과정에서 사람이나 환경에 위해를 미치지 아니하도록 하는 등 대통령령으로 정하는 사항을 준수할 것 5. 그 밖에 기후에너지환경부령으로 정하는 재활용의 기준을 준수할 것 ② 제1항에도 불구하",
+     "basis": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "재활용 업체 준수사항: 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표",
+     "basis": "WMA_RULE:B5의4@20261112#d808ab1786e42c95",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    }
+   ],
+   "required_tests": [
+    {
+     "test": "재활용 전 사전 분석",
+     "r_codes": [
+      "R-10"
+     ],
+     "basis": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0"
+    }
+   ],
+   "r_code_detail": [
+    {
+     "r_code": "R-10",
+     "tier": null,
+     "pre_analysis": true,
+     "basis": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0"
+    }
+   ],
+   "evidence_ids": [
+    "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+    "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+    "WMA:2@20261112#f0a7834ff79e7eec",
+    "WMA_DEC:B1@20261112#72e3426369134a0f",
+    "WMA_DEC:3@20261112#1c2a6694f1744f8b",
+    "WMA:13의2@20261112#d5a26ead3e4715cd",
+    "WMA_RULE:14의3@20261112#6648ee9a95af4c7d",
+    "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0",
+    "WMA_DEC:B4의3@20261112#8a5307b106a38e52",
+    "WMA:13의3@20261112#68c8b90b1817c2e3",
+    "WMA_RULE:B5의4@20261112#d808ab1786e42c95"
+   ],
+   "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)",
+   "law_questions": [
+    "A-1",
+    "A-2",
+    "B-1",
+    "B-2",
+    "D-1",
+    "D-3",
+    "D-4"
+   ],
+   "laws": [
+    {
+     "law": "폐기물관리법",
+     "article": "제13조의2",
+     "key": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "effective_date": "20261112",
+     "used_for": [
+      "B-1",
+      "D-3"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4의3",
+     "key": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0",
+     "effective_date": "20261112",
+     "used_for": [
+      "D-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법",
+     "article": "제13조의3",
+     "key": "WMA:13의3@20261112#68c8b90b1817c2e3",
+     "effective_date": "20261112",
+     "used_for": [
+      "D-3"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 5의4",
+     "key": "WMA_RULE:B5의4@20261112#d808ab1786e42c95",
+     "effective_date": "20261112",
+     "used_for": [
+      "D-4"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "제14조의3",
+     "key": "WMA_RULE:14의3@20261112#6648ee9a95af4c7d",
+     "effective_date": "20261112",
+     "used_for": [
+      "B-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행령",
+     "article": "별표 4의3",
+     "key": "WMA_DEC:B4의3@20261112#8a5307b106a38e52",
+     "effective_date": "20261112",
+     "used_for": [
+      "B-2"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4",
+     "key": "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4",
+     "key": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법",
+     "article": "제2조",
+     "key": "WMA:2@20261112#f0a7834ff79e7eec",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-2"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행령",
+     "article": "별표 1",
+     "key": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-2"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행령",
+     "article": "제3조",
+     "key": "WMA_DEC:3@20261112#1c2a6694f1744f8b",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-2"
+     ]
+    }
+   ],
+   "partners": {
+    "secured": true,
+    "steps": [
+     {
+      "step_order": 1,
+      "role": "transporter",
+      "candidates": [
+       {
+        "company_id": "성운|전주시",
+        "name": "주식회사 성운",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시",
+        "address": "전주시 안덕원1길 28",
+        "phone": "063-231-0600",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5790",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "폐합성수지류, 폐종이팩, 폐종이류, 폐금속캔류; 비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "0"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.819141809597596,
+         "lng": 127.12969676784823,
+         "basis": "시군구 중심점",
+         "distance_km": 0.0
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "국제기술환경|전주시 덕진구",
+        "name": "(유)국제기술환경",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 덕진구",
+        "address": "전주시 덕진구 암심길 135",
+        "phone": "063-214-7272",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5760",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "유기성오니류, 무기성오니류; 비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "355.2"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.852242982179106,
+         "lng": 127.12545064041294,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "금솔환경|전주시 덕진구",
+        "name": "(유)금솔환경",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 덕진구",
+        "address": "전주시 덕진구 기린대로 1012, 3층",
+        "phone": "063-211-6907",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5720",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "정수처리오니, 하수처리오니, 분뇨처리오니, 가축분뇨처리오니, 펄프제지공정오니, 그 밖의 폐수처리오니, 그 밖의 유기성오니 등; 배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "519.5"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.852242982179106,
+         "lng": 127.12545064041294,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "다경건설|전주시 완산구",
+        "name": "(유)다경건설",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 완산구",
+        "address": "전주시 완산구 난전들로 22",
+        "phone": "063-227-4656",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5797",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "정수처리오니, 하수처리오니, 분뇨처리오니, 가축분뇨처리오니, 폐수처리오니, 정수처리오니, 하수처리오니, 하수준설토, 건설오니; 비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "474.2"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.78604063701609,
+         "lng": 127.13394289528352,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "대성환경산업|전주시 완산구",
+        "name": "(유)대성환경산업",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 완산구",
+        "address": "전주시 완산구 봉곡1길 28-8",
+        "phone": "063-236-2810",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5806",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "폐수처리오니, 하수처리오니, 건설오니, 폐합성수지류, 폐합성고무류, 폐폴리염화비닐수지류, 폐폴리우레탄폼류, 등; 배출시설계·비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "261.5"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.78604063701609,
+         "lng": 127.13394289528352,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계·비배출시설계"
+        ],
+        "status": "needs_info"
+       }
+      ],
+      "total_found": 6473,
+      "rejected_summary": {
+       "대상 폐기물 다름": 1362,
+       "건설폐기물만": 1814,
+       "영업 중단": 159
+      },
+      "questions": [
+       {
+        "field": "designated_analysis",
+        "to": "part1",
+        "text": "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?"
+       },
+       {
+        "field": "emitter_facility_type",
+        "to": "part1",
+        "text": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다."
+       }
+      ],
+      "optional": false,
+      "reserve": [
+       {
+        "company_id": "대운물류|전주시 완산구",
+        "name": "(유)대운물류",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 완산구",
+        "address": "전주시 완산구 전라감영4길 5-1",
+        "phone": null,
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5821",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "폐합성수지류, 폐합성고무류, 그 밖의 폐합성고분자화합물, 제재부산물, 목재가공공장 부산물, 폐가구류 폐도장목 폐목재포장재 폐전선드럼, 폐합성섬유, 고철, 비철금속, 폐금속용기류, 폐유리; 배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "0"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.78604063701609,
+         "lng": 127.13394289528352,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "드림종합중기|전주시 덕진구",
+        "name": "(유)드림종합중기",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 덕진구",
+        "address": "전주시 덕진구 동부대로 1556",
+        "phone": "063-212-4272",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5725",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "폐수처리오니, 석탄재, 고로슬래그, 제강슬래그, 비철금속제련공정광재, 선광공정광재, 그 밖의 광재류, 점토점결폐주물사, 화학점결폐주물사, 샌드블라스트폐사, 폐여과사, 그 밖의 폐사, 사업장폐기물소각시설바닥재, 안정화처리물, 시멘트고형화 처리물, 고화 처리물, 킬레이트 처리물, 그 밖의 고형화,고화 처리물, 폐토사, 그 밖의 폐기물; 배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "0"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.852242982179106,
+         "lng": 127.12545064041294,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "부솔|전주시 덕진구",
+        "name": "(유)부솔",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 덕진구",
+        "address": "전주시 덕진구 가리내로 132",
+        "phone": "063-277-9290",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5708",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "폐도자기조각, 가정용폐전기전자제품, 산업용폐전기전자제품, 프린트토너 및 카트리지폐부속품, 폐받침목, 그 밖의 폐목재류, 폐천연섬유 등; 비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "0"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.852242982179106,
+         "lng": 127.12545064041294,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "비사벌환경개발|전주시 덕진구",
+        "name": "(유)비사벌환경개발",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 덕진구",
+        "address": "전주시 덕진구 사거리길 43",
+        "phone": "063-278-5679",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5743",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "폐지, 고철, 폐토사, 폐합성수지 등; 배출시설계·비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "300.9"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.852242982179106,
+         "lng": 127.12545064041294,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계·비배출시설계"
+        ],
+        "status": "needs_info"
+       },
+       {
+        "company_id": "상하건설|전주시 완산구",
+        "name": "(유)상하건설",
+        "role": "transporter",
+        "sido": "전북",
+        "sigungu": "전주시 완산구",
+        "address": "전주시 완산구 난전들로 36",
+        "phone": "063-227-1118",
+        "data_date": "2023",
+        "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5798",
+        "permit_type": "허가",
+        "registration_type": "수집운반",
+        "waste_group": "생활·사업장일반",
+        "treatment_codes": [],
+        "r_codes": [],
+        "accepts_designated": [],
+        "scope_text": "하수처리오니, 하수준설토; 비배출시설계",
+        "capacity": {
+         "보유차량": "0",
+         "2023_운반량_톤": "265.9"
+        },
+        "match_confidence": null,
+        "location": {
+         "lat": 35.78604063701609,
+         "lng": 127.13394289528352,
+         "basis": "시군구 중심점",
+         "distance_km": 3.7
+        },
+        "reasons": [
+         "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+        ],
+        "status": "needs_info"
+       }
+      ]
+     },
+     {
+      "step_order": 2,
+      "role": "preprocessor",
+      "candidates": [
+       {
+        "company_id": "제이에스산업|정읍시",
+        "name": "제이에스산업",
+        "role": "preprocessor",
+        "sido": "전북",
+        "sigungu": "정읍시",
+        "address": "전북 정읍시 북면 칠북로 345",
+        "phone": "063-537-5717",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#629",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 35.610287945477324,
+         "lng": 126.9068592144633,
+         "basis": "시군구 중심점",
+         "distance_km": 30.7
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 7.68,
+         "road_km": 39.9,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 30.7km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "케이에이치인더스트리|김천시",
+        "name": "(주)케이에이치인더스트리",
+        "role": "preprocessor",
+        "sido": "경북",
+        "sigungu": "김천시",
+        "address": "경북 김천시 남면 부상리 773",
+        "phone": "054-974-4300",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#493",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 36.043732903926326,
+         "lng": 128.049229237102,
+         "basis": "시군구 중심점",
+         "distance_km": 86.5
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 21.65,
+         "road_km": 112.5,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 86.5km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "에코시스템|함안군",
+        "name": "(주)에코시스템",
+        "role": "preprocessor",
+        "sido": "경남",
+        "sigungu": "함안군",
+        "address": "경남 함안군 군북면 민등길 85 (주)에코시스템",
+        "phone": null,
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#462",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 36.65034373,
+         "lng": 127.4851769,
+         "basis": "업체 좌표",
+         "distance_km": 97.8
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 24.46,
+         "road_km": 127.1,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 97.8km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "워렉스|나주시",
+        "name": "(주)워렉스",
+        "role": "preprocessor",
+        "sido": "전남",
+        "sigungu": "나주시",
+        "address": "전남 나주시 다도면 판촌리 501",
+        "phone": "061-337-4506",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#606",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 34.96732264,
+         "lng": 126.8623603,
+         "basis": "업체 좌표",
+         "distance_km": 97.8
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 24.46,
+         "road_km": 127.1,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 97.8km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "세림상운|광양시",
+        "name": "(유)세림상운",
+        "role": "preprocessor",
+        "sido": "전남",
+        "sigungu": "광양시",
+        "address": "전남 광양시 옥곡면 옥정로 347 2층 (선유리)",
+        "phone": "061-792-5709",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#593",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 35.03307424167351,
+         "lng": 127.66450202624551,
+         "basis": "시군구 중심점",
+         "distance_km": 99.9
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 25.0,
+         "road_km": 129.9,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 99.9km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       }
+      ],
+      "total_found": 40,
+      "rejected_summary": {
+       "처리 방법 다름": 7,
+       "자가처리만 신고": 1
+      },
+      "questions": [
+       {
+        "field": "designated_analysis",
+        "to": "part1",
+        "text": "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?"
+       }
+      ],
+      "optional": false,
+      "reserve": [
+       {
+        "company_id": "다모아자원|성주군",
+        "name": "다모아자원",
+        "role": "preprocessor",
+        "sido": "경북",
+        "sigungu": "성주군",
+        "address": "경북 성주군 성주읍 삼산3길 25-6",
+        "phone": null,
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#495",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 35.93087549,
+         "lng": 128.3077656,
+         "basis": "업체 좌표",
+         "distance_km": 106.9
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 26.75,
+         "road_km": 139.0,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 106.9km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "푸른글로벌|아산시",
+        "name": "(주)푸른글로벌",
+        "role": "preprocessor",
+        "sido": "충남",
+        "sigungu": "아산시",
+        "address": "충남 아산시 영인면 아산호로 664 213-2 (창용리)",
+        "phone": "041-533-0222",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#645; 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#646",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 36.79519250435419,
+         "lng": 126.97677616834538,
+         "basis": "시군구 중심점",
+         "distance_km": 109.4
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 27.36,
+         "road_km": 142.2,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 109.4km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "산수금속|서산시",
+        "name": "(주)산수금속",
+        "role": "preprocessor",
+        "sido": "충남",
+        "sigungu": "서산시",
+        "address": "충남 서산시 남부순환로 313 (장동,산수금속)",
+        "phone": "041-667-0414",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#643",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [
+         "01-02"
+        ],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 36.73325759,
+         "lng": 126.4737683,
+         "basis": "업체 좌표",
+         "distance_km": 117.4
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 29.36,
+         "road_km": 152.6,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 117.4km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "알씨텍|칠곡군",
+        "name": "(주)알씨텍",
+        "role": "preprocessor",
+        "sido": "경북",
+        "sigungu": "칠곡군",
+        "address": "경북 칠곡군 약목면 경호천동길 74",
+        "phone": "054-977-3090",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#514",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [
+         "02-01",
+         "02-02"
+        ],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 36.00645740808617,
+         "lng": 128.4640288555262,
+         "basis": "시군구 중심점",
+         "distance_km": 122.0
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 30.52,
+         "road_km": 158.6,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 122.0km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       },
+       {
+        "company_id": "koreas앤c|여수시",
+        "name": "korea s앤c",
+        "role": "preprocessor",
+        "sido": "전남",
+        "sigungu": "여수시",
+        "address": "전남 여수시 율촌면 서부로 1632 (가장리)",
+        "phone": "061-692-4831",
+        "data_date": "2024",
+        "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#608",
+        "permit_type": "허가",
+        "registration_type": "중간 재활용업",
+        "waste_group": "51-02 무기성오니류",
+        "treatment_codes": [
+         "2010"
+        ],
+        "r_codes": [
+         "R-10"
+        ],
+        "accepts_designated": [],
+        "scope_text": null,
+        "capacity": null,
+        "match_confidence": null,
+        "location": {
+         "lat": 34.76225031989451,
+         "lng": 127.67100187231402,
+         "basis": "시군구 중심점",
+         "distance_km": 127.4
+        },
+        "reasons": [
+         "51-02 위탁 재활용 허가",
+         "처리방법 2010 중간가공폐기물 제조"
+        ],
+        "status": "needs_info",
+        "carbon": {
+         "transport_kgco2e": 31.86,
+         "road_km": 165.6,
+         "ton": 1.0,
+         "vehicle": "트럭",
+         "factor": 0.192419625,
+         "basis": "직선 127.4km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km",
+         "source": "환경성적표지 탄소발자국 평가계수(국가 LCI DB 기반, 2021.08.02) CSV (탄소_배출계수_v1.csv)"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "carbon_reference": {
+    "treatment_kgco2e": null,
+    "item": null,
+    "note": "분류번호에 맞는 재질 계수 없음",
+    "ton_basis": "월 평균 3개월"
+   }
+  }
+ ],
+ "skipped": {
+  "gate1": {
+   "action": "SKIP",
+   "reason": "지정폐기물(의심 포함)은 순환자원 판매 대상 아님"
+  },
+  "scope": {
+   "action": "SKIP",
+   "reason": "서비스 범위 밖 (중간재활용업만): 관문2 재생이용 (R-3-1, R-3-2, R-3-3, R-3-4, R-4-1, R-4-2), 관문4 처분 (방법 미정)"
+  }
+ },
+ "route_proposals": [
+  {
+   "schema_version": "1.1",
+   "case_id": "PRE-23",
+   "case_version": 1,
+   "route_id": "PRE-23-G2-intermediate-single_material_recycle",
+   "route_version": 1,
+   "stale": false,
+   "synthetic": true,
+   "gate": 2,
+   "waste_status": "designated",
+   "tier": null,
+   "route_type": "single_material_recycle",
+   "title": "중간 가공 (R-10) (R-10)",
+   "steps": [
+    {
+     "order": 1,
+     "process": "수집·운반",
+     "role": "transporter",
+     "treatment_codes": [],
+     "r_codes": [],
+     "optional": false,
+     "treatment_code": null,
+     "r_code": null
+    },
+    {
+     "order": 2,
+     "process": "중간가공폐기물 제조",
+     "role": "preprocessor",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "optional": false,
+     "treatment_code": "2010",
+     "r_code": "R-10"
+    }
+   ],
+   "checks": {
+    "technical": "needs_info",
+    "regulatory": "needs_info",
+    "acceptance": "needs_info"
+   },
+   "check_reasons": {
+    "technical": "가공 사례 대조 전 (사례 데이터 없음)",
+    "regulatory": "D-1 판단: 51-02-01에 R-10 허용; 분류번호(A-1): 조건부; 지정폐기물 여부(A-2): 조건부; 지정폐기물 의심: 성분 분석 결과에 따라 다시 판정; 재활용 금지(B-1): 사실 확인 필요; 재활용 제한(B-2): 사실 확인 필요; 모든 재활용 유형이 사전 분석 대상 (D-1)",
+    "acceptance": "업체 회신 전"
+   },
+   "secured": true,
+   "main_step_order": 2,
+   "partner_candidates": [
+    {
+     "rank": 1,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "제이에스산업|정읍시",
+     "name": "제이에스산업",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "전북 정읍시 북면 칠북로 345",
+     "phone": "063-537-5717",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#629",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "전북",
+     "sigungu": "정읍시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 35.610287945477324,
+      "lng": 126.9068592144633,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 30.7,
+      "type": "직선",
+      "road_est": 39.9,
+      "basis": "시군구 중심점"
+     },
+     "carbon": {
+      "transport_kgco2e": 7.68,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 30.7km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 2,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "케이에이치인더스트리|김천시",
+     "name": "(주)케이에이치인더스트리",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "경북 김천시 남면 부상리 773",
+     "phone": "054-974-4300",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#493",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "경북",
+     "sigungu": "김천시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 36.043732903926326,
+      "lng": 128.049229237102,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 86.5,
+      "type": "직선",
+      "road_est": 112.5,
+      "basis": "시군구 중심점"
+     },
+     "carbon": {
+      "transport_kgco2e": 21.65,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 86.5km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 3,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "에코시스템|함안군",
+     "name": "(주)에코시스템",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "경남 함안군 군북면 민등길 85 (주)에코시스템",
+     "phone": null,
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#462",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "경남",
+     "sigungu": "함안군",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 36.65034373,
+      "lng": 127.4851769,
+      "basis": "업체 좌표"
+     },
+     "distance_km": {
+      "value": 97.8,
+      "type": "직선",
+      "road_est": 127.1,
+      "basis": "업체 좌표"
+     },
+     "carbon": {
+      "transport_kgco2e": 24.46,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 97.8km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 4,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "워렉스|나주시",
+     "name": "(주)워렉스",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "전남 나주시 다도면 판촌리 501",
+     "phone": "061-337-4506",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#606",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "전남",
+     "sigungu": "나주시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 34.96732264,
+      "lng": 126.8623603,
+      "basis": "업체 좌표"
+     },
+     "distance_km": {
+      "value": 97.8,
+      "type": "직선",
+      "road_est": 127.1,
+      "basis": "업체 좌표"
+     },
+     "carbon": {
+      "transport_kgco2e": 24.46,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 97.8km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 5,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "세림상운|광양시",
+     "name": "(유)세림상운",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "전남 광양시 옥곡면 옥정로 347 2층 (선유리)",
+     "phone": "061-792-5709",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#593",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "전남",
+     "sigungu": "광양시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 35.03307424167351,
+      "lng": 127.66450202624551,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 99.9,
+      "type": "직선",
+      "road_est": 129.9,
+      "basis": "시군구 중심점"
+     },
+     "carbon": {
+      "transport_kgco2e": 25.0,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 99.9km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 1,
+     "step_order": 1,
+     "status": "needs_info",
+     "company_id": "성운|전주시",
+     "name": "주식회사 성운",
+     "role": "transporter",
+     "permit_type": "허가",
+     "registration_type": "수집운반",
+     "waste_group": "생활·사업장일반",
+     "treatment_codes": [],
+     "r_codes": [],
+     "accepts_designated": [],
+     "address": "전주시 안덕원1길 28",
+     "phone": "063-231-0600",
+     "data_date": "2023",
+     "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5790",
+     "reasons": [
+      "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+     ],
+     "sido": "전북",
+     "sigungu": "전주시",
+     "scope_text": "폐합성수지류, 폐종이팩, 폐종이류, 폐금속캔류; 비배출시설계",
+     "capacity": {
+      "보유차량": "0",
+      "2023_운반량_톤": "0"
+     },
+     "match_confidence": null,
+     "location": {
+      "lat": 35.819141809597596,
+      "lng": 127.12969676784823,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 0.0,
+      "type": "직선",
+      "road_est": null,
+      "basis": "시군구 중심점"
+     },
+     "carbon": null
+    },
+    {
+     "rank": 2,
+     "step_order": 1,
+     "status": "needs_info",
+     "company_id": "국제기술환경|전주시 덕진구",
+     "name": "(유)국제기술환경",
+     "role": "transporter",
+     "permit_type": "허가",
+     "registration_type": "수집운반",
+     "waste_group": "생활·사업장일반",
+     "treatment_codes": [],
+     "r_codes": [],
+     "accepts_designated": [],
+     "address": "전주시 덕진구 암심길 135",
+     "phone": "063-214-7272",
+     "data_date": "2023",
+     "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5760",
+     "reasons": [
+      "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+     ],
+     "sido": "전북",
+     "sigungu": "전주시 덕진구",
+     "scope_text": "유기성오니류, 무기성오니류; 비배출시설계",
+     "capacity": {
+      "보유차량": "0",
+      "2023_운반량_톤": "355.2"
+     },
+     "match_confidence": null,
+     "location": {
+      "lat": 35.852242982179106,
+      "lng": 127.12545064041294,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 3.7,
+      "type": "직선",
+      "road_est": null,
+      "basis": "시군구 중심점"
+     },
+     "carbon": null
+    },
+    {
+     "rank": 3,
+     "step_order": 1,
+     "status": "needs_info",
+     "company_id": "금솔환경|전주시 덕진구",
+     "name": "(유)금솔환경",
+     "role": "transporter",
+     "permit_type": "허가",
+     "registration_type": "수집운반",
+     "waste_group": "생활·사업장일반",
+     "treatment_codes": [],
+     "r_codes": [],
+     "accepts_designated": [],
+     "address": "전주시 덕진구 기린대로 1012, 3층",
+     "phone": "063-211-6907",
+     "data_date": "2023",
+     "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5720",
+     "reasons": [
+      "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계"
+     ],
+     "sido": "전북",
+     "sigungu": "전주시 덕진구",
+     "scope_text": "정수처리오니, 하수처리오니, 분뇨처리오니, 가축분뇨처리오니, 펄프제지공정오니, 그 밖의 폐수처리오니, 그 밖의 유기성오니 등; 배출시설계",
+     "capacity": {
+      "보유차량": "0",
+      "2023_운반량_톤": "519.5"
+     },
+     "match_confidence": null,
+     "location": {
+      "lat": 35.852242982179106,
+      "lng": 127.12545064041294,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 3.7,
+      "type": "직선",
+      "road_est": null,
+      "basis": "시군구 중심점"
+     },
+     "carbon": null
+    },
+    {
+     "rank": 4,
+     "step_order": 1,
+     "status": "needs_info",
+     "company_id": "다경건설|전주시 완산구",
+     "name": "(유)다경건설",
+     "role": "transporter",
+     "permit_type": "허가",
+     "registration_type": "수집운반",
+     "waste_group": "생활·사업장일반",
+     "treatment_codes": [],
+     "r_codes": [],
+     "accepts_designated": [],
+     "address": "전주시 완산구 난전들로 22",
+     "phone": "063-227-4656",
+     "data_date": "2023",
+     "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5797",
+     "reasons": [
+      "수집·운반업 허가 (생활·사업장일반), 사업장 비배출시설계"
+     ],
+     "sido": "전북",
+     "sigungu": "전주시 완산구",
+     "scope_text": "정수처리오니, 하수처리오니, 분뇨처리오니, 가축분뇨처리오니, 폐수처리오니, 정수처리오니, 하수처리오니, 하수준설토, 건설오니; 비배출시설계",
+     "capacity": {
+      "보유차량": "0",
+      "2023_운반량_톤": "474.2"
+     },
+     "match_confidence": null,
+     "location": {
+      "lat": 35.78604063701609,
+      "lng": 127.13394289528352,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 3.7,
+      "type": "직선",
+      "road_est": null,
+      "basis": "시군구 중심점"
+     },
+     "carbon": null
+    },
+    {
+     "rank": 5,
+     "step_order": 1,
+     "status": "needs_info",
+     "company_id": "대성환경산업|전주시 완산구",
+     "name": "(유)대성환경산업",
+     "role": "transporter",
+     "permit_type": "허가",
+     "registration_type": "수집운반",
+     "waste_group": "생활·사업장일반",
+     "treatment_codes": [],
+     "r_codes": [],
+     "accepts_designated": [],
+     "address": "전주시 완산구 봉곡1길 28-8",
+     "phone": "063-236-2810",
+     "data_date": "2023",
+     "source": "폐기물 수집운반업(생활, 사업자일반폐기물).xlsx#5806",
+     "reasons": [
+      "수집·운반업 허가 (생활·사업장일반), 사업장 배출시설계·비배출시설계"
+     ],
+     "sido": "전북",
+     "sigungu": "전주시 완산구",
+     "scope_text": "폐수처리오니, 하수처리오니, 건설오니, 폐합성수지류, 폐합성고무류, 폐폴리염화비닐수지류, 폐폴리우레탄폼류, 등; 배출시설계·비배출시설계",
+     "capacity": {
+      "보유차량": "0",
+      "2023_운반량_톤": "261.5"
+     },
+     "match_confidence": null,
+     "location": {
+      "lat": 35.78604063701609,
+      "lng": 127.13394289528352,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 3.7,
+      "type": "직선",
+      "road_est": null,
+      "basis": "시군구 중심점"
+     },
+     "carbon": null
+    }
+   ],
+   "reserve_candidates": [
+    {
+     "rank": 6,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "다모아자원|성주군",
+     "name": "다모아자원",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "경북 성주군 성주읍 삼산3길 25-6",
+     "phone": null,
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#495",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "경북",
+     "sigungu": "성주군",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 35.93087549,
+      "lng": 128.3077656,
+      "basis": "업체 좌표"
+     },
+     "distance_km": {
+      "value": 106.9,
+      "type": "직선",
+      "road_est": 139.0,
+      "basis": "업체 좌표"
+     },
+     "carbon": {
+      "transport_kgco2e": 26.75,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 106.9km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 7,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "푸른글로벌|아산시",
+     "name": "(주)푸른글로벌",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "충남 아산시 영인면 아산호로 664 213-2 (창용리)",
+     "phone": "041-533-0222",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#645; 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#646",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "충남",
+     "sigungu": "아산시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 36.79519250435419,
+      "lng": 126.97677616834538,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 109.4,
+      "type": "직선",
+      "road_est": 142.2,
+      "basis": "시군구 중심점"
+     },
+     "carbon": {
+      "transport_kgco2e": 27.36,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 109.4km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 8,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "산수금속|서산시",
+     "name": "(주)산수금속",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [
+      "01-02"
+     ],
+     "address": "충남 서산시 남부순환로 313 (장동,산수금속)",
+     "phone": "041-667-0414",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#643",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "충남",
+     "sigungu": "서산시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 36.73325759,
+      "lng": 126.4737683,
+      "basis": "업체 좌표"
+     },
+     "distance_km": {
+      "value": 117.4,
+      "type": "직선",
+      "road_est": 152.6,
+      "basis": "업체 좌표"
+     },
+     "carbon": {
+      "transport_kgco2e": 29.36,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 117.4km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 9,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "알씨텍|칠곡군",
+     "name": "(주)알씨텍",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [
+      "02-01",
+      "02-02"
+     ],
+     "address": "경북 칠곡군 약목면 경호천동길 74",
+     "phone": "054-977-3090",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#514",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "경북",
+     "sigungu": "칠곡군",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 36.00645740808617,
+      "lng": 128.4640288555262,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 122.0,
+      "type": "직선",
+      "road_est": 158.6,
+      "basis": "시군구 중심점"
+     },
+     "carbon": {
+      "transport_kgco2e": 30.52,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 122.0km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    },
+    {
+     "rank": 10,
+     "step_order": 2,
+     "status": "needs_info",
+     "company_id": "koreas앤c|여수시",
+     "name": "korea s앤c",
+     "role": "preprocessor",
+     "permit_type": "허가",
+     "registration_type": "중간 재활용업",
+     "waste_group": "51-02 무기성오니류",
+     "treatment_codes": [
+      "2010"
+     ],
+     "r_codes": [
+      "R-10"
+     ],
+     "accepts_designated": [],
+     "address": "전남 여수시 율촌면 서부로 1632 (가장리)",
+     "phone": "061-692-4831",
+     "data_date": "2024",
+     "source": "폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#608",
+     "reasons": [
+      "51-02 위탁 재활용 허가",
+      "처리방법 2010 중간가공폐기물 제조"
+     ],
+     "sido": "전남",
+     "sigungu": "여수시",
+     "scope_text": null,
+     "capacity": null,
+     "match_confidence": null,
+     "location": {
+      "lat": 34.76225031989451,
+      "lng": 127.67100187231402,
+      "basis": "시군구 중심점"
+     },
+     "distance_km": {
+      "value": 127.4,
+      "type": "직선",
+      "road_est": 165.6,
+      "basis": "시군구 중심점"
+     },
+     "carbon": {
+      "transport_kgco2e": 31.86,
+      "unit": "kgCO2eq/월",
+      "vehicle": "트럭",
+      "ton": 1.0,
+      "basis": "직선 127.4km × 1.3 (추정 도로 거리) × 트럭 0.192419625 kgCO2eq/ton·km"
+     }
+    }
+   ],
+   "excluded_partners": [],
+   "waste_ton_month": 1.0,
+   "questions": [
+    {
+     "question_id": "Q-1",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "accept",
+     "text": "51-02-01 금지 물질 의심 폐수처리오니 월 1.0톤을 위탁받아 재활용할 수 있나요?"
+    },
+    {
+     "question_id": "Q-2",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "waste_code_detail",
+     "text": "해당 분류번호(말단 번호)까지 허가·신고가 되어 있나요?"
+    },
+    {
+     "question_id": "Q-3",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "r_code_detail",
+     "text": "허가·신고된 세부 재활용 유형(R코드)은 무엇인가요?"
+    },
+    {
+     "question_id": "Q-4",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "capacity",
+     "text": "월 1.0톤을 받을 처리 여력이 있나요? (수탁처리능력 확인서 발급 가능 여부)"
+    },
+    {
+     "question_id": "Q-5",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "transport_by",
+     "text": "운반을 직접 하나요, 별도 운반 업체가 필요한가요?"
+    },
+    {
+     "question_id": "Q-6",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "input_conditions",
+     "text": "반입 기준(성상·이물질·수분·크기·포장)을 알려주세요."
+    },
+    {
+     "question_id": "Q-7",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "min_quantity",
+     "text": "1회 최소 반입량은 얼마인가요?"
+    },
+    {
+     "question_id": "Q-8",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "quote",
+     "text": "단가를 알려주세요: 처리비(배출업체가 냄)인지 매입가(업체가 냄)인지, 운반비 포함 여부와 운반비를 누가 내는지도 함께."
+    },
+    {
+     "question_id": "Q-9",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "delivery_window",
+     "text": "반입 가능 시간과 하차 조건을 알려주세요."
+    },
+    {
+     "question_id": "Q-10",
+     "to_role": "preprocessor",
+     "company_id": null,
+     "field": "license_check",
+     "text": "최신 허가증 또는 신고증명서 사본을 보내 줄 수 있나요?"
+    }
+   ],
+   "conditions": [
+    {
+     "text": "이 오니가 금지물질을 실제로 함유해 지정폐기물(폐유독물질 등)에 해당하는 것으로 확인되면 51-02-01(사업장 일반 무기성오니)이 아니라 지정폐기물 분류번호를 써야 한다.",
+     "basis": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "실제 성분과 발생 경위를 확인한 결과 지정폐기물이 아닌 무기성 폐수처리오니에 해당하는 경우에 51-02-01이 맞는다.",
+     "basis": "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "오니류는 수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 경우에만 지정폐기물이 될 수 있다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "폐수처리 오니는 기후에너지환경부령으로 정하는 물질을 함유한 것이어야 지정폐기물이 된다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "함유 요건에 더해 기후에너지환경부장관이 고시한 시설에서 발생한 것이어야 한다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 오니류로서 기후에너지환경부령으로 정하는 물질을 함유하고 기후에너지환경부장관이 고시한 시설에서 발생되는 폐수처리 오니인 경우 지정폐기물에 해당한다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "화학물질관리법에 따른 금지물질 등을 폐기하는 경우 폐유독물질로서 지정폐기물에 해당한다.",
+     "basis": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "재활용 기준: 폐기물의 재활용 원칙 및 준수사항: 제13조의2(폐기물의 재활용 원칙 및 준수사항) ① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다. 1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것 2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것 3. 소음 또는 진동이 발생하여 사람에게 피해를 주지 아니할 것 4. 중금속 등 유해물질을 제거하거나 안정화하여 재활용제품이나 원료로 사용하는 과정에서 사람이나 환경에 위해를 미치지 아니하도록 하는 등 대통령령으로 정하는 사항을 준수할 것 5. 그 밖에 기후에너지환경부령으로 정하는 재활용의 기준을 준수할 것 ② 제1항에도 불구하",
+     "basis": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "text": "재활용 업체 준수사항: 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표",
+     "basis": "WMA_RULE:B5의4@20261112#d808ab1786e42c95",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    }
+   ],
+   "required_tests": [
+    {
+     "test": "재활용 전 사전 분석",
+     "r_codes": [
+      "R-10"
+     ],
+     "basis": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0"
+    }
+   ],
+   "requirements": [],
+   "alternatives": null,
+   "restrictions": [
+    {
+     "rule_id": "B-1",
+     "action": "needs_info",
+     "description": null,
+     "basis": "WMA:13의2@20261112#d5a26ead3e4715cd"
+    },
+    {
+     "rule_id": "B-2",
+     "action": "needs_info",
+     "description": null,
+     "basis": "WMA_DEC:B4의3@20261112#8a5307b106a38e52"
+    }
+   ],
+   "evidences": [
+    {
+     "evidence_id": "LAW-WMA-13의2",
+     "source": "폐기물관리법 제13조의2",
+     "ref": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "law": "폐기물관리법",
+     "article": "제13조의2",
+     "effective_date": "20261112",
+     "used_for": [
+      "B-1",
+      "D-3"
+     ],
+     "text": "4. 폐유독물 등 인체나 환경에 미치는 위해가 매우 높을 것으로 우려되는 폐기물 중 대통령령으로 정하는 폐기물",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_RULE-B4의3",
+     "source": "폐기물관리법 시행규칙 별표 4의3",
+     "ref": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0",
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4의3",
+     "effective_date": "20261112",
+     "used_for": [
+      "D-1"
+     ],
+     "text": "51-02-01 폐수처리오니: R-3-1, R-3-2, R-3-3, R-3-4, R-4-1, R-10, R-4-2",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA-13의3",
+     "source": "폐기물관리법 제13조의3",
+     "ref": "WMA:13의3@20261112#68c8b90b1817c2e3",
+     "law": "폐기물관리법",
+     "article": "제13조의3",
+     "effective_date": "20261112",
+     "used_for": [
+      "D-3"
+     ],
+     "text": "제13조의3(폐기물의 재활용 시 환경성평가)\n① 제13조의2제1항에도 불구하고 다음 각 호에 해당하는 자는 제13조의4제1항에 따른 재활용환경성평가기관으로부터 해당 폐기물의 재활용이 사람의 건강이나 환경에 미치는 영향을 조사ㆍ예측하여 해로운 영향을 피하거나 제거하는 방안 및 재활용기술의 적합성에 대한 평가(이하 \"재활용환경성평가\"라 한다)를 받아야 한다. 폐기물의 종류, 재활용 유형 등 기후에너지환경부령으로 정하는 중요사항을 변경하는 경우에도 또한 같다.\n1. 기후에너지환경부령으로 정하는 규모 이상의 폐기물 또는 폐기물을 토양 등과",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_RULE-B5의4",
+     "source": "폐기물관리법 시행규칙 별표 5의4",
+     "ref": "WMA_RULE:B5의4@20261112#d808ab1786e42c95",
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 5의4",
+     "effective_date": "20261112",
+     "used_for": [
+      "D-4"
+     ],
+     "text": "폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련)\n1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도\n가. 오염예방 및 저감방법\n1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거\n나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해\n야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치\n된 경우에만 해당한다.\n가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방\n지시설을 이용하여 처리할 것\n나) 소음ㆍ진동: 「소음ㆍ진동관리법 ",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_RULE-14의3",
+     "source": "폐기물관리법 시행규칙 제14조의3",
+     "ref": "WMA_RULE:14의3@20261112#6648ee9a95af4c7d",
+     "law": "폐기물관리법 시행규칙",
+     "article": "제14조의3",
+     "effective_date": "20261112",
+     "used_for": [
+      "B-1"
+     ],
+     "text": "나. 영 별표 4의3 제1호가목 또는 나목에 해당하는 폐기물",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_DEC-B4의3",
+     "source": "폐기물관리법 시행령 별표 4의3",
+     "ref": "WMA_DEC:B4의3@20261112#8a5307b106a38e52",
+     "law": "폐기물관리법 시행령",
+     "article": "별표 4의3",
+     "effective_date": "20261112",
+     "used_for": [
+      "B-2"
+     ],
+     "text": "1. 다음 각 목의 어느 하나에 해당하는 물질 중 폐기되는 물질\n가. 「산업안전보건법」 제117조제1항에 따라 제조 등이 금지된 물질",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_RULE-B4",
+     "source": "폐기물관리법 시행규칙 별표 4",
+     "ref": "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-1"
+     ],
+     "text": "51-02 무기성오니류\n51-02-01 폐수처리오니\n51-02-02 정수처리오니",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_RULE-B4",
+     "source": "폐기물관리법 시행규칙 별표 4",
+     "ref": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-1"
+     ],
+     "text": "09-01-00 「화학물질관리법」 제2조제5호에 따른 금지물질",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA-2",
+     "source": "폐기물관리법 제2조",
+     "ref": "WMA:2@20261112#f0a7834ff79e7eec",
+     "law": "폐기물관리법",
+     "article": "제2조",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-2"
+     ],
+     "text": "\"지정폐기물\"이란 사업장폐기물 중 폐유ㆍ폐산 등 주변 환경을 오염시킬 수 있거나 의료폐기물(醫療廢棄物) 등 인체에 위해(危害)를 줄 수 있는 해로운 물질로서 대통령령으로 정하는 폐기물을 말한다.",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_DEC-B1",
+     "source": "폐기물관리법 시행령 별표 1",
+     "ref": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "law": "폐기물관리법 시행령",
+     "article": "별표 1",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-2"
+     ],
+     "text": "나. 오니류(수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "LAW-WMA_DEC-3",
+     "source": "폐기물관리법 시행령 제3조",
+     "ref": "WMA_DEC:3@20261112#1c2a6694f1744f8b",
+     "law": "폐기물관리법 시행령",
+     "article": "제3조",
+     "effective_date": "20261112",
+     "used_for": [
+      "A-2"
+     ],
+     "text": "제3조(지정폐기물의 종류) 법 제2조제4호에 따른 지정폐기물은 별표 1과 같다.",
+     "text_basis": "판단 인용 (원문 대조 통과)"
+    },
+    {
+     "evidence_id": "PARTNER-제이에스산업|정읍시",
+     "source": "폐기물 재활용실적 및 업체현황(2024년)",
+     "ref": "부록 업체정보_허가_코드별_일반#629"
+    },
+    {
+     "evidence_id": "PARTNER-케이에이치인더스트리|김천시",
+     "source": "폐기물 재활용실적 및 업체현황(2024년)",
+     "ref": "부록 업체정보_허가_코드별_일반#493"
+    },
+    {
+     "evidence_id": "PARTNER-에코시스템|함안군",
+     "source": "폐기물 재활용실적 및 업체현황(2024년)",
+     "ref": "부록 업체정보_허가_코드별_일반#462"
+    },
+    {
+     "evidence_id": "PARTNER-워렉스|나주시",
+     "source": "폐기물 재활용실적 및 업체현황(2024년)",
+     "ref": "부록 업체정보_허가_코드별_일반#606"
+    },
+    {
+     "evidence_id": "PARTNER-세림상운|광양시",
+     "source": "폐기물 재활용실적 및 업체현황(2024년)",
+     "ref": "부록 업체정보_허가_코드별_일반#593"
+    }
+   ],
+   "related_laws": [
+    {
+     "law": "폐기물관리법",
+     "article": "제13조의2",
+     "ref": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "used_for": [
+      "B-1",
+      "D-3"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4의3",
+     "ref": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0",
+     "used_for": [
+      "D-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법",
+     "article": "제13조의3",
+     "ref": "WMA:13의3@20261112#68c8b90b1817c2e3",
+     "used_for": [
+      "D-3"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 5의4",
+     "ref": "WMA_RULE:B5의4@20261112#d808ab1786e42c95",
+     "used_for": [
+      "D-4"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "제14조의3",
+     "ref": "WMA_RULE:14의3@20261112#6648ee9a95af4c7d",
+     "used_for": [
+      "B-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행령",
+     "article": "별표 4의3",
+     "ref": "WMA_DEC:B4의3@20261112#8a5307b106a38e52",
+     "used_for": [
+      "B-2"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4",
+     "ref": "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+     "used_for": [
+      "A-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행규칙",
+     "article": "별표 4",
+     "ref": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "used_for": [
+      "A-1"
+     ]
+    },
+    {
+     "law": "폐기물관리법",
+     "article": "제2조",
+     "ref": "WMA:2@20261112#f0a7834ff79e7eec",
+     "used_for": [
+      "A-2"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행령",
+     "article": "별표 1",
+     "ref": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "used_for": [
+      "A-2"
+     ]
+    },
+    {
+     "law": "폐기물관리법 시행령",
+     "article": "제3조",
+     "ref": "WMA_DEC:3@20261112#1c2a6694f1744f8b",
+     "used_for": [
+      "A-2"
+     ]
+    }
+   ],
+   "document_triggers": [
+    {
+     "trigger": "위탁계약서",
+     "fact": "지정 51-02-01 처리 위탁 (관문 2)",
+     "condition_id": "LA-G-1",
+     "text": "사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다. ② 삭제 <2015.7.20> ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기 / 위탁ㆍ수탁의 기준 및 절차: 제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본 2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 \"폐기물적정처리추진센터\"라 한다)에서 공개한 자료 ",
+     "basis": "WMA:18@20261112#3d3f300677cbd1bc",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    },
+    {
+     "trigger": "수탁처리능력 확인",
+     "fact": "위탁 계약 전 처리 업체의 수탁처리능력확인서",
+     "condition_id": "LA-G-1",
+     "text": "사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다. ② 삭제 <2015.7.20> ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기 / 위탁ㆍ수탁의 기준 및 절차: 제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본 2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 \"폐기물적정처리추진센터\"라 한다)에서 공개한 자료 ",
+     "basis": "WMA:18@20261112#3d3f300677cbd1bc",
+     "basis_status": "AI 판단 (모델 합의 + 원문 인용 검증)"
+    }
+   ],
+   "comparison": {
+    "carbon_transport": 7.68,
+    "carbon_treatment_ref": null,
+    "carbon_treatment_note": "분류번호에 맞는 재질 계수 없음",
+    "carbon_total": null,
+    "carbon_saving": null,
+    "cost_total": null,
+    "missing": [
+     "원료 대체 계수",
+     "quote",
+     "처리 공정 계수"
+    ],
+    "basis": null
+   },
+   "rejected_summary": {
+    "처리 방법 다름": 7,
+    "자가처리만 신고": 1
+   },
+   "applied_feedback_ids": [],
+   "engine": "law_agent_v0",
+   "law_questions": [
+    "A-1",
+    "A-2",
+    "B-1",
+    "B-2",
+    "D-1",
+    "D-3",
+    "D-4"
+   ]
+  }
+ ],
+ "information_request": {
+  "schema_version": "1.1",
+  "case_id": "PRE-23",
+  "case_version": 1,
+  "requests": [
+   {
+    "request_id": "IR-1",
+    "field": "A-1.금지물질 종류 및 함유 여부",
+    "text": "금지물질 종류 및 함유 여부 — 판단 A-1, B-2에 필요합니다.",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-1",
+     "B-2"
+    ]
+   },
+   {
+    "request_id": "IR-2",
+    "field": "A-1.금지물질 함유 여부(분석 결과)",
+    "text": "금지물질 함유 여부(분석 결과) — 판단 A-1, B-1에 필요합니다.",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-1",
+     "B-1"
+    ]
+   },
+   {
+    "request_id": "IR-3",
+    "field": "A-1.무기성 여부",
+    "text": "분류번호 조건 확인에 필요한 사실: 무기성 여부",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-1"
+    ]
+   },
+   {
+    "request_id": "IR-4",
+    "field": "A-1.발생 공정",
+    "text": "발생 공정 — 판단 A-1, B-1, B-2에 필요합니다.",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-1",
+     "B-1",
+     "B-2"
+    ]
+   },
+   {
+    "request_id": "IR-5",
+    "field": "A-2.금지물질 등 해당 여부",
+    "text": "지정폐기물 여부 조건 확인에 필요한 사실: 금지물질 등 해당 여부",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-2"
+    ]
+   },
+   {
+    "request_id": "IR-6",
+    "field": "A-2.기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+    "text": "지정폐기물 여부 조건 확인에 필요한 사실: 기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-2"
+    ]
+   },
+   {
+    "request_id": "IR-7",
+    "field": "A-2.수분함량 또는 고형물함량",
+    "text": "지정폐기물 여부 조건 확인에 필요한 사실: 수분함량 또는 고형물함량",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-2"
+    ]
+   },
+   {
+    "request_id": "IR-8",
+    "field": "A-2.수분함량(또는 고형물함량)",
+    "text": "지정폐기물 여부 조건 확인에 필요한 사실: 수분함량(또는 고형물함량)",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-2"
+    ]
+   },
+   {
+    "request_id": "IR-9",
+    "field": "A-2.유해물질 함유 여부(용출시험 결과)",
+    "text": "지정폐기물 여부 조건 확인에 필요한 사실: 유해물질 함유 여부(용출시험 결과)",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "A-2"
+    ]
+   },
+   {
+    "request_id": "IR-10",
+    "field": "analysis",
+    "text": "성분 분석으로 지정폐기물 해당 여부를 확인했나요?",
+    "to": "배출업체 (분석기관 의뢰 필요)",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ]
+   },
+   {
+    "request_id": "IR-11",
+    "field": "B-1.금지·제한물질 종류 및 실제 함유 여부",
+    "text": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지·제한물질 종류 및 실제 함유 여부",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "B-1"
+    ]
+   },
+   {
+    "request_id": "IR-12",
+    "field": "B-1.금지물질 종류",
+    "text": "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 종류",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ],
+    "question_ids": [
+     "B-1"
+    ]
+   },
+   {
+    "request_id": "IR-13",
+    "field": "designated_analysis",
+    "text": "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?",
+    "to": "배출업체 (분석기관 의뢰 필요)",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ]
+   },
+   {
+    "request_id": "IR-14",
+    "field": "emitter_facility_type",
+    "text": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다.",
+    "to": "배출업체",
+    "affected_routes": [
+     "PRE-23-G2-intermediate-single_material_recycle"
+    ]
+   }
+  ],
+  "fields": [
+   "A-1.금지물질 종류 및 함유 여부",
+   "A-1.금지물질 함유 여부(분석 결과)",
+   "A-1.무기성 여부",
+   "A-1.발생 공정",
+   "A-2.금지물질 등 해당 여부",
+   "A-2.기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+   "A-2.수분함량 또는 고형물함량",
+   "A-2.수분함량(또는 고형물함량)",
+   "A-2.유해물질 함유 여부(용출시험 결과)",
+   "analysis",
+   "B-1.금지·제한물질 종류 및 실제 함유 여부",
+   "B-1.금지물질 종류",
+   "designated_analysis",
+   "emitter_facility_type"
+  ],
+  "part2_internal": []
+ },
+ "recommendation": {
+  "waste": {
+   "case_id": "PRE-23",
+   "폐기물": "금지 물질 의심 폐수처리오니",
+   "분류번호": "51-02-01",
+   "지정폐기물": "해당 (의심 포함)",
+   "월물량_톤": 1.0,
+   "형태": "혼합",
+   "지역": "전북특별자치도 전주시",
+   "주소": "전주시 가상산업로 10 (가상 주소)",
+   "배출업체": null
+  },
+  "options": [
+   {
+    "처리": "중간 가공 (R-10) (R-10)",
+    "구분": "재활용 위탁 (중간 가공)",
+    "법적상태": "확인 필요",
+    "업체확보": "확보",
+    "근거법령": [
+     "폐기물관리법 제13조의2",
+     "폐기물관리법 시행규칙 별표 4의3",
+     "폐기물관리법 제13조의3",
+     "폐기물관리법 시행규칙 별표 5의4",
+     "폐기물관리법 시행규칙 제14조의3",
+     "폐기물관리법 시행령 별표 4의3",
+     "폐기물관리법 시행규칙 별표 4",
+     "폐기물관리법 시행규칙 별표 4",
+     "폐기물관리법 제2조",
+     "폐기물관리법 시행령 별표 1",
+     "폐기물관리법 시행령 제3조"
+    ],
+    "조건": [
+     "이 오니가 금지물질을 실제로 함유해 지정폐기물(폐유독물질 등)에 해당하는 것으로 확인되면 51-02-01(사업장 일반 무기성오니)이 아니라 지정폐기물 분류번호를 써야 한다.",
+     "실제 성분과 발생 경위를 확인한 결과 지정폐기물이 아닌 무기성 폐수처리오니에 해당하는 경우에 51-02-01이 맞는다.",
+     "오니류는 수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 경우에만 지정폐기물이 될 수 있다.",
+     "폐수처리 오니는 기후에너지환경부령으로 정하는 물질을 함유한 것이어야 지정폐기물이 된다.",
+     "함유 요건에 더해 기후에너지환경부장관이 고시한 시설에서 발생한 것이어야 한다.",
+     "수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 오니류로서 기후에너지환경부령으로 정하는 물질을 함유하고 기후에너지환경부장관이 고시한 시설에서 발생되는 폐수처리 오니인 경우 지정폐기물에 해당한다.",
+     "화학물질관리법에 따른 금지물질 등을 폐기하는 경우 폐유독물질로서 지정폐기물에 해당한다.",
+     "재활용 기준: 폐기물의 재활용 원칙 및 준수사항: 제13조의2(폐기물의 재활용 원칙 및 준수사항) ① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다. 1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것 2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것 3. 소음 또는 진동이 발생하여 사람에게 피해를 주지 아니할 것 4. 중금속 등 유해물질을 제거하거나 안정화하여 재활용제품이나 원료로 사용하는 과정에서 사람이나 환경에 위해를 미치지 아니하도록 하는 등 대통령령으로 정하는 사항을 준수할 것 5. 그 밖에 기후에너지환경부령으로 정하는 재활용의 기준을 준수할 것 ② 제1항에도 불구하",
+     "재활용 업체 준수사항: 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표"
+    ],
+    "추천업체": [
+     {
+      "순위": 1,
+      "company_id": "제이에스산업|정읍시",
+      "업체명": "제이에스산업",
+      "역할": "중간 가공 업체",
+      "지역": "전북 정읍시",
+      "주소": "전북 정읍시 북면 칠북로 345",
+      "연락처": "063-537-5717",
+      "허가": "허가 중간 재활용업",
+      "처리방법코드": [
+       "2010"
+      ],
+      "재활용유형": [
+       "R-10"
+      ],
+      "거리_km": 39.9,
+      "직선거리_km": 30.7,
+      "위치_근거": "시군구 중심점",
+      "운송탄소_kgCO2eq_월": 7.68,
+      "추천이유": [
+       "51-02 위탁 재활용 허가",
+       "처리방법 2010 중간가공폐기물 제조"
+      ],
+      "확신도": null,
+      "데이터_기준": "2024 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#629"
+     },
+     {
+      "순위": 2,
+      "company_id": "케이에이치인더스트리|김천시",
+      "업체명": "(주)케이에이치인더스트리",
+      "역할": "중간 가공 업체",
+      "지역": "경북 김천시",
+      "주소": "경북 김천시 남면 부상리 773",
+      "연락처": "054-974-4300",
+      "허가": "허가 중간 재활용업",
+      "처리방법코드": [
+       "2010"
+      ],
+      "재활용유형": [
+       "R-10"
+      ],
+      "거리_km": 112.5,
+      "직선거리_km": 86.5,
+      "위치_근거": "시군구 중심점",
+      "운송탄소_kgCO2eq_월": 21.65,
+      "추천이유": [
+       "51-02 위탁 재활용 허가",
+       "처리방법 2010 중간가공폐기물 제조"
+      ],
+      "확신도": null,
+      "데이터_기준": "2024 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#493"
+     },
+     {
+      "순위": 3,
+      "company_id": "에코시스템|함안군",
+      "업체명": "(주)에코시스템",
+      "역할": "중간 가공 업체",
+      "지역": "경남 함안군",
+      "주소": "경남 함안군 군북면 민등길 85 (주)에코시스템",
+      "연락처": null,
+      "허가": "허가 중간 재활용업",
+      "처리방법코드": [
+       "2010"
+      ],
+      "재활용유형": [
+       "R-10"
+      ],
+      "거리_km": 127.1,
+      "직선거리_km": 97.8,
+      "위치_근거": "업체 좌표",
+      "운송탄소_kgCO2eq_월": 24.46,
+      "추천이유": [
+       "51-02 위탁 재활용 허가",
+       "처리방법 2010 중간가공폐기물 제조"
+      ],
+      "확신도": null,
+      "데이터_기준": "2024 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#462"
+     },
+     {
+      "순위": 4,
+      "company_id": "워렉스|나주시",
+      "업체명": "(주)워렉스",
+      "역할": "중간 가공 업체",
+      "지역": "전남 나주시",
+      "주소": "전남 나주시 다도면 판촌리 501",
+      "연락처": "061-337-4506",
+      "허가": "허가 중간 재활용업",
+      "처리방법코드": [
+       "2010"
+      ],
+      "재활용유형": [
+       "R-10"
+      ],
+      "거리_km": 127.1,
+      "직선거리_km": 97.8,
+      "위치_근거": "업체 좌표",
+      "운송탄소_kgCO2eq_월": 24.46,
+      "추천이유": [
+       "51-02 위탁 재활용 허가",
+       "처리방법 2010 중간가공폐기물 제조"
+      ],
+      "확신도": null,
+      "데이터_기준": "2024 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#606"
+     },
+     {
+      "순위": 5,
+      "company_id": "세림상운|광양시",
+      "업체명": "(유)세림상운",
+      "역할": "중간 가공 업체",
+      "지역": "전남 광양시",
+      "주소": "전남 광양시 옥곡면 옥정로 347 2층 (선유리)",
+      "연락처": "061-792-5709",
+      "허가": "허가 중간 재활용업",
+      "처리방법코드": [
+       "2010"
+      ],
+      "재활용유형": [
+       "R-10"
+      ],
+      "거리_km": 129.9,
+      "직선거리_km": 99.9,
+      "위치_근거": "시군구 중심점",
+      "운송탄소_kgCO2eq_월": 25.0,
+      "추천이유": [
+       "51-02 위탁 재활용 허가",
+       "처리방법 2010 중간가공폐기물 제조"
+      ],
+      "확신도": null,
+      "데이터_기준": "2024 폐기물 재활용실적 및 업체현황(2024년).xlsx#부록 업체정보_허가_코드별_일반#593"
+     }
+    ],
+    "조건맞는_업체_수": 40,
+    "가공업체가_알려줘야_할_것": [],
+    "배출업체가_확인할_것": [
+     "분류번호 조건 확인에 필요한 사실: 금지물질 종류 및 함유 여부",
+     "분류번호 조건 확인에 필요한 사실: 금지물질 함유 여부(분석 결과)",
+     "분류번호 조건 확인에 필요한 사실: 무기성 여부",
+     "분류번호 조건 확인에 필요한 사실: 발생 공정",
+     "지정폐기물 여부 조건 확인에 필요한 사실: 금지물질 등 해당 여부",
+     "지정폐기물 여부 조건 확인에 필요한 사실: 기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+     "지정폐기물 여부 조건 확인에 필요한 사실: 수분함량 또는 고형물함량",
+     "지정폐기물 여부 조건 확인에 필요한 사실: 수분함량(또는 고형물함량)",
+     "지정폐기물 여부 조건 확인에 필요한 사실: 유해물질 함유 여부(용출시험 결과)",
+     "성분 분석으로 지정폐기물 해당 여부를 확인했나요?",
+     "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지·제한물질 종류 및 실제 함유 여부",
+     "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 종류",
+     "재활용 금지 판단에 필요한 사실을 알려 주세요: 금지물질 함유 여부(분석 결과)",
+     "재활용 금지 판단에 필요한 사실을 알려 주세요: 발생 공정",
+     "재활용 제한 판단에 필요한 사실을 알려 주세요: 금지물질 종류 및 함유 여부",
+     "재활용 제한 판단에 필요한 사실을 알려 주세요: 발생 공정",
+     "지정폐기물 의심: 성분 분석으로 일반폐기물임이 확인되어야 이 업체들에 위탁할 수 있습니다. 분석 결과가 있나요?",
+     "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다."
+    ],
+    "다른_단계": [
+     {
+      "역할": "운반 업체",
+      "후보_수": 6473,
+      "메모": "협력 확정 후 선택"
+     }
+    ],
+    "처리탄소_참고": {
+     "treatment_kgco2e": null,
+     "item": null,
+     "note": "분류번호에 맞는 재질 계수 없음",
+     "ton_basis": "월 평균 3개월"
+    }
+   }
+  ],
+  "추천_없음": []
+ },
+ "law_review": [
+  {
+   "question_id": "A-1",
+   "question": "파트 1이 준 분류번호가 시행규칙 별표 4에 있는 번호이고, 폐기물 이름·성상과 맞는가?",
+   "status": "agreed",
+   "answer": "conditional",
+   "value": {},
+   "conditions": [
+    "이 오니가 금지물질을 실제로 함유해 지정폐기물(폐유독물질 등)에 해당하는 것으로 확인되면 51-02-01(사업장 일반 무기성오니)이 아니라 지정폐기물 분류번호를 써야 한다.",
+    "실제 성분과 발생 경위를 확인한 결과 지정폐기물이 아닌 무기성 폐수처리오니에 해당하는 경우에 51-02-01이 맞는다."
+   ],
+   "missing_facts": [
+    "금지물질 종류 및 함유 여부",
+    "금지물질 함유 여부(분석 결과)",
+    "무기성 여부",
+    "발생 공정"
+   ],
+   "flags": [
+    "evidence_truncated"
+   ],
+   "retries": 1,
+   "votes": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "valid": true,
+     "drop_reason": ""
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "conditional",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "WMA_RULE:B4:2@20261112#93b81b4d8cf3d1e4",
+     "text": "51-02 무기성오니류\n51-02-01 폐수처리오니\n51-02-02 정수처리오니"
+    },
+    {
+     "ref": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "text": "09-01-00 「화학물질관리법」 제2조제5호에 따른 금지물질"
+    },
+    {
+     "ref": "WMA_RULE:B4:1@20261112#a8e99ba17ef13b3f",
+     "text": "09 폐유독물질\n09-01-00 「화학물질관리법」 제2조제5호에 따른 금지물질\n09-02-00 연구·검사용 폐시약"
+    }
+   ],
+   "models": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "value": {},
+     "reason": "51-02-01은 별표 4에 있는 '폐수처리오니' 번호이고 폐기물 이름과 오니 성상에는 맞다. 다만 폐기물 이름이 '금지 물질 의심'이라 금지물질 함유가 확인되면 지정폐기물 번호로 바뀔 수 있어 조건부로 판단한다.",
+     "missing_facts": [
+      "금지물질 함유 여부(분석 결과)"
+     ],
+     "evidence_gaps": []
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "conditional",
+     "value": {},
+     "reason": "51-02-01은 별표 4에 있는 번호이며 명칭은 폐수처리오니이나, 상위 분류가 무기성오니류이다. 사례의 성상은 '혼합'이고 금지물질도 의심 단계이므로, 무기성 여부와 금지물질 자체를 폐기하는 경우인지 등을 확인하지 않고 해당 번호의 적합성을 확정할 수 없다.",
+     "missing_facts": [
+      "무기성 여부",
+      "금지물질 종류 및 함유 여부",
+      "발생 공정"
+     ],
+     "evidence_gaps": []
+    }
+   ],
+   "evidence": [
+    {
+     "source": "citation",
+     "law": "CMA",
+     "key": "15",
+     "title": "유해화학물질의 진열량ㆍ보관량 제한 등",
+     "chars": 443,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "CMA",
+     "key": "2",
+     "title": "정의",
+     "chars": 1093,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "RRA_DEC",
+     "key": "18",
+     "title": "재활용의무 대상 제품ㆍ포장재",
+     "chars": 2656,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_DEC",
+     "key": "3",
+     "title": "지정폐기물의 종류",
+     "chars": 44,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_RULE",
+     "key": "4의2",
+     "title": "폐기물의 종류 및 재활용 유형",
+     "chars": 141,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B4:1",
+     "title": "폐기물의 종류별 세부분류(제4조의2제1항 관련)",
+     "chars": 3249,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "B4:2",
+     "title": "폐기물의 종류별 세부분류(제4조의2제1항 관련)",
+     "chars": 366,
+     "note": "코드가 속한 분류 묶음 줄만"
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B5의3:2~2",
+     "title": "폐기물의 재활용 기준(제14조의3제1항 관련)",
+     "chars": 17126,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": true,
+   "note": "",
+   "pack_hash": "2bb6eff09f5abb36c2e4ec74b7f332c7f82e613de547e4da1861a92a8a7fbcbe"
+  },
+  {
+   "question_id": "A-2",
+   "question": "이 폐기물은 지정폐기물인가? (예 / 아니오 / 분석해야 앎)",
+   "status": "agreed",
+   "answer": "conditional",
+   "value": {},
+   "conditions": [
+    "오니류는 수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 경우에만 지정폐기물이 될 수 있다.",
+    "폐수처리 오니는 기후에너지환경부령으로 정하는 물질을 함유한 것이어야 지정폐기물이 된다.",
+    "함유 요건에 더해 기후에너지환경부장관이 고시한 시설에서 발생한 것이어야 한다.",
+    "수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인 오니류로서 기후에너지환경부령으로 정하는 물질을 함유하고 기후에너지환경부장관이 고시한 시설에서 발생되는 폐수처리 오니인 경우 지정폐기물에 해당한다.",
+    "화학물질관리법에 따른 금지물질 등을 폐기하는 경우 폐유독물질로서 지정폐기물에 해당한다."
+   ],
+   "missing_facts": [
+    "금지물질 등 해당 여부",
+    "기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)",
+    "수분함량 또는 고형물함량",
+    "수분함량(또는 고형물함량)",
+    "유해물질 함유 여부(용출시험 결과)"
+   ],
+   "flags": [],
+   "retries": 0,
+   "votes": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "valid": true,
+     "drop_reason": ""
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "unknown",
+     "valid": true,
+     "drop_reason": ""
+    },
+    {
+     "model": "google/gemini-4-argon",
+     "answer": "conditional",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "WMA:2@20261112#f0a7834ff79e7eec",
+     "text": "\"지정폐기물\"이란 사업장폐기물 중 폐유ㆍ폐산 등 주변 환경을 오염시킬 수 있거나 의료폐기물(醫療廢棄物) 등 인체에 위해(危害)를 줄 수 있는 해로운 물질로서 대통령령으로 정하는 폐기물을 말한다."
+    },
+    {
+     "ref": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "text": "나. 오니류(수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인"
+    },
+    {
+     "ref": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "text": "1) 폐수처리 오니(기후에너지환경부령으로 정하는 물질을 함유한 것으로"
+    },
+    {
+     "ref": "WMA_DEC:3@20261112#1c2a6694f1744f8b",
+     "text": "제3조(지정폐기물의 종류) 법 제2조제4호에 따른 지정폐기물은 별표 1과 같다."
+    },
+    {
+     "ref": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "text": "나. 오니류(수분함량이 95퍼센트 미만이거나 고형물함량이 5퍼센트 이상인\n것으로 한정한다)\n1) 폐수처리 오니(기후에너지환경부령으로 정하는 물질을 함유한 것으로\n기후에너지환경부장관이 고시한 시설에서 발생되는 것으로 한정한다)"
+    },
+    {
+     "ref": "WMA_DEC:B1@20261112#72e3426369134a0f",
+     "text": "9. 폐유독물질[「화학물질관리법」 제2조제2호ㆍ제2호의2ㆍ제2호의3 및 같은\n조 제3호부터 제6호까지에 따른 인체급성유해성물질, 인체만성유해성물질, 생\n태유해성물질, 허가물질, 제한물질, 금지물질 및 사고대비물질을 폐기하는 경\n우로 한정하되,"
+    }
+   ],
+   "models": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "value": {},
+     "reason": "도금 폐수처리오니(51-02-01)는 별표 1 제1호 나목 1)의 폐수처리 오니에 해당할 수 있으나, 수분·고형물 함량, 부령 지정 물질 함유, 고시 시설 해당 여부가 모두 충족될 때만 지정폐기물이다. 사례에는 수분함량이 없고 나머지 두 요건도 확인할 근거가 없어 분석이 필요하다.",
+     "missing_facts": [
+      "수분함량 또는 고형물함량",
+      "기후에너지환경부령 지정 유해물질 함유 여부(성분 분석)"
+     ],
+     "evidence_gaps": [
+      "폐수처리 오니의 지정 요건인 '기후에너지환경부령으로 정하는 물질'의 목록(시행규칙 해당 조문·별표)",
+      "지정폐기물 해당 시설을 정한 기후에너지환경부장관 고시 목록",
+      "기후에너지환경부장관 고시 시설 해당 여부"
+     ]
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "unknown",
+     "value": {},
+     "reason": "도금 폐수 처리에서 발생한 금지 물질 의심 오니이므로, 오염 수준이 '깨끗'이고 유해성 의심 표시가 false라는 사실만으로 지정폐기물 해당 가능성을 배제할 수 없다. 오니의 수분·성분·발생시설 요건과 금지물질 자체를 폐기하는 경우인지 확인되지 않았고, 적용할 물질 기준과 시설 고시도 근거 묶음에 없어 판단할 수 없다.",
+     "missing_facts": [
+      "수분 또는 고형물 함량",
+      "유해물질 종류·함량",
+      "발생시설 종류",
+      "금지물질 자체의 폐기 여부"
+     ],
+     "evidence_gaps": [
+      "지정폐기물인 폐수처리 오니에 적용되는 기후에너지환경부령상 물질 및 함유기준",
+      "폐수처리 오니의 발생시설에 관한 기후에너지환경부장관 고시"
+     ]
+    },
+    {
+     "model": "google/gemini-4-argon",
+     "answer": "conditional",
+     "value": {},
+     "reason": "도금 폐수 처리 공정에서 발생한 폐수처리오니(금지 물질 의심)는 수분함량(95% 미만 여부), 기후에너지환경부령으로 정하는 유해물질 함유 여부 및 고시된 특정시설 발생 여부, 또는 화학물질관리법상 금지물질 폐기 여부에 따라 지정폐기물 해당 여부가 결정되나, 해당 분석값과 사실이 확인되지 않았다.",
+     "missing_facts": [
+      "수분함량(또는 고형물함량)",
+      "유해물질 함유 여부(용출시험 결과)",
+      "금지물질 등 해당 여부"
+     ],
+     "evidence_gaps": [
+      "폐기물관리법 시행규칙 별표 1(지정폐기물에 함유된 유해물질 기준)",
+      "기후에너지환경부장관이 고시한 특정시설 목록"
+     ]
+    }
+   ],
+   "evidence": [
+    {
+     "source": "min_laws",
+     "law": "WMA",
+     "key": "2",
+     "title": "정의",
+     "chars": 1115,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_DEC",
+     "key": "3",
+     "title": "지정폐기물의 종류",
+     "chars": 44,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_RULE",
+     "key": "4의2",
+     "title": "폐기물의 종류 및 재활용 유형",
+     "chars": 141,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "B4:2",
+     "title": "폐기물의 종류별 세부분류(제4조의2제1항 관련)",
+     "chars": 366,
+     "note": "코드가 속한 분류 묶음 줄만"
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "68a6d9d356f6045d0303020f98c4fe9d84240da6c9c128ded4e7f87d4fa61b92"
+  },
+  {
+   "question_id": "A-3",
+   "question": "지정폐기물 여부를 위탁 전에 분석·확인해야 하는 대상인가? 대상이면 무엇을 언제 확인하는가?",
+   "status": "agreed",
+   "answer": "conditional",
+   "value": {},
+   "conditions": [
+    "사업장폐기물배출자 신고 또는 변경신고를 하는 경우에 지정폐기물 해당 여부를 미리 확인해야 한다.",
+    "사용 원료, 생산 또는 배출 공정 등의 변경으로 폐기물의 종류 또는 성상이 변경되는 경우에 확인해야 한다.",
+    "처리 대상 폐기물의 종류 또는 성상이 변경되는 경우에 확인해야 한다.",
+    "지정폐기물로 분류될 수 있는 폐기물로서, 아래에 인용된 사유에 따른 배출자 신고 또는 변경신고를 하는 경우 미리 지정폐기물 해당 여부를 확인해야 한다.",
+    "사용 원료, 생산 또는 배출 공정 등의 변경으로 폐기물의 종류 또는 성상이 변경되는 경우에도 미리 확인해야 한다.",
+    "처리 대상 폐기물의 종류 또는 성상이 변경되는 경우에도 미리 확인해야 한다."
+   ],
+   "missing_facts": [
+    "공정 또는 폐기물 성상 변경 여부",
+    "배출자 신고·변경신고 사유",
+    "사업장폐기물배출자 신고 또는 변경신고 시점",
+    "원료·공정 변경에 따른 종류·성상 변경 여부",
+    "처리 대상 폐기물의 종류·성상 변경 여부"
+   ],
+   "flags": [],
+   "retries": 0,
+   "votes": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "valid": true,
+     "drop_reason": ""
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "conditional",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "GUIDE_DECL:§Ⅵ@20251231#72b09a3a8d3892e9",
+     "text": "확인대상 폐기물(규칙 제17조의2제1항)○ 오니류, 폐흡착제, 폐흡수제"
+    },
+    {
+     "ref": "WMA_RULE:17의2@20261112#27c7ef5cf4d02e5a",
+     "text": "사업장폐기물배출자는 법 제17조제1항제1호에 따라 사업장에서 발생하는 폐기물이 지정폐기물로 분류될 수 있는 경우로서 다음 각 호의 어느 하나에 해당하면 사업장에서 발생하는 폐기물이 지정폐기물에 해당되는지를 미리 확인해야 한다."
+    },
+    {
+     "ref": "GUIDE_DECL:§Ⅵ@20251231#72b09a3a8d3892e9",
+     "text": "가. 확인대상 폐기물(규칙 제17조의2제1항)○ 오니류, 폐흡착제, 폐흡수제"
+    },
+    {
+     "ref": "WMA_RULE:17의2@20261112#27c7ef5cf4d02e5a",
+     "text": "② 사업장폐기물배출자는 법 제17조제1항제1호에 따라 사업장에서 발생하는 폐기물이 지정폐기물로 분류될 수 있는 경우로서 다음 각 호의 어느 하나에 해당하면 사업장에서 발생하는 폐기물이 지정폐기물에 해당되는지를 미리 확인해야 한다."
+    },
+    {
+     "ref": "WMA_RULE:17의2@20261112#27c7ef5cf4d02e5a",
+     "text": "① 법 제17조제1항제1호에서 \"기후에너지환경부령으로 정하는 유해물질\"이란 별표 1에 따른 유해물질, 기름성분, 석면 또는 폴리클로리네이티드비페닐을 말한다."
+    }
+   ],
+   "models": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "value": {},
+     "reason": "도금 폐수처리오니는 오니류이므로 확인대상 폐기물이다. 다만 규칙 제17조의2제2항은 확인 시기를 위탁 전이 아니라 신고·변경신고, 공정 변경으로 종류·성상이 바뀌는 때, 처리 대상 폐기물의 종류·성상이 바뀌는 때로 정한다. 이 사례에 그런 사유가 있는지는 사실에 나타나 있지 않다.",
+     "missing_facts": [
+      "사업장폐기물배출자 신고 또는 변경신고 시점",
+      "공정 또는 폐기물 성상 변경 여부"
+     ],
+     "evidence_gaps": []
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "conditional",
+     "value": {},
+     "reason": "도금 폐수처리오니는 확인대상인 오니류이고 앞 판단에서도 지정폐기물로 분류될 가능성이 확정되어 있으므로, 위 조건 중 하나에 해당하면 관련 유해물질 등을 확인하여 지정폐기물 해당 여부를 미리 판단해야 한다. 다만 해당 시점의 사실이 없어 조건부이며, 제시된 근거는 매 위탁 전마다 일률적으로 분석하도록 정한 것이 아니라 신고·변경 등의 확인 시점을 정하고 있다.",
+     "missing_facts": [
+      "배출자 신고·변경신고 사유",
+      "원료·공정 변경에 따른 종류·성상 변경 여부",
+      "처리 대상 폐기물의 종류·성상 변경 여부"
+     ],
+     "evidence_gaps": []
+    }
+   ],
+   "evidence": [
+    {
+     "source": "min_laws",
+     "law": "GUIDE_DECL",
+     "key": "§Ⅵ",
+     "title": "Ⅵ. 사업장폐기물 배출자의 확인의무",
+     "chars": 3385,
+     "note": "체크리스트 번호와 달라 제목으로 다시 찾은 조문"
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "17의2",
+     "title": "사업장폐기물배출자의 확인 등",
+     "chars": 460,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "dda64f1d1c8b1952c744e9f5b620e3cb805459bdbae1943c21cc40c509fa0bb8"
+  },
+  {
+   "question_id": "A-4",
+   "question": "여러 폐기물이 섞여 있는가? 섞였다면 분리할 수 있는가, 섞인 채로 어떤 분류번호로 보는가?",
+   "status": "agreed",
+   "answer": "no",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [],
+   "retries": 0,
+   "votes": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "no",
+     "valid": false,
+     "drop_reason": "결론에 인용이 없음"
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "no",
+     "valid": true,
+     "drop_reason": ""
+    },
+    {
+     "model": "google/gemini-4-argon",
+     "answer": "no",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "WMA_DEC:7@20261112#aaf075e5b429d952",
+     "text": "8. 두 종류 이상의 폐기물이 혼합되어 있어 분리가 어려우면 다음 각 목의 방법으로 처리할 것"
+    }
+   ],
+   "models": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "no",
+     "value": {},
+     "reason": "사례 사실에서 구성 성분은 '금지 물질 의심 폐수처리오니' 하나(100%)이고 mixed_with_other 가 false 로 파트 1이 확인했으므로, 여러 폐기물이 섞여 있지 않다. 따라서 분리 가능 여부나 혼합 상태의 분류번호를 따질 필요가 없다.",
+     "missing_facts": [],
+     "evidence_gaps": []
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "no",
+     "value": {},
+     "reason": "사례에서 다른 폐기물과 혼합되지 않았고, 구성도 폐수처리오니 한 종류가 100%로 확인된다. 따라서 혼합폐기물에 해당하지 않으며, 혼합물의 분리 가능성 및 섞인 상태의 분류번호 판단은 해당 없다.",
+     "missing_facts": [],
+     "evidence_gaps": []
+    },
+    {
+     "model": "google/gemini-4-argon",
+     "answer": "no",
+     "value": {},
+     "reason": "사례 사실에 따르면 다른 폐기물과의 혼합 여부(mixed_with_other)가 false이며, 구성 성분이 '금지 물질 의심 폐수처리오니' 100%로 단일 폐기물이므로 두 종류 이상의 폐기물이 섞여 있지 않다.",
+     "missing_facts": [],
+     "evidence_gaps": []
+    }
+   ],
+   "evidence": [
+    {
+     "source": "min_laws",
+     "law": "WMA_DEC",
+     "key": "7",
+     "title": "폐기물의 처리기준 등",
+     "chars": 3217,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "9517c145a0798f89b6209fc5534e7e6efa5d0e41f6a7809958466cf7f8854546"
+  },
+  {
+   "question_id": "B-1",
+   "question": "이 폐기물은 재활용이 금지된 폐기물인가? (법 제13조의2 제2항 각 호)",
+   "status": "needs_info",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [
+    "금지·제한물질 종류 및 실제 함유 여부",
+    "금지물질 종류",
+    "금지물질 함유 여부(분석 결과)",
+    "발생 공정"
+   ],
+   "flags": [
+    "evidence_gap"
+   ],
+   "retries": 0,
+   "votes": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "unknown",
+     "valid": true,
+     "drop_reason": ""
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "unknown",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "text": "4. 폐유독물 등 인체나 환경에 미치는 위해가 매우 높을 것으로 우려되는 폐기물 중 대통령령으로 정하는 폐기물"
+    },
+    {
+     "ref": "WMA_RULE:14의3@20261112#6648ee9a95af4c7d",
+     "text": "나. 영 별표 4의3 제1호가목 또는 나목에 해당하는 폐기물"
+    }
+   ],
+   "models": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "unknown",
+     "value": {},
+     "reason": "사례는 PCB 항목이 제공되지 않았지만 오염이 '깨끗'하고 오니여서 폐석면·PCB·의료폐기물에 해당할 가능성은 없다. 다만 금지물질 의심 오니가 제4호의 대통령령 지정 폐기물(폐유독물 등)에 해당하는지는 영 별표 4의3이 근거 묶음에 없어 판단할 수 없고, 금지물질 실제 함유 여부도 확인되지 않았다.",
+     "missing_facts": [
+      "금지물질 함유 여부(분석 결과)",
+      "금지물질 종류"
+     ],
+     "evidence_gaps": [
+      "법 제13조의2제2항제4호에서 대통령령으로 정한 폐기물을 나열한 영 별표 4의3 (제1호~제7호) 원문"
+     ]
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "unknown",
+     "value": {},
+     "reason": "금지·제한물질 관련 표시가 true이지만, 앞 판단에서도 실제 물질 종류와 함유 여부는 확정되지 않았다. 지정폐기물 해당 여부만으로 재활용 금지를 단정할 수 없으며, 금지·제한 대상을 정하는 시행령 별표 4의3도 제공되지 않아 판단할 수 없다.",
+     "missing_facts": [
+      "금지·제한물질 종류 및 실제 함유 여부",
+      "발생 공정"
+     ],
+     "evidence_gaps": [
+      "법 제13조의2제2항제4호에 따른 폐기물의 범위를 정하는 시행령 별표 4의3 원문"
+     ]
+    }
+   ],
+   "evidence": [
+    {
+     "source": "min_laws",
+     "law": "WMA",
+     "key": "13의2",
+     "title": "폐기물의 재활용 원칙 및 준수사항",
+     "chars": 661,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_DEC",
+     "key": "3",
+     "title": "지정폐기물의 종류",
+     "chars": 44,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "14의3",
+     "title": "폐기물의 재활용 기준 및 준수사항 등",
+     "chars": 789,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_RULE",
+     "key": "37",
+     "title": "폐기물처리시설 설치 승인ㆍ신고의 제외 대상 등",
+     "chars": 709,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "9168c68631cb0d1cdcf845d885842147ee5a81d150723ac7350a69767509f37f"
+  },
+  {
+   "question_id": "B-2",
+   "question": "이 폐기물이 시행령 별표 4의3 각 호의 '재활용이 제한되는 폐기물'에 해당하는가? 해당하면 그 호가 허용하는 재활용 유형(R코드)은? 해당하지 않으면 answer 를 \"no\" 로 하고 items 는 비운다. (재활용 예정 유형·재활용 방식·환경성평가 여부는 이 질문의 사실이 아니다 — 재활용 유형은 이 시스템이 법에서 정하는 것이므로 missing_facts 로 묻지 않는다)",
+   "status": "needs_info",
+   "answer": "unknown",
+   "value": {
+    "items": []
+   },
+   "conditions": [],
+   "missing_facts": [
+    "금지물질 종류 및 함유 여부",
+    "발생 공정"
+   ],
+   "flags": [
+    "evidence_gap"
+   ],
+   "retries": 0,
+   "votes": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "valid": false,
+     "drop_reason": "형식: answer 가 conditional 인데 items 가 비어 있음"
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "unknown",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "WMA_DEC:B4의3@20261112#8a5307b106a38e52",
+     "text": "1. 다음 각 목의 어느 하나에 해당하는 물질 중 폐기되는 물질\n가. 「산업안전보건법」 제117조제1항에 따라 제조 등이 금지된 물질"
+    },
+    {
+     "ref": "WMA_DEC:B4의3@20261112#8a5307b106a38e52",
+     "text": "나. 「화학물질의 등록 및 평가 등에 관한 법률」 제27조제1항에 따라 금지물\n질로 지정ㆍ고시된 물질"
+    }
+   ],
+   "models": [
+    {
+     "model": "anthropic/claude-sonnet-5-5",
+     "answer": "conditional",
+     "value": {
+      "items": []
+     },
+     "reason": "사례는 '금지 물질 의심' 오니일 뿐 금지물질 해당 여부가 확인되지 않았다. 확인되면 별표 4의3 제1호에 해당할 수 있다. 다만 근거 묶음에는 허용 R코드가 없어 items 를 비웠다.",
+     "missing_facts": [
+      "금지물질 종류",
+      "금지물질 함유 여부(분석 결과)"
+     ],
+     "evidence_gaps": [
+      "별표 4의3 각 호가 허용하는 재활용 유형(R코드)을 적은 규정",
+      "제7호에 따라 기후에너지환경부장관이 고시한 폐기물 목록"
+     ]
+    },
+    {
+     "model": "openai/gpt-6.1-sol",
+     "answer": "unknown",
+     "value": {
+      "items": []
+     },
+     "reason": "앞 판단은 금지물질의 실제 함유 여부와 발생 경위에 따른 조건부 판단이며, 금지물질 의심 오니라는 이름만으로 별표 4의3 제1호의 물질 중 폐기되는 물질이라고 확정할 수 없다. 물질의 정체와 발생 경위가 확인되지 않았고, 근거 묶음에는 해당 물질의 지정 목록 및 허용 R코드 규정도 없어 해당 여부와 코드를 확정할 수 없다.",
+     "missing_facts": [
+      "금지물질 종류 및 함유 여부",
+      "발생 공정"
+     ],
+     "evidence_gaps": [
+      "별표 4의3 제1호 각 목에서 인용한 제조 등 금지물질 및 금지·제한물질 지정 목록",
+      "해당 시 허용되는 재활용 유형(R코드)을 정한 규정"
+     ]
+    }
+   ],
+   "evidence": [
+    {
+     "source": "citation",
+     "law": "WMA",
+     "key": "2의2",
+     "title": "폐기물의 세부분류",
+     "chars": 89,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_DEC",
+     "key": "7의3",
+     "title": "재활용이 금지 또는 제한되는 폐기물",
+     "chars": 83,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_DEC",
+     "key": "B4의3",
+     "title": "재활용이 금지되거나 제한되는 폐기물(제7조의3 관련)",
+     "chars": 650,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "e7c7bbd837f422c91cf0c0eacfde3e2512385a15ee65b4ff594533802784c17d"
+  },
+  {
+   "question_id": "C-1",
+   "question": "이 폐기물이 순환자원 지정 고시의 품목인가? 품목 한정(예 IC 트레이만, 알루미늄·구리만, 도정 공장 발생분만)에 맞는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "C-2",
+   "question": "고시가 정한 용도(허용 R코드)와 방법 기준(이물질, 혼합 금지, 보관 방법)은 무엇이고, 사례가 맞는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "D-1",
+   "question": "이 분류번호에 허용된 재활용 유형(R코드)은 무엇이고, 각각 사전 분석이 필요한가?",
+   "status": "agreed",
+   "answer": "yes",
+   "value": {
+    "items": [
+     "R-3-1",
+     "R-3-2",
+     "R-3-3",
+     "R-3-4",
+     "R-4-1",
+     "R-10",
+     "R-4-2"
+    ],
+    "attrs": {
+     "R-3-1": {
+      "pre_analysis": false
+     },
+     "R-3-2": {
+      "pre_analysis": false
+     },
+     "R-3-3": {
+      "pre_analysis": false
+     },
+     "R-3-4": {
+      "pre_analysis": false
+     },
+     "R-4-1": {
+      "pre_analysis": false
+     },
+     "R-10": {
+      "pre_analysis": true
+     },
+     "R-4-2": {
+      "pre_analysis": true
+     }
+    }
+   },
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "table_answer"
+   ],
+   "retries": 0,
+   "votes": [
+    {
+     "model": "판정표",
+     "answer": "yes",
+     "valid": true,
+     "drop_reason": ""
+    }
+   ],
+   "quotes": [
+    {
+     "ref": "WMA_RULE:B4의3@20261112#7aeb303d9fe8dcf0",
+     "text": "51-02-01 폐수처리오니: R-3-1, R-3-2, R-3-3, R-3-4, R-4-1, R-10, R-4-2"
+    }
+   ],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "D-2",
+   "question": "허용 R코드 중 사례의 형태(원형 보존, 파쇄, 분말, 액상)로 실제 할 수 있는 것은? (재사용 R-1·R-2 등)",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "D-3",
+   "question": "이 재활용 유형에 적용되는 재활용 기준은 무엇인가?",
+   "status": "agreed",
+   "answer": "yes",
+   "value": {
+    "text": "폐기물의 재활용 원칙 및 준수사항: 제13조의2(폐기물의 재활용 원칙 및 준수사항) ① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다. 1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것 2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것 3. 소음 또는 진동이 발생하여 사람에게 피해를 주지 아니할 것 4. 중금속 등 유해물질을 제거하거나 안정화하여 재활용제품이나 원료로 사용하는 과정에서 사람이나 환경에 위해를 미치지 아니하도록 하는 등 대통령령으로 정하는 사항을 준수할 것 5. 그 밖에 기후에너지환경부령으로 정하는 재활용의 기준을 준수할 것 ② 제1항에도 불구하고 다음 각 호의 어느 하나에 해당하 / 폐기물의 재활용 시 환경성평가: 제13조의3(폐기물의 재활용 시 환경성평가) ① 제13조의2제1항에도 불구하고 다음 각 호에 해당하는 자는 제13조의4제1항에 따른 재활용환경성평가기관으로부터 해당 폐기물의 재활용이 사람의 건강이나 환경에 미치는 영향을 조사ㆍ예측하여 해로운 영향을 피하거나 제거하는 방안 및 재활용기술의 적합성에 대한 평가(이하 \"재활용환경성평가\"라 한다)를 받아야 한다. 폐기물의 종류, 재활용 유형 등 기후에너지환경부령으로 정하는 중요사항을 변경하는 경우에도 또한 같다. 1. 기후에너지환경부령으로 정하는 규모 이상의 폐기물 또는 폐기물을 토양 등과 혼합하여 만든 물질을 토양ㆍ지하수ㆍ지표수 등에 접촉시켜 복토재ㆍ성토재ㆍ도로기층재 등 기후에너지환경부령으로"
+   },
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "attached_text"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [
+    {
+     "ref": "WMA:13의2@20261112#d5a26ead3e4715cd",
+     "text": "제13조의2(폐기물의 재활용 원칙 및 준수사항)\n① 누구든지 다음 각 호를 위반하지 아니하는 경우에는 폐기물을 재활용할 수 있다.\n1. 비산먼지, 악취가 발생하거나 휘발성유기화합물, 대기오염물질 등이 배출되어 생활환경에 위해를 미치지 아니할 것\n2. 침출수(浸出水)나 중금속 등 유해물질이 유출되어 토양, 수생태계 또는 지하수를 오염시키지 아니할 것\n3. 소"
+    },
+    {
+     "ref": "WMA:13의3@20261112#68c8b90b1817c2e3",
+     "text": "제13조의3(폐기물의 재활용 시 환경성평가)\n① 제13조의2제1항에도 불구하고 다음 각 호에 해당하는 자는 제13조의4제1항에 따른 재활용환경성평가기관으로부터 해당 폐기물의 재활용이 사람의 건강이나 환경에 미치는 영향을 조사ㆍ예측하여 해로운 영향을 피하거나 제거하는 방안 및 재활용기술의 적합성에 대한 평가(이하 \"재활용환경성평가\"라 한다)를 받아야 한다. "
+    }
+   ],
+   "models": [],
+   "evidence": [
+    {
+     "source": "citation",
+     "law": "WMA",
+     "key": "13의2",
+     "title": "폐기물의 재활용 원칙 및 준수사항",
+     "chars": 661,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA",
+     "key": "13의3",
+     "title": "폐기물의 재활용 시 환경성평가",
+     "chars": 1196,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_RULE",
+     "key": "B4의3",
+     "title": "폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)",
+     "chars": 244,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": true,
+   "note": "",
+   "pack_hash": "559ef43c17ba91b30849151482573e050c8381cf98fd5c062bd4066e2f8c3b04"
+  },
+  {
+   "question_id": "D-4",
+   "question": "재활용 업체가 지켜야 할 준수사항은 무엇인가?",
+   "status": "agreed",
+   "answer": "yes",
+   "value": {
+    "text": "폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련): 폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련) 1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도 가. 오염예방 및 저감방법 1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거 나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해 야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한 배출시설이 설치 된 경우에만 해당한다. 가) 대기오염물질: 「대기환경보전법 시행규칙」 별표 4에 따른 대기오염방 지시설을 이용하여 처리할 것 나) 소음ㆍ진동: 「소음ㆍ진동관리법 시행규칙」 별표 2에 따른 소음ㆍ진동 방지시설을 이용하여 처리할 것 다) 수질오염물질: 「물환경보전법 시행규칙」 별표 5에 따른 수질오염방지 시설을 이용하여 처리할 것 라) 악취:"
+   },
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "attached_text"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [
+    {
+     "ref": "WMA_RULE:B5의4@20261112#d808ab1786e42c95",
+     "text": "폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련)\n1. 폐기물의 재활용에 따른 오염예방 및 저감방법의 종류와 정도\n가. 오염예방 및 저감방법\n1) 폐기물을 재활용하는 과정에서 발생하는 오염은 다음의 방법으로 처리하거\n나 방지시설을 설치ㆍ운영하여 사람이나 환경에 위해가 발생하지 않도록 해\n야 한다. 다만, 가)부터 라)까지의 방법은 해당 오염에 대한"
+    }
+   ],
+   "models": [],
+   "evidence": [
+    {
+     "source": "citation",
+     "law": "WMA_DEC",
+     "key": "B4의2",
+     "title": "폐기물의 재활용 준수사항(제7조의2 관련)",
+     "chars": 521,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA_RULE",
+     "key": "B4의2:6",
+     "title": "폐기물의 재활용 유형별 세부분류(제4조의2제2항 관련)",
+     "chars": 94,
+     "note": "사례 R코드가 든 호만"
+    },
+    {
+     "source": "citation",
+     "law": "WMA_RULE",
+     "key": "B4의3",
+     "title": "폐기물의 종류별 재활용 가능 유형(제4조의2제3항 관련)",
+     "chars": 244,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "B5의4",
+     "title": "폐기물을 재활용하는 자의 준수사항(제14조의3제5항 관련)",
+     "chars": 3716,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "04dfe9f19a557870fba5a433ae99f7de65c930adb7a4c4a761ec1688180e3570"
+  },
+  {
+   "question_id": "D-5",
+   "question": "지정폐기물을 재활용하면 어떤 허가를 가진 업체에만 맡길 수 있는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "E-1",
+   "question": "에너지 회수(R-9 계열)로 인정되는 기준(저위발열량, 회수효율, 외부 공급 등)은 무엇이고, 사례 값이 충족하는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "F-1",
+   "question": "이 폐기물에 허용된 처분 방법(소각·매립·중간처분)은 무엇인가? items 에는 원문에 적힌 방법 이름을 그대로 쓴다 (예: \"소각\", \"고온소각\", \"매립\", \"증발농축\", \"중화\"). 처리방법 코드(4자리)는 법 원문에 없으므로 근거 부족으로 보지 않는다 — [사실 데이터]에 그 방법과 같은 이름의 코드가 있으면 items 에 함께 적어도 된다. 분류번호별 규정이 없으면 이 폐기물 구분(사업장일반·지정)과 성상(가연성·불연성)에 적용되는 일반 규정으로 답한다.",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "F-2",
+   "question": "그 처분 방법을 쓸 때 지켜야 할 조건·수치 기준은? (소각 곤란 시에만 매립, 파쇄 크기, 수분 함량, 잔재물 처리 등)",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "G-1",
+   "question": "처리를 위탁할 때 지켜야 할 기준·절차는? (적법 수탁자 확인, 수탁처리능력 확인서, 서면 계약, 보관 기간)",
+   "status": "agreed",
+   "answer": "yes",
+   "value": {
+    "text": "사업장폐기물의 처리: 제18조(사업장폐기물의 처리) ①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴적물 관리법」 제19조제1항제1호에 따라 폐기물 해양 배출업의 등록을 한 자에게 위탁하여 처리하여야 한다. ② 삭제 <2015.7.20> ③ 기후에너지환경부령으로 정하는 사업장폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분하는 자는 그 폐기물을 배출, 수집ㆍ운반, 재활용 또는 처분할 때마다 폐기물의 인계ㆍ인수에 관한 사항과 계량값, 위치정보, 영상정보 등 기 / 위탁ㆍ수탁의 기준 및 절차: 제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다. 1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확인서를 수탁자로부터 제출받을 것 가. 폐기물처리업 허가증 또는 폐기물처리 신고증명서 사본 나. 법 제40조제1항에 따른 방치폐기물 처리이행보증을 확인할 수 있는 서류 사본 2. 제68조의4제4항에 따라 법 제48조의4에 따른 폐기물적정처리추진센터(이하 \"폐기물적정처리추진센터\"라 한다)에서 공개한 자료 "
+   },
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "attached_text"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [
+    {
+     "ref": "WMA:18@20261112#3d3f300677cbd1bc",
+     "text": "제18조(사업장폐기물의 처리)\n①사업장폐기물배출자는 그의 사업장에서 발생하는 폐기물을 스스로 처리하거나 제25조제3항에 따른 폐기물처리업의 허가를 받은 자, 폐기물처리 신고자, 제4조나 제5조에 따른 폐기물처리시설을 설치ㆍ운영하는 자, 「건설폐기물의 재활용촉진에 관한 법률」 제21조에 따라 건설폐기물 처리업의 허가를 받은 자 또는 「해양폐기물 및 해양오염퇴"
+    },
+    {
+     "ref": "WMA_RULE:16의13@20261112#2fad9980685937f5",
+     "text": "제16조의13(위탁ㆍ수탁의 기준 및 절차) 영 제8조의4제1호에 따른 집단급식소를 운영하는 자, 제18조제1항 각 호 및 제18조의2제1항 각 호의 어느 하나에 해당하는 자는 법 제15조의2제3항 및 제17조제1항제3호 본문에 따라 다음 각 호의 위탁ㆍ수탁의 기준 및 절차를 준수해야 한다.\n1. 다음 각 목의 서류를 포함한 별지 제5호서식의 수탁처리능력 확"
+    }
+   ],
+   "models": [],
+   "evidence": [
+    {
+     "source": "min_laws",
+     "law": "WMA",
+     "key": "18",
+     "title": "사업장폐기물의 처리",
+     "chars": 1032,
+     "note": ""
+    },
+    {
+     "source": "citation",
+     "law": "WMA",
+     "key": "4",
+     "title": "국가와 지방자치단체의 책무",
+     "chars": 601,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_DEC",
+     "key": "B1",
+     "title": "지정폐기물의 종류(제3조 관련)",
+     "chars": 2628,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "13",
+     "title": "예외적 매립시설에서의 폐기물 처분",
+     "chars": 690,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "16의13",
+     "title": "위탁ㆍ수탁의 기준 및 절차",
+     "chars": 538,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "2fc131ca5bbc83e83e73c64b085465f317c1d849e1e2ccf5ba7e3da2c3df0a1b"
+  },
+  {
+   "question_id": "G-2",
+   "question": "전자정보처리프로그램(올바로)으로 인계·인수 내용을 입력해야 하는가? 제외 대상인가? 입력 기한은?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "G-3",
+   "question": "운반 업체가 지켜야 할 운반 기준은?",
+   "status": "agreed",
+   "answer": "yes",
+   "value": {
+    "text": "폐기물의 처리기준 등: 제7조(폐기물의 처리기준 등) ①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다. 1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다. 가. 처리기준과 방법이 같은 폐기물로서 같은 폐기물 처분시설 또는 재활용시설이나 장소에서 처리하는 경우 나. 폐기물의 발생 당시 두 종류 이상의 폐기물이 혼합되어 발생된 경우 다. 특별자치시, 특별자치도 또는 시(특별시와 광역시는 제외한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 분리수집 계획 또는 지역적 여건 등을 고려하여 특별자치시, 특별자치도 또는 시ㆍ군ㆍ구 / 폐기물 수집ㆍ운반업자 등의 운반기준: 제9조(폐기물 수집ㆍ운반업자 등의 운반기준) ① 영 제7조제1항제3호 단서에서 \"기후에너지환경부령으로 정하는 장소로 운반하는 경우\"란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 \"시ㆍ도지사\"라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 \"지방환경관서의 장\"이라 한다)으로부터 승인받은 장소(이하 \"임시보관장소\"라 한다)로 운반하는 경우를 말한다. ② 영 제7조제1항제3호나목에서 \"기후에너지환경부령으로 정하는 자\"란 다음 각 호의 자를 말한다. 1. 제66조제6항제2호에 따른 폐타이어를 수집ㆍ운반하는 자 2. 제66조제6항제3호에 따른 폐가전제품"
+   },
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "attached_text"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [
+    {
+     "ref": "WMA_DEC:7@20261112#aaf075e5b429d952",
+     "text": "제7조(폐기물의 처리기준 등)\n①법 제13조제1항 본문에 따른 폐기물의 처리 기준 및 방법은 다음 각 호와 같다.\n1. 폐기물의 종류와 성질ㆍ상태별로 재활용 가능성 여부, 가연성이나 불연성 여부 등에 따라 구분하여 수집ㆍ운반ㆍ보관할 것. 다만, 의료폐기물이 아닌 폐기물로서 다음 각 목의 어느 하나에 해당하는 경우에는 그러하지 아니하다.\n가. 처리기준과 방법"
+    },
+    {
+     "ref": "WMA_RULE:9@20261112#6a594bac53b7a8c9",
+     "text": "제9조(폐기물 수집ㆍ운반업자 등의 운반기준)\n① 영 제7조제1항제3호 단서에서 \"기후에너지환경부령으로 정하는 장소로 운반하는 경우\"란 적재능력이 작은 차량으로 폐기물을 수집하여 적재능력이 큰 차량으로 옮겨 싣기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 \"시ㆍ도지사\"라 한다) 또는 유역환경청장ㆍ지방환경청장(이하 \"지방환경관서의 장\""
+    }
+   ],
+   "models": [],
+   "evidence": [
+    {
+     "source": "citation",
+     "law": "WMA",
+     "key": "13",
+     "title": "폐기물의 처리 기준 등",
+     "chars": 261,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_DEC",
+     "key": "7",
+     "title": "폐기물의 처리기준 등",
+     "chars": 3217,
+     "note": ""
+    },
+    {
+     "source": "min_laws",
+     "law": "WMA_RULE",
+     "key": "9",
+     "title": "폐기물 수집ㆍ운반업자 등의 운반기준",
+     "chars": 1916,
+     "note": ""
+    },
+    {
+     "source": "search",
+     "law": "WMA_RULE",
+     "key": "B9:1~2",
+     "title": "폐기물 처분시설 또는 재활용시설의 설치기준(제35조 관련)",
+     "chars": 379,
+     "note": ""
+    }
+   ],
+   "evidence_truncated": false,
+   "note": "",
+   "pack_hash": "8f3817c2025ed5c22e9116eb0ef91bc0d689431a76c95ae12bad9a8bc293f606"
+  },
+  {
+   "question_id": "G-4",
+   "question": "순환자원으로 판매하면 인계서·수탁처리능력 확인 대상에서 빠지는가? 어떤 조건에서인가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "H-1",
+   "question": "이 배출 사업장은 사업장폐기물배출자 신고 대상인가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "H-2",
+   "question": "지정폐기물 처리계획 확인 대상인가? (품목별 월 평균 배출량 기준과 사례 물량 비교)",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "H-3",
+   "question": "처리계획 확인 대상이면 제출 서류, 제출처, 기한은?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "I-1",
+   "question": "각 경로의 처리(재활용·처분)를 맡을 수 있는 허가·신고 종류는 무엇인가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "I-2",
+   "question": "폐기물처리 신고 업체가 이 폐기물·재활용 유형을 받을 수 있는 범위인가? 신고자 준수사항은?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "I-3",
+   "question": "수집·운반 업체가 이 폐기물(지정·일반, 성상)을 운반할 수 있는 허가인가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "J-1",
+   "question": "폐전기전자제품·폐자동차에 해당해 전기전자제품 자원순환법이 먼저 적용되는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "J-2",
+   "question": "건설폐기물에 해당해 건설폐기물 재활용촉진법이 적용되는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "J-3",
+   "question": "포장재·제품 등 자원재활용법(생산자책임재활용 등) 대상 품목인가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  },
+  {
+   "question_id": "J-4",
+   "question": "유해화학물질이 들어 있어 화학물질관리법상 추가 의무(취급·보관·운반)가 있는가?",
+   "status": "not_applicable",
+   "answer": "unknown",
+   "value": {},
+   "conditions": [],
+   "missing_facts": [],
+   "flags": [
+    "not_relevant"
+   ],
+   "retries": 0,
+   "votes": [],
+   "quotes": [],
+   "models": [],
+   "evidence": [],
+   "evidence_truncated": false,
+   "note": "서비스 범위 밖 (중간재활용업만) — 묻지 않음",
+   "pack_hash": ""
+  }
+ ],
+ "evidence_pack_ids": [
+  "04dfe9f19a557870fba5a433ae99f7de65c930adb7a4c4a761ec1688180e3570",
+  "2bb6eff09f5abb36c2e4ec74b7f332c7f82e613de547e4da1861a92a8a7fbcbe",
+  "2fc131ca5bbc83e83e73c64b085465f317c1d849e1e2ccf5ba7e3da2c3df0a1b",
+  "559ef43c17ba91b30849151482573e050c8381cf98fd5c062bd4066e2f8c3b04",
+  "68a6d9d356f6045d0303020f98c4fe9d84240da6c9c128ded4e7f87d4fa61b92",
+  "8f3817c2025ed5c22e9116eb0ef91bc0d689431a76c95ae12bad9a8bc293f606",
+  "9168c68631cb0d1cdcf845d885842147ee5a81d150723ac7350a69767509f37f",
+  "9517c145a0798f89b6209fc5534e7e6efa5d0e41f6a7809958466cf7f8854546",
+  "dda64f1d1c8b1952c744e9f5b620e3cb805459bdbae1943c21cc40c509fa0bb8",
+  "e7c7bbd837f422c91cf0c0eacfde3e2512385a15ee65b4ff594533802784c17d"
+ ],
+ "run": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": 3,
+    "table": 0,
+    "calls": 0,
+    "cached": 9,
+    "escalated": 3,
+    "usage": {},
+    "statuses": {
+     "retry": 1,
+     "agreed": 2,
+     "not_applicable": 1
+    },
+    "seconds": 0.3
+   },
+   {
+    "round": 2,
+    "ready": 4,
+    "table": 0,
+    "calls": 0,
+    "cached": 4,
+    "escalated": 0,
+    "usage": {},
+    "statuses": {
+     "agreed": 2
+    },
+    "seconds": 0.5
+   },
+   {
+    "round": 3,
+    "ready": 2,
+    "table": 0,
+    "calls": 0,
+    "cached": 4,
+    "escalated": 1,
+    "usage": {},
+    "statuses": {
+     "needs_info": 2
+    },
+    "seconds": 0.2
+   },
+   {
+    "round": 4,
+    "ready": 1,
+    "table": 1,
+    "calls": 0,
+    "cached": 0,
+    "escalated": 0,
+    "usage": {},
+    "statuses": {},
+    "seconds": 0.3
+   }
+  ],
+  "calls": 0,
+  "usage": {},
+  "seconds": 1.4,
+  "partners": true,
+  "exception_tables": [],
+  "answer_tables": [
+   {
+    "table": "recycling_types_4_3.csv",
+    "rows": 2324,
+    "used_for": "표 답 (법 조문이 분류번호별 표인 질문)"
+   }
+  ],
+  "errors": 0,
+  "audit_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law_agent/audit/PRE-23/20261118T123834.jsonl"
+ }
+}

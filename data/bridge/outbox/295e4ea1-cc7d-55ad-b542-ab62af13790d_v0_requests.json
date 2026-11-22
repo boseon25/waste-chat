@@ -1,0 +1,67 @@
+{
+ "case_id": "295e4ea1-cc7d-55ad-b542-ab62af13790d",
+ "based_on_case_version": 0,
+ "requested_by": "part2",
+ "requests": [
+  {
+   "request_id": "0d680cb4-44d0-5b16-968c-f37e119e8b19",
+   "case_id": "295e4ea1-cc7d-55ad-b542-ab62af13790d",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "part2:emitter_facility_type"
+   ],
+   "trigger_rule_id": "law_agent:emitter_facility_type",
+   "reason": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다.",
+   "question": "배출 사업장이 폐기물 배출시설을 설치한 사업장(배출시설계)인가요, 아닌가요(비배출시설계)? 운반 업체마다 받는 범위가 다릅니다.",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "route:295e4ea1-cc7d-55ad-b542-ab62af13790d-G2-intermediate-single_material_recycle",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "99d8b012-564b-5188-8e0f-aedc603f39c9",
+   "case_id": "295e4ea1-cc7d-55ad-b542-ab62af13790d",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "generation.amount"
+   ],
+   "trigger_rule_id": "law_agent:H-1",
+   "reason": "이 배출 사업장은 사업장폐기물배출자 신고 대상인가? — 필요한 사실: 1일 평균 폐기물 배출량",
+   "question": "이 배출 사업장은 사업장폐기물배출자 신고 대상인가? — 필요한 사실: 1일 평균 폐기물 배출량",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  },
+  {
+   "request_id": "63041918-5bf1-5f0a-ae01-82060ee93473",
+   "case_id": "295e4ea1-cc7d-55ad-b542-ab62af13790d",
+   "based_on_case_version": 0,
+   "requested_by": "part2",
+   "fields": [
+    "industry"
+   ],
+   "trigger_rule_id": "law_agent:H-1",
+   "reason": "이 배출 사업장은 사업장폐기물배출자 신고 대상인가? — 필요한 사실: 배출시설 설치·운영 여부",
+   "question": "이 배출 사업장은 사업장폐기물배출자 신고 대상인가? — 필요한 사실: 배출시설 설치·운영 여부",
+   "answer_type": "text",
+   "options": [],
+   "acceptable_evidence": [],
+   "guidance_id": null,
+   "blocking_scope": "all",
+   "status": "open",
+   "answer_evidence_ids": [],
+   "resolution_reason": null
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+
+===== 2026-11-20 17:50:30 시작: /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python -m law_agent.cli admin web --host 127.0.0.1 --port 8765
+사용자 화면: http://127.0.0.1:8765/
+관리자 화면: http://127.0.0.1:8765/admin  (멈추려면 Ctrl+C)

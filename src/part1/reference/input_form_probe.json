@@ -1,0 +1,792 @@
+{
+  "mode": "read_only_probe",
+  "extractor_version": "docx-probe-0.1.1",
+  "sha256": "83c3bf58c11bd63e0c980213c10380ac3cf34337eafa88d0dfb9324298809d05",
+  "company_controls": [
+    {
+      "tag": "company_name",
+      "raw_value": "예: 가나다산업",
+      "checked": null,
+      "is_placeholder": true,
+      "is_real_answer": false,
+      "source_locator": {
+        "kind": "docx",
+        "table": 0,
+        "row": 0,
+        "cell": 1,
+        "tag": "company_name"
+      },
+      "control_occurrence": 0,
+      "warnings": []
+    },
+    {
+      "tag": "business_number",
+      "raw_value": "예: 123-45-67890",
+      "checked": null,
+      "is_placeholder": true,
+      "is_real_answer": false,
+      "source_locator": {
+        "kind": "docx",
+        "table": 0,
+        "row": 1,
+        "cell": 1,
+        "tag": "business_number"
+      },
+      "control_occurrence": 0,
+      "warnings": []
+    },
+    {
+      "tag": "contact_name",
+      "raw_value": "예: 김담당",
+      "checked": null,
+      "is_placeholder": true,
+      "is_real_answer": false,
+      "source_locator": {
+        "kind": "docx",
+        "table": 0,
+        "row": 2,
+        "cell": 1,
+        "tag": "contact_name"
+      },
+      "control_occurrence": 0,
+      "warnings": []
+    },
+    {
+      "tag": "contact_phone",
+      "raw_value": "예: 010-0000-0000",
+      "checked": null,
+      "is_placeholder": true,
+      "is_real_answer": false,
+      "source_locator": {
+        "kind": "docx",
+        "table": 0,
+        "row": 2,
+        "cell": 2,
+        "tag": "contact_phone"
+      },
+      "control_occurrence": 0,
+      "warnings": []
+    },
+    {
+      "tag": "site_address",
+      "raw_value": "예: 전주시 ○○로 10, ○○공장 A동 창고",
+      "checked": null,
+      "is_placeholder": true,
+      "is_real_answer": false,
+      "source_locator": {
+        "kind": "docx",
+        "table": 0,
+        "row": 3,
+        "cell": 1,
+        "tag": "site_address"
+      },
+      "control_occurrence": 0,
+      "warnings": []
+    }
+  ],
+  "waste_tables": [
+    {
+      "table": 1,
+      "candidate_id": null,
+      "create_candidate": false,
+      "controls": [
+        {
+          "tag": "waste_1_name",
+          "raw_value": "예: 포장 비닐 자투리",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 1,
+            "cell": 1,
+            "tag": "waste_1_name"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_process",
+          "raw_value": "예: 제품 포장을 뜯는 작업에서 나옴",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 2,
+            "cell": 1,
+            "tag": "waste_1_process"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_quantity",
+          "raw_value": "예: 200kg",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 3,
+            "cell": 1,
+            "tag": "waste_1_quantity"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_quantity_evidence",
+          "raw_value": "예: 계량표, 측정 기록 첨부",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 4,
+            "cell": 1,
+            "tag": "waste_1_quantity_evidence"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_appearance",
+          "raw_value": "예: 마른 비닐 조각",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 5,
+            "cell": 1,
+            "tag": "waste_1_appearance"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_mixture_0",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_1_mixture_0"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_mixture_1",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_1_mixture_1"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_mixture_2",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_1_mixture_2"
+          },
+          "control_occurrence": 2,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_mixture_details",
+          "raw_value": "예: 비닐과 종이",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_1_mixture_details"
+          },
+          "control_occurrence": 3,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_contamination_0",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_1_contamination_0"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_contamination_1",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_1_contamination_1"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_contamination_2",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_1_contamination_2"
+          },
+          "control_occurrence": 2,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_contamination_3",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_1_contamination_3"
+          },
+          "control_occurrence": 3,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_contamination_details",
+          "raw_value": "예: 겉에 흙이 조금 묻어 있음",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_1_contamination_details"
+          },
+          "control_occurrence": 4,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_hazard_0",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 8,
+            "cell": 1,
+            "tag": "waste_1_hazard_0"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_hazard_1",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 8,
+            "cell": 1,
+            "tag": "waste_1_hazard_1"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_hazard_2",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 8,
+            "cell": 1,
+            "tag": "waste_1_hazard_2"
+          },
+          "control_occurrence": 2,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_hazard_details",
+          "raw_value": "예: 포함 여부를 확인할 자료 없음",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 8,
+            "cell": 1,
+            "tag": "waste_1_hazard_details"
+          },
+          "control_occurrence": 3,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_notes",
+          "raw_value": "예: 주 1회 발생하며 지붕 있는 창고에 보관함",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 9,
+            "cell": 1,
+            "tag": "waste_1_notes"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_photo_full",
+          "raw_value": "예: 비닐_전체.jpg",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 10,
+            "cell": 1,
+            "tag": "waste_1_photo_full"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_1_photo_close",
+          "raw_value": "예: 비닐_근접.jpg",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 1,
+            "row": 10,
+            "cell": 1,
+            "tag": "waste_1_photo_close"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        }
+      ],
+      "site_override_candidate": null,
+      "untagged_candidates": [],
+      "warnings": [],
+      "attachment_state": "not_checked_filename_is_not_upload"
+    },
+    {
+      "table": 2,
+      "candidate_id": null,
+      "create_candidate": false,
+      "controls": [
+        {
+          "tag": "waste_2_name",
+          "raw_value": "예: 기계를 씻고 남은 세척액",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 0,
+            "cell": 1,
+            "tag": "waste_2_name"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_process",
+          "raw_value": "예: 절삭 기계를 청소하는 작업에서 나옴",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 1,
+            "cell": 1,
+            "tag": "waste_2_process"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_quantity",
+          "raw_value": "예: 100L",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 2,
+            "cell": 1,
+            "tag": "waste_2_quantity"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_quantity_evidence",
+          "raw_value": "예: 계량표, 측정 기록 첨부",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 3,
+            "cell": 1,
+            "tag": "waste_2_quantity_evidence"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_appearance",
+          "raw_value": "예: 회색 액체",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 4,
+            "cell": 1,
+            "tag": "waste_2_appearance"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_mixture_0",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 5,
+            "cell": 1,
+            "tag": "waste_2_mixture_0"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_mixture_1",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 5,
+            "cell": 1,
+            "tag": "waste_2_mixture_1"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_mixture_2",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 5,
+            "cell": 1,
+            "tag": "waste_2_mixture_2"
+          },
+          "control_occurrence": 2,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_mixture_details",
+          "raw_value": "예: 어떤 물질이 섞였는지는 모름",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 5,
+            "cell": 1,
+            "tag": "waste_2_mixture_details"
+          },
+          "control_occurrence": 3,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_contamination_0",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_2_contamination_0"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_contamination_1",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_2_contamination_1"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_contamination_2",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_2_contamination_2"
+          },
+          "control_occurrence": 2,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_contamination_3",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_2_contamination_3"
+          },
+          "control_occurrence": 3,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_contamination_details",
+          "raw_value": "예: 기름막이 일부 보임",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 6,
+            "cell": 1,
+            "tag": "waste_2_contamination_details"
+          },
+          "control_occurrence": 4,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_hazard_0",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_2_hazard_0"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_hazard_1",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_2_hazard_1"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_hazard_2",
+          "raw_value": "☐",
+          "checked": false,
+          "is_placeholder": false,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_2_hazard_2"
+          },
+          "control_occurrence": 2,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_hazard_details",
+          "raw_value": "예: 사용한 세척제 성분표 첨부",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 7,
+            "cell": 1,
+            "tag": "waste_2_hazard_details"
+          },
+          "control_occurrence": 3,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_notes",
+          "raw_value": "예: 뚜껑 있는 전용 용기에 보관함",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 8,
+            "cell": 1,
+            "tag": "waste_2_notes"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_photo_full",
+          "raw_value": "예: 세척액_전체.jpg",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 9,
+            "cell": 1,
+            "tag": "waste_2_photo_full"
+          },
+          "control_occurrence": 0,
+          "warnings": []
+        },
+        {
+          "tag": "waste_2_photo_close",
+          "raw_value": "예: 세척액_근접.jpg",
+          "checked": null,
+          "is_placeholder": true,
+          "is_real_answer": false,
+          "source_locator": {
+            "kind": "docx",
+            "table": 2,
+            "row": 9,
+            "cell": 1,
+            "tag": "waste_2_photo_close"
+          },
+          "control_occurrence": 1,
+          "warnings": []
+        }
+      ],
+      "site_override_candidate": null,
+      "untagged_candidates": [],
+      "warnings": [],
+      "attachment_state": "not_checked_filename_is_not_upload"
+    }
+  ],
+  "case_candidate_count": 0,
+  "accepted_case_count": 0,
+  "limitations": [
+    "NO_DB_WRITE",
+    "NO_PUBLISH",
+    "NO_PHOTO_VALIDATION",
+    "ARBITRARY_LAYOUT_NOT_SUPPORTED",
+    "NO_IDEMPOTENT_CASE_PERSISTENCE"
+  ]
+}

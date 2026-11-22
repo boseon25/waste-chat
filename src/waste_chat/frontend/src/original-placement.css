@@ -1,0 +1,50 @@
+.original-tools {flex:none;padding:5px 14px;border-bottom:1px solid var(--line);background:#f3f3eb;color:#49523f}
+.original-actions,.original-mark-actions,.original-coords {display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.original-actions button,.original-mark-actions button,.original-coords button,.original-editor button,.original-save-position button {
+  display:inline-flex;align-items:center;gap:4px;border:1px solid #c8cfbd;background:#fffef7;
+  border-radius:5px;padding:4px 8px;min-height:27px;font-size:11px;line-height:1.4;color:#36452e;cursor:pointer
+}
+.original-actions button:disabled,.original-mark-actions button:disabled,.original-editor button:disabled {opacity:.6;cursor:default}
+.original-actions button[aria-pressed=true],.original-editor button[type=submit],.original-coords button {background:#e5ecda;border-color:#b6c4a4}
+.original-tools svg,.original-location svg,.original-mark-actions svg {width:13px!important;height:13px!important;flex:none}
+.original-actions a {font-size:11px;color:#43523a;text-underline-offset:3px;margin-left:auto}
+.original-tools p,.original-chat-hint,.original-editor label {font-size:12px;color:#545c4b;line-height:1.45}
+.original-tools p {margin:4px 0 0}
+.original-coords {margin-top:6px}
+.original-coords label,.original-mark-actions label {display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#515b48}
+.original-coords input,.original-mark-actions select {font-size:12px;background:var(--paper);border:1px solid #bfc8b4;border-radius:4px;padding:3px}
+.original-coords input {width:52px;min-height:26px}
+.pdf-hotspots>.original-paper-target {position:absolute;inset:0;width:100%;height:100%;pointer-events:auto;border:0;background:transparent;margin:0;padding:0;cursor:crosshair;border-radius:0;touch-action:pan-x pan-y}
+.pdf-hotspots>.original-mark {position:absolute;pointer-events:auto;transform:translate(-55%,-55%);width:22px;height:22px;background:transparent;border:0;padding:0;cursor:pointer}
+.original-mark>span {position:absolute;right:48%;bottom:48%;width:8px;height:8px;border:1px solid #344a2b;background:#e8f1dd;border-radius:100% 100% 1px 100%}
+.original-mark:hover>span,.original-mark:focus-visible>span,.original-mark[aria-pressed=true]>span {background:#5a783f}
+.original-anchor {position:absolute;transform:translate(-2px,-2px);width:13px;height:13px;border-top:2px solid #426235;border-left:2px solid #426235;pointer-events:none;filter:drop-shadow(0 0 1px white)}
+.original-inspector {padding:9px 15px;background:#f7f8ef;border-bottom:1px solid var(--line);min-height:0;max-height:50%;overflow:auto;flex:0 1 auto}
+.original-location {display:flex;align-items:center;gap:5px;font-size:12px;color:#38482e;flex-wrap:wrap}
+.original-location small {font-size:11px;color:#5b6354;font-variant-numeric:tabular-nums}
+.original-chat-hint {margin:4px 0 6px}
+.original-mark-list {display:flex;flex-direction:column;gap:3px;margin-bottom:5px;color:#535e49;font-size:11px;font-weight:600}
+.original-mark-list select,.original-editor textarea {border:1px solid #c6cdbb;background:var(--paper);border-radius:4px;padding:5px;color:var(--ink);font-size:12px;max-width:100%;min-width:0}
+.original-mark-actions button {font-size:11px;min-height:25px;padding-inline:5px}
+.original-editor {margin-top:6px;font-size:12px;color:#49573e}
+.original-editor summary {cursor:pointer}
+.original-editor form {display:grid;gap:5px;margin-top:5px}
+.original-editor label {display:grid;gap:2px}
+.original-editor button {justify-self:start}
+.original-save-position {margin-top:6px}
+.original-editor p[role=alert],.original-save-position p[role=alert] {font-size:12px;color:#952d1c}
+@media(max-width:760px){.original-tools,.original-inspector{padding-inline:11px}.original-inspector{max-height:48%}.original-actions button,.original-coords button{min-height:30px}}
+
+.original-modes {display:inline-flex;gap:0;border:1px solid #bcc7b3;border-radius:6px;overflow:hidden}
+.original-actions .original-modes button {border:0;border-radius:0;color:#53604c;background:#fafbf6}
+.original-actions .original-modes button+button {border-left:1px solid #c6cdbd}
+.original-actions .original-modes button[aria-pressed=true] {color:#293c20;background:#e0ead5;font-weight:650}
+.original-cell:focus-visible {z-index:1}
+.cell-inspector .original-location {margin:6px 0 2px;font-size:13px}
+.cell-inspector .original-chat-hint {margin:3px 0 5px}
+.cell-inspector .original-mark-list {margin-bottom:0}
+.cell-inspector .original-mark-list select {font-size:13px;min-height:30px}
+.cell-value {display:flex;align-items:baseline;gap:7px;margin:4px 0 6px;font-size:12px;color:var(--ink);line-height:1.4}
+.cell-value span {align-self:baseline;flex:none;font-size:11px;color:#59614f}
+.cell-value strong {overflow-wrap:anywhere;white-space:pre-wrap}
+@media(max-width:760px){.cell-inspector{max-height:43%}.cell-inspector .original-location{margin-top:4px}}

@@ -1,0 +1,37 @@
+.photo-attachments > button { color: #42463a; }
+dialog.photo-dialog#photoDlg {
+  width: min(820px, calc(100vw - 28px));
+  max-height: min(86dvh, 820px);
+  max-width: none;
+  padding: 18px 22px 15px;
+  text-align: left;
+}
+.photo-header, .photo-header > div, .photo-actions, .photo-toolbar { display: flex; align-items: center; }
+.photo-header, .photo-toolbar { justify-content: space-between; gap: 8px; }
+.photo-header > div { gap: 8px; }
+.photo-header h2 { font-size: 20px; letter-spacing: -.045em; }
+dialog#photoDlg > .photo-document { margin: 2px 0 14px; color: #62665a; font-size: 13px; }
+.photo-actions { gap: 12px; flex-wrap: wrap; border-block: 1px solid #d7d8cf; padding: 10px 0; }
+.photo-actions > span, .photo-info { color: #5b5e54; font-size: 12px; line-height: 1.55; }
+.photo-review { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 18px; margin: 12px 0 4px; }
+.photo-visual, .photo-fields { min-width: 0; }
+.photo-dialog select { display: block; width: 100%; height: 36px; background: #fffefa; border: 1px solid #bec0b2; border-radius: 4px; color: #242620; padding: 4px 7px; min-width: 0; text-overflow: ellipsis; }
+dialog#photoDlg .photo-selector { margin: 0 0 9px; }
+.photo-selector select { margin-top: 4px; }
+.photo-canvas { background: #eeede6; height: clamp(170px, 33vh, 340px); border: 1px solid #d7d8cf; overflow: auto; }
+.photo-canvas img { display: block; height: 100%; width: 100%; object-fit: contain; }
+.photo-canvas.zoomed img { height: auto; max-width: none; }
+.photo-toolbar { margin-top: 5px; }
+.photo-fields { border-left: 1px solid #d7d8cf; padding-left: 17px; }
+.photo-fields h3 { font-size: 15px; margin: 0 0 11px; color: #242620; }
+.photo-fields textarea { display: block; resize: vertical; }
+.photo-fields > button { margin-top: 8px; }
+.photo-dialog .photo-status:empty { display: none; }
+dialog#photoDlg > .photo-status { margin: 9px 0 0; font-size: 13px; color: #344821; }
+.photo-info { display: grid; gap: 2px; margin-top: 12px; }
+@media (max-width: 650px) {
+  dialog.photo-dialog#photoDlg { padding: 12px 13px; max-height: 89dvh; }
+  .photo-review { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .photo-fields { border-left: 0; padding: 12px 0 0; border-top: 1px solid #d7d8cf; }
+  .photo-canvas { height: clamp(135px, 22dvh, 220px); }
+}

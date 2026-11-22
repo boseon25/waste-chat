@@ -1,0 +1,33 @@
+{
+  "table": "waste_codes_4",
+  "method": "code",
+  "builder": "build_tables.py build",
+  "table_file": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active/waste_codes_4.csv",
+  "rows": 376,
+  "confirmed": null,
+  "parts": {
+    "WMA_RULE": [
+      "B4"
+    ]
+  },
+  "config": [],
+  "missing_parts": [],
+  "sources": [
+    {
+      "law_id": "WMA_RULE",
+      "type": "annex",
+      "key": "4",
+      "title": "폐기물의 종류별 세부분류(제4조의2제1항 관련)",
+      "effective": "20261112",
+      "hash": "9bce159b174f5897",
+      "chars": 32542,
+      "part": "B4"
+    }
+  ],
+  "ref_check": {
+    "refs": 376,
+    "inside": 376,
+    "outside": {},
+    "old_effective": {}
+  }
+}

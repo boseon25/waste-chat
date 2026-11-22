@@ -1,0 +1,22 @@
+{
+  "run_at": "2026-11-17T11:26:07",
+  "input": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/route_agent/data/test_data/start/part1_sample.json",
+  "feedback": null,
+  "agent": false,
+  "partners": true,
+  "top": 5,
+  "data_dir": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/tables/active",
+  "law_dir": "/home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/chunk_v2",
+  "cases": [
+    {
+      "case_id": "DEMO-PART2-01",
+      "case_version": 1,
+      "routes": 6
+    },
+    {
+      "case_id": "DEMO-PART2-02",
+      "case_version": 1,
+      "routes": 6
+    }
+  ]
+}

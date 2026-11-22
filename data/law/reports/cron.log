@@ -1,0 +1,55 @@
+===== 2026-11-17 11:50:42 update 시작
+[11:50:42] ▶ 개정 확인: /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python3 law_watch.py check
+[11:51:13]   ✅ 개정 확인 (코드 0, 31초) 전체 변경 없음
+
+보고서: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/reports/2026-11-17_check.md
+[11:51:13] 보고서: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/reports/2026-11-17_update.md  (종료 코드 1: 실패)
+===== 2026-11-17 11:51:13 종료 코드 1
+===== 2026-11-17 11:54:27 update 시작
+[11:54:27] ▶ 개정 확인: /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python3 law_watch.py check
+[11:54:57]   ✅ 개정 확인 (코드 0, 30초) 전체 변경 없음
+
+보고서: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/reports/2026-11-17_check.md
+[11:54:57] 보고서: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/reports/2026-11-17_update.md  (종료 코드 1: 실패)
+===== 2026-11-17 11:54:57 종료 코드 1
+===== 2026-11-17 12:03:39 update 시작
+[12:03:39] ▶ 개정 확인: /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python3 law_watch.py check
+[12:04:13]   ✅ 개정 확인 (코드 0, 33초) 전체 변경 없음
+
+보고서: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/reports/2026-11-17_check.md
+[12:04:13] 보고서: /home/a202192012/5.Agent_System/프로젝트/waste_agent/data/law/reports/2026-11-17_update.md  (종료 코드 0: 변경 없음)
+===== 2026-11-17 12:04:13 종료 코드 0
+===== 2026-11-17 12:06:59 update 시작
+[12:06:59] ▶ 개정 확인: /home/a202192012/5.Agent_System/.venv-ai-agent/bin/python3 law_watch.py check
+Traceback (most recent call last):
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 2115, in _communicate
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_api/update.py", line 332, in <module>
+    sys.exit(cmd_update(rebuild="--rebuild" in a))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_api/update.py", line 260, in cmd_update
+    code, out = run(log, "개정 확인", [PY, "law_watch.py", "check"], HERE)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a202192012/5.Agent_System/프로젝트/waste_agent/src/law_api/update.py", line 96, in run
+    p = subprocess.run(args, cwd=cwd, env=env or os.environ.copy(), capture_output=True, text=True, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 1220, in communicate
+    self._wait(timeout=sigint_timeout)
+  File "/home/a202192012/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 2047, in _wait
+    time.sleep(delay)
+KeyboardInterrupt

@@ -1,0 +1,2118 @@
+{
+  "$defs": {
+    "AnalysisResult": {
+      "additionalProperties": false,
+      "properties": {
+        "result_id": {
+          "minLength": 1,
+          "title": "Result Id",
+          "type": "string"
+        },
+        "substance": {
+          "title": "Substance",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "title": "Raw Value",
+          "type": "string"
+        },
+        "qualifier": {
+          "enum": [
+            "measured",
+            "not_detected",
+            "below_quantification",
+            "unknown"
+          ],
+          "title": "Qualifier",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "test_method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Test Method"
+        },
+        "detection_limit": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detection Limit"
+        },
+        "sampled_at": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sampled At"
+        },
+        "sample_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sample Id"
+        },
+        "concentration_type": {
+          "default": "unknown",
+          "enum": [
+            "content",
+            "leachate",
+            "other",
+            "unknown"
+          ],
+          "title": "Concentration Type",
+          "type": "string"
+        },
+        "sample_basis": {
+          "default": "unknown",
+          "enum": [
+            "dry",
+            "wet",
+            "unknown"
+          ],
+          "title": "Sample Basis",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        }
+      },
+      "required": [
+        "result_id",
+        "substance",
+        "raw_value",
+        "qualifier",
+        "evidence_ids"
+      ],
+      "title": "AnalysisResult",
+      "type": "object"
+    },
+    "Assertion": {
+      "additionalProperties": false,
+      "properties": {
+        "assertion_id": {
+          "minLength": 1,
+          "title": "Assertion Id",
+          "type": "string"
+        },
+        "field_path": {
+          "title": "Field Path",
+          "type": "string"
+        },
+        "raw_value": {
+          "title": "Raw Value",
+          "type": "string"
+        },
+        "normalized_value_json": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized Value Json"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "disposition": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "held",
+            "accepted"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assertion_id",
+        "field_path",
+        "raw_value",
+        "evidence_ids",
+        "reason"
+      ],
+      "title": "Assertion",
+      "type": "object"
+    },
+    "Classification": {
+      "additionalProperties": false,
+      "properties": {
+        "reported_code": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "candidates": {
+          "items": {
+            "$ref": "#/$defs/ClassificationCandidate"
+          },
+          "title": "Candidates",
+          "type": "array"
+        },
+        "selected_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selected Code"
+        },
+        "rule_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rule Version"
+        },
+        "review_required": {
+          "default": true,
+          "title": "Review Required",
+          "type": "boolean"
+        }
+      },
+      "title": "Classification",
+      "type": "object"
+    },
+    "ClassificationCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "official_name": {
+          "title": "Official Name",
+          "type": "string"
+        },
+        "rule_id": {
+          "minLength": 1,
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_locator": {
+          "title": "Source Locator",
+          "type": "string"
+        },
+        "state": {
+          "default": "candidate",
+          "enum": [
+            "candidate",
+            "supported",
+            "rejected"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "conditions": {
+          "items": {
+            "$ref": "#/$defs/ConditionResult"
+          },
+          "minItems": 1,
+          "title": "Conditions",
+          "type": "array"
+        },
+        "exclusion_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exclusion Reason"
+        }
+      },
+      "required": [
+        "code",
+        "official_name",
+        "rule_id",
+        "source_id",
+        "source_locator",
+        "conditions"
+      ],
+      "title": "ClassificationCandidate",
+      "type": "object"
+    },
+    "Component": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "proportion_percent": {
+          "$ref": "#/$defs/Fact_Decimal_"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Component",
+      "type": "object"
+    },
+    "ConditionResult": {
+      "additionalProperties": false,
+      "properties": {
+        "condition_id": {
+          "minLength": 1,
+          "title": "Condition Id",
+          "type": "string"
+        },
+        "result": {
+          "enum": [
+            "true",
+            "false",
+            "unknown"
+          ],
+          "title": "Result",
+          "type": "string"
+        },
+        "fact_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Fact Refs",
+          "type": "array"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "condition_id",
+        "result",
+        "reason"
+      ],
+      "title": "ConditionResult",
+      "type": "object"
+    },
+    "Conflict": {
+      "additionalProperties": false,
+      "properties": {
+        "conflict_id": {
+          "minLength": 1,
+          "title": "Conflict Id",
+          "type": "string"
+        },
+        "field_path": {
+          "title": "Field Path",
+          "type": "string"
+        },
+        "assertion_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 2,
+          "title": "Assertion Ids",
+          "type": "array"
+        },
+        "status": {
+          "default": "open",
+          "enum": [
+            "open",
+            "resolved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "conflict_id",
+        "field_path",
+        "assertion_ids",
+        "reason"
+      ],
+      "title": "Conflict",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "minLength": 1,
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "input_document",
+            "user_message",
+            "photo",
+            "analysis",
+            "measurement",
+            "law",
+            "reported_document"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "file_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Id"
+        },
+        "message_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Id"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "source_locator": {
+          "$ref": "#/$defs/Locator"
+        },
+        "raw_excerpt": {
+          "title": "Raw Excerpt",
+          "type": "string"
+        },
+        "document_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date"
+        },
+        "issuer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issuer"
+        },
+        "sample_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sample Id"
+        },
+        "sampled_at": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sampled At"
+        },
+        "applicable_case_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Applicable Case Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "checked_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Checked At"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "kind",
+        "source_locator",
+        "raw_excerpt"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Fact_Annotated_bool__Strict_strict_True___": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[Annotated[bool, Strict(strict=True)]]",
+      "type": "object"
+    },
+    "Fact_Decimal_": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[Decimal]",
+      "type": "object"
+    },
+    "Fact_Literal__day____week____month____year___": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "day",
+                "week",
+                "month",
+                "year"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[Literal['day', 'week', 'month', 'year']]",
+      "type": "object"
+    },
+    "Fact_Literal__kg____t____g____L____m3______________": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "kg",
+                "t",
+                "g",
+                "L",
+                "m3",
+                "개",
+                "포대"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[Literal['kg', 't', 'g', 'L', 'm3', '개', '포대']]",
+      "type": "object"
+    },
+    "Fact_Literal__not_visible____partial____widespread___": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_visible",
+                "partial",
+                "widespread"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[Literal['not_visible', 'partial', 'widespread']]",
+      "type": "object"
+    },
+    "Fact_Literal__single____mixed____composite____multiple_unspecified___": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "single",
+                "mixed",
+                "composite",
+                "multiple_unspecified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[Literal['single', 'mixed', 'composite', 'multiple_unspecified']]",
+      "type": "object"
+    },
+    "Fact_date_": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[date]",
+      "type": "object"
+    },
+    "Fact_str_": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "title": "Fact[str]",
+      "type": "object"
+    },
+    "Generation": {
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "$ref": "#/$defs/Fact_Decimal_"
+        },
+        "unit": {
+          "$ref": "#/$defs/Fact_Literal__kg____t____g____L____m3______________"
+        },
+        "period": {
+          "$ref": "#/$defs/Fact_Literal__day____week____month____year___"
+        },
+        "recurring": {
+          "$ref": "#/$defs/Fact_Annotated_bool__Strict_strict_True___"
+        }
+      },
+      "title": "Generation",
+      "type": "object"
+    },
+    "InformationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {
+          "minLength": 1,
+          "title": "Request Id",
+          "type": "string"
+        },
+        "case_id": {
+          "minLength": 1,
+          "title": "Case Id",
+          "type": "string"
+        },
+        "based_on_case_version": {
+          "minimum": 0,
+          "title": "Based On Case Version",
+          "type": "integer"
+        },
+        "requested_by": {
+          "enum": [
+            "part1",
+            "part2",
+            "part3"
+          ],
+          "title": "Requested By",
+          "type": "string"
+        },
+        "fields": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Fields",
+          "type": "array"
+        },
+        "trigger_rule_id": {
+          "minLength": 1,
+          "title": "Trigger Rule Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "answer_type": {
+          "enum": [
+            "text",
+            "single_choice",
+            "number",
+            "date",
+            "file"
+          ],
+          "title": "Answer Type",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "acceptable_evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Acceptable Evidence",
+          "type": "array"
+        },
+        "guidance_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Guidance Id"
+        },
+        "blocking_scope": {
+          "pattern": "^(all|classification|route:[^\\s:]+|matching:[^\\s:]+|document:[^\\s:]+)$",
+          "title": "Blocking Scope",
+          "type": "string"
+        },
+        "status": {
+          "default": "open",
+          "enum": [
+            "open",
+            "answered",
+            "resolved",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "answer_evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Answer Evidence Ids",
+          "type": "array"
+        },
+        "resolution_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resolution Reason"
+        }
+      },
+      "required": [
+        "request_id",
+        "case_id",
+        "based_on_case_version",
+        "requested_by",
+        "fields",
+        "trigger_rule_id",
+        "reason",
+        "question",
+        "answer_type",
+        "blocking_scope"
+      ],
+      "title": "InformationRequest",
+      "type": "object"
+    },
+    "Locator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "docx",
+            "pdf",
+            "message",
+            "image",
+            "rule",
+            "file"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "table": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table"
+        },
+        "row": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row"
+        },
+        "cell": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell"
+        },
+        "tag": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tag"
+        },
+        "paragraph": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Paragraph"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "message_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Id"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Locator",
+      "type": "object"
+    },
+    "Quantity": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "raw_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Value"
+        },
+        "status": {
+          "default": "needs_info",
+          "enum": [
+            "confirmed",
+            "needs_info",
+            "conditional"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "user_report",
+                "document",
+                "measurement",
+                "observation",
+                "derived"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "verification": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "user_confirmed",
+            "source_checked",
+            "conflicted"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "applicability": {
+          "default": "unknown",
+          "enum": [
+            "matched",
+            "unknown",
+            "mismatched"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "updated_at": {
+          "format": "date-time",
+          "title": "Updated At",
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "kg",
+                "t",
+                "g",
+                "L",
+                "m3",
+                "개",
+                "포대"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "dimension": {
+          "anyOf": [
+            {
+              "enum": [
+                "mass",
+                "volume",
+                "count"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dimension"
+        },
+        "scope": {
+          "const": "current_lot",
+          "default": "current_lot",
+          "title": "Scope",
+          "type": "string"
+        },
+        "measured_at": {
+          "$ref": "#/$defs/Fact_date_"
+        },
+        "method": {
+          "$ref": "#/$defs/Fact_str_"
+        },
+        "net_weight": {
+          "$ref": "#/$defs/Fact_Annotated_bool__Strict_strict_True___"
+        },
+        "conversion_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Conversion Rule"
+        }
+      },
+      "title": "Quantity",
+      "type": "object"
+    },
+    "Readiness": {
+      "additionalProperties": false,
+      "properties": {
+        "route_exploration": {
+          "$ref": "#/$defs/StageReadiness"
+        },
+        "partner_matching": {
+          "$ref": "#/$defs/StageReadiness"
+        },
+        "document_drafting": {
+          "$ref": "#/$defs/StageReadiness"
+        }
+      },
+      "title": "Readiness",
+      "type": "object"
+    },
+    "StageReadiness": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "not_assessed",
+          "enum": [
+            "ready",
+            "conditional",
+            "blocked",
+            "not_assessed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "assessed_by": {
+          "anyOf": [
+            {
+              "enum": [
+                "part1",
+                "part2",
+                "part3"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assessed By"
+        }
+      },
+      "title": "StageReadiness",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "2.0",
+      "default": "2.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "case_id": {
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "case_version": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Case Version",
+      "type": "integer"
+    },
+    "draft_revision": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Draft Revision",
+      "type": "integer"
+    },
+    "company_id": {
+      "minLength": 1,
+      "title": "Company Id",
+      "type": "string"
+    },
+    "site_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Site Id"
+    },
+    "submission_id": {
+      "minLength": 1,
+      "title": "Submission Id",
+      "type": "string"
+    },
+    "lot_id": {
+      "minLength": 1,
+      "title": "Lot Id",
+      "type": "string"
+    },
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "name": {
+      "$ref": "#/$defs/Fact_str_"
+    },
+    "process_description": {
+      "$ref": "#/$defs/Fact_str_"
+    },
+    "industry": {
+      "$ref": "#/$defs/Fact_str_"
+    },
+    "physical_state": {
+      "$ref": "#/$defs/Fact_str_"
+    },
+    "components": {
+      "items": {
+        "$ref": "#/$defs/Component"
+      },
+      "title": "Components",
+      "type": "array"
+    },
+    "mixture_type": {
+      "$ref": "#/$defs/Fact_Literal__single____mixed____composite____multiple_unspecified___"
+    },
+    "separability": {
+      "$ref": "#/$defs/Fact_Annotated_bool__Strict_strict_True___"
+    },
+    "quantity": {
+      "$ref": "#/$defs/Quantity"
+    },
+    "generation": {
+      "$ref": "#/$defs/Generation"
+    },
+    "visible_contamination": {
+      "$ref": "#/$defs/Fact_Literal__not_visible____partial____widespread___"
+    },
+    "hazard_declaration": {
+      "$ref": "#/$defs/Fact_Annotated_bool__Strict_strict_True___"
+    },
+    "substances": {
+      "items": {
+        "$ref": "#/$defs/Fact_str_"
+      },
+      "title": "Substances",
+      "type": "array"
+    },
+    "analysis_results": {
+      "items": {
+        "$ref": "#/$defs/AnalysisResult"
+      },
+      "title": "Analysis Results",
+      "type": "array"
+    },
+    "classification": {
+      "$ref": "#/$defs/Classification"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "assertions": {
+      "items": {
+        "$ref": "#/$defs/Assertion"
+      },
+      "title": "Assertions",
+      "type": "array"
+    },
+    "conflicts": {
+      "items": {
+        "$ref": "#/$defs/Conflict"
+      },
+      "title": "Conflicts",
+      "type": "array"
+    },
+    "information_requests": {
+      "items": {
+        "$ref": "#/$defs/InformationRequest"
+      },
+      "title": "Information Requests",
+      "type": "array"
+    },
+    "missing_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Fields",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "readiness": {
+      "$ref": "#/$defs/Readiness"
+    },
+    "extractor_version": {
+      "default": "not_run",
+      "title": "Extractor Version",
+      "type": "string"
+    },
+    "rule_version": {
+      "default": "none",
+      "title": "Rule Version",
+      "type": "string"
+    },
+    "source_form_date": {
+      "$ref": "#/$defs/Fact_date_"
+    },
+    "site_inherited": {
+      "default": false,
+      "title": "Site Inherited",
+      "type": "boolean"
+    },
+    "site_source_evidence_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Site Source Evidence Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "case_id",
+    "company_id",
+    "submission_id",
+    "lot_id",
+    "synthetic"
+  ],
+  "title": "WasteCase",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Structural contract only. Run Pydantic for local semantic/reference validation."
+}

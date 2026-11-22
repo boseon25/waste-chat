@@ -1,0 +1,34 @@
+# waste-chat 문서 form5_b (제5호 수탁처리능력 확인 · 운반업체) → capacity_check
+# 운반업체는 처리방법·처리이행보증이 없어 CC-15(보증 사본)는 건너뜀
+doc: form5_b
+doc_type: capacity_check
+title: 제5호 수탁처리능력 확인서 (운반업체)
+fields:
+  generator_name: consignor.name
+  generator_registration: consignor.biz_no
+  generator_representative: consignor.representative
+  generator_address: consignor.address
+  waste_classification: waste_items[0].waste_code
+  waste_state_code: waste_items[0].state
+  hauler_entrusted_annual_tons: waste_items[0].ton_year
+  hauler_name: consignee.name
+  hauler_registration: consignee.biz_no
+  hauler_address: consignee.address
+  hauler_permit_number: consignee.permit_no
+  hauler_permit_authority: consignee.permit_agency
+  hauler_acceptance: capacity.acceptable
+  generator_birthdate: consignor.birthdate
+  generator_phone: consignor.phone
+  hauler_representative: consignee.representative
+  hauler_birthdate: consignee.birthdate
+  hauler_phone: consignee.phone
+  hauler_industry: consignee.industry
+  hauler_technical_capacity: consignee.tech
+  hauler_permit_date: consignee.permit_date
+  hauler_permit_industry: permit.industry
+  hauler_permit_waste: permit.waste
+  hauler_vehicle_size: vehicle.size
+  hauler_vehicle_count: vehicle.count
+attachments:
+  permit_hauler: permit_copy
+skip: [CC-15]

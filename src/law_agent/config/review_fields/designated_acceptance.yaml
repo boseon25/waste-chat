@@ -1,0 +1,20 @@
+# waste-chat 문서 designated_acceptance (제5호 폐기물 수탁확인 · 지정 처리계획) → acceptance_check
+# waste-chat 은 이 서식을 '칸 지정' 방식(other_cells.py)으로 10칸만 연결. (4) 수탁 확인 칸은 아직 없음
+doc: designated_acceptance
+doc_type: acceptance_check
+title: 제5호 폐기물 수탁확인서 (지정폐기물 처리계획용)
+fields:
+  generator: consignor.name
+  registration: consignor.biz_no
+  representative: consignor.representative
+  address: consignor.address
+  contractor: consignee.name
+  contractor_reg: consignee.biz_no
+  contractor_rep: consignee.representative
+  contractor_industry: consignee.industry
+  waste_classification: waste_items[0].waste_code      # 서식에 아직 없음
+  acceptance_method: accept_items[0].treatment_code    # 서식에 아직 없음 ((4) 처분·재활용 방법)
+  acceptance_facility: accept_items[0].facility        # 서식에 아직 없음
+  acceptance_tons_year: accept_items[0].ton_year       # 서식에 아직 없음
+  acceptance_schedule: accept_items[0].schedule        # 서식에 아직 없음 (톤/회, 회/년)
+not_in_form: [waste_classification, acceptance_method, acceptance_facility, acceptance_tons_year, acceptance_schedule]

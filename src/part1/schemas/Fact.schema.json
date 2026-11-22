@@ -1,0 +1,96 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value"
+    },
+    "raw_value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Raw Value"
+    },
+    "status": {
+      "default": "needs_info",
+      "enum": [
+        "confirmed",
+        "needs_info",
+        "conditional"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "basis": {
+      "anyOf": [
+        {
+          "enum": [
+            "user_report",
+            "document",
+            "measurement",
+            "observation",
+            "derived"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Basis"
+    },
+    "verification": {
+      "default": "unverified",
+      "enum": [
+        "unverified",
+        "user_confirmed",
+        "source_checked",
+        "conflicted"
+      ],
+      "title": "Verification",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "applicability": {
+      "default": "unknown",
+      "enum": [
+        "matched",
+        "unknown",
+        "mismatched"
+      ],
+      "title": "Applicability",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "title": "Fact[str]",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Structural contract only. Run Pydantic for local semantic/reference validation."
+}

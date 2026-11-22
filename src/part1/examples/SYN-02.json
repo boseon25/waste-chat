@@ -1,0 +1,360 @@
+{
+  "schema_version": "2.0",
+  "case_id": "SYN-02",
+  "case_version": 0,
+  "draft_revision": 0,
+  "company_id": "SYN-CO",
+  "site_id": null,
+  "submission_id": "SYN-SUB",
+  "lot_id": "SYN-02-LOT",
+  "synthetic": true,
+  "name": {
+    "value": "종이·비닐 혼합물",
+    "raw_value": "종이·비닐 혼합물",
+    "status": "conditional",
+    "basis": "user_report",
+    "verification": "unverified",
+    "evidence_ids": [
+      "SYN-02-EV-01"
+    ],
+    "applicability": "matched",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "process_description": {
+    "value": "포장재 분리 수거 작업",
+    "raw_value": "포장재 분리 수거 작업",
+    "status": "conditional",
+    "basis": "user_report",
+    "verification": "unverified",
+    "evidence_ids": [
+      "SYN-02-EV-01"
+    ],
+    "applicability": "matched",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "industry": {
+    "value": null,
+    "raw_value": null,
+    "status": "needs_info",
+    "basis": null,
+    "verification": "unverified",
+    "evidence_ids": [],
+    "applicability": "unknown",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "physical_state": {
+    "value": "고체",
+    "raw_value": "고체",
+    "status": "conditional",
+    "basis": "user_report",
+    "verification": "unverified",
+    "evidence_ids": [
+      "SYN-02-EV-01"
+    ],
+    "applicability": "matched",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "components": [
+    {
+      "name": {
+        "value": "종이",
+        "raw_value": "종이",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "SYN-02-EV-01"
+        ],
+        "applicability": "matched",
+        "updated_at": "2026-11-08T07:00:00Z"
+      },
+      "proportion_percent": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-08T07:00:00Z"
+      }
+    },
+    {
+      "name": {
+        "value": "비닐",
+        "raw_value": "비닐",
+        "status": "conditional",
+        "basis": "user_report",
+        "verification": "unverified",
+        "evidence_ids": [
+          "SYN-02-EV-01"
+        ],
+        "applicability": "matched",
+        "updated_at": "2026-11-08T07:00:00Z"
+      },
+      "proportion_percent": {
+        "value": null,
+        "raw_value": null,
+        "status": "needs_info",
+        "basis": null,
+        "verification": "unverified",
+        "evidence_ids": [],
+        "applicability": "unknown",
+        "updated_at": "2026-11-08T07:00:00Z"
+      }
+    }
+  ],
+  "mixture_type": {
+    "value": "multiple_unspecified",
+    "raw_value": "multiple_unspecified",
+    "status": "conditional",
+    "basis": "user_report",
+    "verification": "unverified",
+    "evidence_ids": [
+      "SYN-02-EV-01"
+    ],
+    "applicability": "matched",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "separability": {
+    "value": null,
+    "raw_value": null,
+    "status": "needs_info",
+    "basis": null,
+    "verification": "unverified",
+    "evidence_ids": [],
+    "applicability": "unknown",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "quantity": {
+    "value": "10",
+    "raw_value": "포대 10개",
+    "status": "conditional",
+    "basis": "user_report",
+    "verification": "unverified",
+    "evidence_ids": [
+      "SYN-02-EV-01"
+    ],
+    "applicability": "matched",
+    "updated_at": "2026-11-08T07:00:00Z",
+    "unit": "포대",
+    "dimension": "count",
+    "scope": "current_lot",
+    "measured_at": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "method": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "net_weight": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "conversion_rule": null
+  },
+  "generation": {
+    "amount": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "unit": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "period": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "recurring": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    }
+  },
+  "visible_contamination": {
+    "value": null,
+    "raw_value": null,
+    "status": "needs_info",
+    "basis": null,
+    "verification": "unverified",
+    "evidence_ids": [],
+    "applicability": "unknown",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "hazard_declaration": {
+    "value": null,
+    "raw_value": "모름",
+    "status": "needs_info",
+    "basis": "user_report",
+    "verification": "unverified",
+    "evidence_ids": [
+      "SYN-02-EV-01"
+    ],
+    "applicability": "matched",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "substances": [],
+  "analysis_results": [],
+  "classification": {
+    "reported_code": {
+      "value": null,
+      "raw_value": null,
+      "status": "needs_info",
+      "basis": null,
+      "verification": "unverified",
+      "evidence_ids": [],
+      "applicability": "unknown",
+      "updated_at": "2026-11-08T07:00:00Z"
+    },
+    "candidates": [],
+    "selected_code": null,
+    "rule_version": null,
+    "review_required": true
+  },
+  "evidence": [
+    {
+      "evidence_id": "SYN-02-EV-01",
+      "kind": "user_message",
+      "file_id": null,
+      "message_id": "SYN-02-MSG-01",
+      "sha256": null,
+      "source_locator": {
+        "kind": "message",
+        "table": null,
+        "row": null,
+        "cell": null,
+        "tag": null,
+        "page": null,
+        "bbox": null,
+        "message_id": "SYN-02-MSG-01",
+        "section": null
+      },
+      "raw_excerpt": "[합성] 이름:종이·비닐 혼합물; 작업:포장재 분리 수거 작업; 형태:고체; 이번 처리량:포대 10개; 재질:['종이', '비닐']; 혼합:multiple_unspecified; 유해물질:모름. 측정방법·날짜와 비율·분리성은 미확인. 분석자료 없음.",
+      "document_date": null,
+      "issuer": null,
+      "sample_id": null,
+      "sampled_at": null,
+      "applicable_case_ids": [
+        "SYN-02"
+      ],
+      "applicability": "matched",
+      "checked_at": null
+    }
+  ],
+  "assertions": [],
+  "conflicts": [],
+  "information_requests": [
+    {
+      "request_id": "SYN-02-Q-01",
+      "case_id": "SYN-02",
+      "based_on_case_version": 0,
+      "requested_by": "part1",
+      "fields": [
+        "quantity.method",
+        "quantity.measured_at"
+      ],
+      "trigger_rule_id": "SYN-Q-QUANTITY-BASIS",
+      "reason": "합성 서식의 이번 처리량 기재 근거 확인을 시연합니다.",
+      "question": "이 양은 실제로 재거나 센 값인가요? 방법과 날짜를 알려 주세요. 모르면 미확인으로 남깁니다.",
+      "answer_type": "text",
+      "options": [],
+      "acceptable_evidence": [
+        "user_message",
+        "measurement"
+      ],
+      "guidance_id": null,
+      "blocking_scope": "document:SYN-lot-quantity",
+      "status": "open",
+      "answer_evidence_ids": [],
+      "resolution_reason": null
+    }
+  ],
+  "missing_fields": [
+    "site_id",
+    "quantity.method",
+    "quantity.measured_at",
+    "photos.full",
+    "photos.close",
+    "mixture_type",
+    "separability"
+  ],
+  "limitations": [
+    "SYNTHETIC_NOT_PUBLISHED",
+    "HAZARD_UNVERIFIED",
+    "NO_REVIEWED_CLASSIFICATION_RULES"
+  ],
+  "readiness": {
+    "route_exploration": {
+      "status": "not_assessed",
+      "reasons": [],
+      "assessed_by": null
+    },
+    "partner_matching": {
+      "status": "not_assessed",
+      "reasons": [],
+      "assessed_by": null
+    },
+    "document_drafting": {
+      "status": "not_assessed",
+      "reasons": [],
+      "assessed_by": null
+    }
+  },
+  "extractor_version": "synthetic-fixture-1",
+  "rule_version": "none",
+  "source_form_date": {
+    "value": null,
+    "raw_value": null,
+    "status": "needs_info",
+    "basis": null,
+    "verification": "unverified",
+    "evidence_ids": [],
+    "applicability": "unknown",
+    "updated_at": "2026-11-08T07:00:00Z"
+  },
+  "site_inherited": false,
+  "site_source_evidence_ids": []
+}
